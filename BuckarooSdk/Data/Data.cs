@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using BuckarooSdk.Base;
+using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services;
+using BuckarooSdk.Transaction.Status;
+
+namespace BuckarooSdk.Data
+{
+	/// <summary>
+	/// General data class, to hold a Request object and a list of services
+	/// </summary>
+    public class Data
+    {
+        internal AuthenticatedRequest Request { get; set; }
+		
+        internal List<Service> Services { get; set; }
+		public DataBase DataRequestBase { get; private set; }
+
+		internal Data(AuthenticatedRequest request)
+        {
+			request.Request.Endpoint = Constants.Settings.GatewaySettings.DataRequestEndPoint;
+			this.Request = request;
+        }
+
+	
+
+		public ConfiguredDataRequest SetBasicFields(DataBase basicFields)
+		{
+			this.DataRequestBase = basicFields;
+			return new ConfiguredDataRequest(this);
+		}
+
+		#region "Internal methods"
+		/// <summary>
+		/// Adding a service to the datarequest.
+		/// </summary>
+		/// <param name="serviceName">The name of the service</param>
+		/// <param name="parameters">The list of service parameters</param>
+		internal void AddService(string serviceName, List<RequestParameter> parameters, string action, string version = "1")
+        {
+            var service = new Service()
+            {
+                Name = serviceName,
+				Action = action,
+				Version = version,
+				Parameters = parameters,
+            };
+
+			if(this.DataRequestBase.Services.ServiceList == null)
+			{
+				this.DataRequestBase.Services.ServiceList = new List<Service>();
+			}
+            this.DataRequestBase.Services.ServiceList.Add(service);
+        }
+        #endregion
+    }
+}
