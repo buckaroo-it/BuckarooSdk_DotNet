@@ -47,3 +47,4 @@ Temporary Items
 .apdisk
 *.suo
 *.vssscc
+*.cache
