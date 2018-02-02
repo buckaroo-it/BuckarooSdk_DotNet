@@ -3,8 +3,8 @@ namespace BuckarooSdk.DataTypes.Response.Error
 	/// <summary>
 	/// An error regarding an action related problem.
 	/// </summary>
-	public class ActionError
-    {
+	public class ActionError : RequestError
+	{
 		/// <summary>
 		/// Service used when the error occured.
 		/// </summary>

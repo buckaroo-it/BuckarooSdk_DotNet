@@ -138,6 +138,17 @@ namespace BuckarooSdk.DataTypes.Response
 			return services;
 		}
 
+		public bool CheckResponseForErrors()
+		{
+			
+			foreach (var actionError in RequestErrors.ActionErrors)
+			{
+				
+			}
+
+			return false;
+		}
+
 		/// <summary>
 		/// Returns the typed reponse for a specific action from the request. In case multiple services were used within one request, 
 		/// this method provides the response voor a certain action (e.g. response.GetActionResponse<IdealPayResponse/>();)

@@ -113,6 +113,11 @@ namespace BuckarooSdk.Connection
 			IEnumerable<string> authorizationResponse;
 			response.Headers.TryGetValues("Authorization", out authorizationResponse);
 
+			if (authorizationResponse == null)
+			{
+				return false;
+			}
+
 			var actualHeader = authorizationResponse.ToList().First();
 			var actualAuthHeaderValues = actualHeader.Split(':',' ');
 

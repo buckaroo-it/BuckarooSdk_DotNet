@@ -6,7 +6,7 @@ namespace BuckarooSdk
 {
 	/// <summary>
 	/// 
-	///    @Copyright 2017, Buckaroo B.V.
+	///    @Copyright 2016, 2017, Sjaak Roos, Buckaroo B.V.
 	/// 
 	///	   This file is part of the Buckaroo SDK
 	/// 

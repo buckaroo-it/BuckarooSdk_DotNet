@@ -7,19 +7,19 @@ namespace BuckarooSdk.Services.MasterCard
         /// <summary>
 		/// The configured transaction
 		/// </summary>
-		private ConfiguredTransaction ConfiguredTransaction { get; set; }
+		private ConfiguredTransaction ConfiguredTransaction { get; }
 
 
         internal MasterCardTransaction(ConfiguredTransaction baseTransaction)
         {
             this.ConfiguredTransaction = baseTransaction;
         }
-        
-        /// <summary>
-		/// The pay function creates a configured transaction with a PayPerEmailPaymentInvitationRequest, 
-        /// that is ready to be executed.
+
+		/// <summary>
+		/// The pay function creates a configured transaction with a MasterCardPayRequest, 
+		/// that is ready to be executed.
 		/// </summary>
-		/// <param name="request">A PayPerEmailPaymentInvitationRequest</param>
+		/// <param name="request">A MasterCardPayRequest</param>
 		/// <returns></returns>
 		public ConfiguredServiceTransaction Pay(MasterCardPayRequest request)
         {

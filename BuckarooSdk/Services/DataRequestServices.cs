@@ -19,7 +19,7 @@ namespace BuckarooSdk.Services
 		internal DataRequestServices()
 		{
 			this.ServiceList = new List<Service>();
-			//this.Global = new List<Global>();
+			this.Global = new List<Global>();
 		}
 	}
 }

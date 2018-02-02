@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using BuckarooSdk.Base;
@@ -18,7 +19,7 @@ namespace BuckarooSdk.Data
         internal AuthenticatedRequest Request { get; set; }
 		
         internal List<Service> Services { get; set; }
-		public DataBase DataRequestBase { get; private set; }
+		internal DataBase DataRequestBase { get; private set; }
 
 		internal Data(AuthenticatedRequest request)
         {
@@ -56,6 +57,23 @@ namespace BuckarooSdk.Data
 			}
             this.DataRequestBase.Services.ServiceList.Add(service);
         }
-        #endregion
-    }
+
+		internal void AddGlobal(string serviceName, List<RequestParameter> parameters, string action, string version = "1")
+		{
+			var global = new Global()
+			{
+				Name = serviceName,
+				Action = action,
+				Version = version,
+				Parameters = parameters,
+			};
+
+			if (this.DataRequestBase.Services.ServiceList == null)
+			{
+				this.DataRequestBase.Services.ServiceList = new List<Service>();
+			}
+			this.DataRequestBase.Services.ServiceList.Add(global);
+		}
+		#endregion
+	}
 }

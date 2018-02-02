@@ -1,5 +1,6 @@
 ﻿using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.CreditManagement.DataRequest;
+using BuckarooSdk.Services.IdealQr.DataRequest;
 
 namespace BuckarooSdk.Data
 {
@@ -26,6 +27,12 @@ namespace BuckarooSdk.Data
 		{
 			return new IdealDataRequest(this);
 		}
+
+		public IdealQrDataRequest IdealQr()
+		{
+			return new IdealQrDataRequest(this);
+		}
+
 
 		public CreditManagementDataRequest CreditManagement()
 		{

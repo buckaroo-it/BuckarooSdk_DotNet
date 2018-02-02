@@ -57,7 +57,6 @@ namespace BuckarooSdk.Connection
 				{
 					request.BuckarooSdkLogger.AddErrorLogging(exception.ToString());
 				}
-			
 
 				// live or test url
 				var apiBaseAddress = request.IsLive ? CheckoutUrl : TestCheckoutUrl;

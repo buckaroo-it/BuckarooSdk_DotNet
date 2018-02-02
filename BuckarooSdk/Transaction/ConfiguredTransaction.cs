@@ -1,5 +1,7 @@
 ﻿using BuckarooSdk.Services.AmericanExpress.TransactionRequest;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
+using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
+using BuckarooSdk.Services.Maestro;
 using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.Transfer;
 using BuckarooSdk.Services.PayPal;
@@ -36,6 +38,15 @@ namespace BuckarooSdk.Transaction
         {
             return new IdealTransaction(this);
         }
+
+		/// <summary>
+		/// The instanciation of the specific Ideal Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public IdealProcessingTransaction IdealProcessing()
+		{
+			return new IdealProcessingTransaction(this);
+		}
 
 		/// <summary>
 		/// The instantiation of the specific Paypermail service transaction.
@@ -82,11 +93,20 @@ namespace BuckarooSdk.Transaction
             return new VisaTransaction(this);
         }
 
+	    /// <summary>
+	    /// The instanciation of the specific Maestro Service transaction.
+	    /// </summary>
+	    /// <returns> An ideal</returns>
+	    public MaestroTransaction Maestro()
+	    {
+		    return new MaestroTransaction(this);
+	    }
+
 		/// <summary>
 		/// The instanciation of the specific Simple SEPA Direct debit Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
-        public SimpleSepaDirectDebitTransaction SimpleSepaDirectDebit()
+		public SimpleSepaDirectDebitTransaction SimpleSepaDirectDebit()
         {
             return new SimpleSepaDirectDebitTransaction(this);
         }

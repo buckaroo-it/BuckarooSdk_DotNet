@@ -8,5 +8,5 @@
         public string Value;
 	}
 	
-	internal class Global : RequestParameter { }
+	internal class Global : Service { }
 }

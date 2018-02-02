@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,9 +29,11 @@ namespace BuckarooSdk.Logging
 			this._errorLogger.AppendLine(errorLog);
 		}
 
+		private int _processStep = 1;
 		public void AddProcessLogging(string processLog)
 		{
-			this._processLogger.AppendLine(processLog);
+			this._processLogger.AppendLine($"{this._processStep}. {processLog}");
+			this._processStep++;
 		}
 
 		public void AddWarningLogging(string warning)
@@ -56,9 +59,9 @@ namespace BuckarooSdk.Logging
 		public string GetFullLog()
 		{
 			var fullLog = new StringBuilder()
-				.AppendLine("---ERRORLOG---\n\n" + this._errorLogger + "\n\n---END ERRORLOG---")
-				.AppendLine("---PROCESSLOG---\n\n" + this._processLogger + "\n\n---END PROCESSLOG---")
-				.AppendLine("---WARNINGLOG---" + this._warningLogger + "\n\n---END WARNINGLOG---");
+				.AppendLine("\n---ERRORLOG---\n\n" + this._errorLogger + "\n\n---END ERRORLOG---")
+				.AppendLine("\n---PROCESSLOG---\n\n" + this._processLogger + "\n\n---END PROCESSLOG---")
+				.AppendLine("\n---WARNINGLOG---\n\n" + this._warningLogger + "\n\n---END WARNINGLOG---");
 
 			return fullLog.ToString();
 		}
