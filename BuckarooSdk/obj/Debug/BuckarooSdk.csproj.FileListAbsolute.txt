@@ -1,9 +1,0 @@
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\bin\Debug\BuckarooSdk.dll.config
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\bin\Debug\BuckarooSdk.XML
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\bin\Debug\BuckarooSdk.dll
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\bin\Debug\BuckarooSdk.pdb
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\bin\Debug\Newtonsoft.Json.dll
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\bin\Debug\Newtonsoft.Json.xml
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\obj\Debug\BuckarooSdk.csprojResolveAssemblyReference.cache
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\obj\Debug\BuckarooSdk.dll
-D:\workspace\Tools\BuckarooSdk\BuckarooSdk_DotNet\BuckarooSdk\obj\Debug\BuckarooSdk.pdb
