@@ -8,7 +8,7 @@ namespace BuckarooSdk.DataTypes.RequestBases
 {
 	public class TransactionSpecificationBase : IRequestBase
 	{
-		internal List<SpecificationRequestedService> Services { get; set; }
+		public List<SpecificationRequestedService> Services { get; set; }
 
 		public TransactionSpecificationBase()
 		{
