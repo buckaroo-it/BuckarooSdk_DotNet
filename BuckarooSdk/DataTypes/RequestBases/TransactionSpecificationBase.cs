@@ -15,7 +15,7 @@ namespace BuckarooSdk.DataTypes.RequestBases
 			this.Services = new List<SpecificationRequestedService>();
 		}
 
-		public TransactionSpecificationBase AddService(string service, int version = 1)
+		public TransactionSpecificationBase AddService(string service, int? version = null)
 		{
 			var serviceToBeAdded = new SpecificationRequestedService()
 			{
