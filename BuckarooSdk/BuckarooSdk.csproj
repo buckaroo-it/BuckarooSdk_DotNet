@@ -111,6 +111,7 @@
     <Compile Include="DataTypes\Response\ConsumerMessage.cs" />
     <Compile Include="DataTypes\Response\Error\CustomParameterError.cs" />
     <Compile Include="DataTypes\Response\DataType.cs" />
+    <Compile Include="DataTypes\Response\Error\RequestError.cs" />
     <Compile Include="DataTypes\Response\InvoiceInfo\AgencyUpdate.cs" />
     <Compile Include="DataTypes\Response\InvoiceInfo\CreditManagementStatus.cs" />
     <Compile Include="DataTypes\Response\InvoiceInfo\CreditNote.cs" />
@@ -203,6 +204,15 @@
     <Compile Include="Services\CreditManagement\TransactionRequest\CreditManagementInvoiceResponse.cs" />
     <Compile Include="Services\CreditManagement\TransactionRequest\CreditManagementTransaction.cs" />
     <Compile Include="Services\DataRequestServices.cs" />
+    <Compile Include="Services\IdealProcessing\Constants\Issuers.cs" />
+    <Compile Include="Services\IdealProcessing\Push\IdealProcessingPayPush.cs" />
+    <Compile Include="Services\IdealProcessing\TransactionRequest\IdealProcessingPayRequest.cs" />
+    <Compile Include="Services\IdealProcessing\TransactionRequest\IdealProcessingPayResponse.cs" />
+    <Compile Include="Services\IdealProcessing\TransactionRequest\IdealProcessingTransaction.cs" />
+    <Compile Include="Services\IdealQr\DataRequest\IdealQrDataRequest.cs" />
+    <Compile Include="Services\IdealQr\DataRequest\IdealQrGenerateRequest.cs" />
+    <Compile Include="Services\IdealQr\DataRequest\IdealQrGenerateResponse.cs" />
+    <Compile Include="Services\IdealQr\Push\IdealQrGeneratePush.cs" />
     <Compile Include="Services\Ideal\Constants\Issuers.cs" />
     <Compile Include="Services\Ideal\Constants\OutputParameters.cs" />
     <Compile Include="Services\Ideal\DataRequest\IdealDataRequest.cs" />
@@ -217,6 +227,15 @@
     <Compile Include="Services\Ideal\TransactionRequest\IdealTransaction.cs" />
     <Compile Include="Services\Ideal\TransactionRequest\IdealPayResponse.cs" />
     <Compile Include="Services\ActionResponse.cs" />
+    <Compile Include="Services\Maestro\MaestroAuthorizeRequest.cs" />
+    <Compile Include="Services\Maestro\MaestroAuthorizeResponse.cs" />
+    <Compile Include="Services\Maestro\MaestroPayRecurrentRequest.cs" />
+    <Compile Include="Services\Maestro\MaestroPayRecurrentResponse.cs" />
+    <Compile Include="Services\Maestro\MaestroPayRemainderRequest.cs" />
+    <Compile Include="Services\Maestro\MaestroPayRemainderResponse.cs" />
+    <Compile Include="Services\Maestro\MaestroPayRequest.cs" />
+    <Compile Include="Services\Maestro\MaestroPayResponse.cs" />
+    <Compile Include="Services\Maestro\MaestroTransaction.cs" />
     <Compile Include="Services\ParameterGroup.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayRequest.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayResponse.cs" />
@@ -272,7 +291,6 @@
     <Compile Include="Services\ServiceEnum.cs" />
     <Compile Include="Services\ServiceHelper.cs" />
     <Compile Include="Services\TransactionServices.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Transfer\Constants\Gender.cs" />
     <Compile Include="Services\Transfer\TransactionRequest\TransferPayRequest.cs" />
     <Compile Include="Services\Transfer\TransactionRequest\TransferPayResponse.cs" />
@@ -294,14 +312,6 @@
     <Compile Include="Transaction\TransactionRequest.cs" />
     <Compile Include="DataTypes\Response\RequestResponse.cs" />
     <Compile Include="Transaction\Status\TransactionStatus.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
