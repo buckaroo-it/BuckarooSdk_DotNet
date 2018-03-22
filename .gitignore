@@ -48,3 +48,4 @@ Temporary Items
 *.suo
 *.vssscc
 *.cache
+/.vs/BuckarooSdk/v15/Server/sqlite3
