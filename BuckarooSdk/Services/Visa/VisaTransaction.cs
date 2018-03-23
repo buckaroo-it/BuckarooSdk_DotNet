@@ -25,7 +25,7 @@ namespace BuckarooSdk.Services.Visa
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
             var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-            configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "pay");
+            configuredServiceTransaction.BaseTransaction.AddService("Visa", parameters, "pay");
 
             return configuredServiceTransaction;
         }
@@ -33,7 +33,7 @@ namespace BuckarooSdk.Services.Visa
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
             var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-            configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "refund");
+            configuredServiceTransaction.BaseTransaction.AddService("Visa", parameters, "refund");
 
             return configuredServiceTransaction;
         }
@@ -41,7 +41,7 @@ namespace BuckarooSdk.Services.Visa
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
             var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-            configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "authorize");
+            configuredServiceTransaction.BaseTransaction.AddService("Visa", parameters, "authorize");
 
             return configuredServiceTransaction;
         }
@@ -49,7 +49,7 @@ namespace BuckarooSdk.Services.Visa
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
             var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-            configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "capture");
+            configuredServiceTransaction.BaseTransaction.AddService("Visa", parameters, "capture");
 
             return configuredServiceTransaction;
         }
@@ -57,7 +57,7 @@ namespace BuckarooSdk.Services.Visa
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
             var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-            configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "payrecurrent");
+            configuredServiceTransaction.BaseTransaction.AddService("Visa", parameters, "payrecurrent");
 
             return configuredServiceTransaction;
         }
@@ -65,7 +65,7 @@ namespace BuckarooSdk.Services.Visa
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
             var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-            configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "payremainder");
+            configuredServiceTransaction.BaseTransaction.AddService("Visa", parameters, "payremainder");
 
             return configuredServiceTransaction;
         }
