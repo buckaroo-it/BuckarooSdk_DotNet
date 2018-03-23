@@ -29,7 +29,7 @@ namespace BuckarooSdk.Services.Maestro
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "pay");
+			configuredServiceTransaction.BaseTransaction.AddService("Maestro", parameters, "pay");
 
 			return configuredServiceTransaction;
 		}
@@ -37,7 +37,7 @@ namespace BuckarooSdk.Services.Maestro
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "authorize");
+			configuredServiceTransaction.BaseTransaction.AddService("Maestro", parameters, "authorize");
 
 			return configuredServiceTransaction;
 		}
@@ -45,7 +45,7 @@ namespace BuckarooSdk.Services.Maestro
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "payrecurrent");
+			configuredServiceTransaction.BaseTransaction.AddService("Maestro", parameters, "payrecurrent");
 
 			return configuredServiceTransaction;
 		}
@@ -53,7 +53,7 @@ namespace BuckarooSdk.Services.Maestro
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("Mastercard", parameters, "payremainder");
+			configuredServiceTransaction.BaseTransaction.AddService("Maestro", parameters, "payremainder");
 
 			return configuredServiceTransaction;
 		}
