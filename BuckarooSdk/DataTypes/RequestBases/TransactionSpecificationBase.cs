@@ -8,14 +8,14 @@ namespace BuckarooSdk.DataTypes.RequestBases
 {
 	public class TransactionSpecificationBase : IRequestBase
 	{
-		internal List<SpecificationRequestedService> Services { get; set; }
+		public List<SpecificationRequestedService> Services { get; set; }
 
 		public TransactionSpecificationBase()
 		{
 			this.Services = new List<SpecificationRequestedService>();
 		}
 
-		public TransactionSpecificationBase AddService(string service, int version = 1)
+		public TransactionSpecificationBase AddService(string service, int? version = null)
 		{
 			var serviceToBeAdded = new SpecificationRequestedService()
 			{
