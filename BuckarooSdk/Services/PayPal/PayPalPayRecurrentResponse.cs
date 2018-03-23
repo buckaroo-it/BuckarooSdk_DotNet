@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices.ComTypes;
-
-namespace BuckarooSdk.Services.PayPal
+﻿namespace BuckarooSdk.Services.PayPal
 {
     public class PayPalPayRecurrentResponse : ActionResponse
     {

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using BuckarooSdk.Services;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BuckarooSdk.DataTypes.Response;
 using BuckarooSdk.DataTypes.Response.Status;
 

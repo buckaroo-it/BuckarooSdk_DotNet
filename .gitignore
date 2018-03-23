@@ -17,6 +17,21 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# private test project.
+BuckarooSdk.Tests
+
+# Debug builds
+BuckarooSdk/bin/Debug
+BuckarooSdk/obj/Debug
+
+
+# Release builds
+BuckarooSdk/bin/Release
+BuckarooSdk/obj/Release
+
+# build packages
+packages
+
 # =========================
 # Operating System Files
 # =========================

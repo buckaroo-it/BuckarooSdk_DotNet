@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BuckarooSdk.DataTypes.RequestBases
 {
 	public class TransactionSpecificationBase : IRequestBase
 	{
-		public List<SpecificationRequestedService> Services { get; set; }
+		public List<SpecificationRequestedService> Services { get; internal set; }
 
 		public TransactionSpecificationBase()
 		{

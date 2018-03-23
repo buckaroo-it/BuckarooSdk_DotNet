@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuckarooSdk.Constants.Logging;
-using Microsoft.SqlServer.Server;
+﻿using System.Text;
 
 namespace BuckarooSdk.Logging
 {

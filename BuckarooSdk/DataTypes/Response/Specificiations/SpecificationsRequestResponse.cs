@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using BuckarooSdk.DataTypes.Response.Specificiations;
 
 namespace BuckarooSdk.DataTypes.Response.Specificiations
 {

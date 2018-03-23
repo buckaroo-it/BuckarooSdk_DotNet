@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuckarooSdk.Services.IdealProcessing.TransactionRequest
+﻿namespace BuckarooSdk.Services.IdealProcessing.TransactionRequest
 {
 	/// <summary>
 	/// The idealrequest class, where the issuer of the request is specified.

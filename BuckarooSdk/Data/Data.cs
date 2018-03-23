@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using BuckarooSdk.Base;
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Services;
-using BuckarooSdk.Transaction.Status;
 
 namespace BuckarooSdk.Data
 {

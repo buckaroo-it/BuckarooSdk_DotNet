@@ -1,5 +1,4 @@
 ﻿using System;
-using BuckarooSdk.DataTypes.ParameterGroups;
 using BuckarooSdk.DataTypes.ParameterGroups.CreditManagement3;
 
 namespace BuckarooSdk.Services.CreditManagement.DataRequest

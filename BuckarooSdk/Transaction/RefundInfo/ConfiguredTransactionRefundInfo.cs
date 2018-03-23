@@ -1,7 +1,6 @@
 ﻿using System;
 using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.DataTypes.Response.RefundInfo;
 
 namespace BuckarooSdk.Transaction.RefundInfo
 {

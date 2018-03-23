@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuckarooSdk.DataTypes.Response.StatusRequest;
+﻿using System.Collections.Generic;
 
 namespace BuckarooSdk.DataTypes.Response.StatusRequest
 {

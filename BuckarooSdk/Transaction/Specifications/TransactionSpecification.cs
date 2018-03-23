@@ -1,5 +1,4 @@
 ﻿using BuckarooSdk.Base;
-using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
 
 namespace BuckarooSdk.Transaction.Specifications
@@ -14,7 +13,7 @@ namespace BuckarooSdk.Transaction.Specifications
 			this.Request = request;
 		}
 
-		public ConfiguredTransactionSpecification SpecificServiceSpecification(string serviceName, int serviceVersion = 1)
+		public ConfiguredTransactionSpecification SpecificServiceSpecification(string serviceName, int? serviceVersion = null)
 		{
 			this.Request.Request.Endpoint += ($"{Constants.Settings.GatewaySettings.TransactionRequestEndPoint}" +
 											$"{Constants.Settings.GatewaySettings.SpecificationEndpoint}" +

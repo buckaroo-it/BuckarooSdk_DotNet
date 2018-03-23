@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuckarooSdk.DataTypes.ParameterGroups.CreditManagement3;
+﻿using BuckarooSdk.DataTypes.ParameterGroups.CreditManagement3;
 
 namespace BuckarooSdk.Services.CreditManagement.DataRequest
 {

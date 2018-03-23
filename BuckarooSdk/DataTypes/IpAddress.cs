@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuckarooSdk.DataTypes
+﻿namespace BuckarooSdk.DataTypes
 {
 	/// <summary>
 	/// The IpAddress class contains all properties regarding the host IP address

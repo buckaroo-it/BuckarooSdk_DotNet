@@ -1,5 +1,4 @@
 ﻿using BuckarooSdk.Base;
-using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
 
 namespace BuckarooSdk.Transaction.RefundInfo

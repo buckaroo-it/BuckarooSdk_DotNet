@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuckarooSdk.DataTypes;
+﻿using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.DataTypes.Response;
 

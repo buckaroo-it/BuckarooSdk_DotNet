@@ -1,6 +1,4 @@
-﻿using System.Runtime.Remoting.Channels;
-
-namespace BuckarooSdk.Services.Visa
+﻿namespace BuckarooSdk.Services.Visa
 {
     public class VisaAuthorizeResponse : ActionResponse
     {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuckarooSdk.Base;
-using BuckarooSdk.DataTypes;
+﻿using BuckarooSdk.Base;
 using BuckarooSdk.DataTypes.RequestBases;
 
 namespace BuckarooSdk.Transaction.Status

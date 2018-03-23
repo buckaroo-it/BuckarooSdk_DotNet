@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.Push;
-using BuckarooSdk.DataTypes.Push;
-
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace BuckarooSdk.Base
 {

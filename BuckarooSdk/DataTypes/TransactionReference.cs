@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuckarooSdk.DataTypes
+﻿namespace BuckarooSdk.DataTypes
 {
 	/// <summary>
 	/// A transaction reference is used to give within a transaction to give a reference towards

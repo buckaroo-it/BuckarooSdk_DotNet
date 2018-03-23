@@ -3,7 +3,6 @@ using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.Maestro;
 using BuckarooSdk.Services.PayPerEmail;
-using BuckarooSdk.Services.Transfer;
 using BuckarooSdk.Services.PayPal;
 using BuckarooSdk.Services.MasterCard;
 using BuckarooSdk.Services.Visa;

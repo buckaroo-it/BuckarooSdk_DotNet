@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuckarooSdk.Services;
+﻿using BuckarooSdk.Services;
 using Newtonsoft.Json;
 
 namespace BuckarooSdk.DataTypes.RequestBases

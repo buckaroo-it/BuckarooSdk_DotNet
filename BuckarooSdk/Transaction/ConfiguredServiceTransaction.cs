@@ -23,7 +23,7 @@ namespace BuckarooSdk.Transaction
         /// <returns>General TransactionResponse object is returned</returns>
         public RequestResponse Execute()
         {
-            var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post).Result;
+            var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post).GetAwaiter().GetResult();
 
 			// relocate logger from request to response
 			response.BuckarooSdkLogger = this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
@@ -31,6 +31,10 @@ namespace BuckarooSdk.Transaction
 			return response;
         }
 
+		/// <summary>
+		/// Returns a 
+		/// </summary>
+		/// <returns></returns>
 		public ConfiguredAdditionalTransaction AddAdditionalService() 
 		{
 			return new ConfiguredAdditionalTransaction(this.BaseTransaction);
