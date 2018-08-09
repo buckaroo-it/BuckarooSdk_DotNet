@@ -14,5 +14,6 @@
 		Transfer,
 		SimpleSepaDirectDebit,
 		CreditManagement,
+		Payconiq,
     }
 }

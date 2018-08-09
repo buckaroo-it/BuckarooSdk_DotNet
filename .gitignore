@@ -64,3 +64,7 @@ Temporary Items
 *.vssscc
 *.cache
 /.vs/BuckarooSdk/v15/Server/sqlite3
+/.vs/BuckarooSdk/DesignTimeBuild
+/.idea/.idea.BuckarooSdk
+/SdkService.tests
+/SdkServices.tests
