@@ -1,4 +1,5 @@
-﻿using BuckarooSdk.DataTypes;
+﻿using System.Threading.Tasks;
+using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.DataTypes.Response;
 using BuckarooSdk.Logging;
@@ -31,11 +32,25 @@ namespace BuckarooSdk.Transaction
 			return response;
         }
 
-		/// <summary>
-		/// Returns a 
-		/// </summary>
-		/// <returns></returns>
-		public ConfiguredAdditionalTransaction AddAdditionalService() 
+        /// <summary>
+        /// Asynchronously execute the request, a post to the Buckaroo Payment Engine is prepared and sent.
+        /// </summary>
+        /// <returns>General TransactionResponse object is returned</returns>
+        public async Task<RequestResponse> ExecuteAsync()
+        {
+            var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post);
+
+            // relocate logger from request to response
+            response.BuckarooSdkLogger = this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
+
+            return response;
+        }
+
+        /// <summary>
+        /// Returns a 
+        /// </summary>
+        /// <returns></returns>
+        public ConfiguredAdditionalTransaction AddAdditionalService() 
 		{
 			return new ConfiguredAdditionalTransaction(this.BaseTransaction);
 		}
