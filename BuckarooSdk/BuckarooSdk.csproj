@@ -78,6 +78,7 @@
     <Compile Include="Base\AuthenticatedRequest.cs" />
     <Compile Include="Connection\BuckarooDelegatingHandler.cs" />
     <Compile Include="Connection\Connector.cs" />
+    <Compile Include="Connection\SignatureCalculationService.cs" />
     <Compile Include="Constants\Logging\Messages.cs" />
     <Compile Include="Constants\Settings.cs" />
     <Compile Include="Constants\Status.cs" />

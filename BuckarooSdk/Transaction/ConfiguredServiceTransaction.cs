@@ -32,7 +32,7 @@ namespace BuckarooSdk.Transaction
         }
 
 		/// <summary>
-		/// Returns a 
+		/// Returns a configured additional transaction,
 		/// </summary>
 		/// <returns></returns>
 		public ConfiguredAdditionalTransaction AddAdditionalService() 

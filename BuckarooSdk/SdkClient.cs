@@ -1,6 +1,7 @@
 ﻿using System;
 using BuckarooSdk.Logging;
 using BuckarooSdk.Base;
+using BuckarooSdk.Connection;
 
 namespace BuckarooSdk
 {
@@ -97,9 +98,22 @@ namespace BuckarooSdk
 		/// Returns a Buckaroo push handler, that can be used to process push messages.
 		/// </summary>
 		/// <returns></returns>
-		public PushHandler GetPushHandler()
+		public PushHandler GetPushHandler(string apiKey)
 		{
-			return this.PushHandler ?? (this.PushHandler = new PushHandler());
+			return this.PushHandler ?? (this.PushHandler = new PushHandler(apiKey));
+		}
+
+		/// <summary>
+		/// Returns a SignatureCalculationService instance that is also used by the SDK to calculate
+		/// and verify authentication signatures regarding the requests, responses and pushes. When using
+		/// the SDK one does not need to calculate signatures himself. But because the service is friendly 
+		/// to use, it is made retrievable through the SDK client and can be used when only a signature needs
+		/// the be checked or calculated for sending a request.
+		/// </summary>
+		/// <returns></returns>
+		public SignatureCalculationService GetSignatureCalculationService()
+		{
+			return new SignatureCalculationService();
 		}
 	}
 }
