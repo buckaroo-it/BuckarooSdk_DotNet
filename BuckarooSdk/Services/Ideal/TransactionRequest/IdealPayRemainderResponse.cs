@@ -15,4 +15,4 @@
 		public string ConsumerIssuer { get; set; }
 	}
 }
-}
+

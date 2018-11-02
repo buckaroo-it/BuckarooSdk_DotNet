@@ -1,8 +1,16 @@
 ﻿namespace BuckarooSdk.Services.Ideal.Push
 {
+	/// <summary>
+	/// 
+	/// </summary>
 	public class IdealPayRemainderPush : ActionPush
 	{
+
 		public override ServiceEnum ServiceEnum => ServiceEnum.Ideal;
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string ConsumerIban { get; set; }
 		public string ConsumerBic { get; set; }
 		public string ConsumerName { get; set; }

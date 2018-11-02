@@ -12,7 +12,7 @@ namespace BuckarooSdk.Services.IdealProcessing.Push
 		public string ConsumerAccountNumber { get; set; }
 		public string ConsumerIssuer { get; set; }
 
-		public override void FillFromPush(DataTypes.Response.Service serviceResponse)
+		internal override void FillFromPush(DataTypes.Response.Service serviceResponse)
 		{
 			base.FillFromPush(serviceResponse);
 		}
