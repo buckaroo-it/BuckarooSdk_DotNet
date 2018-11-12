@@ -1,5 +1,6 @@
 ﻿using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.CreditManagement.DataRequest;
+using BuckarooSdk.Services.Emandates.DataRequest;
 using BuckarooSdk.Services.IdealQr.DataRequest;
 
 namespace BuckarooSdk.Data
@@ -37,6 +38,11 @@ namespace BuckarooSdk.Data
 		public CreditManagementDataRequest CreditManagement()
 		{
 			return new CreditManagementDataRequest(this);
+		}
+
+		public EmandatesDataRequest Emandates()
+		{
+			return new EmandatesDataRequest(this);
 		}
 
 		#endregion
