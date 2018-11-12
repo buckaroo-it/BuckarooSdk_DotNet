@@ -10,15 +10,15 @@ namespace BuckarooSdk.Data
 	/// </summary>
     public class Data
     {
-        internal AuthenticatedRequest Request { get; set; }
+        internal AuthenticatedRequest AuthenticatedRequest { get; set; }
 		
         internal List<Service> Services { get; set; }
 		internal DataBase DataRequestBase { get; private set; }
 
-		internal Data(AuthenticatedRequest request)
+		internal Data(AuthenticatedRequest authenticatedRequest)
         {
-			request.Request.Endpoint = Constants.Settings.GatewaySettings.DataRequestEndPoint;
-			this.Request = request;
+			authenticatedRequest.Request.Endpoint = Constants.Settings.GatewaySettings.DataRequestEndPoint;
+			this.AuthenticatedRequest = authenticatedRequest;
         }
 
 	
