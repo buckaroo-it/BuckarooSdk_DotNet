@@ -4,7 +4,7 @@ using BuckarooSdk.DataTypes.Response;
 
 namespace BuckarooSdk.Services
 {
-	internal abstract class ActionPush
+	public abstract class ActionPush
 	{
 		public abstract ServiceEnum ServiceEnum { get; }
 
