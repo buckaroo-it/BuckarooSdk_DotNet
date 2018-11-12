@@ -25,6 +25,7 @@ namespace BuckarooSdk.Transaction.InvoiceInfo
 		{
 			this.Request.Request.Endpoint += $"{Constants.Settings.GatewaySettings.TransactionRequestEndPoint}" +
 											$"{Constants.Settings.GatewaySettings.InvoiceInfosEndPoint}";
+            this.TransactionInvoiceInfoBase = transactionInvoiceInfoBase;
 
 			return new ConfiguredTransactionInvoiceInfo(this);
 		}
