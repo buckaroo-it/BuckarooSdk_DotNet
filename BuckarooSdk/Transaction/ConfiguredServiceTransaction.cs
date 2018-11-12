@@ -45,19 +45,19 @@ namespace BuckarooSdk.Transaction
 
             return response;
         }
-
+      
         /// <summary>
-        /// Returns a 
+        /// Returns a configured additional transaction,
         /// </summary>
         /// <returns></returns>
         public ConfiguredAdditionalTransaction AddAdditionalService() 
-		{
-			return new ConfiguredAdditionalTransaction(this.BaseTransaction);
-		}
+        {
+          return new ConfiguredAdditionalTransaction(this.BaseTransaction);
+        }
 
-	    public ILogger GetLogger()
-	    {
-		    return this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
-	    }
+        public ILogger GetLogger()
+        {
+          return this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
+        }
     }
 }

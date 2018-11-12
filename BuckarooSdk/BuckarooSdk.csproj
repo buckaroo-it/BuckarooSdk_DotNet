@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BuckarooSdk</RootNamespace>
     <AssemblyName>BuckarooSdk</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -62,8 +62,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -78,6 +78,7 @@
     <Compile Include="Base\AuthenticatedRequest.cs" />
     <Compile Include="Connection\BuckarooDelegatingHandler.cs" />
     <Compile Include="Connection\Connector.cs" />
+    <Compile Include="Connection\SignatureCalculationService.cs" />
     <Compile Include="Constants\Logging\Messages.cs" />
     <Compile Include="Constants\Settings.cs" />
     <Compile Include="Constants\Status.cs" />
@@ -237,6 +238,13 @@
     <Compile Include="Services\Maestro\MaestroPayResponse.cs" />
     <Compile Include="Services\Maestro\MaestroTransaction.cs" />
     <Compile Include="Services\ParameterGroup.cs" />
+    <Compile Include="Services\Payconiq\TransactionRequest\PayconiqPayRemainderRequest.cs" />
+    <Compile Include="Services\Payconiq\TransactionRequest\PayconiqPayRemainderResponse.cs" />
+    <Compile Include="Services\Payconiq\TransactionRequest\PayconiqPayRequest.cs" />
+    <Compile Include="Services\Payconiq\TransactionRequest\PayconiqPayResponse.cs" />
+    <Compile Include="Services\Payconiq\TransactionRequest\PayconiqRefundRequest.cs" />
+    <Compile Include="Services\Payconiq\TransactionRequest\PayconiqRefundResponse.cs" />
+    <Compile Include="Services\Payconiq\TransactionRequest\PayconiqTransaction.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayRequest.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayResponse.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitRefundRequest.cs" />
@@ -318,6 +326,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataTypes\GlobalGroups\" />
+    <Folder Include="Services\Payconiq\Push\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
