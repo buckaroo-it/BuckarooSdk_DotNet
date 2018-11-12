@@ -15,7 +15,7 @@ namespace BuckarooSdk.DataTypes.Response.InvoiceInfo
 		public decimal AmountRefundable { get;set; }
 		public string Description { get;set; }
 		public DateTime CreatedDatetime { get;set; }
-		public string Status { get;set; }
+		public TransactionStatus Status { get;set; }
 		public List<Refund> Refunds { get;set; }
 	}
 }
