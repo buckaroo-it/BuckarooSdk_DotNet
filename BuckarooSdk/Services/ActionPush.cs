@@ -4,11 +4,11 @@ using BuckarooSdk.DataTypes.Response;
 
 namespace BuckarooSdk.Services
 {
-	public abstract class ActionPush
+	internal abstract class ActionPush
 	{
 		public abstract ServiceEnum ServiceEnum { get; }
 
-		public virtual void FillFromPush(DataTypes.Response.Service servicePush)
+		internal virtual void FillFromPush(DataTypes.Response.Service servicePush)
 		{
 			var ownType = this.GetType();
 			var publicProperties = ownType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
