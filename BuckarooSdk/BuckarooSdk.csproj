@@ -259,6 +259,7 @@
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqRefundRequest.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqRefundResponse.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqTransaction.cs" />
+    <Compile Include="Services\PayPerEmail\Push\PayPerEmailPaymentInvitationPush.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayRequest.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayResponse.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitRefundRequest.cs" />
@@ -340,6 +341,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataTypes\GlobalGroups\" />
+    <Folder Include="Services\CreditManagement\Push\" />
     <Folder Include="Services\Payconiq\Push\" />
   </ItemGroup>
   <ItemGroup>

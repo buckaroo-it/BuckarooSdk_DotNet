@@ -14,11 +14,13 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+
 # Windows shortcuts
 *.lnk
 
 # private test project.
 BuckarooSdk.Tests
+VisualBasicTests
 
 # Debug builds
 BuckarooSdk/bin/Debug
