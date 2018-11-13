@@ -259,6 +259,9 @@
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqRefundRequest.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqRefundResponse.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqTransaction.cs" />
+    <Compile Include="Services\PayPal\Push\PayPalPayPush.cs" />
+    <Compile Include="Services\PayPal\Push\PayPalPayRecurrentPush.cs" />
+    <Compile Include="Services\PayPal\Push\PayPalRefundPush.cs" />
     <Compile Include="Services\PayPerEmail\Push\PayPerEmailPaymentInvitationPush.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayRequest.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayResponse.cs" />
@@ -266,6 +269,7 @@
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitRefundResponse.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitTransaction.cs" />
     <Compile Include="Services\Transfer\Push\TransferPayPush.cs" />
+    <Compile Include="Services\Transfer\Push\TransferRefundPush.cs" />
     <Compile Include="Services\Visa\Constants\Recurring.cs" />
     <Compile Include="Services\Visa\VisaAuthorizeRequest.cs" />
     <Compile Include="Services\Visa\VisaAuthorizeResponse.cs" />
