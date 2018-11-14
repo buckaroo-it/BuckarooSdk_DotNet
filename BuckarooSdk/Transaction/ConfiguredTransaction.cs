@@ -5,6 +5,7 @@ using BuckarooSdk.Services.Maestro;
 using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.PayPal;
 using BuckarooSdk.Services.MasterCard;
+using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Services.Visa;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
@@ -127,5 +128,10 @@ namespace BuckarooSdk.Transaction
         }
 
         #endregion
-    }
+
+		public P24Transaction P24()
+		{
+			return new P24Transaction(this);
+		}
+	}
 }

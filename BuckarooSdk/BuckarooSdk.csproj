@@ -251,6 +251,13 @@
     <Compile Include="Services\Maestro\MaestroPayRequest.cs" />
     <Compile Include="Services\Maestro\MaestroPayResponse.cs" />
     <Compile Include="Services\Maestro\MaestroTransaction.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24RefundResponse.cs" />
+    <Compile Include="Services\P24\Push\Pay24PayPush.cs" />
+    <Compile Include="Services\P24\Push\Pay24RefundPush.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24PayRequest.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24PayResponse.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24RefundRequest.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24Transaction.cs" />
     <Compile Include="Services\ParameterGroup.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqPayRemainderRequest.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqPayRemainderResponse.cs" />
