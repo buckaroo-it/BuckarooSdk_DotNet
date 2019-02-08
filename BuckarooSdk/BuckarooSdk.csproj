@@ -82,6 +82,9 @@
     <Compile Include="Constants\Logging\Messages.cs" />
     <Compile Include="Constants\Settings.cs" />
     <Compile Include="Constants\Status.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Subscriptions\Debtor.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlan.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlanCharge.cs" />
     <Compile Include="DataTypes\RequestBases\CancelTransactionBase.cs" />
     <Compile Include="DataTypes\ChannelEnum.cs" />
     <Compile Include="DataTypes\ContinueOnIncomplete.cs" />
@@ -275,6 +278,12 @@
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitRefundRequest.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitRefundResponse.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitTransaction.cs" />
+    <Compile Include="Services\Subscriptions\Domain\Debtor.cs" />
+    <Compile Include="Services\Subscriptions\Domain\Person.cs" />
+    <Compile Include="Services\Subscriptions\Domain\RatePlan.cs" />
+    <Compile Include="Services\Subscriptions\Domain\RatePlanCharge.cs" />
+    <Compile Include="Services\Subscriptions\Requests\CreateSubscription.cs" />
+    <Compile Include="Services\Subscriptions\Responses\CreateSubscription.cs" />
     <Compile Include="Services\Transfer\Push\TransferPayPush.cs" />
     <Compile Include="Services\Transfer\Push\TransferRefundPush.cs" />
     <Compile Include="Services\Visa\Constants\Recurring.cs" />
@@ -356,9 +365,7 @@
     <Folder Include="Services\Payconiq\Push\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
