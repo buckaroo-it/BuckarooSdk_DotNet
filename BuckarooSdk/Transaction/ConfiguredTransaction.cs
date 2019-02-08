@@ -1,12 +1,12 @@
-﻿using BuckarooSdk.Services.AmericanExpress.TransactionRequest;
+﻿using BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest;
+using BuckarooSdk.Services.CreditCards.Maestro;
+using BuckarooSdk.Services.CreditCards.MasterCard;
+using BuckarooSdk.Services.CreditCards.Visa;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
-using BuckarooSdk.Services.Maestro;
 using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.PayPal;
-using BuckarooSdk.Services.MasterCard;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
-using BuckarooSdk.Services.Visa;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
 
