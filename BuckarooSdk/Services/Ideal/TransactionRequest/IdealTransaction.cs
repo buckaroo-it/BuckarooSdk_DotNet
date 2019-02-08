@@ -3,7 +3,7 @@
 namespace BuckarooSdk.Services.Ideal.TransactionRequest
 {
 	/// <summary>
-	/// The CancelTransaction class of payment method type: iDEAL.
+	/// The Transaction class of payment method type: iDEAL.
 	/// </summary>
     public class IdealTransaction
     {

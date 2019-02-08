@@ -4,9 +4,15 @@
 	{
 		public override ServiceEnum ServiceEnum => ServiceEnum.Ideal;
 
-		public string ConsumerIban { get; set; }
-        public string ConsumerBic { get; set; }
-        public string ConsumerName { get; set; }
-        public string ConsumerIssuer { get; set; }
+		/// <summary>
+		/// This is the iDEAL transaction ID.
+		/// </summary>
+		public string TransactionId { get; set; }
+
+		/// <summary>
+		/// The name of the issuer (bank) of the consumer.
+		/// </summary>
+		public string ConsumerIssuer { get; set; }
 	}
 }
+

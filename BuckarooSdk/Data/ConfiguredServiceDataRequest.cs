@@ -1,4 +1,5 @@
-﻿using BuckarooSdk.DataTypes.Response;
+﻿using System.Threading.Tasks;
+using BuckarooSdk.DataTypes.Response;
 using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
 
@@ -19,10 +20,24 @@ namespace BuckarooSdk.Data
 		/// <returns>General DataResponse object is returned</returns>
 		public RequestResponse Execute()
 		{
-			var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.Request.Request, this.BaseData.DataRequestBase, HttpRequestType.Post).Result;
+			var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.AuthenticatedRequest.Request, this.BaseData.DataRequestBase, HttpRequestType.Post).Result;
 
 			// relocate logger from request to response
-			response.BuckarooSdkLogger = this.BaseData.Request.Request.BuckarooSdkLogger;
+			response.BuckarooSdkLogger = this.BaseData.AuthenticatedRequest.Request.BuckarooSdkLogger;
+			return response;
+		}
+
+		/// <summary>
+		/// Asynchronously execute the request, a post to the Buckaroo Payment Engine is prepared and sent.
+		/// </summary>
+		/// <returns>General Dataresponse object is returned</returns>
+		public async Task<RequestResponse> ExecuteAsync()
+		{
+			var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.AuthenticatedRequest.Request, this.BaseData.DataRequestBase, HttpRequestType.Post);
+
+			// relocate logger from request to response
+			response.BuckarooSdkLogger = this.BaseData.AuthenticatedRequest.Request.BuckarooSdkLogger;
+
 			return response;
 		}
 	}

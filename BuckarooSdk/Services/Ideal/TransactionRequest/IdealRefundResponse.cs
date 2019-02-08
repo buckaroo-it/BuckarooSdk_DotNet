@@ -1,10 +1,25 @@
 ﻿namespace BuckarooSdk.Services.Ideal.TransactionRequest
 {
-    /// <summary>
-    /// An iDEAL refund does not have reponse parameters
-    /// </summary>
-    public class IdealRefundResponse : ActionResponse
-    {
+
+	public class IdealRefundResponse : ActionResponse
+	{
 		public override ServiceEnum ServiceEnum => ServiceEnum.Ideal;
-    }
+
+		/// <summary>
+		/// The international bank account number (iban code) of the bank of the consumer. Please note: This field is optional. In some countries, 
+		/// banks are not allowed to provide this information to third parties.
+		/// </summary>
+		public string CustomerIban { get; set; }
+
+		/// <summary>
+		/// The bank identifier (bic code) of the bank of the consumer. Please note: This field is optional. In some countries, banks are not 
+		/// allowed to provide this information to third parties.
+		/// </summary>
+		public string CustomerBic { get; set; }
+
+		/// <summary>
+		/// The beneficiary of the bank account from which the payment was made.
+		/// </summary>
+		public string CustomerAccountName { get; set; }
+	}
 }

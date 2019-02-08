@@ -2,18 +2,23 @@
 {
     public enum ServiceEnum
     {
+		// Payment services
         Ideal,
 		IdealProcessing,
-		IdealQr,
         PayPal,
-        PayPerEmail,
 		MasterCard,
 		Visa,
 		Maestro,
 		AmericanExpress,
 		Transfer,
 		SimpleSepaDirectDebit,
-		CreditManagement,
 		Payconiq,
-    }
+
+		// additional services
+	    CreditManagement,
+		Emandates,
+		Subscriptions,
+	    PayPerEmail,
+	    IdealQr,
+	}
 }

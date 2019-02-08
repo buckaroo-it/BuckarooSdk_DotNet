@@ -8,7 +8,7 @@ namespace BuckarooSdk.Services
 	{
 		public abstract ServiceEnum ServiceEnum { get; }
 
-		public virtual void FillFromPush(DataTypes.Response.Service servicePush)
+		internal virtual void FillFromPush(DataTypes.Response.Service servicePush)
 		{
 			var ownType = this.GetType();
 			var publicProperties = ownType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
