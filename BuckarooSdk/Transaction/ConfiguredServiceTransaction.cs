@@ -24,12 +24,14 @@ namespace BuckarooSdk.Transaction
         /// <returns>General TransactionResponse object is returned</returns>
         public RequestResponse Execute()
         {
-            var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post).GetAwaiter().GetResult();
+	        return this.ExecuteAsync().GetAwaiter().GetResult();
+
+			//var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post).GetAwaiter().GetResult();
 
 			// relocate logger from request to response
-			response.BuckarooSdkLogger = this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
+			//response.BuckarooSdkLogger = this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
 
-			return response;
+			//return response;
         }
 
         /// <summary>
@@ -38,7 +40,8 @@ namespace BuckarooSdk.Transaction
         /// <returns>General TransactionResponse object is returned</returns>
         public async Task<RequestResponse> ExecuteAsync()
         {
-            var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post);
+            var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post)
+				.ConfigureAwait(false);
 
             // relocate logger from request to response
             response.BuckarooSdkLogger = this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;

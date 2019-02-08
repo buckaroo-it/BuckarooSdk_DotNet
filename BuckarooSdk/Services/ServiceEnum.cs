@@ -13,6 +13,7 @@
 		Transfer,
 		SimpleSepaDirectDebit,
 		Payconiq,
+	    Przelewy24,
 
 		// additional services
 	    CreditManagement,

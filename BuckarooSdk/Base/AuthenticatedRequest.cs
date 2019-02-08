@@ -62,5 +62,10 @@ namespace BuckarooSdk.Base
         {
             return new Data.Data(this);
         }
+
+	    public object Subscriptions()
+	    {
+		    throw new System.NotImplementedException();
+	    }
     }
 }

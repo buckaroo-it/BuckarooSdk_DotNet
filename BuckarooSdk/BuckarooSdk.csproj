@@ -82,6 +82,9 @@
     <Compile Include="Constants\Logging\Messages.cs" />
     <Compile Include="Constants\Settings.cs" />
     <Compile Include="Constants\Status.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Subscriptions\Debtor.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlan.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlanCharge.cs" />
     <Compile Include="DataTypes\RequestBases\CancelTransactionBase.cs" />
     <Compile Include="DataTypes\ChannelEnum.cs" />
     <Compile Include="DataTypes\ContinueOnIncomplete.cs" />
@@ -264,6 +267,13 @@
     <Compile Include="Services\CreditCards\Maestro\MaestroPayRequest.cs" />
     <Compile Include="Services\CreditCards\Maestro\MaestroPayResponse.cs" />
     <Compile Include="Services\CreditCards\Maestro\MaestroTransaction.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24RefundResponse.cs" />
+    <Compile Include="Services\P24\Push\Pay24PayPush.cs" />
+    <Compile Include="Services\P24\Push\Pay24RefundPush.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24PayRequest.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24PayResponse.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24RefundRequest.cs" />
+    <Compile Include="Services\P24\TransactionRequest\P24Transaction.cs" />
     <Compile Include="Services\ParameterGroup.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqPayRemainderRequest.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqPayRemainderResponse.cs" />
@@ -272,11 +282,21 @@
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqRefundRequest.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqRefundResponse.cs" />
     <Compile Include="Services\Payconiq\TransactionRequest\PayconiqTransaction.cs" />
+    <Compile Include="Services\PayPal\Push\PayPalPayPush.cs" />
+    <Compile Include="Services\PayPal\Push\PayPalPayRecurrentPush.cs" />
+    <Compile Include="Services\PayPal\Push\PayPalRefundPush.cs" />
+    <Compile Include="Services\PayPerEmail\Push\PayPerEmailPaymentInvitationPush.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayRequest.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayResponse.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitRefundRequest.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitRefundResponse.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitTransaction.cs" />
+    <Compile Include="Services\Subscriptions\Domain\Debtor.cs" />
+    <Compile Include="Services\Subscriptions\Domain\Person.cs" />
+    <Compile Include="Services\Subscriptions\Domain\RatePlan.cs" />
+    <Compile Include="Services\Subscriptions\Domain\RatePlanCharge.cs" />
+    <Compile Include="Services\Subscriptions\Requests\CreateSubscription.cs" />
+    <Compile Include="Services\Subscriptions\Responses\CreateSubscription.cs" />
     <Compile Include="Services\Transfer\Push\TransferPayPush.cs" />
     <Compile Include="Services\CreditCards\Visa\Constants\Recurring.cs" />
     <Compile Include="Services\CreditCards\Visa\VisaAuthorizeRequest.cs" />
@@ -353,6 +373,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataTypes\GlobalGroups\" />
+    <Folder Include="Services\CreditManagement\Push\" />
     <Folder Include="Services\Payconiq\Push\" />
   </ItemGroup>
   <ItemGroup>

@@ -23,14 +23,7 @@ namespace BuckarooSdk.DataTypes.Push
 
 		public List<ServiceEnum> GetServices()
 		{
-			var services = new List<ServiceEnum>();
-			foreach (var service in this.Services)
-			{
-				var serviceEnum = (ServiceEnum)Enum.Parse(typeof(ServiceEnum), service.Name, true);
-				services.Add(serviceEnum);
-			}
-
-			return services;
+			return this.Services.Select(service => (ServiceEnum) Enum.Parse(typeof(ServiceEnum), service.Name, true)).ToList();
 		}
 
 		// abstract class Response
