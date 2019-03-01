@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.PayPal
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.PayPal
 {
     public class PayPalPayRecurrentResponse : ActionResponse
     {
-	    public override ServiceEnum ServiceEnum => ServiceEnum.PayPal;
+	    public override ServiceNames ServiceNames => ServiceNames.PayPal;
         public string PayerStatus { get; set; }
         public string PayerCountry { get; set; }
         public string PayerEmail { get; set; }

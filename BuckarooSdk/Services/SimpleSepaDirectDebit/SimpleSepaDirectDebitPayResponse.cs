@@ -1,10 +1,11 @@
 ﻿using System;
-
+using static BuckarooSdk.Constants.Services;
+ 
 namespace BuckarooSdk.Services.SimpleSepaDirectDebit
 {
     public class SimpleSepaDirectDebitPayResponse : ActionResponse
     {
-	    public override ServiceEnum ServiceEnum => ServiceEnum.SimpleSepaDirectDebit;
+	    public override ServiceNames ServiceNames => ServiceNames.SimpleSepaDirectDebit;
 		/// <summary>
 		/// The date the mandate has been registered
 		/// </summary>

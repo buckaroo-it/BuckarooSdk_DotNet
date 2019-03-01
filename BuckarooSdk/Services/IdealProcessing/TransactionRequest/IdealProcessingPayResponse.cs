@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.IdealProcessing.TransactionRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.IdealProcessing.TransactionRequest
 {
 	public class IdealProcessingPayResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.IdealProcessing;
+		public override ServiceNames ServiceNames => ServiceNames.IdealProcessing;
 
 		public string ConsumerIban { get; set; }
 		public string ConsumerBic { get; set; }

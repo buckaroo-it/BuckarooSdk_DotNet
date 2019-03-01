@@ -12,18 +12,18 @@ namespace BuckarooSdk.Tests.Services.Emandates
 	[TestClass]
 	public class EmandateTests
 	{
-		public SdkClient BuckarooClient { get; private set; }
+		private SdkClient _buckarooClient;
 
 		[TestInitialize]
 		public void Setup()
 		{
-			this.BuckarooClient = new SdkClient(TestSettings.Logger);
+			this._buckarooClient = new SdkClient(TestSettings.Logger);
 		}
 
 		[TestMethod]
 		public void CreateMandateTest()
 		{
-			var request = this.BuckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+			var request = this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
 				.SetBasicFields(new DataBase

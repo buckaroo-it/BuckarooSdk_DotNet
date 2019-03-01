@@ -1527,417 +1527,710 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="F:BuckarooSdk.Services.AmericanExpress.Constants.ShippingMethod.SameDay">
+        <member name="F:BuckarooSdk.Services.CreditCards.AmericanExpress.Constants.ShippingMethod.SameDay">
             <summary>
             Delivery on the same day
             </summary>
         </member>
-        <member name="F:BuckarooSdk.Services.AmericanExpress.Constants.ShippingMethod.Unknown">
+        <member name="F:BuckarooSdk.Services.CreditCards.AmericanExpress.Constants.ShippingMethod.Unknown">
             <summary>
             Delivery method not specified
             </summary>
         </member>
-        <member name="F:BuckarooSdk.Services.AmericanExpress.Constants.ShippingMethod.Priority">
+        <member name="F:BuckarooSdk.Services.CreditCards.AmericanExpress.Constants.ShippingMethod.Priority">
             <summary>
             Priority delivery of 2 or 3 days
             </summary>
         </member>
-        <member name="F:BuckarooSdk.Services.AmericanExpress.Constants.ShippingMethod.Ground4OrMoreDays">
+        <member name="F:BuckarooSdk.Services.CreditCards.AmericanExpress.Constants.ShippingMethod.Ground4OrMoreDays">
             <summary>
             Ground delivery for 4 or more days
             </summary>
         </member>
-        <member name="F:BuckarooSdk.Services.AmericanExpress.Constants.ShippingMethod.ElectronicDelivery">
+        <member name="F:BuckarooSdk.Services.CreditCards.AmericanExpress.Constants.ShippingMethod.ElectronicDelivery">
             <summary>
             Delivery is done electronically
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.VerifyAddress">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeEncryptedRequest.EncryptedCardData">
             <summary>
-            Boolean that states if the address of the custumer has been verified.
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.CustomerIpAddress">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeRequest.ShippingMethodCode">
             <summary>
-            IP address of the customer.
+            This data element contains the two-character, Shipping Method Code (a.k.a., shipment-type code). Valid values include:
+            01 = Same Day
+            02 = Overnight / Next Day
+            03 = Priority, 2-3 days
+            04 = Ground, 4 or more days
+            05 = Electronic Delivery
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingMethodCode">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeRequest.CustomerIPAddress">
             <summary>
-            The method that is used for shipping. Amex has standards for this value.
+            This data element contains the Customer’s IP Address
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.Recurring">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeResponse.CardExpirationDate">
             <summary>
-            States if the payment is a recurring payment.
+            Credit card expiration date.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.CustomerHttpBrowserType">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeResponse.CardNumberEnding">
             <summary>
-            Browser type used by the customer. 
+            Last 4 digits of the creditcard number.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.CustomerHostServerName">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressCaptureResponse.CardExpirationDate">
             <summary>
-            Host server name used by the customer.
+            Credit card expiration date.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.RecurringTimeType">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressCaptureResponse.CardNumberEnding">
             <summary>
-            If the payment is a recurrent payment. It can be defined here in what sequence.
+            Last 4 digits of the creditcard number.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingFirstName">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayEncryptedRequest.EncryptedCardData">
             <summary>
-            The first name stated on the shipping label
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingLastName">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRecurrentResponse.CardExpirationDate">
             <summary>
-            The last name stated on the shipping label
+            Credit card expiration date.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingStreet">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRecurrentResponse.CardNumberEnding">
             <summary>
-            The street where the product is shipped to.
+            Last 4 digits of the creditcard number.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingHouseNumber">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRemainderResponse.CardExpirationDate">
             <summary>
-            The number of the residence where the product is shipped to.
+            Credit card expiration date.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingPostalCode">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRemainderResponse.CardNumberEnding">
             <summary>
-            The postal code of the residence where the product is shipped to.
+            Last 4 digits of the creditcard number.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingCountryCode">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayResponse.CardExpirationDate">
             <summary>
-            The country code of the country where the product is shipped to.
+            Credit card expiration date.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingPhoneNumber">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayResponse.CardNumberEnding">
             <summary>
-            The phone number stated on the shipping information.
+            Last 4 digits of the creditcard number.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.CustomerEmail">
-            <summary>
-            The customer's email address
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingFirstName">
-            <summary>
-            The first name of customer, as stated on the invoice.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingStreet">
-            <summary>
-            The street of the residence where the invoice is send to.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingHouseNumber">
-            <summary>
-            The housenumber of the residence where the invoice is send to.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingHouseNumberSuffix">
-            <summary>
-            The housenumber suffix of the residence where the invoice is send to.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingPostalCode">
-            <summary>
-            The postal code of the residence where the invoice is send to.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingPhoneNumber">
-            <summary>
-            The phone number as it is stated on the invoice
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeResponse.CardExpirationDate">
-            <summary>
-            The expiration date of the card that is used by the consumer
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeResponse.CardNumberEnding">
-            <summary>
-            The end numbers of the card dat is used by the consumer.
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRecurrentRequest">
-            <summary>
-            An American Express payrecurrent does not have request parameters
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRecurrentResponse.CardExpirationDate">
-            <summary>
-            The expiration date of the card that is used by the consumer
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRecurrentResponse.CardNumberEnding">
-            <summary>
-            The end numbers of the card dat is used by the consumer.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.VerifyAddress">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.CustomerIpAddress">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingMethodCode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.Recurring">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.CustomerHttpBrowserType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.CustomerHostServerName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.RecurringTimeType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.RecurringInterval">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingFirstName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingLastName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingStreet">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingHouseNumber">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingPostalCode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingCountryCode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingPhoneNumber">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.CustomerEmail">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingFirstName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingStreet">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingHouseNumber">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingHouseNumberSuffix">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingPostalCode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingPhoneNumber">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderResponse.CardExpirationDate">
-            <summary>
-            The expiration date of the card that is used by the consumer
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderResponse.CardNumberEnding">
-            <summary>
-            The end numbers of the card dat is used by the consumer.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.VerifyAddress">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.CustomerIpAddress">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingMethodCode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.Recurring">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.CustomerHttpBrowserType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.CustomerHostServerName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.RecurringTimeType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.RecurringInterval">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingFirstName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingLastName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingStreet">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingHouseNumber">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingPostalCode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingCountryCode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingPhoneNumber">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.CustomerEmail">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingFirstName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingStreet">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingHouseNumber">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingHouseNumberSuffix">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingPostalCode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingPhoneNumber">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayResponse.CardExpirationDate">
-            <summary>
-            The expiration date of the card that is used by the consumer
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayResponse.CardNumberEnding">
-            <summary>
-            The end numbers of the card dat is used by the consumer.
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressRefundRequest">
-            <summary>
-            An American Express refund does not have request parameters
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressRefundResponse">
-            <summary>
-            An American Express refund does not have response parameters
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressTransaction.ConfiguredTransaction">
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.ConfiguredTransaction">
             <summary>
             The configured transaction
             </summary>
         </member>
-        <member name="M:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressTransaction.Pay(BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRequest)">
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.Pay(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRequest)">
+            <summary>
+            The Pay function creates a configured transaction with an AmericanExpressPayRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressPayRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.Refund(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressRefundRequest)">
+            <summary>
+            The Refund function creates a configured transaction with an AmericanExpressRefundRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressRefundRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.Authorize(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeRequest)">
+            <summary>
+            The Authorize function creates a configured transaction with an AmericanExpressAuthorizeRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressAuthorizeRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.Capture(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressCaptureRequest)">
+            <summary>
+            The Capture function creates a configured transaction with an AmericanExpressCaptureRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressCaptureRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.PayRecurrent(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRecurrentRequest)">
+            <summary>
+            The PayRecurrent function creates a configured transaction with an AmericanExpressPayRecurrentRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressPayRecurrentRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.PayRemainder(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRemainderRequest)">
+            <summary>
+            The PayRemainder function creates a configured transaction with an AmericanExpressPayRemainderRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressPayRemainderRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.PayEncrypted(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayEncryptedRequest)">
+            <summary>
+            The PayEncrypted function creates a configured transaction with an AmericanExpressPayEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressPayEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction.AuthorizeEncrypted(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeEncryptedRequest)">
+            <summary>
+            The AuthorizeEncrypted function creates a configured transaction with an AmericanExpressAuthorizeEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressAuthorizeEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRemainderRequest.ShippingMethodCode">
+            <summary>
+            This data element contains the two-character, Shipping Method Code (a.k.a., shipment-type code). Valid values include:
+            01 = Same Day
+            02 = Overnight / Next Day
+            03 = Priority, 2-3 days
+            04 = Ground, 4 or more days
+            05 = Electronic Delivery
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRemainderRequest.CustomerIPAddress">
+            <summary>
+            This data element contains the Customer’s IP Address
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRequest.ShippingMethodCode">
+            <summary>
+            This data element contains the two-character, Shipping Method Code (a.k.a., shipment-type code). Valid values include:
+            01 = Same Day
+            02 = Overnight / Next Day
+            03 = Priority, 2-3 days
+            04 = Ground, 4 or more days
+            05 = Electronic Delivery
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRequest.CustomerIPAddress">
+            <summary>
+            This data element contains the Customer’s IP Address
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRequest.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressAuthorizeResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressAuthorizeResponse.CardNumberEnding">
+            <summary>
+            The end numbers of the card dat is used by the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressPayRecurrentResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressPayRecurrentResponse.CardNumberEnding">
+            <summary>
+            The end numbers of the card dat is used by the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressPayRemainderResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressPayRemainderResponse.CardNumberEnding">
+            <summary>
+            The end numbers of the card dat is used by the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressPayResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressPayResponse.CardNumberEnding">
+            <summary>
+            The end numbers of the card dat is used by the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.AmericanExpress.Response.AmericanExpressRefundResponse">
+            <summary>
+            An American Express refund does not have response parameters
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.ConfiguredTransaction">
+            <summary>
+            The configured transaction
+            </summary>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.Pay(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRequest)">
+            <summary>
+            The Pay function creates a configured transaction with an AmericanExpressPayRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressPayRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.Refund(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressRefundRequest)">
+            <summary>
+            The Refund function creates a configured transaction with an AmericanExpressRefundRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressRefundRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.Authorize(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeRequest)">
+            <summary>
+            The Authorize function creates a configured transaction with an AmericanExpressAuthorizeRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressAuthorizeRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.Capture(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressCaptureRequest)">
+            <summary>
+            The Capture function creates a configured transaction with an AmericanExpressCaptureRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressCaptureRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.PayRecurrent(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRecurrentRequest)">
+            <summary>
+            The PayRecurrent function creates a configured transaction with an AmericanExpressPayRecurrentRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressPayRecurrentRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.PayRemainder(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayRemainderRequest)">
+            <summary>
+            The PayRemainder function creates a configured transaction with an AmericanExpressPayRemainderRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressPayRemainderRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.PayEncrypted(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressPayEncryptedRequest)">
+            <summary>
+            The PayEncrypted function creates a configured transaction with an AmericanExpressPayEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressPayEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.AmericanExpressTransaction.AuthorizeEncrypted(BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressAuthorizeEncryptedRequest)">
+            <summary>
+            The AuthorizeEncrypted function creates a configured transaction with an AmericanExpressAuthorizeEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A AmericanExpressAuthorizeEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.VerifyAddress">
+            <summary>
+            Boolean that states if the address of the custumer has been verified.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.CustomerIpAddress">
+            <summary>
+            IP address of the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingMethodCode">
+            <summary>
+            The method that is used for shipping. Amex has standards for this value.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.Recurring">
+            <summary>
+            States if the payment is a recurring payment.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.CustomerHttpBrowserType">
+            <summary>
+            Browser type used by the customer. 
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.CustomerHostServerName">
+            <summary>
+            Host server name used by the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.RecurringTimeType">
+            <summary>
+            If the payment is a recurrent payment. It can be defined here in what sequence.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingFirstName">
+            <summary>
+            The first name stated on the shipping label
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingLastName">
+            <summary>
+            The last name stated on the shipping label
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingStreet">
+            <summary>
+            The street where the product is shipped to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingHouseNumber">
+            <summary>
+            The number of the residence where the product is shipped to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingPostalCode">
+            <summary>
+            The postal code of the residence where the product is shipped to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingCountryCode">
+            <summary>
+            The country code of the country where the product is shipped to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.ShippingPhoneNumber">
+            <summary>
+            The phone number stated on the shipping information.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.CustomerEmail">
+            <summary>
+            The customer's email address
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingFirstName">
+            <summary>
+            The first name of customer, as stated on the invoice.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingStreet">
+            <summary>
+            The street of the residence where the invoice is send to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingHouseNumber">
+            <summary>
+            The housenumber of the residence where the invoice is send to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingHouseNumberSuffix">
+            <summary>
+            The housenumber suffix of the residence where the invoice is send to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingPostalCode">
+            <summary>
+            The postal code of the residence where the invoice is send to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest.BillingPhoneNumber">
+            <summary>
+            The phone number as it is stated on the invoice
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeResponse.CardNumberEnding">
+            <summary>
+            The end numbers of the card dat is used by the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRecurrentRequest">
+            <summary>
+            An American Express payrecurrent does not have request parameters
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRecurrentResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRecurrentResponse.CardNumberEnding">
+            <summary>
+            The end numbers of the card dat is used by the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.VerifyAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.CustomerIpAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingMethodCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.Recurring">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.CustomerHttpBrowserType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.CustomerHostServerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.RecurringTimeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.RecurringInterval">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingFirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingLastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingStreet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingHouseNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingPostalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingCountryCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.ShippingPhoneNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.CustomerEmail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingFirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingStreet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingHouseNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingHouseNumberSuffix">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingPostalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest.BillingPhoneNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderResponse.CardNumberEnding">
+            <summary>
+            The end numbers of the card dat is used by the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.VerifyAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.CustomerIpAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingMethodCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.Recurring">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.CustomerHttpBrowserType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.CustomerHostServerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.RecurringTimeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.RecurringInterval">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingFirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingLastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingStreet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingHouseNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingPostalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingCountryCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.ShippingPhoneNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.CustomerEmail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingFirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingStreet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingHouseNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingHouseNumberSuffix">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingPostalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest.BillingPhoneNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayResponse.CardNumberEnding">
+            <summary>
+            The end numbers of the card dat is used by the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressRefundRequest">
+            <summary>
+            An American Express refund does not have request parameters
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressRefundResponse">
+            <summary>
+            An American Express refund does not have response parameters
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressTransaction.ConfiguredTransaction">
+            <summary>
+            The configured transaction
+            </summary>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressTransaction.Pay(BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRequest)">
             <summary>
             The pay function creates a configured transaction with an IdealPayRequest, 
             that is ready to be executed.
@@ -1945,7 +2238,7 @@
             <param name="request">An IdealPayRequest</param>
             <returns></returns>
         </member>
-        <member name="M:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressTransaction.Refund(BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressRefundRequest)">
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressTransaction.Refund(BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressRefundRequest)">
             <summary>
             The refund function creates a configured transaction with an IdealRefundRequest, 
             that is ready to be executed.
@@ -1953,7 +2246,7 @@
             <param name="request">An IdealRefundRequest</param>
             <returns></returns>
         </member>
-        <member name="M:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressTransaction.Authorize(BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest)">
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressTransaction.Authorize(BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressAuthorizeRequest)">
             <summary>
             The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
             that is ready to be executed.
@@ -1961,7 +2254,7 @@
             <param name="request">An IdealPayRemainderRequest</param>
             <returns></returns>
         </member>
-        <member name="M:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressTransaction.PayRecurrent(BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRecurrentRequest)">
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressTransaction.PayRecurrent(BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRecurrentRequest)">
             <summary>
             The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
             that is ready to be executed.
@@ -1969,13 +2262,703 @@
             <param name="request">An IdealPayRemainderRequest</param>
             <returns></returns>
         </member>
-        <member name="M:BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressTransaction.PayRemainder(BuckarooSdk.Services.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest)">
+        <member name="M:BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressTransaction.PayRemainder(BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest.AmericanExpressPayRemainderRequest)">
             <summary>
             The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
             that is ready to be executed.
             </summary>
             <param name="request">An IdealPayRemainderRequest</param>
             <returns></returns>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.BancontactTransaction.ConfiguredTransaction">
+            <summary>
+            The configured transaction
+            </summary>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.BanContact.BancontactTransaction.Pay(BuckarooSdk.Services.CreditCards.BanContact.Request.BancontactPayRequest)">
+            <summary>
+            The Pay function creates a configured transaction with an BancontactPayRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A BancontactPayRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.BanContact.BancontactTransaction.Refund(BuckarooSdk.Services.CreditCards.BanContact.Request.BancontactRefundRequest)">
+            <summary>
+            The Refund function creates a configured transaction with an BancontactRefundRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A BancontactRefundRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.BanContact.BancontactTransaction.PayRemainder(BuckarooSdk.Services.CreditCards.BanContact.Request.BancontactPayRemainderRequest)">
+            <summary>
+            The PayRemainder function creates a configured transaction with an BancontactPayRemainderRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A BancontactPayRemainderRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.BanContact.BancontactTransaction.PayEncrypted(BuckarooSdk.Services.CreditCards.BanContact.Request.BancontactPayEncryptedRequest)">
+            <summary>
+            The PayEncrypted function creates a configured transaction with an BancontactPayEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A BancontactPayEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.BanContact.Push.BancontactPayEncryptedPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Push.BancontactPayEncryptedPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.BanContact.Push.BancontactRefundPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Push.BancontactRefundPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Request.BancontactPayEncryptedRequest.EncryptedCardData">
+            <summary>
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Request.BancontactRefundRequest.CustomerBIC">
+            <summary>
+            The BIC of the customers account.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Request.BancontactRefundRequest.CustomerIBAN">
+            <summary>
+            The IBAN of the customers account
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Request.BancontactRefundRequest.CustomerAccountName">
+            <summary>
+            The account name of the customer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayRemainderResponse.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayRemainderResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayRemainderResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayRemainderResponse.CustomerIBAN">
+            <summary>
+            The IBAN of the customers account
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayRemainderResponse.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayResponse.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card that is used by the consumer
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayResponse.CustomerIBAN">
+            <summary>
+            The IBAN of the customers account
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.BanContact.Response.BancontactPayResponse.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.CreditCardTransaction.ConfiguredTransaction">
+            <summary>
+            The configured transaction
+            </summary>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.Pay(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardPayRequest)">
+            <summary>
+            The pay function creates a configured transaction with a CreditCardPayRequest, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardPayRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.Refund(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardRefundRequest)">
+            <summary>
+            The pay function creates a configured transaction with a CreditCardRefundRequest, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardRefundRequest</param>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.Authorize(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardAuthorizeRequest)">
+            <summary>
+            The pay function creates a configured transaction with a CreditCardAuthorizeRequest, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardAuthorizeRequest</param>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.Capture(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardCaptureRequest)">
+            <summary>
+            The pay function creates a configured transaction with a CreditCardCaptureRequest, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardCaptureRequest</param>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.PayRecurrent(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardPayRecurrentRequest)">
+            <summary>
+            The pay function creates a configured transaction with a CreditCardPayRecurrentRequest, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardPayRecurrentRequest</param>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.PayRemainder(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardPayRemainderRequest)">
+            <summary>
+            The pay function creates a configured transaction with a CreditCardPayRemainderRequest, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardPayRemainderRequest</param>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.CancelAuthorize(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardCancelAuthorizeRequest)">
+            <summary>
+            The CancelAuthorize function creates a configured transaction with an VisaCancelAuthorizeRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A VisaCancelAuthorizeRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.PayEncrypted(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardPayEncryptedRequest)">
+            <summary>
+            The PayEncrypted function creates a configured transaction with an MasterCardPayEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A MasterCardPayEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.AuthorizeEncrypted(BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardAuthorizeEncryptedRequest)">
+            <summary>
+            The AuthorizeEncrypted function creates a configured transaction with an MasterCardAuthorizeEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A MasterCardAuthorizeEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.Pay(BuckarooSdk.Services.CreditCards.Visa.Request.VisaPayRequest)">
+            <summary>
+            The pay function creates a configured transaction with a CreditCardPayRequest, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardPayRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.CancelAuthorize(BuckarooSdk.Services.CreditCards.Visa.Request.VisaCancelAuthorizeRequest)">
+            <summary>
+            The CancelAuthorize function creates a configured transaction with an VisaCancelAuthorizeRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A VisaCancelAuthorizeRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.PayEncrypted(BuckarooSdk.Services.CreditCards.Visa.Request.VisaPayEncryptedRequest)">
+            <summary>
+            The PayEncrypted function creates a configured transaction with an VisaPayEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A VisaPayEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.AuthorizeEncrypted(BuckarooSdk.Services.CreditCards.Visa.Request.VisaAuthorizeEncryptedRequest)">
+            <summary>
+            The AuthorizeEncrypted function creates a configured transaction with an VisaAuthorizeEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A VisaAuthorizeEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.CancelAuthorize(BuckarooSdk.Services.CreditCards.Request.CreditCardCancelAuthorizeRequest)">
+            <summary>
+            The CancelAuthorize function creates a configured transaction with an CreditCardCancelAuthorizeRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardCancelAuthorizeRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.PayEncrypted(BuckarooSdk.Services.CreditCards.Request.CreditCardPayEncryptedRequest)">
+            <summary>
+            The PayEncrypted function creates a configured transaction with an CreditCardPayEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardPayEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.CreditCards.CreditCardTransaction.AuthorizeEncrypted(BuckarooSdk.Services.CreditCards.Request.CreditCardAuthorizeEncryptedRequest)">
+            <summary>
+            The AuthorizeEncrypted function creates a configured transaction with an CreditCardAuthorizeEncryptedRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A CreditCardAuthorizeEncryptedRequest</param>
+            <returns></returns>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.MasterCard.Push.MasterCardAuthorizeEncryptedPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Push.MasterCardAuthorizeEncryptedPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.MasterCard.Push.MasterCardCancelAuthorizePush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Push.MasterCardCancelAuthorizePush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.MasterCard.Push.MasterCardPayEncryptedPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Push.MasterCardPayEncryptedPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.MasterCard.Push.MasterCardRefundPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Push.MasterCardRefundPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardAuthorizeRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardPayRemainderRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardPayRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardAuthorizeEncryptedRequest.EncryptedCardData">
+            <summary>
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Request.MasterCardPayEncryptedRequest.EncryptedCardData">
+            <summary>
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardAuthorizeResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardAuthorizeResponse.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardAuthorizeResponse.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardAuthorizeResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardCaptureResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardCaptureResponse.CardExpirationDate">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayRecurrentResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayRemainderResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayRemainderResponse.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayRemainderResponse.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayRemainderResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayResponse.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayResponse.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardPayResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.MasterCard.Response.MasterCardRefundResponsen">
+            <summary>
+            A MasterCard Refund Response does not have response parameters
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Push.CreditCardAuthorizeEncryptedPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Push.CreditCardAuthorizeEncryptedPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Push.CreditCardCancelAuthorizePush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Push.CreditCardCancelAuthorizePush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Push.CreditCardPayEncryptedPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Push.CreditCardPayEncryptedPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Push.CreditCardRefundPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Push.CreditCardRefundPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Request.CreditCardPayRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Request.CreditCardAuthorizeEncryptedRequest.EncryptedCardData">
+            <summary>
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Request.CreditCardPayEncryptedRequest.EncryptedCardData">
+            <summary>
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Request.CreditCardAuthorizeRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Request.CreditCardPayRemainderRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayRecurrentResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardAuthorizeResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card used by the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardAuthorizeResponse.CardEnrolled">
+            <summary>
+            States wether the card is enrolled.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardAuthorizeResponse.CardAuthentication">
+            <summary>
+            The card authentication reference.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardAuthorizeResponse.CardNumberEnding">
+            <summary>
+            The last few digits of the card used by the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardCaptureResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardCaptureResponse.CardExpirationDate">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayRemainder.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayRemainder.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayRemainder.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayRemainder.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayResponse.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayResponse.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Response.CreditCardPayResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Visa.Push.VisaAuthorizeEncryptedPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Push.VisaAuthorizeEncryptedPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Visa.Push.VisaCancelAuthorizePush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Push.VisaCancelAuthorizePush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Visa.Push.VisaPayEncryptedPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Push.VisaPayEncryptedPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Visa.Push.VisaRefundPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Push.VisaRefundPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Request.VisaAuthorizeEncryptedRequest.EncryptedCardData">
+            <summary>
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Request.VisaAuthorizeRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Request.VisaPayEncryptedRequest.EncryptedCardData">
+            <summary>
+            The value of this parameter is the result of the "encryptCardData"-function of our Client Side Encryption SDK.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Request.VisaPayRemainderRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Request.VisaPayRequest.CustomerCode">
+            <summary>
+            Code chosen by merchant to recognize the customer of this transaction
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Visa.Request.VisaRefundRequest">
+            <summary>
+            A MasterCard Refund Request does not have request parameters
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaAuthorizeResponse.CardExpirationDate">
+            <summary>
+            The expiration date of the card used by the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaAuthorizeResponse.CardEnrolled">
+            <summary>
+            States wether the card is enrolled.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaAuthorizeResponse.CardAuthentication">
+            <summary>
+            The card authentication reference.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaAuthorizeResponse.CardNumberEnding">
+            <summary>
+            The last few digits of the card used by the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaCaptureResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaCaptureResponse.CardExpirationDate">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayRecurrentResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayRemainderResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayRemainderResponse.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayRemainderResponse.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayRemainderResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayResponse.CardExpirationDate">
+            <summary>
+            Credit card expiration date.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayResponse.CardEnrolled">
+            <summary>
+            The enrolled status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayResponse.CardAuthentication">
+            <summary>
+            The authentication status.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.CreditCards.Visa.Response.VisaPayResponse.CardNumberEnding">
+            <summary>
+            Last 4 digits of the creditcard number.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.CreditCards.Visa.Response.VisaRefundResponse">
+            <summary>
+            A MasterCard Refund Response does not have response parameters
+            </summary>
         </member>
         <member name="F:BuckarooSdk.Services.CreditManagement.Constants.CustomerType.Unknown">
             <summary>
@@ -3026,19 +4009,6 @@
             The name of the issuer (bank) of the consumer.
             </summary>
         </member>
-        <member name="P:BuckarooSdk.Services.Maestro.MaestroTransaction.ConfiguredTransaction">
-            <summary>
-            The configured transaction
-            </summary>
-        </member>
-        <member name="M:BuckarooSdk.Services.Maestro.MaestroTransaction.Pay(BuckarooSdk.Services.Maestro.MaestroPayRequest)">
-            <summary>
-            The pay function creates a configured transaction with a MaestroPayRequest, 
-            that is ready to be executed.
-            </summary>
-            <param name="request">A MaestroPayRequest</param>
-            <returns></returns>
-        </member>
         <member name="T:BuckarooSdk.Services.P24.TransactionRequest.P24RefundResponse">
             <summary>
             This response does not have service specific request variables
@@ -3381,6 +4351,95 @@
             <param name="request">An SimpleSepaDirectDebitRefundRequest</param>
             <returns></returns>
         </member>
+        <member name="T:BuckarooSdk.Services.Sofort.Push.SofortPayRecurrentPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.Push.SofortPayRecurrentPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="T:BuckarooSdk.Services.Sofort.Push.SofortRefundPush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.Push.SofortRefundPush.ConsumerIssuer">
+            <summary>
+            The name of the issuer (bank) of the consumer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortPayRemainderResponse.CustomerIBAN">
+            <summary>
+            IBAN bank account number of the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortPayResponse.CustomerIBAN">
+            <summary>
+            IBAN bank account number of the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortPayResponse.CustomerBIC">
+            <summary>
+            BIC code of the customers' bank.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortRefundRequest.CustomerBIC">
+            <summary>
+            BIC code of the customers' bank.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortRefundRequest.CustomerIBAN">
+            <summary>
+            IBAN bank account number of the customer.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortRefundRequest.CustomerAccountName">
+            <summary>
+            The account holder beneficiary name
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortRefundRequest.CustomerKontoNummer">
+            <summary>
+            The account number
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortRefundRequest.CustomerBankLeitzahl">
+            <summary>
+            The german bank code identifying the customer bank.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.Services.Sofort.SofortTransaction.ConfiguredTransaction">
+            <summary>
+            The configured transaction
+            </summary>
+        </member>
+        <member name="M:BuckarooSdk.Services.Sofort.SofortTransaction.Pay(BuckarooSdk.Services.Sofort.SofortPayRequest)">
+            <summary>
+            The Pay function creates a configured transaction with an SofortPayRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A SofortPayRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.Sofort.SofortTransaction.Refund(BuckarooSdk.Services.Sofort.SofortRefundRequest)">
+            <summary>
+            The Refund function creates a configured transaction with an SofortRefundRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A SofortRefundRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.Services.Sofort.SofortTransaction.PayRemainder(BuckarooSdk.Services.Sofort.SofortPayRemainderRequest)">
+            <summary>
+            The PayRemainder function creates a configured transaction with an SofortPayRemainderRequest request, 
+            that is ready to be executed.
+            </summary>
+            <param name="request">A SofortPayRemainderRequest</param>
+            <returns></returns>
+        </member>
         <member name="T:BuckarooSdk.Services.Subscriptions.Responses.CreateSubscription">
              <summary>
              https://dev.buckaroo.nl/AdditionalServices/Description/subscriptions#createsubscription
@@ -3553,102 +4612,6 @@
             <param name="request">A TransferPayRequest</param>
             <returns></returns>
         </member>
-        <member name="P:BuckarooSdk.Services.Visa.VisaAuthorizeRequest.Recurring">
-            <summary>
-            States wether the transaction is recurring
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.Visa.VisaAuthorizeRequest.CustomerCode">
-            <summary>
-            The customer code reference.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.Visa.VisaAuthorizeResponse.CardExpirationDate">
-            <summary>
-            The expiration date of the card used by the customer.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.Visa.VisaAuthorizeResponse.CardEnrolled">
-            <summary>
-            States wether the card is enrolled.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.Visa.VisaAuthorizeResponse.CardAuthentication">
-            <summary>
-            The card authentication reference.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.Visa.VisaAuthorizeResponse.CardNumberEnding">
-            <summary>
-            The last few digits of the card used by the customer.
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.Visa.VisaCaptureRequest">
-            <summary>
-            A Mastercard Capture Request does not have request parameters
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.Visa.VisaPayRecurrentRequest">
-            <summary>
-            A MasterCard PayRecurrent Request does not have request parameters
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.Visa.VisaRefundRequest">
-            <summary>
-            A Mastercard Refund Request does not have request parameters
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.Visa.VisaRefundResponse">
-            <summary>
-            A Mastercard Refund Response does not have response parameters
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.Visa.VisaTransaction.ConfiguredTransaction">
-            <summary>
-            The configured transaction
-            </summary>
-        </member>
-        <member name="M:BuckarooSdk.Services.Visa.VisaTransaction.Pay(BuckarooSdk.Services.Visa.VisaPayRequest)">
-            <summary>
-            The pay function creates a configured transaction with a PayPerEmailPaymentInvitationRequest, 
-            that is ready to be executed.
-            </summary>
-            <param name="request">A PayPerEmailPaymentInvitationRequest</param>
-            <returns></returns>
-        </member>
-        <member name="T:BuckarooSdk.Services.MasterCard.MasterCardCaptureRequest">
-            <summary>
-            A Mastercard Capture Request does not have request parameters
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.MasterCard.MasterCardPayRecurrentRequest">
-            <summary>
-            A MasterCard PayRecurrent Request does not have request parameters
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.MasterCard.MasterCardRefundRequest">
-            <summary>
-            A Mastercard Refund Request does not have request parameters
-            </summary>
-        </member>
-        <member name="T:BuckarooSdk.Services.MasterCard.MasterCardRefundResponsen">
-            <summary>
-            A Mastercard Refund Response does not have response parameters
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.Services.MasterCard.MasterCardTransaction.ConfiguredTransaction">
-            <summary>
-            The configured transaction
-            </summary>
-        </member>
-        <member name="M:BuckarooSdk.Services.MasterCard.MasterCardTransaction.Pay(BuckarooSdk.Services.MasterCard.MasterCardPayRequest)">
-            <summary>
-            The pay function creates a configured transaction with a MasterCardPayRequest, 
-            that is ready to be executed.
-            </summary>
-            <param name="request">A MasterCardPayRequest</param>
-            <returns></returns>
-        </member>
         <member name="T:BuckarooSdk.Services.TransactionServices">
             <summary>
             A class that holds a list of services. 
@@ -3734,13 +4697,31 @@
             </summary>
             <returns> An ideal</returns>
         </member>
-        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.Mastercard">
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.MasterCard">
             <summary>
-            The instanciation of the specific Mastercard Service transaction.
+            The instanciation of the specific MasterCard Service transaction.
             </summary>
             <returns> An ideal</returns>
         </member>
         <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.Visa">
+            <summary>
+            The instanciation of the specific Visa Service transaction.
+            </summary>
+            <returns> An ideal</returns>
+        </member>
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.CarteBleueVisa">
+            <summary>
+            The instanciation of the specific Visa Service transaction.
+            </summary>
+            <returns> An ideal</returns>
+        </member>
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.VisaElectron">
+            <summary>
+            The instanciation of the specific Visa Service transaction.
+            </summary>
+            <returns> An ideal</returns>
+        </member>
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.VPay">
             <summary>
             The instanciation of the specific Visa Service transaction.
             </summary>
@@ -3764,6 +4745,30 @@
             </summary>
             <returns> An ideal</returns>
         </member>
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.Nexi">
+            <summary>
+            The instanciation of the specific MasterCard Service transaction.
+            </summary>
+            <returns> An ideal</returns>
+        </member>
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.CarteBancaire">
+            <summary>
+            The instanciation of the specific MasterCard Service transaction.
+            </summary>
+            <returns> An ideal</returns>
+        </member>
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.Bancontact">
+            <summary>
+            The instanciation of the specific MasterCard Service transaction.
+            </summary>
+            <returns> An ideal</returns>
+        </member>
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.Sofort">
+            <summary>
+            The instanciation of the specific Sofort Service transaction.
+            </summary>
+            <returns> An Sofort</returns>
+        </member>
         <member name="T:BuckarooSdk.Transaction.TransactionRequest">
             <summary>
             The actual transaction, that can only be obtained by defining a transaction request.
@@ -3785,7 +4790,7 @@
             <summary>
             Primary constructor
             </summary>
-            <param name="request"></param>
+            <param name="authenticatedRequest"></param>
         </member>
     </members>
 </doc>

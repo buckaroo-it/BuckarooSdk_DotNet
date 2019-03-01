@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Services.PayPerEmail.Push
 {
 	public class PayPerEmailPaymentInvitationPush : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.PayPerEmail;
+		public override ServiceNames ServiceNames => ServiceNames.PayPerEmail;
 		public DateTime ExpirationDate { get; set; }
 		public string PayLink { get; set; }
 	}
