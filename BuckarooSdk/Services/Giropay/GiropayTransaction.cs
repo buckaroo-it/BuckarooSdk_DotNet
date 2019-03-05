@@ -24,7 +24,7 @@ namespace BuckarooSdk.Services.Giropay
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("giropay", parameters, "Pay", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("giropay", parameters, "Pay", "2");
 
 			return configuredServiceTransaction;
 		}
@@ -39,7 +39,7 @@ namespace BuckarooSdk.Services.Giropay
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("giropay", parameters, "Refund", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("giropay", parameters, "Refund", "2");
 
 			return configuredServiceTransaction;
 		}
@@ -54,7 +54,7 @@ namespace BuckarooSdk.Services.Giropay
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("giropay", parameters, "PayRemainder", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("giropay", parameters, "PayRemainder", "2");
 
 			return configuredServiceTransaction;
 		}

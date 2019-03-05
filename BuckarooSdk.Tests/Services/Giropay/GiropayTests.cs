@@ -42,10 +42,9 @@ namespace BuckarooSdk.Tests.Services.Giropay
 				.Giropay() // Choose the paymentmethod you want to use
 				.Pay(new GiropayPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
-					BIC = string.Empty,
+					BIC = "GENODETT488",
 					CustomerIBAN = string.Empty,
 					BankLeitzahl = 0,
-
 				});
 
 			var response = request.Execute();
@@ -53,6 +52,7 @@ namespace BuckarooSdk.Tests.Services.Giropay
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
+
 		[TestMethod]
 		public void RefundTest()
 		{
@@ -89,6 +89,7 @@ namespace BuckarooSdk.Tests.Services.Giropay
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
+
 		[TestMethod]
 		public void PayRemainderTest()
 		{
