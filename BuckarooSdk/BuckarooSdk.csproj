@@ -235,6 +235,15 @@
     <Compile Include="Services\Emandates\Push\EmandatesCancelMandatePush.cs" />
     <Compile Include="Services\Emandates\Push\EmandatesCreateMandatePush.cs" />
     <Compile Include="Services\Emandates\Push\EmandatesModifyMandatePush.cs" />
+    <Compile Include="Services\EMandate\EMandateCreateMandateRequest.cs" />
+    <Compile Include="Services\EMandate\EMandateCreateMandateResponse.cs" />
+    <Compile Include="Services\EMandate\EMandateGetIssuerListRequest.cs" />
+    <Compile Include="Services\EMandate\EMandateGetIssuerListResponse.cs" />
+    <Compile Include="Services\EMandate\EMandateGetStatusRequest.cs" />
+    <Compile Include="Services\EMandate\EMandateGetStatusResponse.cs" />
+    <Compile Include="Services\EMandate\EMandateModifyMandateRequest.cs" />
+    <Compile Include="Services\EMandate\EMandateModifyMandateResponse.cs" />
+    <Compile Include="Services\EMandate\EmandatesDataRequest.cs" />
     <Compile Include="Services\IdealProcessing\Constants\Issuers.cs" />
     <Compile Include="Services\IdealProcessing\Push\IdealProcessingPayPush.cs" />
     <Compile Include="Services\IdealProcessing\TransactionRequest\IdealProcessingPayRequest.cs" />

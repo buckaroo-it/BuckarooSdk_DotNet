@@ -1,8 +1,8 @@
 ﻿using System;
-using BuckarooSdk.Services.MasterCard;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;
 using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services.CreditCards.MasterCard;
 
 namespace BuckarooSdk.Tests.Services.MasterCard
 {

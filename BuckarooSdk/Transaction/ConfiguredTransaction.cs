@@ -2,11 +2,11 @@
 using BuckarooSdk.Services.CreditCards.Maestro;
 using BuckarooSdk.Services.CreditCards.MasterCard;
 using BuckarooSdk.Services.CreditCards.Visa;
+using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.PayPal;
-using BuckarooSdk.Services.MasterCard;
 using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;

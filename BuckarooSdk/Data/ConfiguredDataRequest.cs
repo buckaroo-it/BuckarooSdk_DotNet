@@ -40,7 +40,11 @@ namespace BuckarooSdk.Data
 			return new CreditManagementDataRequest(this);
 		}
 
-		public EmandatesDataRequest Emandates()
+		/// <summary>
+		/// The instanciation of the specific Ideal Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public EmandatesDataRequest EMandate()
 		{
 			return new EmandatesDataRequest(this);
 		}
