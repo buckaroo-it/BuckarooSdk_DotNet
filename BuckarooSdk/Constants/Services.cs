@@ -33,6 +33,7 @@
 			//Subscriptions,
 			PayPerEmail,
 			IdealQr,
+			Giropay,
 		}
 	}
 }

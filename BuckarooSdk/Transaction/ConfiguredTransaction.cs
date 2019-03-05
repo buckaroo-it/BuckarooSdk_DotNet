@@ -1,6 +1,7 @@
 ﻿using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.AmericanExpress;
 using BuckarooSdk.Services.CreditCards.BanContact;
+using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.P24.TransactionRequest;
@@ -93,6 +94,15 @@ namespace BuckarooSdk.Transaction
 		public CreditCardTransaction Visa()
 		{
 			return new CreditCardTransaction(this, ServiceNames.Visa);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Giropay Service transaction.
+		/// </summary>
+		/// <returns>An Giropay</returns>
+		public GiropayTransaction Giropay()
+		{
+			return new GiropayTransaction(this);
 		}
 
 		/// <summary>
