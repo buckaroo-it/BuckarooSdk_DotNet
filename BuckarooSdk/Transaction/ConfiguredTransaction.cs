@@ -1,6 +1,7 @@
 ﻿using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.AmericanExpress;
 using BuckarooSdk.Services.CreditCards.BanContact;
+using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.P24.TransactionRequest;
@@ -81,6 +82,43 @@ namespace BuckarooSdk.Transaction
 		/// The instanciation of the specific MasterCard Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
+		public CreditCardTransaction MasterCard()
+		{
+			return new CreditCardTransaction(this, ServiceNames.MasterCard);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Visa Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction Visa()
+		{
+			return new CreditCardTransaction(this, ServiceNames.Visa);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Giropay Service transaction.
+		/// </summary>
+		/// <returns>An Giropay</returns>
+		public GiropayTransaction Giropay()
+		{
+			return new GiropayTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Visa Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction CarteBleueVisa()
+		{
+			return new CreditCardTransaction(this, ServiceNames.CarteBleueVisa);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Visa Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction VisaElectron()
 		public CreditCardTransaction MasterCard()
 		{
 			return new CreditCardTransaction(this, ServiceNames.MasterCard);
