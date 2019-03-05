@@ -1,9 +1,11 @@
-﻿namespace BuckarooSdk.Services.Ideal.TransactionRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Ideal.TransactionRequest
 {
 
 	public class IdealRefundResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Ideal;
+		public override ServiceNames ServiceNames => ServiceNames.Ideal;
 
 		/// <summary>
 		/// The international bank account number (iban code) of the bank of the consumer. Please note: This field is optional. In some countries, 

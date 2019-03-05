@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.Ideal.TransactionRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Ideal.TransactionRequest
 {
     public class IdealPayRemainderResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Ideal;
+		public override ServiceNames ServiceNames => ServiceNames.Ideal;
 
 		/// <summary>
 		/// This is the iDEAL transaction ID.

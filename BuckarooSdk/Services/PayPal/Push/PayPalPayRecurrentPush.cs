@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.PayPal.Push
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.PayPal.Push
 {
 	public class PayPalPayRecurrentPush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.PayPal;
+		public override ServiceNames ServiceNames => ServiceNames.PayPal;
 
 		public string PayerStatus { get; set; }
 		public string PayerEmail { get; set; }

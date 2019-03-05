@@ -1,7 +1,9 @@
-﻿namespace BuckarooSdk.Services.Ideal.Push
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Ideal.Push
 {
 	public class IdealRefundPush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Ideal;
+		public override ServiceNames ServiceNames => ServiceNames.Ideal;
 	}
 }

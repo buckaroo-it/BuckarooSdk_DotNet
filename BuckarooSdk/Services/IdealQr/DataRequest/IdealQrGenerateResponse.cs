@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.IdealQr.DataRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.IdealQr.DataRequest
 {
 	public class IdealQrGenerateResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.IdealQr;
+		public override ServiceNames ServiceNames => ServiceNames.IdealQr;
 
 		public string QrImageUrl { get; set; }
 	}

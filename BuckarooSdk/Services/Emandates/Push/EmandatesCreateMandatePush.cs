@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Services.Emandates.Push
 {
 	public class EmandatesCreateMandatePush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Emandates;
+		public override ServiceNames ServiceNames => ServiceNames.Emandates;
 
 		/// <summary>
 		/// The mandateId or “mandate reference“ is the id used to perform the SEPA direct debit calls in the future.

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Services.Payconiq.TransactionRequest
 {
@@ -11,7 +7,7 @@ namespace BuckarooSdk.Services.Payconiq.TransactionRequest
 	/// </summary>
 	public class PayconiqPayResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Payconiq;
+		public override ServiceNames ServiceNames => ServiceNames.Payconiq;
 
 		public string QrUrl { get; set; }
 		public string PayconiqUrl { get; set; }

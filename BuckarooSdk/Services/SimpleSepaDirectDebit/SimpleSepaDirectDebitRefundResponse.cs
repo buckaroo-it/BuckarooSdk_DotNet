@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.SimpleSepaDirectDebit
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.SimpleSepaDirectDebit
 {
     public class SimpleSepaDirectDebitRefundResponse : ActionResponse
     {
-	    public override ServiceEnum ServiceEnum => ServiceEnum.SimpleSepaDirectDebit;
+	    public override ServiceNames ServiceNames => ServiceNames.SimpleSepaDirectDebit;
 
 		/// <summary>
 		/// The account name of the customer
