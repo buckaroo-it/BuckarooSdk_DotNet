@@ -1,7 +1,6 @@
 ﻿using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.CreditManagement.DataRequest;
 using BuckarooSdk.Services.Emandates.DataRequest;
-using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.IdealQr.DataRequest;
 
 namespace BuckarooSdk.Data
