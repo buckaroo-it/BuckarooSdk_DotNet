@@ -567,21 +567,6 @@
             Internet protocol version V6
             </summary>
         </member>
-        <member name="P:BuckarooSdk.DataTypes.Push.DataRequest.Key">
-            <summary>
-            The transaction key
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.DataTypes.Push.DataRequest.Status">
-            <summary>
-            The status of the transaction
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.DataTypes.Push.DataRequest.Services">
-            <summary>
-            The list of services that were available for the transaction request
-            </summary>
-        </member>
         <member name="P:BuckarooSdk.DataTypes.Push.DataRequest.CustomParameters">
             <summary>
             The list of custom parameters that was sent with the transaction request

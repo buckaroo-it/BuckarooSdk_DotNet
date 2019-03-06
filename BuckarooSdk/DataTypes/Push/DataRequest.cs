@@ -13,18 +13,6 @@ namespace BuckarooSdk.DataTypes.Push
 	public class DataRequest : Push
 	{
 		/// <summary>
-		/// The transaction key
-		/// </summary>
-		public new string Key { get; set; }
-		/// <summary>
-		/// The status of the transaction
-		/// </summary>
-		public new Status Status { get; set; }
-		/// <summary>
-		/// The list of services that were available for the transaction request
-		/// </summary>
-		public new List<Service> Services { get; set; }
-		/// <summary>
 		/// The list of custom parameters that was sent with the transaction request
 		/// </summary>
 		public CustomParameters CustomParameters { get; set; }

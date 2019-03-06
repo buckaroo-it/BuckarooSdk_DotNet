@@ -8,7 +8,7 @@ using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.DataTypes.Push
 {
-	public class TransactionPush : Push
+	public sealed class TransactionPush : Push
 	{
 
 		/// <summary>
