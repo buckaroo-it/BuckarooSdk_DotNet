@@ -1,6 +1,6 @@
 ﻿using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.CreditManagement.DataRequest;
-using BuckarooSdk.Services.Emandates.DataRequest;
+using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.IdealQr.DataRequest;
 
 namespace BuckarooSdk.Data
@@ -40,15 +40,10 @@ namespace BuckarooSdk.Data
 			return new CreditManagementDataRequest(this);
 		}
 
-		/// <summary>
-		/// The instanciation of the specific Ideal Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public EmandatesDataRequest EMandate()
+		public EMandateRequestObject EMandate()
 		{
-			return new EmandatesDataRequest(this);
+			return new EMandateRequestObject(this);
 		}
-
 		#endregion
 	}
 }

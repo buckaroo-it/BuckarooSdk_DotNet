@@ -12,7 +12,7 @@ namespace BuckarooSdk.Services.EMandate
 
 		public string Reference { get; set; }
 
-		public string IBAN { get; set; }
+		public string Iban { get; set; }
 
 		public string EmandateStatus { get; set; }
 

@@ -5,7 +5,6 @@ using BuckarooSdk.Logging;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BuckarooSdk.Data.ConfiguredDataRequest;
 
 namespace BuckarooSdk.Tests.Services.Emandates
 {
@@ -28,14 +27,14 @@ namespace BuckarooSdk.Tests.Services.Emandates
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
-				.SetBasicFields(new DataRequestBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
 				{
-					//Currency = "EUR",
-					//Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					//ReturnUrl = TestSettings.ReturnUrl,
-					//ReturnUrlCancel = TestSettings.ReturnUrlCancel,
-					//ReturnUrlError = TestSettings.ReturnUrlError,
-					//ReturnUrlReject = TestSettings.ReturnUrlReject,
+					Currency = "EUR",
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
 
 				})
 				.EMandate() // Choose the paymentmethod you want to use
@@ -44,11 +43,10 @@ namespace BuckarooSdk.Tests.Services.Emandates
 					EMandateReason = string.Empty,
 					SequenceType = 0,
 					PurchaseId = string.Empty,
-					DebtorbankId = string.Empty,
-					MandateId = string.Empty,
+					DebtorBankId = string.Empty,
 					DebtorReference = string.Empty,
 					Language = string.Empty,
-
+					MandateId = string.Empty,
 				});
 
 			var response = request.Execute();
@@ -63,8 +61,8 @@ namespace BuckarooSdk.Tests.Services.Emandates
 			var request =
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
-				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.DataRequest() // One of the request type options.
+				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -92,8 +90,8 @@ namespace BuckarooSdk.Tests.Services.Emandates
 			var request =
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
-				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.DataRequest() // One of the request type options.
+				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -121,8 +119,8 @@ namespace BuckarooSdk.Tests.Services.Emandates
 			var request =
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
-				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.DataRequest() // One of the request type options.
+				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",

@@ -8,7 +8,7 @@ namespace BuckarooSdk.Services.EMandate
 
 		public string PurchaseId { get; set; }
 
-		public string DebtorbankId { get; set; }
+		public string DebtorBankId { get; set; }
 
 		public string MandateId { get; set; }
 
