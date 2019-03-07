@@ -1,8 +1,8 @@
 ﻿using System;
-using BuckarooSdk.Services.Visa;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;
 using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services.CreditCards.Visa;
 
 namespace BuckarooSdk.Tests.Services.Visa
 {

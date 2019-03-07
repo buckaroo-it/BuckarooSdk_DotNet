@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuckarooSdk.Services.Payconiq.TransactionRequest
+﻿namespace BuckarooSdk.Services.Payconiq.TransactionRequest
 {
 	/// <summary>
 	/// The payconiq pay response class, where customer values of the request can be read from.

@@ -2,8 +2,6 @@
 using System.Diagnostics;
 using System.Globalization;
 using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.Logging;
-using BuckarooSdk.Services.IdealQr.DataRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

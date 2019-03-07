@@ -2,8 +2,8 @@
 using System.Diagnostics;
 using System.Globalization;
 using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.Services.AmericanExpress.TransactionRequest;
-using BuckarooSdk.Services.AmericanExpress.Constants;
+using BuckarooSdk.Services.CreditCards.AmericanExpress.Constants;
+using BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BuckarooSdk.Tests.Services.AmericanExpress
