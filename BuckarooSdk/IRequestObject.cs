@@ -24,5 +24,8 @@ namespace BuckarooSdk
 		List<Service> Services { get; set; }
 
 		void AddService(string serviceName, List<RequestParameter> parameters, string action, string version = "1");
+
+		void AddAdditionalService(string serviceName, List<RequestParameter> parameters, string action,
+			string version = "1");
 	}
 }

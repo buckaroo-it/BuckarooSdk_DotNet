@@ -23,7 +23,7 @@ namespace BuckarooSdk.Data
 
 		public ConfiguredTransaction SetBasicFields(IRequestObject basicFields)
 		{
-			this.DataRequestBase = basicFields;
+			this.RequestObjectBase = basicFields;
 			return new ConfiguredTransaction(this);
 		}
 
@@ -38,11 +38,11 @@ namespace BuckarooSdk.Data
 				Parameters = parameters,
 			};
 
-			if (this.DataRequestBase.Services == null)
+			if (this.RequestObjectBase.Services == null)
 			{
-				this.DataRequestBase.Services = new List<Service>();
+				this.RequestObjectBase.Services = new List<Service>();
 			}
-			this.DataRequestBase.Services.Add(global);
+			this.RequestObjectBase.Services.Add(global);
 		}
 		#endregion
 	}

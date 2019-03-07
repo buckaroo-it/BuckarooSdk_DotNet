@@ -21,15 +21,15 @@ namespace BuckarooSdk.Transaction
 	/// </summary>
 	public class ConfiguredTransaction
 	{
-		internal RequestObject BaseTransaction { get; private set; }
+		internal IRequestObject BaseTransaction { get; }
 
 		/// <summary>
 		/// ConfiguredTransaction primary constructor.
 		/// </summary>
 		/// <param name="transaction"></param>
-		public ConfiguredTransaction(RequestObject transaction)
+		public ConfiguredTransaction(IRequestObject transaction)
 		{
-			this.BaseTransaction = transaction;
+			this.BaseTransaction = transaction.RequestObjectBase;
 		}
 
 		#region "Services"
