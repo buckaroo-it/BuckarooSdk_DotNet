@@ -92,8 +92,6 @@
     <Compile Include="DataTypes\CustomParameter.cs" />
     <Compile Include="DataTypes\AdditionalParameters.cs" />
     <Compile Include="DataTypes\CustomParameters.cs" />
-    <Compile Include="DataTypes\RequestBases\DataBase.cs" />
-    <Compile Include="DataTypes\RequestBases\DataRequestBase.cs" />
     <Compile Include="DataTypes\HttpRequestType.cs" />
     <Compile Include="DataTypes\InvoiceInfoRequestInvoice.cs" />
     <Compile Include="DataTypes\IpAddress.cs" />
@@ -161,7 +159,6 @@
     <Compile Include="DataTypes\Response\Status\StatusSubCode.cs" />
     <Compile Include="DataTypes\Response\Specificiations\SupportedCurrency.cs" />
     <Compile Include="DataTypes\SpecificationRequestedService.cs" />
-    <Compile Include="DataTypes\RequestBases\TransactionBase.cs" />
     <Compile Include="DataTypes\RequestBases\TransactionInvoiceInfoBase.cs" />
     <Compile Include="DataTypes\TransactionReference.cs" />
     <Compile Include="DataTypes\RequestBases\TransactionRefundInfoBase.cs" />
@@ -221,7 +218,6 @@
     <Compile Include="Services\CreditManagement\TransactionRequest\CreditManagementInvoiceRequest.cs" />
     <Compile Include="Services\CreditManagement\TransactionRequest\CreditManagementInvoiceResponse.cs" />
     <Compile Include="Services\CreditManagement\TransactionRequest\CreditManagementTransaction.cs" />
-    <Compile Include="Services\DataRequestServices.cs" />
     <Compile Include="Services\EMandate\EMandateCreateMandateRequest.cs" />
     <Compile Include="Services\EMandate\EMandateCreateMandateResponse.cs" />
     <Compile Include="Services\EMandate\EMandateGetIssuerListRequest.cs" />
