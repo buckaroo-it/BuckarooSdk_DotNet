@@ -8,17 +8,11 @@ namespace BuckarooSdk.Services.EMandate
 		/// <summary>
 		/// The configured transaction
 		/// </summary>
-		private ConfiguredTransaction ConfiguredTransaction { get; }
-		private ConfiguredDataRequest ConfiguredDataRequest { get; }
+		private IRequestObject ConfiguredTransaction { get; }
 
-		internal EMandateRequestObject(ConfiguredTransaction configuredTransaction)
+		internal EMandateRequestObject(IRequestObject configuredTransaction)
 		{
 			this.ConfiguredTransaction = configuredTransaction;
-		}
-
-		internal EMandateRequestObject(ConfiguredDataRequest configuredDataRequest)
-		{
-			this.ConfiguredDataRequest = configuredDataRequest;
 		}
 
 		/// <summary>
@@ -30,7 +24,7 @@ namespace BuckarooSdk.Services.EMandate
 		public ConfiguredServiceDataRequest CreateMandate(EMandateCreateMandateRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredTransaction.RequestObjectBase);
 			configuredServiceDataReqeust.BaseData.AddService("emandate", parameters, "CreateMandate");
 
 			return configuredServiceDataReqeust;
@@ -45,7 +39,7 @@ namespace BuckarooSdk.Services.EMandate
 		public ConfiguredServiceDataRequest GetIssuerList(EMandateGetIssuerListRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredTransaction.RequestObjectBase);
 			configuredServiceDataReqeust.BaseData.AddService("emandate", parameters, "GetIssuerList");
 
 			return configuredServiceDataReqeust;
@@ -60,7 +54,7 @@ namespace BuckarooSdk.Services.EMandate
 		public ConfiguredServiceDataRequest GetStatus(EMandateGetStatusRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredTransaction.RequestObjectBase);
 			configuredServiceDataReqeust.BaseData.AddService("emandate", parameters, "GetStatus");
 
 			return configuredServiceDataReqeust;
@@ -75,7 +69,7 @@ namespace BuckarooSdk.Services.EMandate
 		public ConfiguredServiceDataRequest ModifyMandate(EMandateModifyMandateRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredTransaction.RequestObjectBase);
 			configuredServiceDataReqeust.BaseData.AddService("emandate", parameters, "ModifyMandate");
 
 			return configuredServiceDataReqeust;

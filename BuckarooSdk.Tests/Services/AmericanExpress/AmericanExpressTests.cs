@@ -27,7 +27,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
 					new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -63,7 +63,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
 					new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					Currency = "EUR",
 					AmountCredit = 0.02m,
@@ -91,7 +91,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
 					new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -126,7 +126,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
 					new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -153,7 +153,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
 					new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,

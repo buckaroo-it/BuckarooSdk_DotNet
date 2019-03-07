@@ -27,8 +27,8 @@ namespace BuckarooSdk.Services.P24.TransactionRequest
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
 
-			if(this.ConfiguredTransaction.BaseTransaction.TransactionBase.Currency != null 
-					&& this.ConfiguredTransaction.BaseTransaction.TransactionBase.Currency.Equals("PLN", StringComparison.InvariantCulture))
+			if(this.ConfiguredTransaction.BaseTransaction.RequestObjectBase.Currency != null 
+					&& this.ConfiguredTransaction.BaseTransaction.RequestObjectBase.Currency.Equals("PLN", StringComparison.InvariantCulture))
 			{
 				this.ConfiguredTransaction.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger
 					.AddWarningLogging("P24 requests can only be performed with the currency Polish zloty (PLN)");
@@ -50,8 +50,8 @@ namespace BuckarooSdk.Services.P24.TransactionRequest
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
 
-			if(this.ConfiguredTransaction.BaseTransaction.TransactionBase.Currency != null 
-				&& this.ConfiguredTransaction.BaseTransaction.TransactionBase.Currency.Equals("PLN", StringComparison.InvariantCulture))
+			if(this.ConfiguredTransaction.BaseTransaction.RequestObjectBase.Currency != null 
+				&& this.ConfiguredTransaction.BaseTransaction.RequestObjectBase.Currency.Equals("PLN", StringComparison.InvariantCulture))
 			{
 				this.ConfiguredTransaction.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger
 					.AddWarningLogging("P24 requests can only be performed with the currency Polish zloty (PLN)");

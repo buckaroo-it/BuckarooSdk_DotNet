@@ -7,9 +7,9 @@ namespace BuckarooSdk.Data
 {
 	public class ConfiguredServiceDataRequest
 	{
-		internal Data BaseData { get; set; }
+		internal IRequestObject BaseData { get; set; }
 
-		internal ConfiguredServiceDataRequest(Data data)
+		internal ConfiguredServiceDataRequest(IRequestObject data)
 		{
 			this.BaseData = data;
 		}
@@ -20,7 +20,8 @@ namespace BuckarooSdk.Data
 		/// <returns>General DataResponse object is returned</returns>
 		public RequestResponse Execute()
 		{
-			var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.AuthenticatedRequest.Request, this.BaseData.DataRequestBase, HttpRequestType.Post).Result;
+			// var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.AuthenticatedRequest.Request, this.BaseData.RequestObjectBase, HttpRequestType.Post).Result;
+			var response = Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.AuthenticatedRequest.Request, null, HttpRequestType.Post).Result;
 
 			// relocate logger from request to response
 			response.BuckarooSdkLogger = this.BaseData.AuthenticatedRequest.Request.BuckarooSdkLogger;
@@ -33,8 +34,8 @@ namespace BuckarooSdk.Data
 		/// <returns>General Dataresponse object is returned</returns>
 		public async Task<RequestResponse> ExecuteAsync()
 		{
-			var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.AuthenticatedRequest.Request, this.BaseData.DataRequestBase, HttpRequestType.Post)
-				.ConfigureAwait(false);
+			// var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.AuthenticatedRequest.Request, this.BaseData.RequestObjectBase, HttpRequestType.Post).ConfigureAwait(false);
+			var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseData.AuthenticatedRequest.Request, null, HttpRequestType.Post).ConfigureAwait(false);
 
 			// relocate logger from request to response
 			response.BuckarooSdkLogger = this.BaseData.AuthenticatedRequest.Request.BuckarooSdkLogger;

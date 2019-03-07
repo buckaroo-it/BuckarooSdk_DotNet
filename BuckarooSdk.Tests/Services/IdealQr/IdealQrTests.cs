@@ -25,7 +25,7 @@ namespace BuckarooSdk.Tests.Services.IdealQr
 			var request = this.BuckarooClient.CreateRequest()
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest()
-				.SetBasicFields(new DataBase())
+				.SetBasicFields(new RequestObject())
 				.IdealQr()
 				.Generate(new IdealQrGenerateRequest()
 				{

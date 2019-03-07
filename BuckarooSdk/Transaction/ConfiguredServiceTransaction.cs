@@ -11,9 +11,9 @@ namespace BuckarooSdk.Transaction
 	/// </summary>
     public class ConfiguredServiceTransaction
     {
-        internal TransactionRequest BaseTransaction { get;}
+        internal RequestObject BaseTransaction { get;}
 
-		internal ConfiguredServiceTransaction(TransactionRequest transactionRequest)
+		internal ConfiguredServiceTransaction(RequestObject transactionRequest)
         {
             this.BaseTransaction = transactionRequest;
         }
@@ -40,11 +40,11 @@ namespace BuckarooSdk.Transaction
         /// <returns>General TransactionResponse object is returned</returns>
         public async Task<RequestResponse> ExecuteAsync()
         {
-            var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post)
-				.ConfigureAwait(false);
+			var response = await Connection.Connector.SendRequest<IRequestObject, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction, HttpRequestType.Post).ConfigureAwait(false);
+			// var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, null, HttpRequestType.Post).ConfigureAwait(false);
 
-            // relocate logger from request to response
-            response.BuckarooSdkLogger = this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
+			// relocate logger from request to response
+			response.BuckarooSdkLogger = this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
 
             return response;
         }

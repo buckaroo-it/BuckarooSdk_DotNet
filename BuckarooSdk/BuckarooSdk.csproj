@@ -167,9 +167,9 @@
     <Compile Include="DataTypes\RequestBases\TransactionRefundInfoBase.cs" />
     <Compile Include="DataTypes\RequestBases\TransactionSpecificationBase.cs" />
     <Compile Include="DataTypes\RequestBases\TransactionStatusBase.cs" />
-    <Compile Include="Data\ConfiguredDataRequest.cs" />
     <Compile Include="Data\ConfiguredServiceDataRequest.cs" />
     <Compile Include="Data\Data.cs" />
+    <Compile Include="IRequestObject.cs" />
     <Compile Include="Logging\BuckarooException.cs" />
     <Compile Include="Logging\ExtensiveLogger.cs" />
     <Compile Include="Logging\ILogger.cs" />
@@ -177,6 +177,7 @@
     <Compile Include="Base\PushHandler.cs" />
     <Compile Include="Base\Request.cs" />
     <Compile Include="Base\ResponseHandler.cs" />
+    <Compile Include="RequestObject.cs" />
     <Compile Include="SdkClient.cs" />
     <Compile Include="Services\ActionPush.cs" />
     <Compile Include="Services\CreditCards\AmericanExpress\Constants\Recurring.cs" />

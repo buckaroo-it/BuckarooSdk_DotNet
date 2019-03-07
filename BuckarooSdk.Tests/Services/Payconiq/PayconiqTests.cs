@@ -1,12 +1,9 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.Logging;
-using BuckarooSdk.Services.IdealQr.DataRequest;
-using BuckarooSdk.Services.Payconiq.TransactionRequest;
+﻿using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Diagnostics;
+using System.Globalization;
 
 
 namespace BuckarooSdk.Tests.Services.Payconiq
@@ -28,7 +25,7 @@ namespace BuckarooSdk.Tests.Services.Payconiq
 			var request = this.BuckarooClient.CreateRequest()
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, TestSettings.Test, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -58,7 +55,7 @@ namespace BuckarooSdk.Tests.Services.Payconiq
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					AmountCredit = 0.02m,
 					Currency = "EUR",
@@ -89,16 +86,10 @@ namespace BuckarooSdk.Tests.Services.Payconiq
 			this.BuckarooClient = null;
 		}
 
-		private TestContext testContextInstance;
-
 		/// <summary>
 		///  Gets or sets the test context which provides
 		///  information about and functionality for the current test run.
 		///</summary>
-		public TestContext TestContext
-		{
-			get => this.testContextInstance;
-			set => this.testContextInstance = value;
-		}
+		public TestContext TestContext { get; set; }
 	}
 }

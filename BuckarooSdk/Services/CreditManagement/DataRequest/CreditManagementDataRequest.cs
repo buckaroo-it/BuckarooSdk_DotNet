@@ -4,9 +4,9 @@ namespace BuckarooSdk.Services.CreditManagement.DataRequest
 {
 	public class CreditManagementDataRequest
 	{
-		private ConfiguredDataRequest ConfiguredDataRequest { get; set; }
+		private RequestObject ConfiguredDataRequest { get; set; }
 
-		internal CreditManagementDataRequest(ConfiguredDataRequest configuredDataRequest)
+		internal CreditManagementDataRequest(RequestObject configuredDataRequest)
 		{
 			this.ConfiguredDataRequest = configuredDataRequest;
 		}
@@ -22,7 +22,7 @@ namespace BuckarooSdk.Services.CreditManagement.DataRequest
 		public ConfiguredServiceDataRequest CreateInvoice(CreditManagementCreateInvoiceRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceTransaction = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceTransaction = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.RequestObjectBase);
 			configuredServiceTransaction.BaseData.AddService("CreditManagement3", parameters, "CreateInvoice");
 
 			return configuredServiceTransaction;
@@ -37,7 +37,7 @@ namespace BuckarooSdk.Services.CreditManagement.DataRequest
 		public ConfiguredServiceDataRequest CreateCreditNote(CreditManagementCreateCreditNoteRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.RequestObjectBase);
 			configuredServiceDataRequest.BaseData.AddService("CreditManagement3", parameters, "CreateCombinedInvoice");
 
 			return configuredServiceDataRequest;
@@ -52,7 +52,7 @@ namespace BuckarooSdk.Services.CreditManagement.DataRequest
 		public ConfiguredServiceDataRequest AddOrUpdateDebtor(CreditManagementAddOrUpdateDebtorRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.RequestObjectBase);
 			configuredServiceDataRequest.BaseData.AddService("CreditManagement3", parameters, "AddOrUpdateDebtor");
 
 			return configuredServiceDataRequest;
@@ -67,7 +67,7 @@ namespace BuckarooSdk.Services.CreditManagement.DataRequest
 		public ConfiguredServiceDataRequest CreatePaymentPlan (CreditManagementCreatePaymentPlanRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.RequestObjectBase);
 			configuredServiceDataRequest.BaseData.AddService("CreditManagement3", parameters, "CreatePaymentPlan");
 
 			return configuredServiceDataRequest;
@@ -82,7 +82,7 @@ namespace BuckarooSdk.Services.CreditManagement.DataRequest
 		public ConfiguredServiceDataRequest TerminatePaymentPlan(CreditManagementCreatePaymentPlanRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.RequestObjectBase);
 			configuredServiceDataRequest.BaseData.AddService("CreditManagement3", parameters, "TerminatePaymentPlan");
 
 			return configuredServiceDataRequest;

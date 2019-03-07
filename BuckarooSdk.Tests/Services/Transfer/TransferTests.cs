@@ -1,8 +1,7 @@
-﻿using System;
+﻿using BuckarooSdk.Services.Transfer.TransactionRequest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Globalization;
-using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.Services.Transfer.TransactionRequest;
 
 namespace BuckarooSdk.Tests.Services.Transfer
 {
@@ -23,7 +22,7 @@ namespace BuckarooSdk.Tests.Services.Transfer
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -52,7 +51,7 @@ namespace BuckarooSdk.Tests.Services.Transfer
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+				.SetBasicFields(new RequestObject
 				{
 					AmountCredit = 0.02m,
 					Currency = "EUR",
