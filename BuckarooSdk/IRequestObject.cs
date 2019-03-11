@@ -21,7 +21,7 @@ namespace BuckarooSdk
 		IRequestObject RequestObjectBase { get; set; }
 
 		AuthenticatedRequest AuthenticatedRequest { get; set; }
-		List<Services.Service> ServiceList { get; set; }
+		List<Services.Service> Services { get; set; }
 
 		void AddService(string serviceName, List<RequestParameter> parameters, string action, string version = "1");
 

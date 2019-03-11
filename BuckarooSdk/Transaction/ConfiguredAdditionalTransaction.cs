@@ -11,7 +11,7 @@ namespace BuckarooSdk.Transaction
 			this.BaseTransaction = transactionRequest;
 		}
 
-		#region "ServiceList"
+		#region "Services"
 
 		public CreditManagementTransaction CreditManagement()
 		{

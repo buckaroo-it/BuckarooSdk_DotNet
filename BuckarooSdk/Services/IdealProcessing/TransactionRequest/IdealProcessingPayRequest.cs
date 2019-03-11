@@ -6,7 +6,7 @@
 	public class IdealProcessingPayRequest
 	{
 		/// <summary>
-		/// Use constants in BuckarooSdk.ServiceList.Ideal.IdealIssuer
+		/// Use constants in BuckarooSdk.Services.Ideal.IdealIssuer
 		/// </summary>
 		public string Issuer { get; set; }
 	}

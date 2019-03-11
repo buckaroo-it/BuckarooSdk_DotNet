@@ -12,7 +12,7 @@ namespace BuckarooSdk.Services
 	internal class TransactionServices
     {
 		/// <summary>
-		/// A list of ServiceList.
+		/// A list of Services.
 		/// </summary>
 		[JsonProperty()]
         internal List<Service> ServiceList { get; set; }
