@@ -262,6 +262,16 @@
     <Compile Include="Services\CreditCards\Maestro\MaestroPayRequest.cs" />
     <Compile Include="Services\CreditCards\Maestro\MaestroPayResponse.cs" />
     <Compile Include="Services\CreditCards\Maestro\MaestroTransaction.cs" />
+    <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRemainderRequest.cs" />
+    <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRemainderResponse.cs" />
+    <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRequest.cs" />
+    <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayResponse.cs" />
+    <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonRefundRequest.cs" />
+    <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonRefundResponse.cs" />
+    <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonRequestObject.cs" />
+    <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonPayPush.cs" />
+    <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonPayRemainderPush.cs" />
+    <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonRefundPush.cs" />
     <Compile Include="Services\P24\TransactionRequest\P24RefundResponse.cs" />
     <Compile Include="Services\P24\Push\Pay24PayPush.cs" />
     <Compile Include="Services\P24\Push\Pay24RefundPush.cs" />

@@ -1,13 +1,13 @@
-﻿using BuckarooSdk.Services.Ideal.DataRequest;
-using BuckarooSdk.Services.CreditManagement.DataRequest;
+﻿using BuckarooSdk.Services.CreditManagement.DataRequest;
 using BuckarooSdk.Services.EMandate;
+using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.IdealQr.DataRequest;
 
 namespace BuckarooSdk.Data
 {
 	public class ConfiguredDataRequest
 	{
-		internal Data BaseDataRequest { get; private set;}
+		internal Data BaseDataRequest { get; private set; }
 
 		/// <summary>
 		/// ConfiguredDataRequest primary constructor.
@@ -44,6 +44,7 @@ namespace BuckarooSdk.Data
 		{
 			return new EMandateRequestObject(this);
 		}
+
 		#endregion
 	}
 }

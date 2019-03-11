@@ -94,6 +94,7 @@
     <Compile Include="Services\IdealProcessing\IdealProcessingTests.cs" />
     <Compile Include="Services\IdealQr\IdealQrTests.cs" />
     <Compile Include="Services\Ideal\IdealTests.cs" />
+    <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonTests.cs" />
     <Compile Include="Services\Maestro\MaestroTests.cs" />
     <Compile Include="Services\MasterCard\MasterCardTests.cs" />
     <Compile Include="Services\P24\P24Tests.cs" />

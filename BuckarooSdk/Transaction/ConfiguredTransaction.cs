@@ -5,10 +5,11 @@ using BuckarooSdk.Services.CreditCards.Visa;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
-using BuckarooSdk.Services.PayPerEmail;
-using BuckarooSdk.Services.PayPal;
+using BuckarooSdk.Services.KbcPaymentButton;
 using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
+using BuckarooSdk.Services.PayPal;
+using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
 
@@ -119,20 +120,25 @@ namespace BuckarooSdk.Transaction
 		}
 
 
-	/// <summary>
+		/// <summary>
 		/// The instanciation of the specific American Express Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
-        public AmericanExpressTransaction AmericanExpress()
-        {
-            return new AmericanExpressTransaction(this);
-        }
+		public AmericanExpressTransaction AmericanExpress()
+		{
+			return new AmericanExpressTransaction(this);
+		}
 
-        #endregion
+		#endregion
 
 		public P24Transaction P24()
 		{
 			return new P24Transaction(this);
+		}
+
+		public KbcPaymentButtonRequestObject KbcPaymentButton()
+		{
+			return new KbcPaymentButtonRequestObject(this);
 		}
 	}
 }
