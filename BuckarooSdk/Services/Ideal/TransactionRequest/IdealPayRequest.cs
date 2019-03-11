@@ -19,7 +19,7 @@
 		/// This information is required, but it is possible to let the customer fill it in on the Buckaroo checkout page. In that case, leave 
 		/// the Issuer parameter out and add the basic parameter "ContinueOnIncomplete" with a value of 1. 
 		/// 
-		/// Use constants in BuckarooSdk.Services.Ideal.IdealIssuer
+		/// Use constants in BuckarooSdk.ServiceList.Ideal.IdealIssuer
 		/// </summary>
 		public string Issuer { get; set; }
 	}

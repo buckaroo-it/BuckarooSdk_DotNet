@@ -33,7 +33,7 @@ namespace BuckarooSdk.Transaction
 			this.BaseTransaction.AuthenticatedRequest = transaction.AuthenticatedRequest;
 		}
 
-		#region "Services"
+		#region "ServiceList"
 
 		/// <summary>
 		/// The instanciation of the specific Ideal Service transaction.

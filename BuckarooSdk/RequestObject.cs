@@ -90,7 +90,7 @@ namespace BuckarooSdk
 		/// <summary>
 		/// If no primary service is provided and ContinueOnIncomplete is set, this list of comma 
 		/// separated servicescodes can be used to limit the number of services from which the customer 
-		/// may choose once he is redirected to the payment form. Services which are entered in this field 
+		/// may choose once he is redirected to the payment form. ServiceList which are entered in this field 
 		/// are not selectable. This field is optional.
 		/// </summary>
 		public string ServicesExcludedForClient { get; set; }
@@ -118,14 +118,14 @@ namespace BuckarooSdk
 
 		public IRequestObject RequestObjectBase { get; set; }
 		public AuthenticatedRequest AuthenticatedRequest { get; set; }
-		public List<Services.Service> Services { get; set; }
+		public List<Services.Service> ServiceList { get; set; }
 
 		public RequestObject()
 		{
 			this.CustomParameters = new CustomParameters();
 			this.AdditionalParameters = new AdditionalParameters();
-			// this.Services = new TransactionServices();
-			this.Services = new List<Service>();
+			// this.ServiceList = new TransactionServices();
+			this.ServiceList = new List<Service>();
 			this.OriginalTransactionReference = new TransactionReference();
 			this.ClientIp = new IpAddress();
 		}
@@ -145,12 +145,12 @@ namespace BuckarooSdk
 				Parameters = parameters,
 			};
 
-			if (this.Services == null)
+			if (this.ServiceList == null)
 			{
-				this.Services = new List<Services.Service>();
+				this.ServiceList = new List<Services.Service>();
 			}
 
-			this.Services.Add(service);
+			this.ServiceList.Add(service);
 		}
 
 		/// <summary>
@@ -192,7 +192,7 @@ namespace BuckarooSdk
 				Parameters = parameters
 			};
 
-			this.Services.Add(service);
+			this.ServiceList.Add(service);
 		}
 	}
 }

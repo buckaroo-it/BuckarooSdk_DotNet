@@ -1,11 +1,11 @@
 ﻿//using System;
 //using System.Globalization;
 //using BuckarooSdk.DataTypes.RequestBases;
-//using BuckarooSdk.Services.Maestro;
-//using BuckarooSdk.Services.MasterCard;
+//using BuckarooSdk.ServiceList.Maestro;
+//using BuckarooSdk.ServiceList.MasterCard;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//namespace BuckarooSdk.Tests.Services.Maestro
+//namespace BuckarooSdk.Tests.ServiceList.Maestro
 //{
 //	[TestClass]
 //	public class MaestroTests
