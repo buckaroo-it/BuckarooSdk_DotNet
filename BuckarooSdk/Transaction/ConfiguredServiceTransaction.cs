@@ -11,9 +11,9 @@ namespace BuckarooSdk.Transaction
 	/// </summary>
     public class ConfiguredServiceTransaction
     {
-        internal IRequestObject BaseTransaction { get;}
+        internal RequestObject BaseTransaction { get;}
 
-		internal ConfiguredServiceTransaction(IRequestObject transactionRequest)
+		internal ConfiguredServiceTransaction(RequestObject transactionRequest)
         {
             this.BaseTransaction = transactionRequest;
         }

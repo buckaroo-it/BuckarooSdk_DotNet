@@ -1,14 +1,14 @@
 ﻿using BuckarooSdk.Base;
-using BuckarooSdk.DataTypes;
-using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.DataTypes.Response;
 using BuckarooSdk.Services;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BuckarooSdk.DataTypes;
+using BuckarooSdk.DataTypes.RequestBases;
+using Newtonsoft.Json;
 using Service = BuckarooSdk.Services.Service;
 
 namespace BuckarooSdk
@@ -143,6 +143,19 @@ namespace BuckarooSdk
 			this.Services.Add(service);
 		}
 
+		internal void AddAdditionalService(string serviceName, List<RequestParameter> parameters, string action, string version = "1")
+		{
+			var service = new Service()
+			{
+				Name = serviceName,
+				Action = action,
+				Version = version,
+				Parameters = parameters
+			};
+
+			this.Services.Add(service);
+		}
+
 		/// <summary>
 		/// The parameters that are additional to the service, which means that they can vary in case 
 		/// different service are used. Where the base transaction paremeters are service independent, these
@@ -163,19 +176,6 @@ namespace BuckarooSdk
 				Name = key,
 				Value = value
 			});
-		}
-
-		public void AddAdditionalService(string serviceName, List<RequestParameter> parameters, string action, string version = "1")
-		{
-			var service = new Service()
-			{
-				Name = serviceName,
-				Action = action,
-				Version = version,
-				Parameters = parameters
-			};
-
-			this.Services.Add(service);
 		}
 	}
 }

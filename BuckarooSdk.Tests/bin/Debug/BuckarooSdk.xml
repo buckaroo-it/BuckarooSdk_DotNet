@@ -3409,7 +3409,7 @@
             The configuredTransaction is a transaction where the basic fields are set.
             </summary>
         </member>
-        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.#ctor(BuckarooSdk.IRequestObject)">
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.#ctor(BuckarooSdk.RequestObject)">
             <summary>
             ConfiguredTransaction primary constructor.
             </summary>

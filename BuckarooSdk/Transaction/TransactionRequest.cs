@@ -1,7 +1,7 @@
-﻿using BuckarooSdk.Base;
+﻿using System.Collections.Generic;
+using BuckarooSdk.Base;
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Services;
-using System.Collections.Generic;
 
 namespace BuckarooSdk.Transaction
 {
@@ -22,12 +22,7 @@ namespace BuckarooSdk.Transaction
 		/// <returns> A configured transaction </returns>
 		public ConfiguredTransaction SetBasicFields(IRequestObject basicFields)
 		{
-			this.RequestObjectBase = basicFields;
-
-			// TEST
-			var blaaaa = new ConfiguredTransaction(this);
-			// END TEST
-
+			this.TransactionBase = basicFields;
 			return new ConfiguredTransaction(this);
 		}
 
