@@ -24,5 +24,6 @@ namespace BuckarooSdk.Services
         {
             this.ServiceList = new List<Service>();
         }
+
     }
 }

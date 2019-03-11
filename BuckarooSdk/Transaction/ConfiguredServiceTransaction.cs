@@ -40,9 +40,7 @@ namespace BuckarooSdk.Transaction
         /// <returns>General TransactionResponse object is returned</returns>
         public async Task<RequestResponse> ExecuteAsync()
         {
-			// Original:
-	        var response = await Connection.Connector.SendRequest<IRequestObject, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction, HttpRequestType.Post).ConfigureAwait(false);
-			// var response = await Connection.Connector.SendRequest<IRequestObject, RequestResponse>(this.BaseTransaction, this.BaseTransaction, HttpRequestType.Post).ConfigureAwait(false);
+			var response = await Connection.Connector.SendRequest<IRequestObject, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction, HttpRequestType.Post).ConfigureAwait(false);
 			// var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, null, HttpRequestType.Post).ConfigureAwait(false);
 
 			// relocate logger from request to response

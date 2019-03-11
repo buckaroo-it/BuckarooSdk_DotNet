@@ -120,16 +120,6 @@ namespace BuckarooSdk
 		public AuthenticatedRequest AuthenticatedRequest { get; set; }
 		public List<Services.Service> Services { get; set; }
 
-		public RequestObject()
-		{
-			this.CustomParameters = new CustomParameters();
-			this.AdditionalParameters = new AdditionalParameters();
-			// this.Services = new TransactionServices();
-			this.Services = new List<Service>();
-			this.OriginalTransactionReference = new TransactionReference();
-			this.ClientIp = new IpAddress();
-		}
-
 		/// <summary>
 		/// Adding a service to the datarequest.
 		/// </summary>
@@ -152,13 +142,6 @@ namespace BuckarooSdk
 
 			this.Services.Add(service);
 		}
-
-		/// <summary>
-		/// The parameters that are custom, which means that they can vary in case different services
-		/// are used. Where the base transaction paremeters are service independent, these
-		/// </summary>
-		[JsonProperty()]
-		internal CustomParameters CustomParameters { get; set; }
 
 		/// <summary>
 		/// The parameters that are additional to the service, which means that they can vary in case 

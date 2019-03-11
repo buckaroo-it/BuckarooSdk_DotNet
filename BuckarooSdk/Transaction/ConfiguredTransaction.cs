@@ -30,7 +30,6 @@ namespace BuckarooSdk.Transaction
 		public ConfiguredTransaction(IRequestObject transaction)
 		{
 			this.BaseTransaction = transaction.RequestObjectBase;
-			this.BaseTransaction.AuthenticatedRequest = transaction.AuthenticatedRequest;
 		}
 
 		#region "Services"

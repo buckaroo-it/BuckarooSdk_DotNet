@@ -23,6 +23,11 @@ namespace BuckarooSdk.Transaction
 		public ConfiguredTransaction SetBasicFields(IRequestObject basicFields)
 		{
 			this.RequestObjectBase = basicFields;
+
+			// TEST
+			var blaaaa = new ConfiguredTransaction(this);
+			// END TEST
+
 			return new ConfiguredTransaction(this);
 		}
 
