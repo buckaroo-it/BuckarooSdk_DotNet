@@ -26,6 +26,8 @@ VisualBasicTests
 # Debug builds
 BuckarooSdk/bin/Debug
 BuckarooSdk/obj/Debug
+BuckarooSdk.Tests/bin/Debug
+BuckarooSdk.Tests/obj/Debug
 
 
 # Release builds
