@@ -23,7 +23,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -45,7 +45,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountCredit = 0.02m,
@@ -67,7 +67,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -91,7 +91,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -113,7 +113,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -134,7 +134,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,

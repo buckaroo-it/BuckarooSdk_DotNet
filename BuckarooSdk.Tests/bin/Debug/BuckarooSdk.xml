@@ -101,6 +101,14 @@
             <param name="value"></param>
             <returns></returns>
         </member>
+        <member name="M:BuckarooSdk.DataTypes.RequestBases.DataBase.AddAdditionalParameter(System.String,System.String)">
+            <summary>
+            Adds an additional parameter to the transactionbase. requires a parameter key and a parameter value.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
         <member name="P:BuckarooSdk.DataTypes.RequestBases.DataRequestBase.AmountDebit">
             <summary>
             The debit amount of the transaction.
@@ -221,6 +229,126 @@
             The base properties for a transaction request
             </summary>
         </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.Currency">
+            <summary>
+            The currency of the transaction.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.AmountDebit">
+            <summary>
+            The debit amount of the transaction.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.AmountCredit">
+            <summary>
+            the credit amount of the transaction.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.Invoice">
+            <summary>
+            The invoicenumber of the invoice the transaction belongs to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.Order">
+            <summary>
+            The ordernumber of the order the transaction belongs to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.Description">
+            <summary>
+            The description that belongs to the transaction.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ClientIp">
+            <summary>
+            The Ip Address of the client, that is sending the request. Needs to be instantiated.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ReturnUrl">
+            <summary>
+            The return url, is the url that the user needs to be redirected to.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ReturnUrlCancel">
+            <summary>
+            The return url cancel, is a specific url that the user needs to be redirected to in 
+            case the user cancels the transaction.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ReturnUrlError">
+            <summary>
+            The return url error, is a specific url that the user needs to be redirected to in 
+            case the an error occurs during the processing of the request.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ReturnUrlReject">
+            <summary>
+            The return url reject, is a specific url that the user needs to be redirected to in 
+            case the transaction is rejected by Buckaroo.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.OriginalTransactionKey">
+            <summary>
+            Contains the original transaction key in case there was a previous payment, that is 
+            linked to this payment. e.g. in case of a refund.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.StartRecurrent">
+            <summary>
+            Defines if a transaction should initiate a recurrent transaction. Some services support 
+            recurring payments (You can identify these by determining if they support the action 
+            PayRecurrent). Before being able to do a recurrent payment, a normal payment needs to be 
+            made with this field set to true (the default value for this field is false).
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ContinueOnIncomplete">
+            <summary>
+            Defines a value that states wheter the request should be aborted, or that the user should
+            be redirected in case the request is incomplete.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ServicesSelectableByClient">
+            <summary>
+            If no primary service is provided and ContinueOnIncomplete is set, this list of comma 
+            separated servicescodes can be used to limit the number of services from which the customer 
+            may choose once he is redirected to the payment form. Only services which are entered in 
+            this field are selectable. This field is optional and when empty or missing, the customer 
+            may choose any of the available services
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ServicesExcludedForClient">
+            <summary>
+            If no primary service is provided and ContinueOnIncomplete is set, this list of comma 
+            separated servicescodes can be used to limit the number of services from which the customer 
+            may choose once he is redirected to the payment form. Services which are entered in this field 
+            are not selectable. This field is optional.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.PushUrl">
+            <summary>
+            When provided, this push URL overrides all the push URLs as configured in the payment plaza 
+            under websites for the associated website key.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.PushUrlFailure">
+            <summary>
+            When provided, this push URL overrides the push URL for failed transactions as configured 
+            in the payment plaza under websites for the associated website key.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ClientUserAgent">
+            <summary>
+            This tag can be used to tell the Payment Engine what the user agent of the client’s 
+            webbrowser is. This can be used for statistical purposes but also to perform anti-fraud checks 
+            on transactions.
+            </summary>
+        </member>
+        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.OriginalTransactionReference">
+            <summary>
+            Contains the reference to a previously performed transaction. It has a type, as well as the
+            actual reference
+            </summary>
+        </member>
         <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.CustomParameters">
             <summary>
             The parameters that are custom, which means that they can vary in case different services
@@ -238,17 +366,6 @@
             A services property, which then contains a list of Services
             </summary>
         </member>
-        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.OriginalTransactionReference">
-            <summary>
-            Contains the reference to a previously performed transaction. It has a type, as well as the
-            actual reference
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.DataTypes.RequestBases.TransactionBase.ClientIp">
-            <summary>
-            The Ip Address of the client, that is sending the request. Needs to be instantiated.
-            </summary>
-        </member>
         <member name="M:BuckarooSdk.DataTypes.RequestBases.TransactionBase.#ctor">
             <summary>
             Primary constructor. Al lists are instantiate within this constructor
@@ -257,6 +374,14 @@
         <member name="M:BuckarooSdk.DataTypes.RequestBases.TransactionBase.AddCustomParameter(System.String,System.String)">
             <summary>
             Adds a custom parameter to the transactionbase. requires a parameter key and a parameter value.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.DataTypes.RequestBases.TransactionBase.AddAdditionalParameter(System.String,System.String)">
+            <summary>
+            Adds an additional parameter to the transactionbase. requires a parameter key and a parameter value.
             </summary>
             <param name="key"></param>
             <param name="value"></param>
@@ -277,6 +402,14 @@
         <member name="M:BuckarooSdk.DataTypes.RequestBases.TransactionStatus.AddCustomParameter(System.String,System.String)">
             <summary>
             Adds a custom parameter to the transactionbase. requires a parameter key and a parameter value.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuckarooSdk.DataTypes.RequestBases.TransactionStatus.AddAdditionalParameter(System.String,System.String)">
+            <summary>
+            Adds an additional parameter to the transactionbase. requires a parameter key and a parameter value.
             </summary>
             <param name="key"></param>
             <param name="value"></param>
@@ -1272,6 +1405,18 @@
             The actual reference of the original transaction
             </summary>
         </member>
+        <member name="M:BuckarooSdk.Data.ConfiguredDataRequest.#ctor(BuckarooSdk.Data.Data)">
+            <summary>
+            ConfiguredDataRequest primary constructor.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:BuckarooSdk.Data.ConfiguredDataRequest.Ideal">
+            <summary>
+            The instanciation of the specific Ideal Service transaction.
+            </summary>
+            <returns> An ideal</returns>
+        </member>
         <member name="M:BuckarooSdk.Data.ConfiguredServiceDataRequest.Execute">
             <summary>
             Execute the request, a post to the Buckaroo Payment Engine is prepared and send.
@@ -1289,15 +1434,12 @@
             General data class, to hold a Request object and a list of services
             </summary>
         </member>
-        <member name="P:BuckarooSdk.IRequestObject.Currency">
+        <member name="M:BuckarooSdk.Data.Data.AddService(System.String,System.Collections.Generic.List{BuckarooSdk.Services.RequestParameter},System.String,System.String)">
             <summary>
-            The currency of the transaction.
+            Adding a service to the datarequest.
             </summary>
-        </member>
-        <member name="P:BuckarooSdk.IRequestObject.RequestObjectBase">
-            <summary>
-            The base transaction info
-            </summary>
+            <param name="serviceName">The name of the service</param>
+            <param name="parameters">The list of service parameters</param>
         </member>
         <member name="T:BuckarooSdk.Logging.ILogger">
             <summary>
@@ -1305,147 +1447,6 @@
             required that is not supported by this implementation, a custom logger can be made and used, as long
             as the custom logger implements this interface.
             </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.Currency">
-            <summary>
-            The currency of the transaction.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.AmountDebit">
-            <summary>
-            The debit amount of the transaction.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.AmountCredit">
-            <summary>
-            the credit amount of the transaction.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.Invoice">
-            <summary>
-            The invoicenumber of the invoice the transaction belongs to.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.Order">
-            <summary>
-            The ordernumber of the order the transaction belongs to.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.Description">
-            <summary>
-            The description that belongs to the transaction.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ClientIp">
-            <summary>
-            The Ip Address of the client, that is sending the request. Needs to be instantiated.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ReturnUrl">
-            <summary>
-            The return url, is the url that the user needs to be redirected to.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ReturnUrlCancel">
-            <summary>
-            The return url cancel, is a specific url that the user needs to be redirected to in 
-            case the user cancels the transaction.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ReturnUrlError">
-            <summary>
-            The return url error, is a specific url that the user needs to be redirected to in 
-            case the an error occurs during the processing of the request.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ReturnUrlReject">
-            <summary>
-            The return url reject, is a specific url that the user needs to be redirected to in 
-            case the transaction is rejected by Buckaroo.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.OriginalTransactionKey">
-            <summary>
-            Contains the original transaction key in case there was a previous payment, that is 
-            linked to this payment. e.g. in case of a refund.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.StartRecurrent">
-            <summary>
-            Defines if a transaction should initiate a recurrent transaction. Some services support 
-            recurring payments (You can identify these by determining if they support the action 
-            PayRecurrent). Before being able to do a recurrent payment, a normal payment needs to be 
-            made with this field set to true (the default value for this field is false).
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ContinueOnIncomplete">
-            <summary>
-            Defines a value that states wheter the request should be aborted, or that the user should
-            be redirected in case the request is incomplete.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ServicesSelectableByClient">
-            <summary>
-            If no primary service is provided and ContinueOnIncomplete is set, this list of comma 
-            separated servicescodes can be used to limit the number of services from which the customer 
-            may choose once he is redirected to the payment form. Only services which are entered in 
-            this field are selectable. This field is optional and when empty or missing, the customer 
-            may choose any of the available services
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ServicesExcludedForClient">
-            <summary>
-            If no primary service is provided and ContinueOnIncomplete is set, this list of comma 
-            separated servicescodes can be used to limit the number of services from which the customer 
-            may choose once he is redirected to the payment form. Services which are entered in this field 
-            are not selectable. This field is optional.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.PushUrl">
-            <summary>
-            When provided, this push URL overrides all the push URLs as configured in the payment plaza 
-            under websites for the associated website key.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.PushUrlFailure">
-            <summary>
-            When provided, this push URL overrides the push URL for failed transactions as configured 
-            in the payment plaza under websites for the associated website key.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.ClientUserAgent">
-            <summary>
-            This tag can be used to tell the Payment Engine what the user agent of the client’s 
-            webbrowser is. This can be used for statistical purposes but also to perform anti-fraud checks 
-            on transactions.
-            </summary>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.OriginalTransactionReference">
-            <summary>
-            Contains the reference to a previously performed transaction. It has a type, as well as the
-            actual reference
-            </summary>
-        </member>
-        <member name="M:BuckarooSdk.RequestObject.AddService(System.String,System.Collections.Generic.List{BuckarooSdk.Services.RequestParameter},System.String,System.String)">
-            <summary>
-            Adding a service to the datarequest.
-            </summary>
-            <param name="serviceName">The name of the service</param>
-            <param name="parameters">The list of service parameters</param>
-        </member>
-        <member name="P:BuckarooSdk.RequestObject.AdditionalParameters">
-            <summary>
-            The parameters that are additional to the service, which means that they can vary in case 
-            different service are used. Where the base transaction paremeters are service independent, these
-            </summary>
-        </member>
-        <member name="M:BuckarooSdk.RequestObject.AddAdditionalParameter(System.String,System.String)">
-            <summary>
-            Adds an additional parameter to the transactionbase. requires a parameter key and a parameter value.
-            </summary>
-            <param name="key"></param>
-            <param name="value"></param>
-            <returns></returns>
         </member>
         <member name="T:BuckarooSdk.SdkClient">
              <summary>
@@ -3409,7 +3410,7 @@
             The configuredTransaction is a transaction where the basic fields are set.
             </summary>
         </member>
-        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.#ctor(BuckarooSdk.RequestObject)">
+        <member name="M:BuckarooSdk.Transaction.ConfiguredTransaction.#ctor(BuckarooSdk.Transaction.TransactionRequest)">
             <summary>
             ConfiguredTransaction primary constructor.
             </summary>
@@ -3485,7 +3486,7 @@
             The base transaction info
             </summary>
         </member>
-        <member name="M:BuckarooSdk.Transaction.TransactionRequest.SetBasicFields(BuckarooSdk.IRequestObject)">
+        <member name="M:BuckarooSdk.Transaction.TransactionRequest.SetBasicFields(BuckarooSdk.DataTypes.RequestBases.TransactionBase)">
             <summary>
             Setter for the basic fields of the transaction.
             </summary>
@@ -3496,6 +3497,7 @@
             <summary>
             Primary constructor
             </summary>
+            <param name="request"></param>
         </member>
     </members>
 </doc>

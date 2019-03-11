@@ -35,7 +35,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 				this.BuckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new RequestObject // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -71,7 +71,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 			var request = this.BuckarooClient.CreateRequest()
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -147,7 +147,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					AmountCredit = 0.02m,
 					Currency = "EUR",
@@ -171,7 +171,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 			var request = this.BuckarooClient.CreateRequest()
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					AmountDebit = 0.02m,
 					Currency = "EUR",

@@ -105,8 +105,6 @@ D:\Source\Tools\BuckarooSdk\Trunk\BuckarooSdk_dotnet\BuckarooSdk.Tests\bin\Debug
 D:\Source\Tools\BuckarooSdk\Trunk\BuckarooSdk_dotnet\BuckarooSdk.Tests\bin\Debug\System.Xml.XmlSerializer.dll
 D:\Source\Tools\BuckarooSdk\Trunk\BuckarooSdk_dotnet\BuckarooSdk.Tests\bin\Debug\System.Xml.XPath.dll
 D:\Source\Tools\BuckarooSdk\Trunk\BuckarooSdk_dotnet\BuckarooSdk.Tests\bin\Debug\System.Xml.XPath.XDocument.dll
-D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\obj\Debug\BuckarooSdk.Tests.csprojAssemblyReference.cache
-D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\obj\Debug\BuckarooSdk.Tests.csproj.CoreCompileInputs.cache
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\bin\Debug\BuckarooSdk.Tests.dll.config
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\bin\Debug\BuckarooSdk.Tests.dll
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\bin\Debug\BuckarooSdk.Tests.pdb
@@ -115,6 +113,8 @@ D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\bin\Debug\Newtonsoft.Json.dll
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\bin\Debug\BuckarooSdk.pdb
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\bin\Debug\BuckarooSdk.xml
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\obj\Debug\BuckarooSdk.Tests.csprojAssemblyReference.cache
+D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\obj\Debug\BuckarooSdk.Tests.csproj.CoreCompileInputs.cache
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\obj\Debug\BuckarooSdk.Tests.csproj.CopyComplete
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\obj\Debug\BuckarooSdk.Tests.dll
 D:\Git\public\BuckarooSdk_DotNet\BuckarooSdk.Tests\obj\Debug\BuckarooSdk.Tests.pdb

@@ -23,7 +23,7 @@ namespace BuckarooSdk.Tests.Services.IdealProcessing
 			var request = this.BuckarooClient.CreateRequest()
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,

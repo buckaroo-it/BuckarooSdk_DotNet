@@ -1,11 +1,12 @@
-﻿using BuckarooSdk.Services.PayPerEmail;
+﻿using System;
+using BuckarooSdk.Services.PayPerEmail;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Globalization;
+using BuckarooSdk.DataTypes.RequestBases;
 
 namespace BuckarooSdk.Tests.Services.PayPerEmail
 {
-	[TestClass]
+    [TestClass]
     public class PayPerEmailTests
     {
 		private SdkClient _sdkClient;
@@ -22,8 +23,8 @@ namespace BuckarooSdk.Tests.Services.PayPerEmail
             var request = this._sdkClient.CreateRequest()
                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("en-US"))
                .TransactionRequest()
-               .SetBasicFields(new RequestObject
-			   {
+               .SetBasicFields(new TransactionBase
+               {
                    Currency = "EUR",
                    AmountDebit = 75.00m,
                    Invoice = $"INV_{DateTime.Now.Ticks}",

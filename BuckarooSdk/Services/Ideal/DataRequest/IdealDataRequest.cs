@@ -1,13 +1,12 @@
 ﻿using BuckarooSdk.Data;
-using BuckarooSdk.Transaction;
 
 namespace BuckarooSdk.Services.Ideal.DataRequest
 {
 	public class IdealDataRequest
 	{
-		private ConfiguredTransaction ConfiguredDataRequest { get; set; }
+		private ConfiguredDataRequest ConfiguredDataRequest { get; set; }
 
-		internal IdealDataRequest(ConfiguredTransaction configuredDateRequest)
+		internal IdealDataRequest(ConfiguredDataRequest configuredDateRequest)
 		{
 			this.ConfiguredDataRequest = configuredDateRequest;
 		}

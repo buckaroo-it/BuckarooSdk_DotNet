@@ -4,9 +4,9 @@ namespace BuckarooSdk.Transaction
 {
 	public class ConfiguredAdditionalTransaction
 	{
-		internal RequestObject BaseTransaction { get; private set; }
+		internal TransactionRequest BaseTransaction { get; private set; }
 		
-		public ConfiguredAdditionalTransaction(RequestObject transactionRequest)
+		public ConfiguredAdditionalTransaction(TransactionRequest transactionRequest)
 		{
 			this.BaseTransaction = transactionRequest;
 		}

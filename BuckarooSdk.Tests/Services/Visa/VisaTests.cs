@@ -1,7 +1,8 @@
-﻿using BuckarooSdk.Services.CreditCards.Visa;
+﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Globalization;
+using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services.CreditCards.Visa;
 
 namespace BuckarooSdk.Tests.Services.Visa
 {
@@ -22,14 +23,14 @@ namespace BuckarooSdk.Tests.Services.Visa
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
 					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}"
 				}
-					//.AddAdditionalParameter("add_test1", DateTime.Now.Ticks.ToString())
-					//.AddAdditionalParameter("add_test2", "test")
+					.AddAdditionalParameter("add_test1", DateTime.Now.Ticks.ToString())
+					.AddAdditionalParameter("add_test2", "test")
 				)
 				.Visa()
 
@@ -47,7 +48,7 @@ namespace BuckarooSdk.Tests.Services.Visa
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -69,14 +70,14 @@ namespace BuckarooSdk.Tests.Services.Visa
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
 					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}"
 				}
-					//.AddAdditionalParameter("add_test1", DateTime.Now.Ticks.ToString())
-					//.AddAdditionalParameter("add_test2", "test")
+					.AddAdditionalParameter("add_test1", DateTime.Now.Ticks.ToString())
+					.AddAdditionalParameter("add_test2", "test")
 				)
 				.Visa()
 
@@ -94,7 +95,7 @@ namespace BuckarooSdk.Tests.Services.Visa
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -116,7 +117,7 @@ namespace BuckarooSdk.Tests.Services.Visa
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -138,7 +139,7 @@ namespace BuckarooSdk.Tests.Services.Visa
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,

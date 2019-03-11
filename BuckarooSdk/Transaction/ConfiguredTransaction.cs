@@ -2,11 +2,9 @@
 using BuckarooSdk.Services.CreditCards.Maestro;
 using BuckarooSdk.Services.CreditCards.MasterCard;
 using BuckarooSdk.Services.CreditCards.Visa;
-using BuckarooSdk.Services.CreditManagement.DataRequest;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
-using BuckarooSdk.Services.IdealQr.DataRequest;
 using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.PayPal;
 using BuckarooSdk.Services.P24.TransactionRequest;
@@ -21,13 +19,13 @@ namespace BuckarooSdk.Transaction
 	/// </summary>
 	public class ConfiguredTransaction
 	{
-		internal RequestObject BaseTransaction { get; private set; }
+		internal TransactionRequest BaseTransaction { get; private set; }
 
 		/// <summary>
 		/// ConfiguredTransaction primary constructor.
 		/// </summary>
 		/// <param name="transaction"></param>
-		public ConfiguredTransaction(RequestObject transaction)
+		public ConfiguredTransaction(TransactionRequest transaction)
 		{
 			this.BaseTransaction = transaction;
 		}
@@ -135,21 +133,6 @@ namespace BuckarooSdk.Transaction
 		public P24Transaction P24()
 		{
 			return new P24Transaction(this);
-		}
-
-		public CreditManagementDataRequest CreditManagement()
-		{
-			return new CreditManagementDataRequest(null);
-		}
-
-		public EMandateRequestObject EMandate()
-		{
-			return new EMandateRequestObject(null);
-		}
-
-		public IdealQrDataRequest IdealQr()
-		{
-			return new IdealQrDataRequest(this);
 		}
 	}
 }

@@ -1,7 +1,8 @@
-﻿using BuckarooSdk.Services.SimpleSepaDirectDebit;
+﻿using System;
+using BuckarooSdk.Services.SimpleSepaDirectDebit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Globalization;
+using BuckarooSdk.DataTypes.RequestBases;
 
 namespace BuckarooSdk.Tests.Services.SimpleSepaDirectDebit
 {
@@ -22,7 +23,7 @@ namespace BuckarooSdk.Tests.Services.SimpleSepaDirectDebit
 			var payment = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -51,7 +52,7 @@ namespace BuckarooSdk.Tests.Services.SimpleSepaDirectDebit
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					AmountCredit = 0.02m,
 					Currency = "EUR",

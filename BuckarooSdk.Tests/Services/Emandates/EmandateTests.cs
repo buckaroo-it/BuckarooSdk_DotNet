@@ -27,7 +27,7 @@ namespace BuckarooSdk.Tests.Services.Emandates
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
-				.SetBasicFields(new RequestObject // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -62,7 +62,7 @@ namespace BuckarooSdk.Tests.Services.Emandates
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
-				.SetBasicFields(new RequestObject // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -91,7 +91,7 @@ namespace BuckarooSdk.Tests.Services.Emandates
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
-				.SetBasicFields(new RequestObject // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -120,7 +120,7 @@ namespace BuckarooSdk.Tests.Services.Emandates
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
-				.SetBasicFields(new RequestObject // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",

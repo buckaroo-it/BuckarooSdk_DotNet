@@ -1,6 +1,6 @@
 ﻿namespace BuckarooSdk.Services
 {
-	public class RequestParameter
+    internal class RequestParameter
     {
         public string Name;
         public string GroupType = string.Empty;

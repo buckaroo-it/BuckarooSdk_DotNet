@@ -23,7 +23,7 @@ namespace BuckarooSdk.Tests.Services.P24
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					Currency = "PLN",
 					AmountDebit = 0.02m,
@@ -48,7 +48,7 @@ namespace BuckarooSdk.Tests.Services.P24
 			var request = this._sdkClient.CreateRequest()
 				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new RequestObject
+				.SetBasicFields(new TransactionBase
 				{
 					OriginalTransactionKey = "FDE0FA2B028F4060BE8A3CDE822D211C",
 					Currency = "PLN",

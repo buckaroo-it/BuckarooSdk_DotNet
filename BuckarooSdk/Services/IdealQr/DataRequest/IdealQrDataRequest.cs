@@ -1,13 +1,12 @@
 ﻿using BuckarooSdk.Data;
-using BuckarooSdk.Transaction;
 
 namespace BuckarooSdk.Services.IdealQr.DataRequest
 {
 	public class IdealQrDataRequest
 	{
-		private ConfiguredTransaction ConfiguredDataRequest { get; set; }
+		private ConfiguredDataRequest ConfiguredDataRequest { get; set; }
 
-		internal IdealQrDataRequest(ConfiguredTransaction configuredDateRequest)
+		internal IdealQrDataRequest(ConfiguredDataRequest configuredDateRequest)
 		{
 			this.ConfiguredDataRequest = configuredDateRequest;
 		}
@@ -21,7 +20,7 @@ namespace BuckarooSdk.Services.IdealQr.DataRequest
 		public ConfiguredServiceDataRequest Generate(IdealQrGenerateRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseTransaction);
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
 			configuredServiceDataRequest.BaseData.AddService("IdealQr", parameters, "Generate");
 
 			return configuredServiceDataRequest;

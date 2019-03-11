@@ -25,7 +25,7 @@ namespace BuckarooSdk.Tests.Services.CreditManagement
 			var datarequest = this._sdkClient.CreateRequest()
 			.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, CultureInfo.GetCultureInfo("nl-NL"))
 			.DataRequest()
-			.SetBasicFields(new RequestObject
+			.SetBasicFields(new DataBase
 			{
 				Currency = "EUR",
 				Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",

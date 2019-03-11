@@ -2,7 +2,7 @@
 
 namespace BuckarooSdk.Services
 {
-	public class Service
+    internal class Service
     {
         public string Name { get; set; }
         public string Action { get; set; }

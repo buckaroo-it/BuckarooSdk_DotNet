@@ -56,5 +56,20 @@ namespace BuckarooSdk.DataTypes.RequestBases
 				Value = value
             });
         }
+
+        /// <summary>
+        /// Adds an additional parameter to the transactionbase. requires a parameter key and a parameter value.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public void AddAdditionalParameter(string key, string value)
+        {
+            this.AdditionalParameters.AdditionalParameter.Add(new AdditionalParameter()
+            {
+                Name = key,
+                Value = value
+            });
+        }
 	}
 }

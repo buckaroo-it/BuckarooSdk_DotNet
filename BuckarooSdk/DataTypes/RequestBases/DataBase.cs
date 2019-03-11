@@ -11,7 +11,7 @@ namespace BuckarooSdk.DataTypes.RequestBases
 		public string ReturnUrlReject { get; set; }
 		public string Invoice { get; set; }
 		public string Description { get; set; }
-		// public string Currency { get; set; }
+		public string Currency { get; set; }
 		public decimal Amount { get; set; }
 		public decimal AmountCredit { get; set; }
 		public string OriginalTransactionKey { get; set; }
@@ -43,6 +43,23 @@ namespace BuckarooSdk.DataTypes.RequestBases
 		public DataBase AddCustomParameter(string key, string value)
 		{
 			this.CustomParameters.List.Add(new CustomParameter()
+			{
+				Name = key,
+				Value = value
+			});
+
+			return this;
+		}
+
+		/// <summary>
+		/// Adds an additional parameter to the transactionbase. requires a parameter key and a parameter value.
+		/// </summary>
+		/// <param name="key"></param>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public DataBase AddAdditionalParameter(string key, string value)
+		{
+			this.AdditionalParameters.AdditionalParameter.Add(new AdditionalParameter()
 			{
 				Name = key,
 				Value = value
