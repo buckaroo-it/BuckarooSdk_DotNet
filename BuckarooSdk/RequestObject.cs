@@ -118,14 +118,15 @@ namespace BuckarooSdk
 
 		public IRequestObject RequestObjectBase { get; set; }
 		public AuthenticatedRequest AuthenticatedRequest { get; set; }
-		public List<Services.Service> ServiceList { get; set; }
+		// public List<Services.Service> ServiceList { get; set; }
+		public TransactionServices Services { get; set; }
 
 		public RequestObject()
 		{
 			this.CustomParameters = new CustomParameters();
 			this.AdditionalParameters = new AdditionalParameters();
 			// this.ServiceList = new TransactionServices();
-			this.ServiceList = new List<Service>();
+			this.Services = new TransactionServices();
 			this.OriginalTransactionReference = new TransactionReference();
 			this.ClientIp = new IpAddress();
 		}
@@ -145,12 +146,13 @@ namespace BuckarooSdk
 				Parameters = parameters,
 			};
 
-			if (this.ServiceList == null)
+			if (this.Services == null)
 			{
-				this.ServiceList = new List<Services.Service>();
+				this.Services = new TransactionServices();
 			}
 
-			this.ServiceList.Add(service);
+			// this.Services.Add(service);
+			this.Services.ServiceList.Add(service);
 		}
 
 		/// <summary>
@@ -192,7 +194,8 @@ namespace BuckarooSdk
 				Parameters = parameters
 			};
 
-			this.ServiceList.Add(service);
+			// this.Services.Add(service);
+			this.Services.ServiceList.Add(service);
 		}
 	}
 }

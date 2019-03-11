@@ -38,11 +38,11 @@ namespace BuckarooSdk.Data
 				Parameters = parameters,
 			};
 
-			if (this.RequestObjectBase.ServiceList == null)
+			if (this.RequestObjectBase.Services == null)
 			{
-				this.RequestObjectBase.ServiceList  = new List<Service>();
+				this.RequestObjectBase.Services = new TransactionServices();
 			}
-			this.RequestObjectBase.ServiceList.Add(global);
+			this.RequestObjectBase.Services.ServiceList.Add(global);
 		}
 		#endregion
 	}
