@@ -3319,7 +3319,7 @@
             <param name="basicFields"></param>
             <returns> A configured transaction </returns>
         </member>
-        <member name="M:BuckarooSdk.Transaction.TransactionRequest.#ctor(BuckarooSdk.Base.AuthenticatedRequest,BuckarooSdk.IRequestObject)">
+        <member name="M:BuckarooSdk.Transaction.TransactionRequest.#ctor(BuckarooSdk.Base.AuthenticatedRequest)">
             <summary>
             Primary constructor
             </summary>

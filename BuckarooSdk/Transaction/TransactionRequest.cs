@@ -1,4 +1,7 @@
 ﻿using BuckarooSdk.Base;
+using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services;
+using System.Collections.Generic;
 
 namespace BuckarooSdk.Transaction
 {
@@ -10,7 +13,7 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The base transaction info
 		/// </summary>
-		internal IRequestObject TransactionBase { get; }
+		internal IRequestObject TransactionBase { get; private set; }
 
 		/// <summary>
 		/// Setter for the basic fields of the transaction.
@@ -26,11 +29,14 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// Primary constructor
 		/// </summary>
-		internal TransactionRequest(AuthenticatedRequest authenticatedRequest, IRequestObject transactionBase = null)
+		internal TransactionRequest(AuthenticatedRequest authenticatedRequest)
 		{
-			TransactionBase = transactionBase;
 			authenticatedRequest.Request.Endpoint = Constants.Settings.GatewaySettings.TransactionRequestEndPoint;
 			this.AuthenticatedRequest = authenticatedRequest;
 		}
+
+		#region "Internal methods"
+
+		#endregion
 	}
 }

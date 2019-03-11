@@ -9,7 +9,7 @@ namespace BuckarooSdk.Services
 	/// <summary>
 	/// A class that holds a list of services. 
 	/// </summary>
-	public class TransactionServices
+	internal class TransactionServices
     {
 		/// <summary>
 		/// A list of ServiceList.
