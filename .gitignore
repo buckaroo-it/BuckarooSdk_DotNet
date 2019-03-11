@@ -33,6 +33,8 @@ BuckarooSdk.Tests/obj/Debug
 # Release builds
 BuckarooSdk/bin/Release
 BuckarooSdk/obj/Release
+BuckarooSdk.Tests/bin/Release
+BuckarooSdk.Tests/obj/Release
 
 # build packages
 packages
