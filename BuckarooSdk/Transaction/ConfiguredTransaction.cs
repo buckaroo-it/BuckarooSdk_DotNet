@@ -1,15 +1,17 @@
-﻿using BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest;
-using BuckarooSdk.Services.CreditCards.Maestro;
-using BuckarooSdk.Services.CreditCards.MasterCard;
-using BuckarooSdk.Services.CreditCards.Visa;
+﻿using BuckarooSdk.Services.CreditCards;
+using BuckarooSdk.Services.CreditCards.AmericanExpress;
+using BuckarooSdk.Services.CreditCards.BanContact;
+using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
-using BuckarooSdk.Services.PayPerEmail;
-using BuckarooSdk.Services.PayPal;
 using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
+using BuckarooSdk.Services.PayPal;
+using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
+using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
+using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Transaction
 {
@@ -77,30 +79,62 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Mastercard Service transaction.
+		/// The instanciation of the specific Giropay Service transaction.
 		/// </summary>
-		/// <returns> An ideal</returns>
-		public MasterCardTransaction Mastercard()
+		/// <returns>An Giropay</returns>
+		public GiropayTransaction Giropay()
 		{
-			return new MasterCardTransaction(this);
+			return new GiropayTransaction(this);
+		}
+
+		public CreditCardTransaction MasterCard()
+		{
+			return new CreditCardTransaction(this, ServiceNames.MasterCard);
 		}
 
 		/// <summary>
 		/// The instanciation of the specific Visa Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
-		public VisaTransaction Visa()
+		public CreditCardTransaction Visa()
 		{
-			return new VisaTransaction(this);
+			return new CreditCardTransaction(this, ServiceNames.Visa);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Visa Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction CarteBleueVisa()
+		{
+			return new CreditCardTransaction(this, ServiceNames.CarteBleueVisa);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Visa Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction VisaElectron()
+		{
+			return new CreditCardTransaction(this, ServiceNames.VisaElectron);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Visa Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction VPay()
+		{
+			return new CreditCardTransaction(this, ServiceNames.VPay);
 		}
 
 		/// <summary>
 		/// The instanciation of the specific Maestro Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
-		public MaestroTransaction Maestro()
+		public CreditCardTransaction Maestro()
 		{
-			return new MaestroTransaction(this);
+			return new CreditCardTransaction(this, ServiceNames.Maestro);
 		}
 
 		/// <summary>
@@ -132,6 +166,42 @@ namespace BuckarooSdk.Transaction
 		public P24Transaction P24()
 		{
 			return new P24Transaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific MasterCard Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction Nexi()
+		{
+			return new CreditCardTransaction(this, ServiceNames.Nexi);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific MasterCard Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction CarteBancaire()
+		{
+			return new CreditCardTransaction(this, ServiceNames.CarteBancaire);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific MasterCard Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public BancontactTransaction Bancontact()
+		{
+			return new BancontactTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Sofort Service transaction.
+		/// </summary>
+		/// <returns> An Sofort</returns>
+		public SofortTransaction Sofort()
+		{
+			return new SofortTransaction(this);
 		}
 	}
 }

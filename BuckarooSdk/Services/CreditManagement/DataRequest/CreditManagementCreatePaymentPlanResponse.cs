@@ -1,8 +1,9 @@
-﻿
+﻿using static BuckarooSdk.Constants.Services;
+
 namespace BuckarooSdk.Services.CreditManagement.DataRequest
 {
 	public class CreditManagementCreatePaymentPlanResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.CreditManagement;
+		public override ServiceNames ServiceNames => ServiceNames.CreditManagement;
 	}
 }

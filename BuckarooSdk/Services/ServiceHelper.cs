@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
+using System.Reflection;
 
 namespace BuckarooSdk.Services
 {
 	internal static class ServiceHelper
 	{
-		internal static List<RequestParameter> CreateServiceParameters(object request)
+		internal static List<RequestParameter> CreateServiceParameters(object request, string serviceName = "")
 		{
-			return CreateServiceParametersImplementation(request);
+			return CreateServiceParametersImplementation(request, serviceName);
 		}
 
-		private static List<RequestParameter> CreateServiceParametersImplementation(object fullOrPartialRequest, string groupName = "", string groupId = "")
+		private static List<RequestParameter> CreateServiceParametersImplementation(object fullOrPartialRequest, string serviceName, string groupName = "", string groupId = "")
 		{
 			var result = new List<RequestParameter>();
 
@@ -36,7 +37,7 @@ namespace BuckarooSdk.Services
 					var i = 1;
 					foreach (var item in groupValue)
 					{
-						var subResult = CreateServiceParametersImplementation(groupValue, groupValue.GroupName, i.ToString());
+						var subResult = CreateServiceParametersImplementation(groupValue, serviceName, groupValue.GroupName, i.ToString());
 						result.AddRange(subResult);
 						i++;
 					}
@@ -47,7 +48,7 @@ namespace BuckarooSdk.Services
 				else if (propertyValue is IParameterGroup)
 				{
 					var groupValue = propertyValue as IParameterGroup;
-					var subResult = CreateServiceParametersImplementation(groupValue, groupValue.GroupName);
+					var subResult = CreateServiceParametersImplementation(groupValue, serviceName, groupValue.GroupName, groupId);
 					result.AddRange(subResult);
 				}
 
@@ -59,7 +60,8 @@ namespace BuckarooSdk.Services
 					var i = 1;
 					foreach (var item in collectionValue)
 					{
-						result.Add(CreateParameter(item, property.Name, groupName, i.ToString()));
+						var propertyName = PropertyName(serviceName.ToString(), property);
+						result.Add(CreateParameter(item, propertyName, groupName, i.ToString()));
 						i++;
 					}
 				}
@@ -68,11 +70,29 @@ namespace BuckarooSdk.Services
 				// Make param for this item
 				else
 				{
-					result.Add(CreateParameter(propertyValue, property.Name, groupName));
+					var propertyName = PropertyName(serviceName.ToString(), property);
+					result.Add(CreateParameter(propertyValue, propertyName, groupName));
 				}
 			}
 
 			return result;
+		}
+
+		private static string PropertyName(string serviceName, PropertyInfo property)
+		{
+			var propertyName = property.Name;
+
+			if (property.Name == "CreditcardNumber")
+			{
+				switch (serviceName.ToLower())
+				{
+					case "vpay":
+						propertyName = "VPayCreditcardNumber";
+						break;
+				}
+			}
+
+			return propertyName;
 		}
 
 		private static RequestParameter CreateParameter(object value, string name, string groupName = "", string groupId = "")

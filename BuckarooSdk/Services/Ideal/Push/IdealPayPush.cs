@@ -1,11 +1,13 @@
-﻿namespace BuckarooSdk.Services.Ideal.Push
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Ideal.Push
 {
 	/// <summary>
 	/// 
 	/// </summary>
 	public class IdealPayPush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Ideal;
+		public override ServiceNames ServiceNames => ServiceNames.Ideal;
 
 		/// <summary>
 		/// This is the iDEAL transaction ID.

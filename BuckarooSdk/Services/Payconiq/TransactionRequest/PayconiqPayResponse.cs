@@ -1,11 +1,13 @@
-﻿namespace BuckarooSdk.Services.Payconiq.TransactionRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Payconiq.TransactionRequest
 {
 	/// <summary>
 	/// The payconiq pay response class, where customer values of the request can be read from.
 	/// </summary>
 	public class PayconiqPayResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Payconiq;
+		public override ServiceNames ServiceNames => ServiceNames.Payconiq;
 
 		public string QrUrl { get; set; }
 		public string PayconiqUrl { get; set; }

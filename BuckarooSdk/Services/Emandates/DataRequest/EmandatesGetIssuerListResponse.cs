@@ -1,9 +1,9 @@
-﻿namespace BuckarooSdk.Services.Emandates.DataRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Emandates.DataRequest
 {
 	public class EmandatesGetIssuerListResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Emandates;
-
-
+		public override ServiceNames ServiceNames => ServiceNames.Emandates;
 	}
 }

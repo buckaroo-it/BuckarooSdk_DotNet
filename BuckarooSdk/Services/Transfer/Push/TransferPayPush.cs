@@ -1,10 +1,9 @@
-﻿namespace BuckarooSdk.Services.Transfer.Push
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Transfer.Push
 {
 	public class TransferPayPush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Transfer;
-
-		
-
+		public override ServiceNames ServiceNames => ServiceNames.Transfer;
 	}
 }

@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.Transfer.TransactionRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Transfer.TransactionRequest
 {
     public class TransferPayResponse : ActionResponse
     {
-	    public override ServiceEnum ServiceEnum => ServiceEnum.Transfer;
+	    public override ServiceNames ServiceNames => ServiceNames.Transfer;
 		/// <summary>
 		/// The name of the account where the transfer is originated from.
 		/// </summary>
