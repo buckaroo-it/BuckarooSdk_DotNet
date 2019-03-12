@@ -14,9 +14,10 @@
 		SimpleSepaDirectDebit,
 		Payconiq,
 	    Przelewy24,
+	    EPS,
 
 		// additional services
-	    CreditManagement,
+		CreditManagement,
 		Emandates,
 		Subscriptions,
 	    PayPerEmail,

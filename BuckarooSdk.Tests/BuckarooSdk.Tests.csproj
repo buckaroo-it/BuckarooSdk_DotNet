@@ -91,6 +91,7 @@
     <Compile Include="Services\AmericanExpress\AmericanExpressTests.cs" />
     <Compile Include="Services\CreditManagement\CreditManagementTests.cs" />
     <Compile Include="Services\Emandates\EmandateTests.cs" />
+    <Compile Include="Services\EPS\EPSTests.cs" />
     <Compile Include="Services\IdealProcessing\IdealProcessingTests.cs" />
     <Compile Include="Services\IdealQr\IdealQrTests.cs" />
     <Compile Include="Services\Ideal\IdealTests.cs" />
