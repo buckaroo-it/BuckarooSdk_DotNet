@@ -71,3 +71,4 @@ Temporary Items
 /.idea/.idea.BuckarooSdk
 /SdkService.tests
 /SdkServices.tests
+*.user
