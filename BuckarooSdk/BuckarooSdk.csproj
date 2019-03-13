@@ -331,6 +331,16 @@
     <Compile Include="Services\Emandates\Push\EmandatesCancelMandatePush.cs" />
     <Compile Include="Services\Emandates\Push\EmandatesCreateMandatePush.cs" />
     <Compile Include="Services\Emandates\Push\EmandatesModifyMandatePush.cs" />
+    <Compile Include="Services\EPS\EPSPayRemainderRequest.cs" />
+    <Compile Include="Services\EPS\EPSPayRemainderResponse.cs" />
+    <Compile Include="Services\EPS\EPSPayRequest.cs" />
+    <Compile Include="Services\EPS\EPSPayResponse.cs" />
+    <Compile Include="Services\EPS\EPSRefundRequest.cs" />
+    <Compile Include="Services\EPS\EPSRefundResponse.cs" />
+    <Compile Include="Services\EPS\EPSRequestObject.cs" />
+    <Compile Include="Services\EPS\Push\EPSPayPush.cs" />
+    <Compile Include="Services\EPS\Push\EPSPayRemainderPush.cs" />
+    <Compile Include="Services\EPS\Push\EPSRefundPush.cs" />
     <Compile Include="Services\Giropay\GiropayPayRemainderRequest.cs" />
     <Compile Include="Services\Giropay\GiropayPayRemainderResponse.cs" />
     <Compile Include="Services\Giropay\GiropayPayRequest.cs" />

@@ -1,3 +1,8 @@
+﻿using BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest;
+using BuckarooSdk.Services.CreditCards.Maestro;
+using BuckarooSdk.Services.CreditCards.MasterCard;
+using BuckarooSdk.Services.CreditCards.Visa;
+using BuckarooSdk.Services.EPS;
 ﻿using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.AmericanExpress;
 using BuckarooSdk.Services.CreditCards.BanContact;
@@ -152,21 +157,25 @@ namespace BuckarooSdk.Transaction
 		}
 
 
-	/// <summary>
+		/// <summary>
 		/// The instanciation of the specific American Express Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
-        public AmericanExpressTransaction AmericanExpress()
-        {
-            return new AmericanExpressTransaction(this);
-        }
+		public AmericanExpressTransaction AmericanExpress()
+		{
+			return new AmericanExpressTransaction(this);
+		}
 
-        #endregion
+		#endregion
 
 		public P24Transaction P24()
 		{
 			return new P24Transaction(this);
 		}
+
+		public EPSRequestObject EPS()
+		{
+			return new EPSRequestObject(this);
 
 		/// <summary>
 		/// The instanciation of the specific MasterCard Service transaction.
