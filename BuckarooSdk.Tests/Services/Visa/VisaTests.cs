@@ -2,9 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;
 using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services.CreditCards.Visa;
 using BuckarooSdk.Logging;
 using BuckarooSdk.Services.CreditCards.Request;
-// using BuckarooSdk.Services.CreditCards.Visa;
 using BuckarooSdk.Services.CreditCards.Visa.Request;
 using BuckarooSdk.Tests.Constants;
 

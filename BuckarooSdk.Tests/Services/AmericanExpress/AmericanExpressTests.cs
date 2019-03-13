@@ -1,3 +1,9 @@
+﻿using System;
+using System.Diagnostics;
+using System.Globalization;
+using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services.CreditCards.AmericanExpress.Constants;
+using BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest;
 ﻿using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Logging;
 using BuckarooSdk.Services.CreditCards.AmericanExpress.Request;
