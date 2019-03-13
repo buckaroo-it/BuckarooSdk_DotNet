@@ -18,9 +18,7 @@ using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Services.PayPal;
 using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
-using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
-using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Transaction
 {
@@ -88,62 +86,30 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Giropay Service transaction.
+		/// The instanciation of the specific Mastercard Service transaction.
 		/// </summary>
-		/// <returns>An Giropay</returns>
-		public GiropayTransaction Giropay()
+		/// <returns> An ideal</returns>
+		public MasterCardTransaction Mastercard()
 		{
-			return new GiropayTransaction(this);
-		}
-
-		public CreditCardTransaction MasterCard()
-		{
-			return new CreditCardTransaction(this, ServiceNames.MasterCard);
+			return new MasterCardTransaction(this);
 		}
 
 		/// <summary>
 		/// The instanciation of the specific Visa Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
-		public CreditCardTransaction Visa()
+		public VisaTransaction Visa()
 		{
-			return new CreditCardTransaction(this, ServiceNames.Visa);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific Visa Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction CarteBleueVisa()
-		{
-			return new CreditCardTransaction(this, ServiceNames.CarteBleueVisa);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific Visa Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction VisaElectron()
-		{
-			return new CreditCardTransaction(this, ServiceNames.VisaElectron);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific Visa Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction VPay()
-		{
-			return new CreditCardTransaction(this, ServiceNames.VPay);
+			return new VisaTransaction(this);
 		}
 
 		/// <summary>
 		/// The instanciation of the specific Maestro Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
-		public CreditCardTransaction Maestro()
+		public MaestroTransaction Maestro()
 		{
-			return new CreditCardTransaction(this, ServiceNames.Maestro);
+			return new MaestroTransaction(this);
 		}
 
 		/// <summary>
