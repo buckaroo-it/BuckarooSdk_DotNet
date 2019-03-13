@@ -2,6 +2,10 @@
 using BuckarooSdk.Services.CreditCards.Maestro;
 using BuckarooSdk.Services.CreditCards.MasterCard;
 using BuckarooSdk.Services.CreditCards.Visa;
+using BuckarooSdk.Services.EMandate;
+using BuckarooSdk.Services.Ideal.TransactionRequest;
+using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
+using BuckarooSdk.Services.KbcPaymentButton;
 using BuckarooSdk.Services.EPS;
 ﻿using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.AmericanExpress;
@@ -173,10 +177,15 @@ namespace BuckarooSdk.Transaction
 			return new P24Transaction(this);
 		}
 
+		public KbcPaymentButtonRequestObject KbcPaymentButton()
+		{
+			return new KbcPaymentButtonRequestObject(this);
+		}
+
 		public EPSRequestObject EPS()
 		{
 			return new EPSRequestObject(this);
-
+		}
 		/// <summary>
 		/// The instanciation of the specific MasterCard Service transaction.
 		/// </summary>

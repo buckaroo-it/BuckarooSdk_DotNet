@@ -23,6 +23,19 @@ BuckarooSdk.Tests/Constants/TestSettings.cs
 
 VisualBasicTests
 
+# Debug builds
+BuckarooSdk/bin/Debug
+BuckarooSdk/obj/Debug
+BuckarooSdk.Tests/bin/Debug
+BuckarooSdk.Tests/obj/Debug
+
+
+# Release builds
+BuckarooSdk/bin/Release
+BuckarooSdk/obj/Release
+BuckarooSdk.Tests/bin/Release
+BuckarooSdk.Tests/obj/Release
+
 # Release files
 BuckarooSdk/bin/
 BuckarooSdk.Tests/bin/
