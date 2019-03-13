@@ -79,9 +79,14 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific MasterCard Service transaction.
+		/// The instanciation of the specific Giropay Service transaction.
 		/// </summary>
-		/// <returns> An ideal</returns>
+		/// <returns>An Giropay</returns>
+		public GiropayTransaction Giropay()
+		{
+			return new GiropayTransaction(this);
+		}
+
 		public CreditCardTransaction MasterCard()
 		{
 			return new CreditCardTransaction(this, ServiceNames.MasterCard);
@@ -94,15 +99,6 @@ namespace BuckarooSdk.Transaction
 		public CreditCardTransaction Visa()
 		{
 			return new CreditCardTransaction(this, ServiceNames.Visa);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific Giropay Service transaction.
-		/// </summary>
-		/// <returns>An Giropay</returns>
-		public GiropayTransaction Giropay()
-		{
-			return new GiropayTransaction(this);
 		}
 
 		/// <summary>

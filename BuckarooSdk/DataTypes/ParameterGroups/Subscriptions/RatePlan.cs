@@ -1,6 +1,5 @@
 ﻿using BuckarooSdk.Services;
 using System;
-using Newtonsoft.Json;
 
 namespace BuckarooSdk.DataTypes.ParameterGroups.Subscriptions
 {
