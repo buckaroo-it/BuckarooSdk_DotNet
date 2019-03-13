@@ -1,11 +1,11 @@
 ﻿using System;
+using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest
 {
 	public class AmericanExpressPayRemainderResponse : ActionResponse
 	{
-
-		public override ServiceEnum ServiceEnum => ServiceEnum.AmericanExpress;
+		public override ServiceNames ServiceNames => ServiceNames.AmericanExpress;
 
 		/// <summary>
 		/// The expiration date of the card that is used by the consumer

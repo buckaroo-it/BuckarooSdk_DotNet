@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.Emandates.DataRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Emandates.DataRequest
 {
 	public class EmandatesGetStatusResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Emandates;
+		public override ServiceNames ServiceNames => ServiceNames.Emandates;
 
 		/// <summary>
 		/// Status of emandate

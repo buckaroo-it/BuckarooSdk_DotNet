@@ -1,10 +1,12 @@
-﻿namespace BuckarooSdk.Services.Transfer.TransactionRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Transfer.TransactionRequest
 {
     /// <summary>
     /// A Transfer refund does not have reponse parameters
     /// </summary>
     public class TransferRefundResponse : ActionResponse
     {
-	    public override ServiceEnum ServiceEnum => ServiceEnum.Transfer;
+	    public override ServiceNames ServiceNames => ServiceNames.Transfer;
     }
 }

@@ -1,175 +1,354 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.Services.CreditCards.AmericanExpress.Constants;
-using BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest;
+﻿using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Logging;
+using BuckarooSdk.Services.CreditCards.AmericanExpress.Request;
+using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Globalization;
 
 namespace BuckarooSdk.Tests.Services.AmericanExpress
 {
 	[TestClass]
 	public class AmericanExpressTests
+
 	{
-		private SdkClient _sdkClient;
+		private SdkClient _buckarooClient;
+		private string TestName => nameof(AmericanExpressTests).ToUpper();
 
 		[TestInitialize]
 		public void Setup()
 		{
-			this._sdkClient = new SdkClient(Constants.TestSettings.Logger);
+			this._buckarooClient = new SdkClient(Constants.TestSettings.Logger);
 		}
 
 		[TestMethod]
 		public void PayTest()
 		{
-			var request = this._sdkClient.CreateRequest()
-
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
-					new CultureInfo("nl-NL"))
-				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
-					AmountDebit = 0.02m,
-					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
-					Description = "AMEX_PAY_SDK_TEST",
-					ReturnUrl = Constants.TestSettings.ReturnUrl,
-					ReturnUrlCancel = Constants.TestSettings.ReturnUrlCancel,
-					ReturnUrlError = Constants.TestSettings.ReturnUrlError,
-					ReturnUrlReject = Constants.TestSettings.ReturnUrlReject,
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					AmountDebit = 2,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress()
-				.Pay(new AmericanExpressPayRequest()
+				.AmericanExpress() // Choose the paymentmethod you want to use
+				.Pay(new AmericanExpressPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
-					CustomerEmail = "techsup@buckaroo.nl",
-					BillingFirstName = "Jacobus",
-					ShippingLastName = "Roos",
-					ShippingMethodCode = ShippingMethod.SameDay,
-					Recurring = Recurring.None,
+					RecurringInterval = 0,
+					ShippingMethodCode = string.Empty,
+					Recurring = string.Empty,
+					CustomerIPAddress = string.Empty,
+					VerifyAddress = false,
+					CustomerHTTPBrowserType = string.Empty,
+					CustomerHostServerName = string.Empty,
+					RecurringTimeType = string.Empty,
+					CustomerCardName = string.Empty,
+					AmexCreditcardNumber = string.Empty,
+					CVV4 = string.Empty,
+					ShippingFirstName = string.Empty,
+					ShippingLastName = string.Empty,
+					ShippingStreet = string.Empty,
+					CardExpirationDate = DateTime.MinValue,
+					ShippingHouseNumber = string.Empty,
+					ShippingHouseNumberSuffix = string.Empty,
+					ShippingPostalCode = string.Empty,
+					ShippingCountryCode = string.Empty,
+					ShippingPhoneNumber = string.Empty,
+					CustomerEmail = string.Empty,
+					BillingFirstName = string.Empty,
+					BillingLastName = string.Empty,
+					BillingStreet = string.Empty,
+					BillingHouseNumber = string.Empty,
+					BillingHouseNumberSuffix = string.Empty,
+					BillingPostalCode = string.Empty,
+					BillingPhoneNumber = string.Empty,
 				});
 
 			var response = request.Execute();
-
-			if (response.Status.Code.Code == BuckarooSdk.Constants.Status.PendingInput)
-			{
-				Process.Start(response.RequiredAction.RedirectURL);
-			}
+			
+			// Process.Start(response.RequiredAction.RedirectURL);
+			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
 
 		[TestMethod]
 		public void RefundTest()
 		{
-			var request = this._sdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
-					new CultureInfo("nl-NL"))
-				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
-					AmountCredit = 0.02m,
-					Invoice = "SDK_TEST_636167137486595015",
-					Description = "IDEAL_PAY_SDK_UNITTEST",
-					ReturnUrl = Constants.TestSettings.ReturnUrl,
-					ReturnUrlCancel = Constants.TestSettings.ReturnUrlCancel,
-					ReturnUrlError = Constants.TestSettings.ReturnUrlError,
-					ReturnUrlReject = Constants.TestSettings.ReturnUrlReject,
-					OriginalTransactionKey = "D71088D71A4D49EFA4B1603C50220D89"
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					OriginalTransactionKey = string.Empty,
+					AmountCredit = 2,
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress()
-				.Refund(new AmericanExpressRefundRequest()
+				.AmericanExpress() // Choose the paymentmethod you want to use
+				.Refund(new AmericanExpressRefundRequest // choose the action you want to use and provide the payment method specific info.
 				{
-					// no parameters are required.
+
 				});
+
 			var response = request.Execute();
+
+			// Process.Start(response.RequiredAction.RedirectURL);
+			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
-		
+
 		[TestMethod]
 		public void AuthorizeTest()
 		{
-			this._sdkClient = new SdkClient();
-			var request = this._sdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
-					new CultureInfo("nl-NL"))
-				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
-					AmountDebit = 0.02m,
-					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
-					Description = "IDEAL_PAY_SDK_UNITTEST",
-					ReturnUrl = Constants.TestSettings.ReturnUrl,
-					ReturnUrlCancel = Constants.TestSettings.ReturnUrlCancel,
-					ReturnUrlError = Constants.TestSettings.ReturnUrlError,
-					ReturnUrlReject = Constants.TestSettings.ReturnUrlReject,
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					AmountDebit = 2,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress()
-				.Authorize(new AmericanExpressAuthorizeRequest()
+				.AmericanExpress() // Choose the paymentmethod you want to use
+				.Authorize(new AmericanExpressAuthorizeRequest // choose the action you want to use and provide the payment method specific info.
 				{
-					CustomerEmail = "techsup@buckaroo.nl",
-					BillingFirstName = "Jacobus",
-					ShippingLastName = "Roos",
-					ShippingMethodCode = ShippingMethod.SameDay,
+					RecurringInterval = 0,
+					ShippingMethodCode = string.Empty,
+					Recurring = string.Empty,
+					CustomerIPAddress = string.Empty,
+					VerifyAddress = false,
+					CustomerHTTPBrowserType = string.Empty,
+					CustomerHostServerName = string.Empty,
+					RecurringTimeType = string.Empty,
+					ShippingFirstName = string.Empty,
+					ShippingLastName = string.Empty,
+					ShippingStreet = string.Empty,
+					ShippingHouseNumber = string.Empty,
+					ShippingHouseNumberSuffix = string.Empty,
+					ShippingPostalCode = string.Empty,
+					ShippingCountryCode = string.Empty,
+					ShippingPhoneNumber = string.Empty,
+					CustomerEmail = string.Empty,
+					BillingFirstName = string.Empty,
+					BillingLastName = string.Empty,
+					BillingStreet = string.Empty,
+					BillingHouseNumber = string.Empty,
+					BillingHouseNumberSuffix = string.Empty,
+					BillingPostalCode = string.Empty,
+					BillingPhoneNumber = string.Empty,
+
 				});
 
 			var response = request.Execute();
 
-			if (response.Status.Code.Code == BuckarooSdk.Constants.Status.PendingInput)
-			{
-				Process.Start(response.RequiredAction.RedirectURL);
-			}
+			// Process.Start(response.RequiredAction.RedirectURL);
+			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+		}
+
+		[TestMethod]
+		public void CaptureTest()
+		{
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				{
+					Currency = "EUR",
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					AmountDebit = 2,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					OriginalTransactionKey = "",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+				})
+				.AmericanExpress() // Choose the paymentmethod you want to use
+				.Capture(new AmericanExpressCaptureRequest // choose the action you want to use and provide the payment method specific info.
+				{
+
+				});
+
+			var response = request.Execute();
+
+			// Process.Start(response.RequiredAction.RedirectURL);
+			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
 
 		[TestMethod]
 		public void PayRecurrentTest()
 		{
-			var request = this._sdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
-					new CultureInfo("nl-NL"))
-				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
-					AmountDebit = 0.02m,
-					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
-					Description = "IDEAL_PAY_SDK_UNITTEST",
-					ReturnUrl = Constants.TestSettings.ReturnUrl,
-					ReturnUrlCancel = Constants.TestSettings.ReturnUrlCancel,
-					ReturnUrlError = Constants.TestSettings.ReturnUrlError,
-					ReturnUrlReject = Constants.TestSettings.ReturnUrlReject,
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					AmountDebit = 2,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					OriginalTransactionKey = "",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress()
-				.PayRecurrent(new AmericanExpressPayRecurrentRequest()
+				.AmericanExpress() // Choose the paymentmethod you want to use
+				.PayRecurrent(new AmericanExpressPayRecurrentRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
 				});
 
 			var response = request.Execute();
+
+			// Process.Start(response.RequiredAction.RedirectURL);
+			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+		}
+
+		[TestMethod]
+		public void PayEncryptedTest()
+		{
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				{
+					Currency = "EUR",
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					AmountDebit = 2,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+				})
+				.AmericanExpress() // Choose the paymentmethod you want to use
+				.PayEncrypted(new AmericanExpressPayEncryptedRequest // choose the action you want to use and provide the payment method specific info.
+				{
+					EncryptedCardData = string.Empty,
+
+				});
+
+			var response = request.Execute();
+
+			// Process.Start(response.RequiredAction.RedirectURL);
+			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+		}
+
+		[TestMethod]
+		public void AuthorizeEncryptedTest()
+		{
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				{
+					Currency = "EUR",
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					AmountDebit = 2,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+				})
+				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AuthorizeEncrypted(new AmericanExpressAuthorizeEncryptedRequest // choose the action you want to use and provide the payment method specific info.
+				{
+					EncryptedCardData = string.Empty,
+
+				});
+
+			var response = request.Execute();
+
+			// Process.Start(response.RequiredAction.RedirectURL);
+			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
 
 		[TestMethod]
 		public void PayRemainderTest()
 		{
-			var request = this._sdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, Constants.TestSettings.Test,
-					new CultureInfo("nl-NL"))
-				.TransactionRequest()
-				.SetBasicFields(new TransactionBase
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
 					Currency = "EUR",
-					AmountDebit = 0.02m,
-					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
-					Description = "IDEAL_PAY_SDK_UNITTEST",
-					ReturnUrl = Constants.TestSettings.ReturnUrl,
-					ReturnUrlCancel = Constants.TestSettings.ReturnUrlCancel,
-					ReturnUrlError = Constants.TestSettings.ReturnUrlError,
-					ReturnUrlReject = Constants.TestSettings.ReturnUrlReject,
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					AmountDebit = 2,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					OriginalTransactionKey = "",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress()
-				.PayRemainder(new AmericanExpressPayRemainderRequest()
+				.AmericanExpress() // Choose the paymentmethod you want to use
+				.PayRemainder(new AmericanExpressPayRemainderRequest // choose the action you want to use and provide the payment method specific info.
 				{
+					RecurringInterval = 0,
+					ShippingMethodCode = string.Empty,
+					Recurring = string.Empty,
+					CustomerIPAddress = string.Empty,
+					VerifyAddress = false,
+					CustomerHTTPBrowserType = string.Empty,
+					CustomerHostServerName = string.Empty,
+					RecurringTimeType = string.Empty,
+					ShippingFirstName = string.Empty,
+					ShippingLastName = string.Empty,
+					ShippingStreet = string.Empty,
+					ShippingHouseNumber = string.Empty,
+					ShippingHouseNumberSuffix = string.Empty,
+					ShippingPostalCode = string.Empty,
+					ShippingCountryCode = string.Empty,
+					ShippingPhoneNumber = string.Empty,
+					CustomerEmail = string.Empty,
+					BillingFirstName = string.Empty,
+					BillingLastName = string.Empty,
+					BillingStreet = string.Empty,
+					BillingHouseNumber = string.Empty,
+					BillingHouseNumberSuffix = string.Empty,
+					BillingPostalCode = string.Empty,
+					BillingPhoneNumber = string.Empty,
 
 				});
+
 			var response = request.Execute();
+
+			// Process.Start(response.RequiredAction.RedirectURL);
+			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
+
 	}
 }

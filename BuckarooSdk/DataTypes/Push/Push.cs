@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BuckarooSdk.DataTypes.Response.Status;
 using BuckarooSdk.Services;
+using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.DataTypes.Push
 {
@@ -21,9 +22,9 @@ namespace BuckarooSdk.DataTypes.Push
 		/// </summary>
 		public List<Response.Service> Services { get; set; }
 
-		public List<ServiceEnum> GetServices()
+		public List<ServiceNames> GetServices()
 		{
-			return this.Services.Select(service => (ServiceEnum) Enum.Parse(typeof(ServiceEnum), service.Name, true)).ToList();
+			return this.Services.Select(service => (ServiceNames) Enum.Parse(typeof(ServiceNames), service.Name, true)).ToList();
 		}
 
 		// abstract class Response
@@ -32,7 +33,7 @@ namespace BuckarooSdk.DataTypes.Push
 		{
 			var result = new T();
 
-			var service = this.Services.FirstOrDefault(s => s.Name.Equals(result.ServiceEnum.ToString(), StringComparison.OrdinalIgnoreCase));
+			var service = this.Services.FirstOrDefault(s => s.Name.Equals(result.ServiceNames.ToString(), StringComparison.OrdinalIgnoreCase));
 			if (service == null) return null;
 
 			result.FillFromPush(service);

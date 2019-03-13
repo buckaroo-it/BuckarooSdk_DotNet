@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BuckarooSdk.DataTypes.Response;
 using BuckarooSdk.Services;
+using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Base
 {
@@ -20,15 +21,15 @@ namespace BuckarooSdk.Base
             return new List<DataTypes.Response.Service>();
         }
 
-        internal static ServiceEnum ServiceSwitch(List<ServiceEnum> services)
+        internal static ServiceNames ServiceSwitch(List<ServiceNames> services)
         {
-            var specificService = new ServiceEnum();
+            var specificService = new ServiceNames();
             foreach (var service in services)
             {
                 switch (service)
                 {
-                    case ServiceEnum.Ideal:
-                        specificService = ServiceEnum.Ideal;
+                    case ServiceNames.Ideal:
+                        specificService = ServiceNames.Ideal;
                         break;
                 }
             }

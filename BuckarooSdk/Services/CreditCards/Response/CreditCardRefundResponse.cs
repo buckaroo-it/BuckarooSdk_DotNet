@@ -1,7 +1,9 @@
-﻿namespace BuckarooSdk.Services.CreditCards.Response
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.CreditCards.Response
 {
 	public class CreditCardRefundResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Visa;
+		public override ServiceNames ServiceNames => ServiceNames.CreditCard;
 	}
 }
