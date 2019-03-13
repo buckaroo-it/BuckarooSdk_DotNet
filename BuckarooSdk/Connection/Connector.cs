@@ -26,8 +26,8 @@ namespace BuckarooSdk.Connection
 		static Connector()
 		{
 			// get urls from config, or use default values
-			CheckoutUrl = (CheckoutUrl ?? "https://testcheckout.buckaroo.nl").TrimEnd('/');
-			TestCheckoutUrl = (TestCheckoutUrl ?? "https://testcheckout.buckaroo.nl").TrimEnd('/');
+			//CheckoutUrl = (CheckoutUrl ?? "https://checkout.buckaroo.nl").TrimEnd('/');
+			//TestCheckoutUrl = (TestCheckoutUrl ?? "https://testcheckout.buckaroo.nl").TrimEnd('/');
 
 			// ensure urls are on the correct format
 			ValidateUrls();

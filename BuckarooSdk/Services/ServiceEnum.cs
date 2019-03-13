@@ -15,6 +15,8 @@
 		Payconiq,
 		Przelewy24,
 		KbcPaymentButton,
+	    Przelewy24,
+	    EPS,
 
 		// additional services
 		CreditManagement,

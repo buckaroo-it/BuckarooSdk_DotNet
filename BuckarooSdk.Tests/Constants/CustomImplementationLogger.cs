@@ -7,16 +7,16 @@ namespace BuckarooSdk.Tests.Constants
 	public class CustomImplementationLogger : ILogger
 	{
 		public string LoggingFolder { get; set; }
-		
+		public string LoggingPath { get; set; }
+
 		public CustomImplementationLogger()
 		{
 			this.LoggingFolder = DateTime.Now.Ticks.ToString();
-			Directory.CreateDirectory($"C:\\Users\\S.Roos\\Documents\\Sjaak\\{this.LoggingFolder}");
+			Directory.CreateDirectory($"{ TestSettings.LogBasePath }{this.LoggingFolder}");
 		}
 
 		public void AddProcessLogging(string processLog)
 		{
-			
 		}
 
 		public string GetProcessLog()
@@ -61,12 +61,12 @@ namespace BuckarooSdk.Tests.Constants
 
 		public void HandleRawRequest(string request)
 		{
-			File.WriteAllText($"C:\\Users\\S.Roos\\Documents\\Sjaak\\{this.LoggingFolder}\\rawrequest.json", request);
+			File.WriteAllText($"{ TestSettings.LogBasePath }{this.LoggingFolder}\\rawrequest.json", request);
 		}
 
 		public void HandleRawResponse(string response)
 		{
-			File.WriteAllText($"C:\\Users\\S.Roos\\Documents\\Sjaak\\{this.LoggingFolder}\\rawresponse.json", response);
+			File.WriteAllText($"{ TestSettings.LogBasePath }{this.LoggingFolder}\\rawresponse.json", response);
 		}
 
 		public void Dispose()

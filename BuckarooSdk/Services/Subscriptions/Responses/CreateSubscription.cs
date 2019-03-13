@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using BuckarooSdk.DataTypes.ParameterGroups.Subscriptions;
+﻿using BuckarooSdk.DataTypes.ParameterGroups.Subscriptions;
 
 namespace BuckarooSdk.Services.Subscriptions.Responses
 {

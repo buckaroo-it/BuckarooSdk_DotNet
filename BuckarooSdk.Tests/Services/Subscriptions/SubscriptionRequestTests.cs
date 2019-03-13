@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Globalization;
 using BuckarooSdk.Tests.Constants;
 
 
@@ -19,7 +18,7 @@ namespace BuckarooSdk.Tests.Services.Subscriptions
 		[TestMethod]
 		public void CreateSubscriptionTest()
 		{
-			//var request = this.BuckarooClient.CreateRequest()
+			//var request = this._buckarooClient.CreateRequest()
 			//.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 			//.Subscriptions()
 		}

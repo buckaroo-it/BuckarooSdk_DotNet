@@ -36,6 +36,12 @@ BuckarooSdk/obj/Release
 BuckarooSdk.Tests/bin/Release
 BuckarooSdk.Tests/obj/Release
 
+# Release files
+BuckarooSdk/bin/
+BuckarooSdk.Tests/bin/
+BuckarooSdk/obj/
+BuckarooSdk.Tests/obj/
+
 # build packages
 packages
 
@@ -75,3 +81,4 @@ Temporary Items
 /.idea/.idea.BuckarooSdk
 /SdkService.tests
 /SdkServices.tests
+/TestResults
