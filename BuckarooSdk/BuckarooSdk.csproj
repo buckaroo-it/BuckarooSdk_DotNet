@@ -245,6 +245,14 @@
     <Compile Include="Services\EPS\Push\EPSPayPush.cs" />
     <Compile Include="Services\EPS\Push\EPSPayRemainderPush.cs" />
     <Compile Include="Services\EPS\Push\EPSRefundPush.cs" />
+    <Compile Include="Services\Giropay\GiropayPayRemainderRequest.cs" />
+    <Compile Include="Services\Giropay\GiropayPayRemainderResponse.cs" />
+    <Compile Include="Services\Giropay\GiropayPayRequest.cs" />
+    <Compile Include="Services\Giropay\GiropayPayResponse.cs" />
+    <Compile Include="Services\Giropay\GiropayRefundRequest.cs" />
+    <Compile Include="Services\Giropay\GiropayRefundResponse.cs" />
+    <Compile Include="Services\Giropay\GiropayTransaction.cs" />
+    <Compile Include="Services\Giropay\Push\GiropayRefundPush.cs" />
     <Compile Include="Services\IdealProcessing\Constants\Issuers.cs" />
     <Compile Include="Services\IdealProcessing\Push\IdealProcessingPayPush.cs" />
     <Compile Include="Services\IdealProcessing\TransactionRequest\IdealProcessingPayRequest.cs" />

@@ -3,6 +3,10 @@ using BuckarooSdk.Services.CreditCards.Maestro;
 using BuckarooSdk.Services.CreditCards.MasterCard;
 using BuckarooSdk.Services.CreditCards.Visa;
 using BuckarooSdk.Services.EPS;
+﻿using BuckarooSdk.Services.CreditCards;
+using BuckarooSdk.Services.CreditCards.AmericanExpress;
+using BuckarooSdk.Services.CreditCards.BanContact;
+using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.P24.TransactionRequest;
@@ -138,6 +142,41 @@ namespace BuckarooSdk.Transaction
 		public EPSRequestObject EPS()
 		{
 			return new EPSRequestObject(this);
+		}
+		/// <summary>
+		/// The instanciation of the specific MasterCard Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction Nexi()
+		{
+			return new CreditCardTransaction(this, ServiceNames.Nexi);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific MasterCard Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public CreditCardTransaction CarteBancaire()
+		{
+			return new CreditCardTransaction(this, ServiceNames.CarteBancaire);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific MasterCard Service transaction.
+		/// </summary>
+		/// <returns> An ideal</returns>
+		public BancontactTransaction Bancontact()
+		{
+			return new BancontactTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Sofort Service transaction.
+		/// </summary>
+		/// <returns> An Sofort</returns>
+		public SofortTransaction Sofort()
+		{
+			return new SofortTransaction(this);
 		}
 	}
 }
