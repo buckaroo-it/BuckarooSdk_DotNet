@@ -1,4 +1,6 @@
-﻿namespace BuckarooSdk.Services.Ideal.TransactionRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Ideal.TransactionRequest
 {
 	/// <summary>
 	/// If the request has a valid structure and a valid signature, a transaction will be created in the Payment Engine and a response 
@@ -7,7 +9,7 @@
 	/// </summary>
 	public class IdealPayResponse : ActionResponse
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Ideal;
+		public override ServiceNames ServiceNames => ServiceNames.Ideal;
 
 		/// <summary>
 		/// This is the iDEAL transaction ID.

@@ -31,8 +31,8 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// Primary constructor
 		/// </summary>
-		/// <param name="request"></param>
-        internal TransactionRequest(AuthenticatedRequest authenticatedRequest)
+		/// <param name="authenticatedRequest"></param>
+		internal TransactionRequest(AuthenticatedRequest authenticatedRequest)
         {
             authenticatedRequest.Request.Endpoint = Constants.Settings.GatewaySettings.TransactionRequestEndPoint;
             this.AuthenticatedRequest = authenticatedRequest;

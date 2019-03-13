@@ -1,8 +1,10 @@
-﻿namespace BuckarooSdk.Services.Emandates.Push
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.Emandates.Push
 {
 	public class EmandatesModifyMandatePush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.Emandates;
+		public override ServiceNames ServiceNames => ServiceNames.Emandates;
 
 		/// <summary>
 		/// The mandateId or “mandate reference”, with this id you can retrieve the status from the GetStatus 

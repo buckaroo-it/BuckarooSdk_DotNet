@@ -1,9 +1,11 @@
-﻿namespace BuckarooSdk.Services.CreditManagement.DataRequest
+﻿using static BuckarooSdk.Constants.Services;
+
+namespace BuckarooSdk.Services.CreditManagement.DataRequest
 {
 	public class CreditManagementCreateInvoiceResponse : ActionResponse
 	{
 		// No response Parameters
-		public override ServiceEnum ServiceEnum => ServiceEnum.CreditManagement;
+		public override ServiceNames ServiceNames => ServiceNames.CreditManagement;
 
 		public string InvoiceKey { get;set; }
 	}

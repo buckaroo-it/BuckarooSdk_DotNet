@@ -3,11 +3,7 @@
 	public class CreditCardAuthorizeRequest
 	{
 		/// <summary>
-		/// States wether the transaction is recurring
-		/// </summary>
-		public string Recurring { get; set; }
-		/// <summary>
-		/// The customer code reference.
+		/// Code chosen by merchant to recognize the customer of this transaction
 		/// </summary>
 		public string CustomerCode { get; set; }
 	}

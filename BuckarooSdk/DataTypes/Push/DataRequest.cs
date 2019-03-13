@@ -5,24 +5,13 @@ using BuckarooSdk.DataTypes.Response;
 using BuckarooSdk.DataTypes.Response.Status;
 using BuckarooSdk.Services;
 using Service = BuckarooSdk.DataTypes.Response.Service;
+using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.DataTypes.Push
 {
 	//TODO fill properties
 	public class DataRequest : Push
 	{
-		/// <summary>
-		/// The transaction key
-		/// </summary>
-		public string Key { get; set; }
-		/// <summary>
-		/// The status of the transaction
-		/// </summary>
-		public Status Status { get; set; }
-		/// <summary>
-		/// The list of services that were available for the transaction request
-		/// </summary>
-		public List<Service> Services { get; set; }
 		/// <summary>
 		/// The list of custom parameters that was sent with the transaction request
 		/// </summary>
@@ -100,12 +89,12 @@ namespace BuckarooSdk.DataTypes.Push
 			this.Status = new Status();
 		}
 
-		public List<ServiceEnum> GetServices()
+		public new List<ServiceNames> GetServices()
 		{
-			var services = new List<ServiceEnum>();
+			var services = new List<ServiceNames>();
 			foreach (var service in this.Services)
 			{
-				var serviceEnum = (ServiceEnum)Enum.Parse(typeof(ServiceEnum), service.Name, true);
+				var serviceEnum = (ServiceNames)Enum.Parse(typeof(ServiceNames), service.Name, true);
 				services.Add(serviceEnum);
 			}
 
@@ -113,12 +102,12 @@ namespace BuckarooSdk.DataTypes.Push
 		}
 
 		// abstract class Response
-		public T GetActionResponse<T>()
+		public new T GetActionResponse<T>()
 			where T : ActionResponse, new()
 		{
 			var result = new T();
 
-			var service = this.Services.FirstOrDefault(s => s.Name.Equals(result.ServiceEnum.ToString(), StringComparison.OrdinalIgnoreCase));
+			var service = this.Services.FirstOrDefault(s => s.Name.Equals(result.ServiceNames.ToString(), StringComparison.OrdinalIgnoreCase));
 			if (service == null) return null;
 
 			result.FillFromResponse(service);

@@ -2,7 +2,9 @@
 {
 	public class CreditCardPayRemainderRequest
 	{
-		public string Recurring { get; set; }
+		/// <summary>
+		/// Code chosen by merchant to recognize the customer of this transaction
+		/// </summary>
 		public string CustomerCode { get; set; }
 	}
 }

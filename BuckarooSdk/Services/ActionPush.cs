@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Linq;
 using BuckarooSdk.DataTypes.Response;
+using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Services
 {
 	public abstract class ActionPush
 	{
-		public abstract ServiceEnum ServiceEnum { get; }
+		public abstract ServiceNames ServiceNames { get; }
 
 		internal virtual void FillFromPush(DataTypes.Response.Service servicePush)
 		{

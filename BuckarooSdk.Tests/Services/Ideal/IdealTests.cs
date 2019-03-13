@@ -193,7 +193,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 		{
 			var pushHandler = this.BuckarooClient.GetPushHandler(TestSettings.SecretKey); // Retrieving the pushHandler from de SDK client.
 
-			using (var reader = new StreamReader("C:\\Users\\S.Roos\\Documents\\Sjaak\\IdealPush.json"))
+			using (var reader = new StreamReader($"{ TestSettings.LogBasePath }IdealPush.json"))
 			{
 				// JSON push as it is received by the client system.
 				var jsonString = reader.ReadToEnd();
