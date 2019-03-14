@@ -37,6 +37,7 @@
 			EPS,
 			KbcPaymentButton,
 			EMandate,
+			Dankort,
 		}
 	}
 }

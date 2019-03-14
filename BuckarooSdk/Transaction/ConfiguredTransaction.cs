@@ -136,6 +136,15 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
+		/// The instanciation of the specific Dankort Service transaction.
+		/// </summary>
+		/// <returns> An Dankort</returns>
+		public CreditCardTransaction Dankort()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
+		}
+
+		/// <summary>
 		/// The instanciation of the specific EMandate Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
