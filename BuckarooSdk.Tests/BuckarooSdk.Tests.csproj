@@ -89,8 +89,11 @@
     <Compile Include="General\GeneralTransactionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AmericanExpress\AmericanExpressTests.cs" />
+    <Compile Include="Services\BanContact\BanContactTests.cs" />
+    <Compile Include="Services\CarteBancaire\CarteBancaireTests.cs" />
+    <Compile Include="Services\CarteBleueVisa\CarteBleueVisaTests.cs" />
     <Compile Include="Services\CreditManagement\CreditManagementTests.cs" />
-    <Compile Include="Services\Emandates\EmandateTests.cs" />
+    <Compile Include="Services\EMandate\EMandateTests.cs" />
     <Compile Include="Services\EPS\EPSTests.cs" />
     <Compile Include="Services\Giropay\GiropayTests.cs" />
     <Compile Include="Services\IdealProcessing\IdealProcessingTests.cs" />
@@ -99,14 +102,18 @@
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonTests.cs" />
     <Compile Include="Services\Maestro\MaestroTests.cs" />
     <Compile Include="Services\MasterCard\MasterCardTests.cs" />
+    <Compile Include="Services\Nexi\NexiTests.cs" />
     <Compile Include="Services\P24\P24Tests.cs" />
     <Compile Include="Services\Payconiq\PayconiqTests.cs" />
     <Compile Include="Services\PayPal\PayPalTests.cs" />
     <Compile Include="Services\PayPerEmail\PayPerEmailTests.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitTests.cs" />
+    <Compile Include="Services\Sofort\SofortTests.cs" />
     <Compile Include="Services\Subscriptions\SubscriptionRequestTests.cs" />
     <Compile Include="Services\Transfer\TransferTests.cs" />
+    <Compile Include="Services\VisaElectron\VisaElectronTests.cs" />
     <Compile Include="Services\Visa\VisaTests.cs" />
+    <Compile Include="Services\VPay\VPayTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

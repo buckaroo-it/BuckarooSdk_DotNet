@@ -127,15 +127,6 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific DanKort Service transaction.
-		/// </summary>
-		/// <returns> An DanKort</returns>
-		public CreditCardTransaction DanKort()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.DanKort);
-		}
-
-		/// <summary>
 		/// The instanciation of the specific VPay Service transaction.
 		/// </summary>
 		/// <returns> An VPay</returns>
