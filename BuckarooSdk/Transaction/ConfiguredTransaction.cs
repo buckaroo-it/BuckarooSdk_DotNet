@@ -10,6 +10,7 @@ using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Services.PayPal;
 using BuckarooSdk.Services.PayPerEmail;
+using BuckarooSdk.Services.PaysafeCard;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
 using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
@@ -33,8 +34,101 @@ namespace BuckarooSdk.Transaction
 			this.BaseTransaction = transaction;
 		}
 
-		#region "Services"
+		#region CreditCards
+		/// <summary>
+		/// The instanciation of the specific Visa Service transaction.
+		/// </summary>
+		/// <returns> A Visa</returns>
+		public CreditCardTransaction Visa()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Visa);
+		}
 
+		/// <summary>
+		/// The instanciation of the specific MasterCard Service transaction.
+		/// </summary>
+		/// <returns>A MasterCard</returns>
+		public CreditCardTransaction MasterCard()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.MasterCard);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific CarteBleueVisa Service transaction.
+		/// </summary>
+		/// <returns>A CarteBleueVisa</returns>
+		public CreditCardTransaction CarteBleueVisa()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.CarteBleueVisa);
+		}
+
+
+		/// <summary>
+		/// The instanciation of the specific VisaElectron Service transaction.
+		/// </summary>
+		/// <returns>A VisaElectron</returns>
+		public CreditCardTransaction VisaElectron()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.VisaElectron);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific VPay Service transaction.
+		/// </summary>
+		/// <returns>A VPay</returns>
+		public CreditCardTransaction VPay()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.VPay);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Maestro Service transaction.
+		/// </summary>
+		/// <returns>A Maestro</returns>
+		public CreditCardTransaction Maestro()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Maestro);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific American Express Service transaction.
+		/// </summary>
+		/// <returns>An AmericanExpress</returns>
+		public AmericanExpressTransaction AmericanExpress()
+		{
+			return new AmericanExpressTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Nexi Service transaction.
+		/// </summary>
+		/// <returns>A Nexi</returns>
+		public CreditCardTransaction Nexi()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Nexi);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Carte Bancaire Service transaction.
+		/// </summary>
+		/// <returns>A CarteBancaire</returns>
+		public CreditCardTransaction CarteBancaire()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.CarteBancaire);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Bancontact Service transaction.
+		/// </summary>
+		/// <returns>A Bancontact</returns>
+		public BancontactTransaction Bancontact()
+		{
+			return new BancontactTransaction(this);
+		}
+
+		#endregion
+
+		#region iDeal
 		/// <summary>
 		/// The instanciation of the specific Ideal Service transaction.
 		/// </summary>
@@ -52,6 +146,8 @@ namespace BuckarooSdk.Transaction
 		{
 			return new IdealProcessingTransaction(this);
 		}
+
+		#endregion
 
 		/// <summary>
 		/// The instantiation of the specific Paypermail service transaction.
@@ -81,76 +177,12 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Mastercard Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction Mastercard()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.MasterCard);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific Visa Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction Visa()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Visa);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific MasterCard Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction MasterCard()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.MasterCard);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific CarteBleueVisa Service transaction.
-		/// </summary>
-		/// <returns> An VisaElectron</returns>
-		public CreditCardTransaction CarteBleueVisa()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.CarteBleueVisa);
-		}
-
-
-		/// <summary>
-		/// The instanciation of the specific VisaElectron Service transaction.
-		/// </summary>
-		/// <returns> An VisaElectron</returns>
-		public CreditCardTransaction VisaElectron()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.VisaElectron);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific VPay Service transaction.
-		/// </summary>
-		/// <returns> An VPay</returns>
-		public CreditCardTransaction VPay()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.VPay);
-		}
-
-		/// <summary>
 		/// The instanciation of the specific EMandate Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
 		public EMandateRequestObject EMandate()
 		{
 			return new EMandateRequestObject(this);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific Maestro Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction Maestro()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Maestro);
 		}
 
 		/// <summary>
@@ -167,18 +199,6 @@ namespace BuckarooSdk.Transaction
 			return new PayconiqTransaction(this);
 		}
 
-
-		/// <summary>
-		/// The instanciation of the specific American Express Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public AmericanExpressTransaction AmericanExpress()
-		{
-			return new AmericanExpressTransaction(this);
-		}
-
-		#endregion
-
 		public P24Transaction P24()
 		{
 			return new P24Transaction(this);
@@ -193,31 +213,14 @@ namespace BuckarooSdk.Transaction
 		{
 			return new EPSRequestObject(this);
 		}
-		/// <summary>
-		/// The instanciation of the specific MasterCard Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction Nexi()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Nexi);
-		}
 
 		/// <summary>
-		/// The instanciation of the specific MasterCard Service transaction.
+		/// The instanciation of the specific PaysafeCard Service transaction.
 		/// </summary>
-		/// <returns> An ideal</returns>
-		public CreditCardTransaction CarteBancaire()
+		/// <returns> An PaysafeCard</returns>
+		public PaysafeCardRequestObject PaysafeCard()
 		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.CarteBancaire);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific MasterCard Service transaction.
-		/// </summary>
-		/// <returns> An ideal</returns>
-		public BancontactTransaction Bancontact()
-		{
-			return new BancontactTransaction(this);
+			return new PaysafeCardRequestObject(this);
 		}
 
 		/// <summary>
