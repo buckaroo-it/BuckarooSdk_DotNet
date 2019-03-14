@@ -34,6 +34,9 @@
 			PayPerEmail,
 			IdealQr,
 			Giropay,
+			EPS,
+			KbcPaymentButton,
+			EMandate,
 		}
 	}
 }

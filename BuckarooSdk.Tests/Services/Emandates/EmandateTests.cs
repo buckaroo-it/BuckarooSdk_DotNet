@@ -23,9 +23,6 @@ namespace BuckarooSdk.Tests.Services.Emandates
 		[TestMethod]
 		public void CreateMandateTest()
 		{
-			var request =
-				this._buckarooClient.CreateRequest(new StandardLogger()); // Create a request.
-			
 				var request = this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.

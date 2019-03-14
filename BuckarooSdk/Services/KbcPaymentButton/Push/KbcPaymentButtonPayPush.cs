@@ -5,7 +5,7 @@ namespace BuckarooSdk.Services.KbcPaymentButton.Push
 	/// </summary>
 	public class KbcPaymentButtonPayPush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.KbcPaymentButton;
+		public override Constants.Services.ServiceNames ServiceNames => Constants.Services.ServiceNames.KbcPaymentButton;
 
 		/// <summary>
 		/// The name of the issuer (bank) of the consumer.

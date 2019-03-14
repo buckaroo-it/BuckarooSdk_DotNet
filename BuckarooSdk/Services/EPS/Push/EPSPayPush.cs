@@ -5,7 +5,7 @@ namespace BuckarooSdk.Services.EPS.Push
 	/// </summary>
 	public class EPSPayPush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.EPS;
+		public override Constants.Services.ServiceNames ServiceNames => Constants.Services.ServiceNames.EPS;
 
 		/// <summary>
 		/// The name of the issuer (bank) of the consumer.
