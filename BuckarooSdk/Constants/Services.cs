@@ -38,6 +38,11 @@
 			EMandate,
 			PaysafeCard,
 			Dankort,
+			AfterpayAcceptgiro,
+			AfterpayDigiaccept,
+			Afterpay,
+			OnlineGiro,
+			OnlineGiroLite,
 		}
 	}
 }

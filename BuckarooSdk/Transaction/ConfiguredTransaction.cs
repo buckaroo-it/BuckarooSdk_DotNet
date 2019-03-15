@@ -1,11 +1,17 @@
-﻿using BuckarooSdk.Services.CreditCards;
+﻿using BuckarooSdk.Services.Afterpay;
+using BuckarooSdk.Services.AfterpayAcceptgiro;
+using BuckarooSdk.Services.AfterpayDigiaccept;
+using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.EPS;
 using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
+using BuckarooSdk.Services.INGHomePay;
 using BuckarooSdk.Services.KbcPaymentButton;
+using BuckarooSdk.Services.OnlineGiro;
+using BuckarooSdk.Services.OnlineGiroLite;
 using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Services.PayPal;
@@ -35,6 +41,15 @@ namespace BuckarooSdk.Transaction
 		}
 
 		#region CreditCards
+		/// <summary>
+		/// The instanciation of the specific Dankort Service transaction.
+		/// </summary>
+		/// <returns> An Dankort</returns>
+		public CreditCardTransaction Dankort()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
+		}
+
 		/// <summary>
 		/// The instanciation of the specific Visa Service transaction.
 		/// </summary>
@@ -149,6 +164,21 @@ namespace BuckarooSdk.Transaction
 
 		#endregion
 
+		#region AfterPay
+		/// <summary>
+		/// The instanciation of the specific AfterpayAcceptgiro Service transaction.
+		/// </summary>
+
+		public AfterpayAcceptgiroRequestObject AfterpayAcceptgiro()
+    {
+			return new AfterpayAcceptgiroRequestObject(this);
+		}
+		/// <returns> An INGHomePay</returns>
+		public INGHomePayRequestObject INGHomePay()
+		{
+			return new INGHomePayRequestObject(this);
+		}
+		
 		/// <summary>
 		/// The instanciation of the specific Dankort Service transaction.
 		/// </summary>
@@ -156,6 +186,40 @@ namespace BuckarooSdk.Transaction
 		public CreditCardTransaction Dankort()
 		{
 			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific AfterpayDigiaccept Service transaction.
+		/// </summary>
+		public AfterpayDigiacceptRequestObject AfterpayDigiaccept()
+		{
+			return new AfterpayDigiacceptRequestObject(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Afterpay Service transaction.
+		/// </summary>
+		public AfterpayRequestObject Afterpay()
+		{
+			return new AfterpayRequestObject(this);
+		}
+		#endregion
+      
+		/// The instantiation of the specific OnlineGiro service transaction.
+		/// </summary>
+		/// <returns></returns>
+		public OnlineGiroRequestObject OnlineGiro()
+		{
+			return new OnlineGiroRequestObject(this);
+		}
+
+		/// <summary>
+		/// The instantiation of the specific OnlineGiroLite service transaction.
+		/// </summary>
+		/// <returns></returns>
+		public OnlineGiroLiteRequestObject OnlineGiroLite()
+		{
+			return new OnlineGiroLiteRequestObject(this);
 		}
 
 		/// <summary>
