@@ -8,7 +8,10 @@ using BuckarooSdk.Services.EPS;
 using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
+using BuckarooSdk.Services.INGHomePay;
 using BuckarooSdk.Services.KbcPaymentButton;
+using BuckarooSdk.Services.OnlineGiro;
+using BuckarooSdk.Services.OnlineGiroLite;
 using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Services.PayPal;
@@ -165,9 +168,24 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instanciation of the specific AfterpayAcceptgiro Service transaction.
 		/// </summary>
+
 		public AfterpayAcceptgiroRequestObject AfterpayAcceptgiro()
-		{
+    {
 			return new AfterpayAcceptgiroRequestObject(this);
+		}
+		/// <returns> An INGHomePay</returns>
+		public INGHomePayRequestObject INGHomePay()
+		{
+			return new INGHomePayRequestObject(this);
+		}
+		
+		/// <summary>
+		/// The instanciation of the specific Dankort Service transaction.
+		/// </summary>
+		/// <returns> An Dankort</returns>
+		public CreditCardTransaction Dankort()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
 		}
 
 		/// <summary>
@@ -186,6 +204,23 @@ namespace BuckarooSdk.Transaction
 			return new AfterpayRequestObject(this);
 		}
 		#endregion
+      
+		/// The instantiation of the specific OnlineGiro service transaction.
+		/// </summary>
+		/// <returns></returns>
+		public OnlineGiroRequestObject OnlineGiro()
+		{
+			return new OnlineGiroRequestObject(this);
+		}
+
+		/// <summary>
+		/// The instantiation of the specific OnlineGiroLite service transaction.
+		/// </summary>
+		/// <returns></returns>
+		public OnlineGiroLiteRequestObject OnlineGiroLite()
+		{
+			return new OnlineGiroLiteRequestObject(this);
+		}
 
 		/// <summary>
 		/// The instantiation of the specific Paypermail service transaction.

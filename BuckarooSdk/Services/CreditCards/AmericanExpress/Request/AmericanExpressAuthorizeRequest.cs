@@ -45,6 +45,9 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 
 		public string ShippingPhoneNumber { get; set; }
 
+		/// <summary>
+		/// The email address of the customer where the email needs to be send to.
+		/// </summary>
 		public string CustomerEmail { get; set; }
 
 		public string BillingFirstName { get; set; }

@@ -400,6 +400,9 @@
     <Compile Include="Services\Ideal\TransactionRequest\IdealTransaction.cs" />
     <Compile Include="Services\Ideal\TransactionRequest\IdealPayResponse.cs" />
     <Compile Include="Services\ActionResponse.cs" />
+    <Compile Include="Services\INGHomePay\INGHomePayPayRequest.cs" />
+    <Compile Include="Services\INGHomePay\INGHomePayPayResponse.cs" />
+    <Compile Include="Services\INGHomePay\INGHomePayRequestObject.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRemainderRequest.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRemainderResponse.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRequest.cs" />
@@ -410,6 +413,14 @@
     <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonPayPush.cs" />
     <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonPayRemainderPush.cs" />
     <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonRefundPush.cs" />
+    <Compile Include="Services\OnlineGiroLite\OnlineGiroLitePaymentInvitationRequest.cs" />
+    <Compile Include="Services\OnlineGiroLite\OnlineGiroLitePaymentInvitationResponse.cs" />
+    <Compile Include="Services\OnlineGiroLite\OnlineGiroLiteRequestObject.cs" />
+    <Compile Include="Services\OnlineGiroLite\Push\OnlineGiroLitePaymentInvitationPush.cs" />
+    <Compile Include="Services\OnlineGiro\OnlineGiroPaymentInvitationRequest.cs" />
+    <Compile Include="Services\OnlineGiro\OnlineGiroPaymentInvitationResponse.cs" />
+    <Compile Include="Services\OnlineGiro\OnlineGiroRequestObject.cs" />
+    <Compile Include="Services\OnlineGiro\Push\OnlineGiroPaymentInvitationPush.cs" />
     <Compile Include="Services\P24\TransactionRequest\P24RefundResponse.cs" />
     <Compile Include="Services\P24\Push\Pay24PayPush.cs" />
     <Compile Include="Services\P24\Push\Pay24RefundPush.cs" />

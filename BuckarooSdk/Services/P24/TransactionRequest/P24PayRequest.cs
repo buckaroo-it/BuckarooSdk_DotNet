@@ -6,8 +6,19 @@
 	/// </summary>
 	public class P24PayRequest
 	{
+		/// <summary>
+		/// The email address of the customer where the email needs to be send to.
+		/// </summary>
 		public string CustomerEmail { get; set; }
+
+		/// <summary>
+		/// The first name of the customer.
+		/// </summary>
 		public string CustomerFirstName { get; set; }
+
+		/// <summary>
+		/// The last name of the customer.
+		/// </summary>
 		public string CustomerLastName { get; set; }
 
 	}

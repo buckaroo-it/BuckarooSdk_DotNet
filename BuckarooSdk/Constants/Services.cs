@@ -41,6 +41,8 @@
 			AfterpayAcceptgiro,
 			AfterpayDigiaccept,
 			Afterpay,
+			OnlineGiro,
+			OnlineGiroLite,
 		}
 	}
 }
