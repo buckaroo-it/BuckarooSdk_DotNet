@@ -36,7 +36,8 @@
 			EPS,
 			KbcPaymentButton,
 			EMandate,
-			PaysafeCard
+			PaysafeCard,
+			Dankort,
 		}
 	}
 }

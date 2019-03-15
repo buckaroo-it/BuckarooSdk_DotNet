@@ -93,6 +93,7 @@
     <Compile Include="Services\CarteBancaire\CarteBancaireTests.cs" />
     <Compile Include="Services\CarteBleueVisa\CarteBleueVisaTests.cs" />
     <Compile Include="Services\CreditManagement\CreditManagementTests.cs" />
+    <Compile Include="Services\Dankort\DankortTests.cs" />
     <Compile Include="Services\EMandate\EMandateTests.cs" />
     <Compile Include="Services\EPS\EPSTests.cs" />
     <Compile Include="Services\Giropay\GiropayTests.cs" />

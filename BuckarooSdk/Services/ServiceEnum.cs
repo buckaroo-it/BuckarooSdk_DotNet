@@ -15,7 +15,7 @@
 		Payconiq,
 		Przelewy24,
 		KbcPaymentButton,
-		EPS,
+	    EPS,
 
 		// additional services
 		CreditManagement,
@@ -23,5 +23,6 @@
 		Subscriptions,
 		PayPerEmail,
 		IdealQr,
+		Dankort,
 	}
 }

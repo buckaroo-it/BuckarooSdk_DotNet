@@ -150,6 +150,15 @@ namespace BuckarooSdk.Transaction
 		#endregion
 
 		/// <summary>
+		/// The instanciation of the specific Dankort Service transaction.
+		/// </summary>
+		/// <returns> An Dankort</returns>
+		public CreditCardTransaction Dankort()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
+		}
+
+		/// <summary>
 		/// The instantiation of the specific Paypermail service transaction.
 		/// </summary>
 		/// <returns></returns>
