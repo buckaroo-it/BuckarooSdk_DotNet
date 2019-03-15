@@ -6,6 +6,8 @@ using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.KbcPaymentButton;
+using BuckarooSdk.Services.OnlineGiro;
+using BuckarooSdk.Services.OnlineGiroLite;
 using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Services.PayPal;
@@ -156,6 +158,24 @@ namespace BuckarooSdk.Transaction
 		public CreditCardTransaction Dankort()
 		{
 			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
+		}
+
+		/// <summary>
+		/// The instantiation of the specific OnlineGiro service transaction.
+		/// </summary>
+		/// <returns></returns>
+		public OnlineGiroRequestObject OnlineGiro()
+		{
+			return new OnlineGiroRequestObject(this);
+		}
+
+		/// <summary>
+		/// The instantiation of the specific OnlineGiroLite service transaction.
+		/// </summary>
+		/// <returns></returns>
+		public OnlineGiroLiteRequestObject OnlineGiroLite()
+		{
+			return new OnlineGiroLiteRequestObject(this);
 		}
 
 		/// <summary>
