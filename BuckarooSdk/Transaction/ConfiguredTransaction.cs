@@ -5,6 +5,7 @@ using BuckarooSdk.Services.EPS;
 using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
+using BuckarooSdk.Services.INGHomePay;
 using BuckarooSdk.Services.KbcPaymentButton;
 using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
@@ -149,6 +150,15 @@ namespace BuckarooSdk.Transaction
 
 		#endregion
 
+		/// <summary>
+		/// The instanciation of the specific Dankort Service transaction.
+		/// </summary>
+		/// <returns> An INGHomePay</returns>
+		public INGHomePayRequestObject INGHomePay()
+		{
+			return new INGHomePayRequestObject(this);
+		}
+		
 		/// <summary>
 		/// The instanciation of the specific Dankort Service transaction.
 		/// </summary>

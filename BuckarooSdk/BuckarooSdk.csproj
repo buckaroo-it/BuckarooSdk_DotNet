@@ -356,6 +356,9 @@
     <Compile Include="Services\Ideal\TransactionRequest\IdealTransaction.cs" />
     <Compile Include="Services\Ideal\TransactionRequest\IdealPayResponse.cs" />
     <Compile Include="Services\ActionResponse.cs" />
+    <Compile Include="Services\INGHomePay\INGHomePayPayRequest.cs" />
+    <Compile Include="Services\INGHomePay\INGHomePayPayResponse.cs" />
+    <Compile Include="Services\INGHomePay\INGHomePayRequestObject.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRemainderRequest.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRemainderResponse.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRequest.cs" />
