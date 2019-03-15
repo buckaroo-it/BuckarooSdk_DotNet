@@ -38,6 +38,8 @@
 			EMandate,
 			PaysafeCard,
 			Dankort,
+			OnlineGiro,
+			OnlineGiroLite,
 		}
 	}
 }
