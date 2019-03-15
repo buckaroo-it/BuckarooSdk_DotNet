@@ -1,4 +1,7 @@
-﻿using BuckarooSdk.Services.CreditCards;
+﻿using BuckarooSdk.Services.Afterpay;
+using BuckarooSdk.Services.AfterpayAcceptgiro;
+using BuckarooSdk.Services.AfterpayDigiaccept;
+using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.EPS;
@@ -35,6 +38,15 @@ namespace BuckarooSdk.Transaction
 		}
 
 		#region CreditCards
+		/// <summary>
+		/// The instanciation of the specific Dankort Service transaction.
+		/// </summary>
+		/// <returns> An Dankort</returns>
+		public CreditCardTransaction Dankort()
+		{
+			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
+		}
+
 		/// <summary>
 		/// The instanciation of the specific Visa Service transaction.
 		/// </summary>
@@ -149,14 +161,31 @@ namespace BuckarooSdk.Transaction
 
 		#endregion
 
+		#region AfterPay
 		/// <summary>
-		/// The instanciation of the specific Dankort Service transaction.
+		/// The instanciation of the specific AfterpayAcceptgiro Service transaction.
 		/// </summary>
-		/// <returns> An Dankort</returns>
-		public CreditCardTransaction Dankort()
+		public AfterpayAcceptgiroRequestObject AfterpayAcceptgiro()
 		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
+			return new AfterpayAcceptgiroRequestObject(this);
 		}
+
+		/// <summary>
+		/// The instanciation of the specific AfterpayDigiaccept Service transaction.
+		/// </summary>
+		public AfterpayDigiacceptRequestObject AfterpayDigiaccept()
+		{
+			return new AfterpayDigiacceptRequestObject(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Afterpay Service transaction.
+		/// </summary>
+		public AfterpayRequestObject Afterpay()
+		{
+			return new AfterpayRequestObject(this);
+		}
+		#endregion
 
 		/// <summary>
 		/// The instantiation of the specific Paypermail service transaction.
