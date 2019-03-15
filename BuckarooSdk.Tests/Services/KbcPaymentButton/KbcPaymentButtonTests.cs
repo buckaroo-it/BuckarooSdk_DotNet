@@ -76,7 +76,6 @@ namespace BuckarooSdk.Tests.Services.KbcPaymentButton
 				{
 					CustomerIBAN = string.Empty,
 					CustomerAccountName = string.Empty,
-
 				});
 
 			var response = request.Execute();

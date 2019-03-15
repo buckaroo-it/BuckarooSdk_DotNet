@@ -43,6 +43,7 @@
 			Afterpay,
 			OnlineGiro,
 			OnlineGiroLite,
+			Klarna,
 		}
 	}
 }
