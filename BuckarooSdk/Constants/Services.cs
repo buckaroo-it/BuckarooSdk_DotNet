@@ -29,7 +29,6 @@
 			Sofort,
 			//// additional services
 			CreditManagement,
-			Emandates,
 			//Subscriptions,
 			PayPerEmail,
 			IdealQr,
@@ -37,6 +36,7 @@
 			EPS,
 			KbcPaymentButton,
 			EMandate,
+			PaysafeCard,
 			Dankort,
 		}
 	}

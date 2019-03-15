@@ -385,6 +385,13 @@
     <Compile Include="Services\PayPal\Push\PayPalPayRecurrentPush.cs" />
     <Compile Include="Services\PayPal\Push\PayPalRefundPush.cs" />
     <Compile Include="Services\PayPerEmail\Push\PayPerEmailPaymentInvitationPush.cs" />
+    <Compile Include="Services\PaysafeCard\PaysafeCardPayRemainderRequest.cs" />
+    <Compile Include="Services\PaysafeCard\PaysafeCardPayRemainderResponse.cs" />
+    <Compile Include="Services\PaysafeCard\PaysafeCardPayRequest.cs" />
+    <Compile Include="Services\PaysafeCard\PaysafeCardPayResponse.cs" />
+    <Compile Include="Services\PaysafeCard\PaysafeCardRequestObject.cs" />
+    <Compile Include="Services\PaysafeCard\Push\PaysafeCardPayPush.cs" />
+    <Compile Include="Services\PaysafeCard\Push\PaysafeCardPayRemainderPush.cs" />
     <Compile Include="Services\ServiceEnum.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayRequest.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitPayResponse.cs" />
