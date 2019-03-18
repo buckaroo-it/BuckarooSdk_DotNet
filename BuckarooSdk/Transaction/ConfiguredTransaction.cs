@@ -1,6 +1,7 @@
 ﻿using BuckarooSdk.Services.Afterpay;
 using BuckarooSdk.Services.AfterpayAcceptgiro;
 using BuckarooSdk.Services.AfterpayDigiaccept;
+using BuckarooSdk.Services.Capayable;
 using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
 using BuckarooSdk.Services.EMandate;
@@ -178,15 +179,6 @@ namespace BuckarooSdk.Transaction
 		{
 			return new INGHomePayRequestObject(this);
 		}
-		
-		/// <summary>
-		/// The instanciation of the specific Dankort Service transaction.
-		/// </summary>
-		/// <returns> An Dankort</returns>
-		public CreditCardTransaction Dankort()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
-		}
 
 		/// <summary>
 		/// The instanciation of the specific AfterpayDigiaccept Service transaction.
@@ -204,10 +196,14 @@ namespace BuckarooSdk.Transaction
 			return new AfterpayRequestObject(this);
 		}
 		#endregion
-      
+
+		/// The instantiation of the specific Capayable service transaction.
+		public CapayableRequestObject Capayable()
+		{
+			return new CapayableRequestObject(this);
+		}
+
 		/// The instantiation of the specific OnlineGiro service transaction.
-		/// </summary>
-		/// <returns></returns>
 		public OnlineGiroRequestObject OnlineGiro()
 		{
 			return new OnlineGiroRequestObject(this);
