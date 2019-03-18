@@ -178,15 +178,6 @@ namespace BuckarooSdk.Transaction
 		{
 			return new INGHomePayRequestObject(this);
 		}
-		
-		/// <summary>
-		/// The instanciation of the specific Dankort Service transaction.
-		/// </summary>
-		/// <returns> An Dankort</returns>
-		public CreditCardTransaction Dankort()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
-		}
 
 		/// <summary>
 		/// The instanciation of the specific AfterpayDigiaccept Service transaction.

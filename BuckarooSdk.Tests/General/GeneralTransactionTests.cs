@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using BuckarooSdk;
 using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BuckarooSdk.Tests.General
@@ -46,6 +48,30 @@ namespace BuckarooSdk.Tests.General
 			Assert.AreEqual(3, response.Services.Count);
 		}
 
+		[TestMethod]
+		public void NoServiceTransactionTest()
+		{
+			IEnumerable<string> transactionsToBeCanceled = new List<string>()
+			{
+				"94436C07DE6F44EBACBF26CB561F17B3",
+			};
+			var request = this.SdkClient.CreateRequest()
+				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest()
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				{
+					Currency = "EUR",
+					AmountDebit = 0.02m,
+					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
+					Description = "IDEAL_PAY_SDK_UNITTEST",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+				});
+			
+
+		}
 		[TestMethod]
 		public void CancelTransactionTest()
 		{
