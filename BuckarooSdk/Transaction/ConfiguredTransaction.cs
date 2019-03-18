@@ -10,6 +10,7 @@ using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.INGHomePay;
 using BuckarooSdk.Services.KbcPaymentButton;
+using BuckarooSdk.Services.Klarna;
 using BuckarooSdk.Services.OnlineGiro;
 using BuckarooSdk.Services.OnlineGiroLite;
 using BuckarooSdk.Services.P24.TransactionRequest;
@@ -178,15 +179,6 @@ namespace BuckarooSdk.Transaction
 		{
 			return new INGHomePayRequestObject(this);
 		}
-		
-		/// <summary>
-		/// The instanciation of the specific Dankort Service transaction.
-		/// </summary>
-		/// <returns> An Dankort</returns>
-		public CreditCardTransaction Dankort()
-		{
-			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
-		}
 
 		/// <summary>
 		/// The instanciation of the specific AfterpayDigiaccept Service transaction.
@@ -275,6 +267,11 @@ namespace BuckarooSdk.Transaction
 		public P24Transaction P24()
 		{
 			return new P24Transaction(this);
+		}
+		
+		public KlarnaRequestObject Klarna()
+		{
+			return new KlarnaRequestObject(this);
 		}
 
 		public KbcPaymentButtonRequestObject KbcPaymentButton()

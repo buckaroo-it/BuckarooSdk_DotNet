@@ -105,6 +105,7 @@
     <Compile Include="Services\Ideal\IdealTests.cs" />
     <Compile Include="Services\INGHomePay\INGHomePayTests.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonTests.cs" />
+    <Compile Include="Services\Klarna\KlarnaTests.cs" />
     <Compile Include="Services\Maestro\MaestroTests.cs" />
     <Compile Include="Services\MasterCard\MasterCardTests.cs" />
     <Compile Include="Services\Nexi\NexiTests.cs" />
