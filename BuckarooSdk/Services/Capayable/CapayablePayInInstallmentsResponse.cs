@@ -1,7 +1,7 @@
 namespace BuckarooSdk.Services.Capayable
-		{
-		public class CapayablePayInInstallmentsResponse
-		{
-			
-		}
+{
+	public class CapayablePayInInstallmentsResponse
+	{
+
 	}
+}

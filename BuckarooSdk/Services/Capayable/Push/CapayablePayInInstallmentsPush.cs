@@ -7,8 +7,6 @@ namespace BuckarooSdk.Services.Capayable.Push
 	{
 		public override Constants.Services.ServiceNames ServiceNames => Constants.Services.ServiceNames.Capayable;
 
-		
-
 		/// <summary>
 		/// The name of the issuer (bank) of the consumer.
 		/// </summary>

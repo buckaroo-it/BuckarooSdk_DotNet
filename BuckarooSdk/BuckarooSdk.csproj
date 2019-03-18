@@ -83,6 +83,13 @@
     <Compile Include="Constants\Services.cs" />
     <Compile Include="Constants\Settings.cs" />
     <Compile Include="Constants\Status.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Capayable\Address.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Capayable\Company.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Capayable\Email.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Capayable\Person.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Capayable\Phone.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Capayable\ProductLine.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Capayable\SubTotalLine.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\Debtor.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlan.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlanCharge.cs" />

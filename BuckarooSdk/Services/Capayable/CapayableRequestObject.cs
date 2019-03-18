@@ -2,23 +2,23 @@ using BuckarooSdk.Transaction;
 
 namespace BuckarooSdk.Services.Capayable
 {
-    public class CapayableRequestObject
-    {
-        /// <summary>
+	public class CapayableRequestObject
+	{
+		/// <summary>
 		/// The configured transaction
 		/// </summary>
-        private ConfiguredTransaction ConfiguredTransaction { get; }
+		private ConfiguredTransaction ConfiguredTransaction { get; }
 
-        internal CapayableRequestObject(ConfiguredTransaction configuredTransaction)
-        {
-            this.ConfiguredTransaction = configuredTransaction;
-        }
+		internal CapayableRequestObject(ConfiguredTransaction configuredTransaction)
+		{
+			this.ConfiguredTransaction = configuredTransaction;
+		}
 
 		/// <summary>
-        /// The Pay function creates a configured transaction with an CapayablePayRequest request, 
-        /// that is ready to be executed.
-        /// </summary>
-        /// <param name="request">A CapayablePayRequest</param>
+		/// The Pay function creates a configured transaction with an CapayablePayRequest request, 
+		/// that is ready to be executed.
+		/// </summary>
+		/// <param name="request">A CapayablePayRequest</param>
 		/// <returns></returns>
 		public ConfiguredServiceTransaction Pay(CapayablePayRequest request)
 		{
@@ -29,11 +29,11 @@ namespace BuckarooSdk.Services.Capayable
 			return configuredServiceTransaction;
 		}
 
-/// <summary>
-        /// The Refund function creates a configured transaction with an CapayableRefundRequest request, 
-        /// that is ready to be executed.
-        /// </summary>
-        /// <param name="request">A CapayableRefundRequest</param>
+		/// <summary>
+		/// The Refund function creates a configured transaction with an CapayableRefundRequest request, 
+		/// that is ready to be executed.
+		/// </summary>
+		/// <param name="request">A CapayableRefundRequest</param>
 		/// <returns></returns>
 		public ConfiguredServiceTransaction Refund(CapayableRefundRequest request)
 		{
@@ -44,11 +44,11 @@ namespace BuckarooSdk.Services.Capayable
 			return configuredServiceTransaction;
 		}
 
-/// <summary>
-        /// The PayInInstallments function creates a configured transaction with an CapayablePayInInstallmentsRequest request, 
-        /// that is ready to be executed.
-        /// </summary>
-        /// <param name="request">A CapayablePayInInstallmentsRequest</param>
+		/// <summary>
+		/// The PayInInstallments function creates a configured transaction with an CapayablePayInInstallmentsRequest request, 
+		/// that is ready to be executed.
+		/// </summary>
+		/// <param name="request">A CapayablePayInInstallmentsRequest</param>
 		/// <returns></returns>
 		public ConfiguredServiceTransaction PayInInstallments(CapayablePayInInstallmentsRequest request)
 		{
@@ -58,7 +58,5 @@ namespace BuckarooSdk.Services.Capayable
 
 			return configuredServiceTransaction;
 		}
-
-
 	}
 }

@@ -3,7 +3,9 @@ using BuckarooSdk.Logging;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Diagnostics;
 using System.Globalization;
+using BuckarooSdk.DataTypes.ParameterGroups.Capayable;
 using BuckarooSdk.Services.Capayable;
 
 namespace BuckarooSdk.Tests.Services.Capayable
@@ -29,6 +31,11 @@ namespace BuckarooSdk.Tests.Services.Capayable
 				.TransactionRequest() // One of the request type options.
 				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
+					ClientIp = new DataTypes.IpAddress()
+					{
+						Type = DataTypes.InternetProtocolVersion.IPv4,
+						Address = "127.0.0.1"
+					},
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					ReturnUrl = TestSettings.ReturnUrl,
@@ -42,28 +49,51 @@ namespace BuckarooSdk.Tests.Services.Capayable
 				.Capayable() // Choose the paymentmethod you want to use
 				.Pay(new CapayablePayRequest // choose the action you want to use and provide the payment method specific info.
 				{
-					CustomerType = string.Empty, // Mandatory
-					LastName = string.Empty, // Mandatory
-					Initials = string.Empty, // Mandatory
-					Culture = string.Empty, // Mandatory
-					Gender = 0, // Mandatory
-					BirthDate = DateTime.MinValue, // Mandatory
-					Street = string.Empty, // Mandatory
-					HouseNumber = 0, // Mandatory
-					HouseNumberSuffix = string.Empty,
-					ZipCode = string.Empty, // Mandatory
-					City = string.Empty, // Mandatory
-					Country = string.Empty, // Mandatory
-					Phone = string.Empty, // Mandatory
-					Fax = string.Empty,
-					Email = string.Empty, // Mandatory
-					ChamberOfCommerce = string.Empty,
+					CustomerType = "Debtor", // Mandatory
 					InvoiceDate = DateTime.MinValue, // Mandatory
-					Code = string.Empty, // Mandatory
-					Quantity = 0, // Mandatory
-					Price = 0, // Mandatory
-					Name = string.Empty,
-					Value = string.Empty,
+					Person = new Person
+					{
+						LastName = "de Tester",// Mandatory
+						Initials = "JdT",// Mandatory
+						Gender = 1,// Mandatory
+						Culture = "nl-NL",// Mandatory
+						BirthDate = DateTime.MinValue,// Mandatory
+					},
+					Address = new Address
+					{
+						Street = "Straatje",// Mandatory
+						HouseNumber = 1,// Mandatory
+						HouseNumberSuffix = string.Empty,
+						ZipCode = "1234AB",// Mandatory
+						City = "Stadje",// Mandatory
+						Country = "NL",// Mandatory
+					},
+					Phone = new CustomerPhone
+					{
+						Phone = "11187654321",// Mandatory
+						Fax = string.Empty,
+					},
+					Email = new EmailAddress
+					{
+						Email = "jan@jdt.nl",// Mandatory
+					},
+					Company = new Company
+					{
+						Name = string.Empty,
+						ChamberOfCommerce = string.Empty,
+					},
+					ProductLine = new ProductLine
+					{
+						Code = "1234",// Mandatory
+						Name = "ProductNaam",// Mandatory
+						Quantity = 1,// Mandatory
+						Price = 12,// Mandatory
+					},
+					SubTotalLine = new SubTotalLine
+					{
+						Name = string.Empty,
+						Value = string.Empty,
+					},
 				});
 
 			var response = request.Execute();
@@ -81,6 +111,11 @@ namespace BuckarooSdk.Tests.Services.Capayable
 				.TransactionRequest() // One of the request type options.
 				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
+					ClientIp = new DataTypes.IpAddress()
+					{
+						Type = DataTypes.InternetProtocolVersion.IPv4,
+						Address = "127.0.0.1"
+					},
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					ReturnUrl = TestSettings.ReturnUrl,
@@ -113,6 +148,11 @@ namespace BuckarooSdk.Tests.Services.Capayable
 				.TransactionRequest() // One of the request type options.
 				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
+					ClientIp = new DataTypes.IpAddress()
+					{
+						Type = DataTypes.InternetProtocolVersion.IPv4,
+						Address = "127.0.0.1"
+					},
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					ReturnUrl = TestSettings.ReturnUrl,
@@ -126,28 +166,51 @@ namespace BuckarooSdk.Tests.Services.Capayable
 				.PayInInstallments(new CapayablePayInInstallmentsRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					IsInThreeGuarantee = string.Empty,
-					CustomerType = string.Empty, // Mandatory
-					LastName = "de Tester", // Mandatory
-					Initials = "J", // Mandatory
-					Gender = 1, // Mandatory
-					Culture = "nl-NL", // Mandatory
-					BirthDate = new DateTime(1966, 12, 12), // Mandatory
-					Street = "Straatnaam", // Mandatory
-					HouseNumber = 1, // Mandatory
-					HouseNumberSuffix = string.Empty,
-					ZipCode = "1234AB", // Mandatory
-					City = "Stadje", // Mandatory
-					Country = "NL", // Mandatory
-					Phone = "00012345678", // Mandatory
-					Fax = string.Empty,
-					Email = "jan@jdt.com", // Mandatory
-					ChamberOfCommerce = string.Empty,
-					InvoiceDate = new DateTime(2020, 12, 12), // Mandatory
-					Code = string.Empty, // Mandatory
-					Quantity = 1, // Mandatory
-					Price = 12, // Mandatory
-					Name = string.Empty,
-					Value = string.Empty,
+					CustomerType = "Debtor", // Mandatory
+					InvoiceDate = DateTime.MinValue, // Mandatory
+					Person = new Person
+					{
+						LastName = "de Tester",// Mandatory
+						Initials = "JdT",// Mandatory
+						Gender = 1,// Mandatory
+						Culture = "nl-NL",// Mandatory
+						BirthDate = DateTime.MinValue,// Mandatory
+					},
+					Address = new Address
+					{
+						Street = "Straatje",// Mandatory
+						HouseNumber = 1,// Mandatory
+						HouseNumberSuffix = string.Empty,
+						ZipCode = "1234AB",// Mandatory
+						City = "Stadje",// Mandatory
+						Country = "NL",// Mandatory
+					},
+					Phone = new CustomerPhone
+					{
+						Phone = "11187654321",// Mandatory
+						Fax = string.Empty,
+					},
+					Email = new EmailAddress
+					{
+						Email = "jan@jdt.nl",// Mandatory
+					},
+					Company = new Company
+					{
+						Name = string.Empty,
+						ChamberOfCommerce = string.Empty,
+					},
+					ProductLine = new ProductLine
+					{
+						Code = "1234",// Mandatory
+						Name = "ProductNaam",// Mandatory
+						Quantity = 1,// Mandatory
+						Price = 12,// Mandatory
+					},
+					SubTotalLine = new SubTotalLine
+					{
+						Name = string.Empty,
+						Value = string.Empty,
+					},
 				});
 
 			var response = request.Execute();
@@ -163,3 +226,5 @@ namespace BuckarooSdk.Tests.Services.Capayable
 		}
 	}
 }
+
+

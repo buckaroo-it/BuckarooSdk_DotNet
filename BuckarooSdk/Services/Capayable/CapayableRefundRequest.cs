@@ -1,8 +1,7 @@
 namespace BuckarooSdk.Services.Capayable
-		{
+{
+	public class CapayableRefundRequest
+	{
 
-		public class CapayableRefundRequest
-		{
-			
-		}
 	}
+}
