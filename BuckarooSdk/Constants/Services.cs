@@ -44,6 +44,7 @@
 			OnlineGiro,
 			OnlineGiroLite,
 			Klarna,
+			Ippies,
 		}
 	}
 }

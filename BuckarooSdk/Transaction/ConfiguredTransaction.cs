@@ -9,6 +9,7 @@ using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.INGHomePay;
+using BuckarooSdk.Services.Ippies;
 using BuckarooSdk.Services.KbcPaymentButton;
 using BuckarooSdk.Services.Klarna;
 using BuckarooSdk.Services.OnlineGiro;
@@ -196,9 +197,14 @@ namespace BuckarooSdk.Transaction
 			return new AfterpayRequestObject(this);
 		}
 		#endregion
-      
+
+		/// The instantiation of the specific Ippies service transaction.
+		public IppiesRequestObject Ippies()
+		{
+			return new IppiesRequestObject(this);
+		}
+
 		/// The instantiation of the specific OnlineGiro service transaction.
-		/// </summary>
 		/// <returns></returns>
 		public OnlineGiroRequestObject OnlineGiro()
 		{
