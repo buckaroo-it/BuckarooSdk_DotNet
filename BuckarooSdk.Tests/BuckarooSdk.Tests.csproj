@@ -109,6 +109,7 @@
     <Compile Include="Services\Maestro\MaestroTests.cs" />
     <Compile Include="Services\MasterCard\MasterCardTests.cs" />
     <Compile Include="Services\Nexi\NexiTests.cs" />
+    <Compile Include="Services\Notification\NotificationTests.cs" />
     <Compile Include="Services\OnlineGiroLite\OnlineGiroLiteTests.cs" />
     <Compile Include="Services\OnlineGiro\OnlineGiroTests.cs" />
     <Compile Include="Services\P24\P24Tests.cs" />
