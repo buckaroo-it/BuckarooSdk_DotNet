@@ -1,4 +1,5 @@
-﻿using BuckarooSdk.Services.CreditManagement.DataRequest;
+﻿using BuckarooSdk.Services.BuckarooWallet;
+using BuckarooSdk.Services.CreditManagement.DataRequest;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.IdealQr.DataRequest;
@@ -20,6 +21,11 @@ namespace BuckarooSdk.Data
 		}
 
 		#region "Services"
+
+		public BuckarooWalletRequestObject BuckarooWallet()
+		{
+			return new BuckarooWalletRequestObject(this);
+		}
 
 		public KlarnaRequestObject Klarna()
 		{
