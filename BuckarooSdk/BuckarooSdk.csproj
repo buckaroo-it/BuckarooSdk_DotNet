@@ -229,6 +229,16 @@
     <Compile Include="Services\Afterpay\AfterpayRefundResponse.cs" />
     <Compile Include="Services\Afterpay\AfterpayRequestObject.cs" />
     <Compile Include="Services\Afterpay\Push\AfterpayRefundPush.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherCreateApplicationRequest.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherCreateApplicationResponse.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherGetBalanceRequest.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherGetBalanceResponse.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherPayRequest.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherPayResponse.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherRefundRequest.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherRefundResponse.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherRequestObject.cs" />
+    <Compile Include="Services\BuckarooVoucher\Push\BuckarooVoucherRefundPush.cs" />
     <Compile Include="Services\CreditCards\AmericanExpress\Constants\Recurring.cs" />
     <Compile Include="Services\CreditCards\AmericanExpress\Constants\ShippingMethod.cs" />
     <Compile Include="Services\CreditCards\AmericanExpress\Request\AmericanExpressAuthorizeEncryptedRequest.cs" />

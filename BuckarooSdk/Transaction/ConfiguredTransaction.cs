@@ -1,6 +1,7 @@
 ﻿using BuckarooSdk.Services.Afterpay;
 using BuckarooSdk.Services.AfterpayAcceptgiro;
 using BuckarooSdk.Services.AfterpayDigiaccept;
+using BuckarooSdk.Services.BuckarooVoucher;
 using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
 using BuckarooSdk.Services.EMandate;
@@ -171,7 +172,7 @@ namespace BuckarooSdk.Transaction
 		/// </summary>
 
 		public AfterpayAcceptgiroRequestObject AfterpayAcceptgiro()
-    {
+		{
 			return new AfterpayAcceptgiroRequestObject(this);
 		}
 		/// <returns> An INGHomePay</returns>
@@ -196,9 +197,15 @@ namespace BuckarooSdk.Transaction
 			return new AfterpayRequestObject(this);
 		}
 		#endregion
-      
+
+		/// The instantiation of the specific BuckarooVoucher service transaction.
+		/// <returns></returns>
+		public BuckarooVoucherRequestObject BuckarooVoucher()
+		{
+			return new BuckarooVoucherRequestObject(this);
+		}
+
 		/// The instantiation of the specific OnlineGiro service transaction.
-		/// </summary>
 		/// <returns></returns>
 		public OnlineGiroRequestObject OnlineGiro()
 		{
@@ -268,7 +275,7 @@ namespace BuckarooSdk.Transaction
 		{
 			return new P24Transaction(this);
 		}
-		
+
 		public KlarnaRequestObject Klarna()
 		{
 			return new KlarnaRequestObject(this);

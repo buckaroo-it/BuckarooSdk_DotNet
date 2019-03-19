@@ -1,4 +1,5 @@
-﻿using BuckarooSdk.Services.CreditManagement.DataRequest;
+﻿using BuckarooSdk.Services.BuckarooVoucher;
+using BuckarooSdk.Services.CreditManagement.DataRequest;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.IdealQr.DataRequest;
@@ -20,6 +21,11 @@ namespace BuckarooSdk.Data
 		}
 
 		#region "Services"
+
+		public BuckarooVoucherRequestObject BuckarooVoucher()
+		{
+			return new BuckarooVoucherRequestObject(this);
+		}
 
 		public KlarnaRequestObject Klarna()
 		{
