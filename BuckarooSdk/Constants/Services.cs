@@ -44,6 +44,9 @@
 			OnlineGiro,
 			OnlineGiroLite,
 			Klarna,
+			CustomGiftcard,
+			CustomGiftcard2,
+			CustomGiftcard3,
 		}
 	}
 }
