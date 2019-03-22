@@ -1,9 +1,10 @@
+using BuckarooSdk.DataTypes.ParameterGroups.Klarna;
+
 namespace BuckarooSdk.Services.Klarna
 {
+
 	public class KlarnaRefundRequest
 	{
-		public int ArticleQuantity { get; set; }
-
-		public string ArticleNumber { get; set; }
+		public Article Article { get; set; }
 	}
 }

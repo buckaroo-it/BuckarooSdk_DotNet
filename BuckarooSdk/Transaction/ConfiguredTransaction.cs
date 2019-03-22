@@ -1,6 +1,7 @@
 ﻿using BuckarooSdk.Services.Afterpay;
 using BuckarooSdk.Services.AfterpayAcceptgiro;
 using BuckarooSdk.Services.AfterpayDigiaccept;
+using BuckarooSdk.Services.Capayable;
 using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
 using BuckarooSdk.Services.EMandate;
@@ -198,15 +199,26 @@ namespace BuckarooSdk.Transaction
 		}
 		#endregion
 
+      
+		/// <summary>
 		/// The instantiation of the specific Notification service transaction.
-		/// <returns></returns>
+		/// </summary>
 		public NotificationRequestObject Notification()
 		{
 			return new NotificationRequestObject(this);
 		}
 
+		/// <summary>
 		/// The instantiation of the specific OnlineGiro service transaction.
-		/// <returns></returns>
+		/// </summary>
+		public CapayableRequestObject Capayable()
+		{
+			return new CapayableRequestObject(this);
+		}
+
+		/// <summary>
+		/// The instantiation of the specific OnlineGiro service transaction.
+		/// </summary>
 		public OnlineGiroRequestObject OnlineGiro()
 		{
 			return new OnlineGiroRequestObject(this);
@@ -215,7 +227,6 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instantiation of the specific OnlineGiroLite service transaction.
 		/// </summary>
-		/// <returns></returns>
 		public OnlineGiroLiteRequestObject OnlineGiroLite()
 		{
 			return new OnlineGiroLiteRequestObject(this);
