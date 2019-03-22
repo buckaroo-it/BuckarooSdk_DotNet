@@ -43,8 +43,10 @@
 			Afterpay,
 			OnlineGiro,
 			OnlineGiroLite,
+			Capayable,
 			Klarna,
 			BuckarooVoucher,
+			Notification,
 		}
 	}
 }
