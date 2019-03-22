@@ -45,6 +45,7 @@
 			OnlineGiroLite,
 			Capayable,
 			Klarna,
+			Notification,
 		}
 	}
 }

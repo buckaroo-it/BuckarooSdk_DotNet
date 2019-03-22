@@ -12,6 +12,7 @@ using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.INGHomePay;
 using BuckarooSdk.Services.KbcPaymentButton;
 using BuckarooSdk.Services.Klarna;
+using BuckarooSdk.Services.Notification;
 using BuckarooSdk.Services.OnlineGiro;
 using BuckarooSdk.Services.OnlineGiroLite;
 using BuckarooSdk.Services.P24.TransactionRequest;
@@ -172,7 +173,7 @@ namespace BuckarooSdk.Transaction
 		/// </summary>
 
 		public AfterpayAcceptgiroRequestObject AfterpayAcceptgiro()
-    {
+		{
 			return new AfterpayAcceptgiroRequestObject(this);
 		}
 		/// <returns> An INGHomePay</returns>
@@ -198,13 +199,26 @@ namespace BuckarooSdk.Transaction
 		}
 		#endregion
 
-		/// The instantiation of the specific Capayable service transaction.
+      
+		/// <summary>
+		/// The instantiation of the specific Notification service transaction.
+		/// </summary>
+		public NotificationRequestObject Notification()
+		{
+			return new NotificationRequestObject(this);
+		}
+
+		/// <summary>
+		/// The instantiation of the specific OnlineGiro service transaction.
+		/// </summary>
 		public CapayableRequestObject Capayable()
 		{
 			return new CapayableRequestObject(this);
 		}
 
+		/// <summary>
 		/// The instantiation of the specific OnlineGiro service transaction.
+		/// </summary>
 		public OnlineGiroRequestObject OnlineGiro()
 		{
 			return new OnlineGiroRequestObject(this);
@@ -213,7 +227,6 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instantiation of the specific OnlineGiroLite service transaction.
 		/// </summary>
-		/// <returns></returns>
 		public OnlineGiroLiteRequestObject OnlineGiroLite()
 		{
 			return new OnlineGiroLiteRequestObject(this);
@@ -273,7 +286,7 @@ namespace BuckarooSdk.Transaction
 		{
 			return new P24Transaction(this);
 		}
-		
+
 		public KlarnaRequestObject Klarna()
 		{
 			return new KlarnaRequestObject(this);

@@ -448,6 +448,10 @@
     <Compile Include="Services\Klarna\Push\KlarnaGetPClassesPush.cs" />
     <Compile Include="Services\Klarna\Push\KlarnaRefundPush.cs" />
     <Compile Include="Services\Klarna\Push\KlarnaUpdateReservationPush.cs" />
+    <Compile Include="Services\Notification\NotificationExtraInfoRequest.cs" />
+    <Compile Include="Services\Notification\NotificationExtraInfoResponse.cs" />
+    <Compile Include="Services\Notification\NotificationRequestObject.cs" />
+    <Compile Include="Services\Notification\Push\NotificationExtraInfoPush.cs" />
     <Compile Include="Services\OnlineGiroLite\OnlineGiroLitePaymentInvitationRequest.cs" />
     <Compile Include="Services\OnlineGiroLite\OnlineGiroLitePaymentInvitationResponse.cs" />
     <Compile Include="Services\OnlineGiroLite\OnlineGiroLiteRequestObject.cs" />
