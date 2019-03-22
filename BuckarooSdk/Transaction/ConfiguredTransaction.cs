@@ -1,6 +1,7 @@
 ﻿using BuckarooSdk.Services.Afterpay;
 using BuckarooSdk.Services.AfterpayAcceptgiro;
 using BuckarooSdk.Services.AfterpayDigiaccept;
+using BuckarooSdk.Services.BuckarooVoucher;
 using BuckarooSdk.Services.Capayable;
 using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
@@ -199,6 +200,13 @@ namespace BuckarooSdk.Transaction
 		}
 		#endregion
 
+    /// <summary>
+		/// The instantiation of the specific BuckarooVoucher service transaction.
+		/// </summary>
+		public BuckarooVoucherRequestObject BuckarooVoucher()
+		{
+			return new BuckarooVoucherRequestObject(this);
+		}
       
 		/// <summary>
 		/// The instantiation of the specific Notification service transaction.

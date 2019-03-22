@@ -237,6 +237,16 @@
     <Compile Include="Services\Afterpay\AfterpayRefundResponse.cs" />
     <Compile Include="Services\Afterpay\AfterpayRequestObject.cs" />
     <Compile Include="Services\Afterpay\Push\AfterpayRefundPush.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherCreateApplicationRequest.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherCreateApplicationResponse.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherGetBalanceRequest.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherGetBalanceResponse.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherPayRequest.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherPayResponse.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherRefundRequest.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherRefundResponse.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherRequestObject.cs" />
+    <Compile Include="Services\BuckarooVoucher\Push\BuckarooVoucherRefundPush.cs" />
     <Compile Include="Services\Capayable\CapayablePayInInstallmentsRequest.cs" />
     <Compile Include="Services\Capayable\CapayablePayInInstallmentsResponse.cs" />
     <Compile Include="Services\Capayable\CapayablePayRequest.cs" />
