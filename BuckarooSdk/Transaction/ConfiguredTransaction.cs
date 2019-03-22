@@ -1,6 +1,7 @@
 ﻿using BuckarooSdk.Services.Afterpay;
 using BuckarooSdk.Services.AfterpayAcceptgiro;
 using BuckarooSdk.Services.AfterpayDigiaccept;
+using BuckarooSdk.Services.Capayable;
 using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
 using BuckarooSdk.Services.EMandate;
@@ -196,10 +197,14 @@ namespace BuckarooSdk.Transaction
 			return new AfterpayRequestObject(this);
 		}
 		#endregion
-      
+
+		/// The instantiation of the specific Capayable service transaction.
+		public CapayableRequestObject Capayable()
+		{
+			return new CapayableRequestObject(this);
+		}
+
 		/// The instantiation of the specific OnlineGiro service transaction.
-		/// </summary>
-		/// <returns></returns>
 		public OnlineGiroRequestObject OnlineGiro()
 		{
 			return new OnlineGiroRequestObject(this);
