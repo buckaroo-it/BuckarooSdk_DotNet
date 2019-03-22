@@ -2,6 +2,7 @@
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.IdealQr.DataRequest;
+using BuckarooSdk.Services.Klarna;
 
 namespace BuckarooSdk.Data
 {
@@ -19,6 +20,11 @@ namespace BuckarooSdk.Data
 		}
 
 		#region "Services"
+
+		public KlarnaRequestObject Klarna()
+		{
+			return new KlarnaRequestObject(this);
+		}
 
 		/// <summary>
 		/// The instanciation of the specific Ideal Service transaction.
