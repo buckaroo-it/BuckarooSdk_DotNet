@@ -83,6 +83,7 @@
     <Compile Include="Constants\Services.cs" />
     <Compile Include="Constants\Settings.cs" />
     <Compile Include="Constants\Status.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Klarna\Article.cs" />
     <Compile Include="DataTypes\ParameterGroups\Capayable\Address.cs" />
     <Compile Include="DataTypes\ParameterGroups\Capayable\Company.cs" />
     <Compile Include="DataTypes\ParameterGroups\Capayable\Email.cs" />
