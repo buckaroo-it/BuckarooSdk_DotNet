@@ -45,8 +45,10 @@
 			OnlineGiroLite,
 			Capayable,
 			Klarna,
+			BuckarooWallet,
 			BuckarooVoucher,
 			Notification,
+
 		}
 	}
 }

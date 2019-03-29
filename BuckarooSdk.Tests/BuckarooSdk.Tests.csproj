@@ -93,6 +93,7 @@
     <Compile Include="Services\Afterpay\AfterpayTests.cs" />
     <Compile Include="Services\AmericanExpress\AmericanExpressTests.cs" />
     <Compile Include="Services\BanContact\BanContactTests.cs" />
+    <Compile Include="Services\BuckarooWallet\BuckarooWalletTests.cs" />
     <Compile Include="Services\BuckarooVoucher\BuckarooVoucherTests.cs" />
     <Compile Include="Services\Capayable\CapayableTests.cs" />
     <Compile Include="Services\CarteBancaire\CarteBancaireTests.cs" />
