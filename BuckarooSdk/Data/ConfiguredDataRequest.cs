@@ -1,4 +1,6 @@
-﻿using BuckarooSdk.Services.BuckarooWallet;
+
+using BuckarooSdk.Services.BuckarooWallet;
+using BuckarooSdk.Services.BuckarooVoucher;
 using BuckarooSdk.Services.CreditManagement.DataRequest;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.Ideal.DataRequest;
@@ -25,6 +27,11 @@ namespace BuckarooSdk.Data
 		public BuckarooWalletRequestObject BuckarooWallet()
 		{
 			return new BuckarooWalletRequestObject(this);
+    }
+    
+		public BuckarooVoucherRequestObject BuckarooVoucher()
+		{
+			return new BuckarooVoucherRequestObject(this);
 		}
 
 		public KlarnaRequestObject Klarna()
