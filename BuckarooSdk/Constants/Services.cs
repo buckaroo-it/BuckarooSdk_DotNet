@@ -43,10 +43,14 @@
 			Afterpay,
 			OnlineGiro,
 			OnlineGiroLite,
+			Capayable,
 			Klarna,
 			CustomGiftcard,
 			CustomGiftcard2,
 			CustomGiftcard3,
+			BuckarooWallet,
+			BuckarooVoucher,
+			Notification,
 		}
 	}
 }
