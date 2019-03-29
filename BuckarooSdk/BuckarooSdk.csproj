@@ -501,6 +501,7 @@
     <Compile Include="Transaction\Cancel\ConfiguredCancelTransaction.cs" />
     <Compile Include="Transaction\ConfiguredServiceTransaction.cs" />
     <Compile Include="Transaction\ConfiguredTransaction.cs" />
+    <Compile Include="Transaction\General\GeneralTransaction.cs" />
     <Compile Include="Transaction\InvoiceInfo\ConfiguredTransactionInvoiceInfo.cs" />
     <Compile Include="Transaction\InvoiceInfo\TransactionInvoiceInfo.cs" />
     <Compile Include="Transaction\RefundInfo\ConfiguredTransactionRefundInfo.cs" />

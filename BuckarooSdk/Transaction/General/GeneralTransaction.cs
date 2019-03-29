@@ -22,5 +22,16 @@ namespace BuckarooSdk.Transaction.General
 			this.ConfiguredTransaction = configuredTransaction;
 		}
 
+		/// <summary>
+		/// The Pay function creates a configured transaction with an GiropayPayRequest request, 
+		/// that is ready to be executed.
+		/// </summary>
+		/// <param name="request">A GiropayPayRequest</param>
+		/// <returns></returns>
+		public ConfiguredServiceTransaction Pay()
+		{
+			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
+			return configuredServiceTransaction;
+		}
 	}
 }

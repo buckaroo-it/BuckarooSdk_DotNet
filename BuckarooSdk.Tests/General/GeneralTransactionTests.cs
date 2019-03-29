@@ -17,7 +17,7 @@ namespace BuckarooSdk.Tests.General
 
 		public GeneralTransactionTests()
 		{
-			this.SdkClient = new SdkClient(Constants.TestSettings.Logger);
+			this.SdkClient = new SdkClient(TestSettings.Logger);
 		}
 
 		[TestMethod]
@@ -51,12 +51,8 @@ namespace BuckarooSdk.Tests.General
 		[TestMethod]
 		public void NoServiceTransactionTest()
 		{
-			IEnumerable<string> transactionsToBeCanceled = new List<string>()
-			{
-				"94436C07DE6F44EBACBF26CB561F17B3",
-			};
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
 				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
 				{
@@ -68,8 +64,11 @@ namespace BuckarooSdk.Tests.General
 					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
 					ReturnUrlError = TestSettings.ReturnUrlError,
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
-				});
-			
+				})
+				.NoServiceSelected()
+				.Pay();
+
+			var response = request.ExecuteAsync();
 
 		}
 		[TestMethod]
@@ -80,7 +79,7 @@ namespace BuckarooSdk.Tests.General
 				"94436C07DE6F44EBACBF26CB561F17B3",
 			};
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.CancelTransactionRequest()
 				.CancelMultiple(new CancelTransactionBase(transactionsToBeCanceled));
 
