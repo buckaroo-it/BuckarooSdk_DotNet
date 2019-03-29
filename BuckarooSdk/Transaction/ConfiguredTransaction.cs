@@ -1,8 +1,12 @@
-﻿using BuckarooSdk.Services.Afterpay;
+using BuckarooSdk.Services.Afterpay;
 using BuckarooSdk.Services.AfterpayAcceptgiro;
 using BuckarooSdk.Services.AfterpayDigiaccept;
+using BuckarooSdk.Services.BuckarooWallet;
+using BuckarooSdk.Services.BuckarooVoucher;
+using BuckarooSdk.Services.Capayable;
 using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
+using BuckarooSdk.Services.CustomGiftcard;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.EPS;
 using BuckarooSdk.Services.Giropay;
@@ -10,6 +14,8 @@ using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.INGHomePay;
 using BuckarooSdk.Services.KbcPaymentButton;
+using BuckarooSdk.Services.Klarna;
+using BuckarooSdk.Services.Notification;
 using BuckarooSdk.Services.OnlineGiro;
 using BuckarooSdk.Services.OnlineGiroLite;
 using BuckarooSdk.Services.P24.TransactionRequest;
@@ -171,7 +177,7 @@ namespace BuckarooSdk.Transaction
 		/// </summary>
 
 		public AfterpayAcceptgiroRequestObject AfterpayAcceptgiro()
-    {
+		{
 			return new AfterpayAcceptgiroRequestObject(this);
 		}
 		/// <returns> An INGHomePay</returns>
@@ -197,9 +203,63 @@ namespace BuckarooSdk.Transaction
 		}
 		#endregion
       
+		/// <summary>
+		/// The instantiation of the specific CustomGiftcard service transaction.
+		/// </summary>
+		public CustomGiftcardRequestObject CustomGiftcard()
+		{
+			return new CustomGiftcardRequestObject(this, Constants.Services.ServiceNames.CustomGiftcard);
+		}
+
+		/// The instantiation of the specific CustomGiftcard2 service transaction.
+		/// <returns></returns>
+		public CustomGiftcardRequestObject CustomGiftcard2()
+		{
+			return new CustomGiftcardRequestObject(this, Constants.Services.ServiceNames.CustomGiftcard2);
+		}
+
+		/// The instantiation of the specific CustomGiftcard3 service transaction.
+		/// <returns></returns>
+		public CustomGiftcardRequestObject CustomGiftcard3()
+		{
+			return new CustomGiftcardRequestObject(this, Constants.Services.ServiceNames.CustomGiftcard3);
+		}
+
+		/// <summary>
+		/// The instantiation of the specific BuckarooWallet service transaction.
+		/// </summary>
+		public BuckarooWalletRequestObject BuckarooWallet()
+		{
+			return new BuckarooWalletRequestObject(this);
+		}
+    
+    /// <summary>
+		/// The instantiation of the specific BuckarooVoucher service transaction.
+		/// </summary>
+		public BuckarooVoucherRequestObject BuckarooVoucher()
+		{
+			return new BuckarooVoucherRequestObject(this);
+		}
+      
+		/// <summary>
+		/// The instantiation of the specific Notification service transaction.
+		/// </summary>
+		public NotificationRequestObject Notification()
+		{
+			return new NotificationRequestObject(this);
+		}
+
+		/// <summary>
 		/// The instantiation of the specific OnlineGiro service transaction.
 		/// </summary>
-		/// <returns></returns>
+		public CapayableRequestObject Capayable()
+		{
+			return new CapayableRequestObject(this);
+		}
+
+		/// <summary>
+		/// The instantiation of the specific OnlineGiro service transaction.
+		/// </summary>
 		public OnlineGiroRequestObject OnlineGiro()
 		{
 			return new OnlineGiroRequestObject(this);
@@ -208,7 +268,6 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instantiation of the specific OnlineGiroLite service transaction.
 		/// </summary>
-		/// <returns></returns>
 		public OnlineGiroLiteRequestObject OnlineGiroLite()
 		{
 			return new OnlineGiroLiteRequestObject(this);
@@ -217,7 +276,6 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instantiation of the specific Paypermail service transaction.
 		/// </summary>
-		/// <returns></returns>
 		public PayPerEmailTransaction PayPerEmail()
 		{
 			return new PayPerEmailTransaction(this);
@@ -226,7 +284,6 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instanciation of the specific Transfer Service transaction.
 		/// </summary>
-		/// <returns> An ideal</returns>
 		public TransferTransaction Transfer()
 		{
 			return new TransferTransaction(this);
@@ -235,7 +292,6 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instanciation of the specific PayPal Service transaction.
 		/// </summary>
-		/// <returns> An ideal</returns>
 		public PayPalTransaction PayPal()
 		{
 			return new PayPalTransaction(this);
@@ -244,7 +300,6 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instanciation of the specific EMandate Service transaction.
 		/// </summary>
-		/// <returns> An ideal</returns>
 		public EMandateRequestObject EMandate()
 		{
 			return new EMandateRequestObject(this);
@@ -253,7 +308,6 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instanciation of the specific Simple SEPA Direct debit Service transaction.
 		/// </summary>
-		/// <returns> An ideal</returns>
 		public SimpleSepaDirectDebitTransaction SimpleSepaDirectDebit()
 		{
 			return new SimpleSepaDirectDebitTransaction(this);
@@ -267,6 +321,11 @@ namespace BuckarooSdk.Transaction
 		public P24Transaction P24()
 		{
 			return new P24Transaction(this);
+		}
+
+		public KlarnaRequestObject Klarna()
+		{
+			return new KlarnaRequestObject(this);
 		}
 
 		public KbcPaymentButtonRequestObject KbcPaymentButton()
