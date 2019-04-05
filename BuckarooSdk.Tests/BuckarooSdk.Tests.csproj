@@ -93,9 +93,13 @@
     <Compile Include="Services\Afterpay\AfterpayTests.cs" />
     <Compile Include="Services\AmericanExpress\AmericanExpressTests.cs" />
     <Compile Include="Services\BanContact\BanContactTests.cs" />
+    <Compile Include="Services\BuckarooWallet\BuckarooWalletTests.cs" />
+    <Compile Include="Services\BuckarooVoucher\BuckarooVoucherTests.cs" />
+    <Compile Include="Services\Capayable\CapayableTests.cs" />
     <Compile Include="Services\CarteBancaire\CarteBancaireTests.cs" />
     <Compile Include="Services\CarteBleueVisa\CarteBleueVisaTests.cs" />
     <Compile Include="Services\CreditManagement\CreditManagementTests.cs" />
+    <Compile Include="Services\CustomGiftcard\CustomGiftcardTests.cs" />
     <Compile Include="Services\Dankort\DankortTests.cs" />
     <Compile Include="Services\EMandate\EMandateTests.cs" />
     <Compile Include="Services\EPS\EPSTests.cs" />
@@ -110,6 +114,7 @@
     <Compile Include="Services\Maestro\MaestroTests.cs" />
     <Compile Include="Services\MasterCard\MasterCardTests.cs" />
     <Compile Include="Services\Nexi\NexiTests.cs" />
+    <Compile Include="Services\Notification\NotificationTests.cs" />
     <Compile Include="Services\OnlineGiroLite\OnlineGiroLiteTests.cs" />
     <Compile Include="Services\OnlineGiro\OnlineGiroTests.cs" />
     <Compile Include="Services\P24\P24Tests.cs" />
@@ -138,7 +143,6 @@
       <Name>BuckarooSdk</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
