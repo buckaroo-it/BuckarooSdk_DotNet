@@ -1,11 +1,11 @@
 ﻿namespace BuckarooSdk.Services
 {
-    public enum ServiceEnum
-    {
+	public enum ServiceEnum
+	{
 		// Payment services
-        Ideal,
+		Ideal,
 		IdealProcessing,
-        PayPal,
+		PayPal,
 		MasterCard,
 		Visa,
 		Maestro,
@@ -13,12 +13,16 @@
 		Transfer,
 		SimpleSepaDirectDebit,
 		Payconiq,
+		Przelewy24,
+		KbcPaymentButton,
+	    EPS,
 
 		// additional services
-	    CreditManagement,
+		CreditManagement,
 		Emandates,
 		Subscriptions,
-	    PayPerEmail,
-	    IdealQr,
+		PayPerEmail,
+		IdealQr,
+		Dankort,
 	}
 }

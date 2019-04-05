@@ -77,10 +77,10 @@ namespace BuckarooSdk.Connection
 						response =
 							await
 								client.PostAsync(apiBaseAddress + request.Endpoint,
-									new StringContent(requestJson, Encoding.UTF8, "application/json"));
+									new StringContent(requestJson, Encoding.UTF8, "application/json")).ConfigureAwait(false);
 						break;
 					case HttpRequestType.Get:
-						response = await client.GetAsync(apiBaseAddress + request.Endpoint);
+						response = await client.GetAsync(apiBaseAddress + request.Endpoint).ConfigureAwait(false);
 						break;
 					default:
 						request.BuckarooSdkLogger.AddErrorLogging(Constants.Logging.Messages.BadImplementation);

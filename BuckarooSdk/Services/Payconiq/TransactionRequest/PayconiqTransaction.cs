@@ -4,7 +4,7 @@ namespace BuckarooSdk.Services.Payconiq.TransactionRequest
 {
 	public class PayconiqTransaction
 	{
-		private ConfiguredTransaction ConfiguredTransaction { get; set; }
+		private ConfiguredTransaction ConfiguredTransaction { get; }
 
 		internal PayconiqTransaction(ConfiguredTransaction configuredTransaction)
 		{

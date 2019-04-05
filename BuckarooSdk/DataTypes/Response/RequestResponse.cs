@@ -1,9 +1,10 @@
-﻿using BuckarooSdk.Services;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using BuckarooSdk.DataTypes.Response.Error;
+﻿using BuckarooSdk.DataTypes.Response.Error;
 using BuckarooSdk.Logging;
+using BuckarooSdk.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.DataTypes.Response
 {
@@ -126,12 +127,12 @@ namespace BuckarooSdk.DataTypes.Response
 			this.Status = new Status.Status();
 		}
 
-		public List<ServiceEnum> GetServices()
+		public List<ServiceNames> GetServices()
 		{
-			var services = new List<ServiceEnum>();
+			var services = new List<ServiceNames>();
 			foreach (var service in this.Services)
 			{
-				var serviceEnum = (ServiceEnum)Enum.Parse(typeof(ServiceEnum), service.Name, true);
+				var serviceEnum = (ServiceNames)Enum.Parse(typeof(ServiceNames), service.Name, true);
 				services.Add(serviceEnum);
 			}
 
@@ -160,7 +161,7 @@ namespace BuckarooSdk.DataTypes.Response
 		{
 			var result = new T();
 
-			var service = this.Services.FirstOrDefault(s => s.Name.Equals(result.ServiceEnum.ToString(), StringComparison.OrdinalIgnoreCase));
+			var service = this.Services.FirstOrDefault(s => s.Name.Equals(result.ServiceNames.ToString(), StringComparison.OrdinalIgnoreCase));
 			if (service == null) return null;
 
 			result.FillFromResponse(service);

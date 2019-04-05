@@ -1,9 +1,10 @@
-﻿
+﻿using static BuckarooSdk.Constants.Services;
+
 namespace BuckarooSdk.Services.IdealProcessing.Push
 {
 	public class IdealProcessingPayPush : ActionPush
 	{
-		public override ServiceEnum ServiceEnum => ServiceEnum.IdealProcessing;
+		public override ServiceNames ServiceNames => ServiceNames.IdealProcessing;
 
 		public string ConsumerIban { get; set; }
 		public string ConsumerBic { get; set; }
