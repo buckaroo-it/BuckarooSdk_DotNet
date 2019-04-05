@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using BuckarooSdk;
 using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BuckarooSdk.Tests.General
@@ -15,7 +17,7 @@ namespace BuckarooSdk.Tests.General
 
 		public GeneralTransactionTests()
 		{
-			this.SdkClient = new SdkClient(Constants.TestSettings.Logger);
+			this.SdkClient = new SdkClient(TestSettings.Logger);
 		}
 
 		[TestMethod]
@@ -47,6 +49,29 @@ namespace BuckarooSdk.Tests.General
 		}
 
 		[TestMethod]
+		public void NoServiceTransactionTest()
+		{
+			var request = this.SdkClient.CreateRequest()
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest()
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				{
+					Currency = "EUR",
+					AmountDebit = 0.02m,
+					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
+					Description = "IDEAL_PAY_SDK_UNITTEST",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+				})
+				.NoServiceSelected()
+				.Pay();
+
+			var response = request.ExecuteAsync();
+
+		}
+		[TestMethod]
 		public void CancelTransactionTest()
 		{
 			IEnumerable<string> transactionsToBeCanceled = new List<string>()
@@ -54,7 +79,7 @@ namespace BuckarooSdk.Tests.General
 				"94436C07DE6F44EBACBF26CB561F17B3",
 			};
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.CancelTransactionRequest()
 				.CancelMultiple(new CancelTransactionBase(transactionsToBeCanceled));
 

@@ -26,6 +26,7 @@ using BuckarooSdk.Services.PaysafeCard;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
 using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
+using BuckarooSdk.Transaction.General;
 using AmericanExpressTransaction = BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction;
 
 namespace BuckarooSdk.Transaction
@@ -358,10 +359,19 @@ namespace BuckarooSdk.Transaction
 		/// <summary>
 		/// The instanciation of the specific Sofort Service transaction.
 		/// </summary>
-		/// <returns> An Sofort</returns>
+		/// <returns> A Giropay transaction</returns>
 		public GiropayTransaction Giropay()
 		{
 			return new GiropayTransaction(this);
+		}
+
+		/// <summary>
+		/// The instantiation of a general transaction without a service.
+		/// </summary>
+		/// <returns> A general transaction without any service selected</returns>
+		public GeneralTransaction NoServiceSelected()
+		{
+			return new GeneralTransaction(this);
 		}
 	}
 }
