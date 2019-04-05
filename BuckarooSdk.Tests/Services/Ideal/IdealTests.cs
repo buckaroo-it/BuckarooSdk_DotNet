@@ -32,7 +32,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 		public void PayTest()
 		{
 			var request = 
-				this.BuckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				this.BuckarooClient.CreateRequest() // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
 				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
@@ -52,7 +52,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 					Issuer = BuckarooSdk.Services.Ideal.Constants.Issuers.IngBank,
 				});
 
-			var response = request.Execute();
+			var response = request.ExecuteAsync().GetAwaiter().GetResult();
 
 			Process.Start(response.RequiredAction.RedirectURL);
 

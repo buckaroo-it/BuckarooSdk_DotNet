@@ -24,7 +24,7 @@ namespace BuckarooSdk.Tests.General
 		public void TransactionSpecificationTest()
 		{
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionSpecificationRequest()
 				.SpecificServiceSpecification("ideal", 2);
 
@@ -59,16 +59,16 @@ namespace BuckarooSdk.Tests.General
 					Currency = "EUR",
 					AmountDebit = 0.02m,
 					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
-					Description = "IDEAL_PAY_SDK_UNITTEST",
+					Description = "NOSERVICESELECTED_PAY_SDK_UNITTEST",
 					ReturnUrl = TestSettings.ReturnUrl,
 					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
 					ReturnUrlError = TestSettings.ReturnUrlError,
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					ContinueOnIncomplete = ContinueOnIncomplete.RedirectToHTML,
 				})
-				.NoServiceSelected()
-				.Pay();
-
-			var response = request.ExecuteAsync();
+				;
+				
+			var response = request.ExecuteWithoutSelectedService();
 
 		}
 		[TestMethod]

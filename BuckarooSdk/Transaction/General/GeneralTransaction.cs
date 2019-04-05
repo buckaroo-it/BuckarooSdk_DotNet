@@ -15,7 +15,7 @@ namespace BuckarooSdk.Transaction.General
 		/// <summary>
 		/// The configured transaction
 		/// </summary>
-		private ConfiguredTransaction ConfiguredTransaction { get; }
+		internal ConfiguredTransaction ConfiguredTransaction { get; }
 
 		internal GeneralTransaction(ConfiguredTransaction configuredTransaction)
 		{
@@ -31,6 +31,7 @@ namespace BuckarooSdk.Transaction.General
 		public ConfiguredServiceTransaction Pay()
 		{
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
+			//configuredServiceTransaction.BaseTransaction.AddService("", null, "pay");
 			return configuredServiceTransaction;
 		}
 	}

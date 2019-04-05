@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BuckarooSdk",
+    "\\BuckarooSdk\\Connection"
   ],
+  "SelectedNode": "\\BuckarooSdk\\Connection\\BuckarooDelegatingHandler.cs",
   "PreviewInSolutionExplorer": false
 }

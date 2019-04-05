@@ -74,9 +74,7 @@ namespace BuckarooSdk.Connection
 				switch (requestType)
 				{
 					case HttpRequestType.Post:
-						response =
-							await
-								client.PostAsync(apiBaseAddress + request.Endpoint,
+						response = await client.PostAsync(apiBaseAddress + request.Endpoint,
 									new StringContent(requestJson, Encoding.UTF8, "application/json")).ConfigureAwait(false);
 						break;
 					case HttpRequestType.Get:
@@ -87,7 +85,7 @@ namespace BuckarooSdk.Connection
 						throw new Exception(Constants.Logging.Messages.BadImplementation);
 				}
 
-				var responseJson = response.Content.ReadAsStringAsync().Result;
+				var responseJson = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
 				// deserialize to response type
 				try

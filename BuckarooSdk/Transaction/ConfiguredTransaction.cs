@@ -28,6 +28,10 @@ using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
 using BuckarooSdk.Transaction.General;
 using AmericanExpressTransaction = BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction;
+using BuckarooSdk.DataTypes.Response;
+using BuckarooSdk.DataTypes.RequestBases;
+using System.Threading.Tasks;
+using BuckarooSdk.DataTypes;
 
 namespace BuckarooSdk.Transaction
 {
@@ -45,6 +49,23 @@ namespace BuckarooSdk.Transaction
 		public ConfiguredTransaction(TransactionRequest transaction)
 		{
 			this.BaseTransaction = transaction;
+		}
+
+		public RequestResponse ExecuteWithoutSelectedService()
+		{
+			return this.ExecuteWithoutSelectedServiceAsync().GetAwaiter().GetResult();
+		}
+
+		public async Task<RequestResponse> ExecuteWithoutSelectedServiceAsync()
+		{
+			var configuredServiceTransaction = new GeneralTransaction(this).Pay();
+			var response = await Connection.Connector.SendRequest<IRequestBase, RequestResponse>(this.BaseTransaction.AuthenticatedRequest.Request, this.BaseTransaction.TransactionBase, HttpRequestType.Post)
+				.ConfigureAwait(false);
+
+			// relocate logger from request to response
+			response.BuckarooSdkLogger = this.BaseTransaction.AuthenticatedRequest.Request.BuckarooSdkLogger;
+
+			return response;
 		}
 
 		#region CreditCards
@@ -202,7 +223,7 @@ namespace BuckarooSdk.Transaction
 			return new AfterpayRequestObject(this);
 		}
 		#endregion
-      
+
 		/// <summary>
 		/// The instantiation of the specific CustomGiftcard service transaction.
 		/// </summary>
@@ -232,15 +253,15 @@ namespace BuckarooSdk.Transaction
 		{
 			return new BuckarooWalletRequestObject(this);
 		}
-    
-    /// <summary>
+
+		/// <summary>
 		/// The instantiation of the specific BuckarooVoucher service transaction.
 		/// </summary>
 		public BuckarooVoucherRequestObject BuckarooVoucher()
 		{
 			return new BuckarooVoucherRequestObject(this);
 		}
-      
+
 		/// <summary>
 		/// The instantiation of the specific Notification service transaction.
 		/// </summary>

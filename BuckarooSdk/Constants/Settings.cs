@@ -10,7 +10,7 @@ namespace BuckarooSdk.Constants
 			/// <summary>
 			/// Main endpoints
 			/// </summary>
-			internal const string TransactionRequestEndPoint = "/json/transaction";
+			internal const string TransactionRequestEndPoint = "/json/Transaction";
 			internal const string DataRequestEndPoint = "/json/DataRequest";
 
 			/// <summary>
