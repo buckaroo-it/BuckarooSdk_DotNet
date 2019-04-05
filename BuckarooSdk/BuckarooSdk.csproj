@@ -458,6 +458,16 @@
     <Compile Include="Services\INGHomePay\INGHomePayPayRequest.cs" />
     <Compile Include="Services\INGHomePay\INGHomePayPayResponse.cs" />
     <Compile Include="Services\INGHomePay\INGHomePayRequestObject.cs" />
+    <Compile Include="Services\Ippies\IppiesPayRemainderRequest.cs" />
+    <Compile Include="Services\Ippies\IppiesPayRemainderResponse.cs" />
+    <Compile Include="Services\Ippies\IppiesPayRequest.cs" />
+    <Compile Include="Services\Ippies\IppiesPayResponse.cs" />
+    <Compile Include="Services\Ippies\IppiesRefundRequest.cs" />
+    <Compile Include="Services\Ippies\IppiesRefundResponse.cs" />
+    <Compile Include="Services\Ippies\IppiesRequestObject.cs" />
+    <Compile Include="Services\Ippies\Push\IppiesPayPush.cs" />
+    <Compile Include="Services\Ippies\Push\IppiesPayRemainderPush.cs" />
+    <Compile Include="Services\Ippies\Push\IppiesRefundPush.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRemainderRequest.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRemainderResponse.cs" />
     <Compile Include="Services\KbcPaymentButton\KbcPaymentButtonPayRequest.cs" />

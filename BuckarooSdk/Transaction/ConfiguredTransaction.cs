@@ -13,6 +13,7 @@ using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.INGHomePay;
+using BuckarooSdk.Services.Ippies;
 using BuckarooSdk.Services.KbcPaymentButton;
 using BuckarooSdk.Services.Klarna;
 using BuckarooSdk.Services.Notification;
@@ -202,7 +203,7 @@ namespace BuckarooSdk.Transaction
 			return new AfterpayRequestObject(this);
 		}
 		#endregion
-      
+
 		/// <summary>
 		/// The instantiation of the specific CustomGiftcard service transaction.
 		/// </summary>
@@ -224,6 +225,13 @@ namespace BuckarooSdk.Transaction
 		{
 			return new CustomGiftcardRequestObject(this, Constants.Services.ServiceNames.CustomGiftcard3);
 		}
+    
+    /// The instantiation of the specific Ippies service transaction.
+		public IppiesRequestObject Ippies()
+		{
+			return new IppiesRequestObject(this);
+		}
+
 
 		/// <summary>
 		/// The instantiation of the specific BuckarooWallet service transaction.

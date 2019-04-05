@@ -51,6 +51,7 @@
 			BuckarooWallet,
 			BuckarooVoucher,
 			Notification,
+			Ippies,
 		}
 	}
 }
