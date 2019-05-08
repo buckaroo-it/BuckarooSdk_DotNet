@@ -52,6 +52,7 @@
 			BuckarooVoucher,
 			Notification,
 			Ippies,
+			ApplePay,
 		}
 	}
 }

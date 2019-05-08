@@ -29,6 +29,7 @@ using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
 using BuckarooSdk.Transaction.General;
 using AmericanExpressTransaction = BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction;
+using BuckarooSdkCore.Services.ApplePay.TransactionRequest;
 
 namespace BuckarooSdk.Transaction
 {
@@ -371,6 +372,15 @@ namespace BuckarooSdk.Transaction
 		public GiropayTransaction Giropay()
 		{
 			return new GiropayTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Sofort Service transaction.
+		/// </summary>
+		/// <returns> A Giropay transaction</returns>
+		public ApplePayTransaction ApplePay()
+		{
+			return new ApplePayTransaction(this);
 		}
 
 		/// <summary>
