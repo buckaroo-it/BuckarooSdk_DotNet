@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\CreditCards\AmericanExpress\Request\Bak\**" />
+    <EmbeddedResource Remove="Services\CreditCards\AmericanExpress\Request\Bak\**" />
+    <None Remove="Services\CreditCards\AmericanExpress\Request\Bak\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataTypes\GlobalGroups\" />
+    <Folder Include="Services\CreditCards\BanContact\Constants\" />
+    <Folder Include="Services\CreditManagement\Push\" />
+    <Folder Include="Services\Payconiq\Push\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>

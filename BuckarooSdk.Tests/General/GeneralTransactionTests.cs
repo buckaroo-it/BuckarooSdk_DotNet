@@ -71,6 +71,38 @@ namespace BuckarooSdk.Tests.General
 			var response = request.ExecuteAsync();
 
 		}
+
+		[TestMethod]
+		public void NoServiceTransactionTest2()
+		{
+			var request = this.SdkClient.CreateRequest();
+			var authRequest = request.Authenticate(
+					TestSettings.WebsiteKey, TestSettings.SecretKey,
+						TestSettings.Test, CultureInfo.GetCultureInfo("nl-NL"),
+							 ChannelEnum.Web);
+			var transactionRequest = authRequest.TransactionRequest();
+			TransactionBase data = new TransactionBase();
+			data.AmountDebit = 0.02m;
+			data.Currency = "EUR";
+			data.Description = "IDEAL_PAY_SDK_UNITTEST";
+			data.Invoice = $"SDK_TEST_{DateTime.Now.Ticks}";
+			data.PushUrl = TestSettings.PushUri;
+			data.ReturnUrl = TestSettings.ReturnUrl;
+			data.ReturnUrlCancel = TestSettings.ReturnUrlCancel;
+			data.ReturnUrlError = TestSettings.ReturnUrlError;
+			data.ReturnUrlReject = TestSettings.ReturnUrlReject;
+			data.StartRecurrent = false;// redundant
+
+			var t = transactionRequest.SetBasicFields(data);
+			var gt = t.NoServiceSelected();
+			var st = gt.Pay();
+			var response = st.Execute();
+
+		}
+
+		
+
+
 		[TestMethod]
 		public void CancelTransactionTest()
 		{

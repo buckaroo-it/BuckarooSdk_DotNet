@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28809.33
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuckarooSdk", "BuckarooSdk\BuckarooSdk.csproj", "{CB68F005-23BC-42B0-8D90-787F97E9E646}"
 EndProject
@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuckarooSdk.Tests", "BuckarooSdk.Tests\BuckarooSdk.Tests.csproj", "{0B26C093-CE7B-410F-BCCF-7A0FC5D5BEB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuckarooSdkCore", "BuckarooSdkCore\BuckarooSdkCore.csproj", "{A26557F3-1579-4B84-A74D-DC6391480EF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,14 @@ Global
 		{0B26C093-CE7B-410F-BCCF-7A0FC5D5BEB9}.NET45|Any CPU.Build.0 = NET45|Any CPU
 		{0B26C093-CE7B-410F-BCCF-7A0FC5D5BEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B26C093-CE7B-410F-BCCF-7A0FC5D5BEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26557F3-1579-4B84-A74D-DC6391480EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26557F3-1579-4B84-A74D-DC6391480EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26557F3-1579-4B84-A74D-DC6391480EF2}.NET40|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26557F3-1579-4B84-A74D-DC6391480EF2}.NET40|Any CPU.Build.0 = Debug|Any CPU
+		{A26557F3-1579-4B84-A74D-DC6391480EF2}.NET45|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26557F3-1579-4B84-A74D-DC6391480EF2}.NET45|Any CPU.Build.0 = Debug|Any CPU
+		{A26557F3-1579-4B84-A74D-DC6391480EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26557F3-1579-4B84-A74D-DC6391480EF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
