@@ -100,9 +100,6 @@ namespace BuckarooSdk.Tests.General
 
 		}
 
-		
-
-
 		[TestMethod]
 		public void CancelTransactionTest()
 		{

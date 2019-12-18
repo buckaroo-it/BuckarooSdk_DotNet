@@ -1,7 +1,7 @@
 using BuckarooSdk.DataTypes.ParameterGroups.Klarna;
 using System.Collections.Generic;
 
-namespace BuckarooSdk.Services.Klarna
+namespace BuckarooSdk.Services.KlarnaKP
 {
 	public class KlarnaReserveRequest
 	{
