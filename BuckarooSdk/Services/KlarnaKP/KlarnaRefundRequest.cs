@@ -5,6 +5,6 @@ namespace BuckarooSdk.Services.KlarnaKP
 
 	public class KlarnaRefundRequest
 	{
-		public Article Article { get; set; }
+		//Use OriginalTransactionKey in the base request
 	}
 }

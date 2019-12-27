@@ -22,6 +22,22 @@ namespace BuckarooSdk.Services.KlarnaKP
 		}
 
 		/// <summary>
+		/// The Reserve function creates a configured datarequest with an KlarnaReserveRequest request, 
+		/// that is ready to be executed.
+		/// </summary>
+		/// <param name="request">A KlarnaReserveRequest</param>
+		/// <returns></returns>
+		public ConfiguredServiceDataRequest Reserve(KlarnaReserveRequest request)
+		{
+			var parameters = ServiceHelper.CreateServiceParameters(request);
+			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			configuredServiceDataReqeust.BaseData.AddService("klarnakp", parameters, "Reserve");
+
+			return configuredServiceDataReqeust;
+		}
+
+
+		/// <summary>
 		/// The Pay function creates a configured transaction with an KlarnaPayRequest request, 
 		/// that is ready to be executed.
 		/// </summary>
@@ -51,20 +67,6 @@ namespace BuckarooSdk.Services.KlarnaKP
 			return configuredServiceTransaction;
 		}
 
-		/// <summary>
-		/// The Reserve function creates a configured datarequest with an KlarnaReserveRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A KlarnaReserveRequest</param>
-		/// <returns></returns>
-		public ConfiguredServiceDataRequest Reserve(KlarnaReserveRequest request)
-		{
-			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("klarna", parameters, "Reserve");
-
-			return configuredServiceDataReqeust;
-		}
 
 		/// <summary>
 		/// The CancelReservation function creates a configured datarequest with an KlarnaCancelReservationRequest request, 
@@ -102,13 +104,13 @@ namespace BuckarooSdk.Services.KlarnaKP
 		/// </summary>
 		/// <param name="request">A KlarnaGetPClassesRequest</param>
 		/// <returns></returns>
-		public ConfiguredServiceDataRequest GetPClasses(KlarnaGetPClassesRequest request)
-		{
-			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("klarna", parameters, "GetPClasses");
+		//public ConfiguredServiceDataRequest GetPClasses(KlarnaGetPClassesRequest request)
+		//{
+		//	var parameters = ServiceHelper.CreateServiceParameters(request);
+		//	var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+		//	configuredServiceDataReqeust.BaseData.AddService("klarna", parameters, "GetPClasses");
 
-			return configuredServiceDataReqeust;
-		}
+		//	return configuredServiceDataReqeust;
+		//}
 	}
 }

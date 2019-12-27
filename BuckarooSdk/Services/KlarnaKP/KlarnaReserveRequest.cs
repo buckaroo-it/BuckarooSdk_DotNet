@@ -7,7 +7,7 @@ namespace BuckarooSdk.Services.KlarnaKP
 	{
 		public string BillingPhoneNumber { get; set; }
 
-		public List<Article> Article { get; set; }
+		public ParameterGroupCollection<Article> Articles { get; set; }
 
 		public string ShippingCountry { get; set; }
 
@@ -35,8 +35,6 @@ namespace BuckarooSdk.Services.KlarnaKP
 
 		public string BillingStreet { get; set; }
 
-		public string Encoding { get; set; }
-
 		public int Gender { get; set; }
 
 		public string BillingPostalCode { get; set; }
@@ -44,8 +42,6 @@ namespace BuckarooSdk.Services.KlarnaKP
 		public string BillingCountry { get; set; }
 
 		public string ShippingHouseNumberSuffix { get; set; }
-
-		public int PClass { get; set; }
 
 		public string OperatingCountry { get; set; }
 
@@ -70,5 +66,15 @@ namespace BuckarooSdk.Services.KlarnaKP
 		public string BillingFirstName { get; set; }
 
 		public string ShippingPhoneNumber { get; set; }
+
+		internal void AddArticle(Article article)
+		{
+			this.Articles.Add(article);
+		}
+
+		internal void AddArticleList(List<Article> articles)
+		{
+			this.Articles.AddRange(articles);
+		}
 	}
 }

@@ -37,7 +37,7 @@ namespace BuckarooSdk.Services
 					var i = 1;
 					foreach (var item in groupValue)
 					{
-						var subResult = CreateServiceParametersImplementation(groupValue, serviceName, groupValue.GroupName, i.ToString());
+						var subResult = CreateServiceParametersImplementation(item, serviceName, groupValue.GroupName, i.ToString());
 						result.AddRange(subResult);
 						i++;
 					}
@@ -71,7 +71,7 @@ namespace BuckarooSdk.Services
 				else
 				{
 					var propertyName = PropertyName(serviceName.ToString(), property);
-					result.Add(CreateParameter(propertyValue, propertyName, groupName));
+					result.Add(CreateParameter(propertyValue, propertyName, groupName, groupId));
 				}
 			}
 

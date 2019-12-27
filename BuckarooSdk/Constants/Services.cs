@@ -45,6 +45,7 @@
 			OnlineGiroLite,
 			Capayable,
 			Klarna,
+			KlarnaKP,
 			CustomGiftcard,
 			CustomGiftcard2,
 			CustomGiftcard3,

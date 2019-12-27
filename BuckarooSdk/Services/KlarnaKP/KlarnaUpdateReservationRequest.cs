@@ -6,7 +6,7 @@ namespace BuckarooSdk.Services.KlarnaKP
 	{
 		public string BillingPhoneNumber { get; set; }
 
-		public Article Article { get; set; }
+		public ParameterGroupCollection<Article> Articles { get; set; }
 
 		public string ShippingCity { get; set; }
 

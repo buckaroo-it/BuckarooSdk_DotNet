@@ -4,14 +4,12 @@ namespace BuckarooSdk.Services.KlarnaKP
 {
 	public class KlarnaPayRequest
 	{
-		public bool SendByEmail { get; set; }
-
-		public bool PreserveReservation { get; set; }
-
 		public string ReservationNumber { get; set; }
 
+		/// <summary>
+		/// Only the Articlenumber and articlequantity are required, and only when the reservation is partially paid. 
+		/// </summary>
 		public Article Article { get; set; }
 
-		public bool SendByMail { get; set; }
 	}
 }

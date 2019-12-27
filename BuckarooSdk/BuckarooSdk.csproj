@@ -62,8 +62,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -91,6 +91,7 @@
     <Compile Include="DataTypes\ParameterGroups\Capayable\Phone.cs" />
     <Compile Include="DataTypes\ParameterGroups\Capayable\ProductLine.cs" />
     <Compile Include="DataTypes\ParameterGroups\Capayable\SubTotalLine.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Klarna\ArticleList.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\Debtor.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlan.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlanCharge.cs" />
@@ -480,8 +481,6 @@
     <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonRefundPush.cs" />
     <Compile Include="Services\KlarnaKP\KlarnaCancelReservationRequest.cs" />
     <Compile Include="Services\KlarnaKP\KlarnaCancelReservationResponse.cs" />
-    <Compile Include="Services\KlarnaKP\KlarnaGetPClassesRequest.cs" />
-    <Compile Include="Services\KlarnaKP\KlarnaGetPClassesResponse.cs" />
     <Compile Include="Services\KlarnaKP\KlarnaPayRequest.cs" />
     <Compile Include="Services\KlarnaKP\KlarnaPayResponse.cs" />
     <Compile Include="Services\KlarnaKP\KlarnaRefundRequest.cs" />
@@ -493,6 +492,7 @@
     <Compile Include="Services\KlarnaKP\KlarnaUpdateReservationResponse.cs" />
     <Compile Include="Services\KlarnaKP\Push\KlarnaCancelReservationPush.cs" />
     <Compile Include="Services\KlarnaKP\Push\KlarnaGetPClassesPush.cs" />
+    <Compile Include="Services\KlarnaKP\Push\KlarnaReservePush.cs" />
     <Compile Include="Services\KlarnaKP\Push\KlarnaRefundPush.cs" />
     <Compile Include="Services\KlarnaKP\Push\KlarnaUpdateReservationPush.cs" />
     <Compile Include="Services\Klarna\KlarnaCancelReservationRequest.cs" />
