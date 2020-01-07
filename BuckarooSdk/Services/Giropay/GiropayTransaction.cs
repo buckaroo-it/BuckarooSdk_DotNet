@@ -43,22 +43,5 @@ namespace BuckarooSdk.Services.Giropay
 
 			return configuredServiceTransaction;
 		}
-
-		/// <summary>
-		/// The PayRemainder function creates a configured transaction with an GiropayPayRemainderRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A GiropayPayRemainderRequest</param>
-		/// <returns></returns>
-		public ConfiguredServiceTransaction PayRemainder(GiropayPayRemainderRequest request)
-		{
-			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("giropay", parameters, "PayRemainder", "2");
-
-			return configuredServiceTransaction;
-		}
-
-
 	}
 }
