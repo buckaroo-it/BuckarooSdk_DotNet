@@ -5,7 +5,5 @@ namespace BuckarooSdk.Services.Giropay
 		public string BIC { get; set; }
 
 		public string CustomerIBAN { get; set; }
-
-		public long BankLeitzahl { get; set; }
 	}
 }

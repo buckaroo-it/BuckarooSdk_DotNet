@@ -204,6 +204,7 @@ namespace BuckarooSdk.Transaction
 		}
 		#endregion
 
+		#region customgiftcard
 		/// <summary>
 		/// The instantiation of the specific CustomGiftcard service transaction.
 		/// </summary>
@@ -225,8 +226,9 @@ namespace BuckarooSdk.Transaction
 		{
 			return new CustomGiftcardRequestObject(this, Constants.Services.ServiceNames.CustomGiftcard3);
 		}
-    
-    /// The instantiation of the specific Ippies service transaction.
+
+		#endregion
+		/// The instantiation of the specific Ippies service transaction.
 		public IppiesRequestObject Ippies()
 		{
 			return new IppiesRequestObject(this);
@@ -371,6 +373,11 @@ namespace BuckarooSdk.Transaction
 		public GiropayTransaction Giropay()
 		{
 			return new GiropayTransaction(this);
+		}
+
+		public Services.KlarnaKP.KlarnaRequestObject KlarnaKP()
+		{
+			return new Services.KlarnaKP.KlarnaRequestObject(this);
 		}
 
 		/// <summary>

@@ -24,7 +24,7 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("AmericanExpress", parameters, "Pay", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("amex", parameters, "Pay", "1");
 
 			return configuredServiceTransaction;
 		}
@@ -39,7 +39,7 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("AmericanExpress", parameters, "Refund", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("amex", parameters, "Refund", "1");
 
 			return configuredServiceTransaction;
 		}
@@ -54,7 +54,7 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("AmericanExpress", parameters, "Authorize", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("amex", parameters, "Authorize", "1");
 
 			return configuredServiceTransaction;
 		}
@@ -69,7 +69,7 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("AmericanExpress", parameters, "Capture", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("amex", parameters, "Capture", "1");
 
 			return configuredServiceTransaction;
 		}
@@ -84,7 +84,7 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("AmericanExpress", parameters, "PayRecurrent", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("amex", parameters, "PayRecurrent", "1");
 
 			return configuredServiceTransaction;
 		}
@@ -99,7 +99,7 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("AmericanExpress", parameters, "PayRemainder", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("amex", parameters, "PayRemainder", "1");
 
 			return configuredServiceTransaction;
 		}
@@ -114,7 +114,7 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("AmericanExpress", parameters, "PayEncrypted", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("amex", parameters, "PayEncrypted", "1");
 
 			return configuredServiceTransaction;
 		}
@@ -129,7 +129,7 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.Request
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("AmericanExpress", parameters, "AuthorizeEncrypted", "1");
+			configuredServiceTransaction.BaseTransaction.AddService("amex", parameters, "AuthorizeEncrypted", "1");
 
 			return configuredServiceTransaction;
 		}

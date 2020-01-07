@@ -24,10 +24,7 @@ namespace BuckarooSdk.Services
 			{
 				var propertyValue = property.GetValue(fullOrPartialRequest);
 
-				if (propertyValue == null)
-				{
-					continue;
-				}
+				if (propertyValue is null || string.IsNullOrEmpty(StringifyParameter(propertyValue))) continue;
 
 				// Group with EVERY PARAM MaxOccurs > 1:
 				// Recurse into this method for each item
@@ -37,7 +34,7 @@ namespace BuckarooSdk.Services
 					var i = 1;
 					foreach (var item in groupValue)
 					{
-						var subResult = CreateServiceParametersImplementation(groupValue, serviceName, groupValue.GroupName, i.ToString());
+						var subResult = CreateServiceParametersImplementation(item, serviceName, groupValue.GroupName, i.ToString());
 						result.AddRange(subResult);
 						i++;
 					}
@@ -71,7 +68,7 @@ namespace BuckarooSdk.Services
 				else
 				{
 					var propertyName = PropertyName(serviceName.ToString(), property);
-					result.Add(CreateParameter(propertyValue, propertyName, groupName));
+					result.Add(CreateParameter(propertyValue, propertyName, groupName, groupId));
 				}
 			}
 

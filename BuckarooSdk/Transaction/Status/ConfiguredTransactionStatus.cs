@@ -34,7 +34,6 @@ namespace BuckarooSdk.Transaction.Status
 
 		public DataTypes.Response.StatusRequest.TransactionStatus GetSingleStatus()
 		{
-
 			return Connection.Connector.SendRequest<IRequestBase, DataTypes.Response.StatusRequest.TransactionStatus>
 				(this.TransactionStatus.Request.Request, this.TransactionStatus.TransactionStatusBase, HttpRequestType.Get).Result;
 		}

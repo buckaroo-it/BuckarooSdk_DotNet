@@ -101,7 +101,7 @@ namespace BuckarooSdk.DataTypes.Push
 		}
 
 		// abstract class Response
-		public T GetActionResponse<T>()
+		public new T GetActionResponse<T>()
 			where T : ActionResponse, new()
 		{
 			var result = new T();

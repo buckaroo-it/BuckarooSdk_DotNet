@@ -27,7 +27,7 @@ namespace BuckarooSdk.Services.Klarna
 		/// </summary>
 		/// <param name="request">A KlarnaPayRequest</param>
 		/// <returns></returns>
-		public ConfiguredServiceTransaction Pay(KlarnaPayRequest request)
+		public ConfiguredServiceTransaction Pay(KlarnaKP.KlarnaPayRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);

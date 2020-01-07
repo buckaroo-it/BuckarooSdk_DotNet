@@ -62,8 +62,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -91,6 +91,7 @@
     <Compile Include="DataTypes\ParameterGroups\Capayable\Phone.cs" />
     <Compile Include="DataTypes\ParameterGroups\Capayable\ProductLine.cs" />
     <Compile Include="DataTypes\ParameterGroups\Capayable\SubTotalLine.cs" />
+    <Compile Include="DataTypes\ParameterGroups\Klarna\ArticleList.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\Debtor.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlan.cs" />
     <Compile Include="DataTypes\ParameterGroups\Subscriptions\RatePlanCharge.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Base\PushHandler.cs" />
     <Compile Include="Base\Request.cs" />
     <Compile Include="Base\ResponseHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -296,7 +298,6 @@
     <Compile Include="Services\CreditCards\AmericanExpress\Response\AmericanExpressPayResponse.cs" />
     <Compile Include="Services\CreditCards\AmericanExpress\Request\AmericanExpressRefundRequest.cs" />
     <Compile Include="Services\CreditCards\AmericanExpress\Response\AmericanExpressRefundResponse.cs" />
-    <Compile Include="Services\CreditCards\AmericanExpress\AmericanExpressTransaction.cs" />
     <Compile Include="Services\CreditCards\BanContact\BanContactTransaction.cs" />
     <Compile Include="Services\CreditCards\BanContact\Push\BancontactPayEncryptedPush.cs" />
     <Compile Include="Services\CreditCards\BanContact\Push\BancontactRefundPush.cs" />
@@ -478,6 +479,22 @@
     <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonPayPush.cs" />
     <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonPayRemainderPush.cs" />
     <Compile Include="Services\KbcPaymentButton\Push\KbcPaymentButtonRefundPush.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaCancelReservationRequest.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaCancelReservationResponse.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaPayRequest.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaPayResponse.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaRefundRequest.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaRefundResponse.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaRequestObject.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaReserveRequest.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaReserveResponse.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaUpdateReservationRequest.cs" />
+    <Compile Include="Services\KlarnaKP\KlarnaUpdateReservationResponse.cs" />
+    <Compile Include="Services\KlarnaKP\Push\KlarnaCancelReservationPush.cs" />
+    <Compile Include="Services\KlarnaKP\Push\KlarnaGetPClassesPush.cs" />
+    <Compile Include="Services\KlarnaKP\Push\KlarnaReservePush.cs" />
+    <Compile Include="Services\KlarnaKP\Push\KlarnaRefundPush.cs" />
+    <Compile Include="Services\KlarnaKP\Push\KlarnaUpdateReservationPush.cs" />
     <Compile Include="Services\Klarna\KlarnaCancelReservationRequest.cs" />
     <Compile Include="Services\Klarna\KlarnaCancelReservationResponse.cs" />
     <Compile Include="Services\Klarna\KlarnaGetPClassesRequest.cs" />
