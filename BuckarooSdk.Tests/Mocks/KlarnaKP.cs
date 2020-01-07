@@ -1,11 +1,6 @@
 ﻿using BuckarooSdk.DataTypes.ParameterGroups.Klarna;
 using BuckarooSdk.Services;
 using BuckarooSdk.Services.KlarnaKP;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BuckarooSdk.Tests.Mocks
 {
@@ -13,26 +8,28 @@ namespace BuckarooSdk.Tests.Mocks
 	{
 		internal static KlarnaReserveRequest KlarnaKpReserveMock => new KlarnaReserveRequest()
 		{
-			Gender = 0,
+			Gender = 1, //mandatory
 			OperatingCountry = "NL", // Mandatory
-			Pno = "12345678", // Mandatory
+			Pno = "03061992", // Mandatory
 
 			//billing
-			BillingPhoneNumber = string.Empty,
-			BillingHouseNumber = string.Empty,
-			BillingCompanyName = string.Empty,
-			BillingLastName = string.Empty,
+			BillingCompanyName = "Buckaroo",
+			BillingFirstName = "JJA",
+			BillingLastName = "Roos",
+			BillingEmail = "s.roos@buckaroo.nl",
+			BillingStreet = "Zonnebaan",
+			BillingHouseNumber = "9",
 			BillingHouseNumberSuffix = string.Empty,
-			BillingEmail = string.Empty,
+			BillingPostalCode = "3542 EA",
+			BillingCountry = "NL",
+			BillingCellPhoneNumber = "0613575514",
+			BillingCity = "Utrecht",
+			BillingPhoneNumber = string.Empty,
 			BillingCareOf = string.Empty,
-			BillingStreet = string.Empty,
-			BillingPostalCode = string.Empty,
-			BillingCountry = string.Empty,
-			BillingCellPhoneNumber = string.Empty,
-			BillingCity = string.Empty,
-			BillingFirstName = string.Empty,
 
 			//shipping
+			ShippingSameAsBilling = true, //if true, shipping part can be skipped.
+
 			ShippingCountry = string.Empty,
 			ShippingCity = string.Empty,
 			ShippingCompany = string.Empty,
@@ -43,7 +40,6 @@ namespace BuckarooSdk.Tests.Mocks
 			ShippingPostalCode = string.Empty,
 			ShippingStreet = string.Empty,
 			ShippingHouseNumber = string.Empty,
-			ShippingSameAsBilling = false,
 			ShippingEmail = string.Empty,
 			ShippingCareOf = string.Empty,
 			ShippingPhoneNumber = string.Empty,
@@ -54,58 +50,88 @@ namespace BuckarooSdk.Tests.Mocks
 				new Article()
 				{
 					ArticleTitle = "foo1",
+					ArticleNumber = "123",
+					ArticlePrice = 0.1m,
+					ArticleQuantity = 2,
+					ArticleVat = 21
 				},
 				new Article()
 				{
 					ArticleTitle = "foo2",
+					ArticleNumber = "456",
+					ArticlePrice = 0.2m,
+					ArticleQuantity = 1,
+					ArticleVat = 21
 				},
-				new Article()
-				{
-					ArticleTitle = "foo3",
-				}
+
 			}
 		};
 
 		internal static KlarnaCancelReservationRequest KlarnaKpCancelReservationMock => new KlarnaCancelReservationRequest()
 		{
-			ReservationNumber = "",
+			ReservationNumber = "38ade936-e9b9-7dba-94e1-d0fda0425a1d",
 		};
 
 		internal static KlarnaUpdateReservationRequest KlarnaKpUpdateReservationMock => new KlarnaUpdateReservationRequest()
 		{
-			ReservationNumber = "",
+			ReservationNumber = "26a709d5-97ff-79b1-a805-b1b3c38cfef1",
+			
 			//billing
-			BillingPhoneNumber = string.Empty,
-			BillingHouseNumber = string.Empty,
-			BillingCompanyName = string.Empty,
-			BillingLastName = string.Empty,
+			BillingCompanyName = "Buckaroo",
+			BillingFirstName = "JJA",
+			BillingLastName = "Roos",
+			BillingEmail = "s.roos@buckaroo.nl",
+			BillingStreet = "Zonnebaan",
+			BillingHouseNumber = "9",
 			BillingHouseNumberSuffix = string.Empty,
-			BillingEmail = string.Empty,
+			BillingPostalCode = "3542 EA",
+			BillingCountry = "NL",
+			BillingCellPhoneNumber = "0613575514",
+			BillingCity = "Utrecht",
+			BillingPhoneNumber = string.Empty,
 			BillingCareOf = string.Empty,
-			BillingStreet = string.Empty,
-			BillingPostalCode = string.Empty,
-			BillingCountry = string.Empty,
-			BillingCellPhoneNumber = string.Empty,
-			BillingCity = string.Empty,
-			BillingFirstName = string.Empty,
 
-			ShippingCountry = string.Empty,
-			ShippingCity = string.Empty,
-			ShippingCompany = string.Empty,
-			ShippingLastName = string.Empty,
-			ShippingCellPhoneNumber = string.Empty,
-			ShippingFirstName = string.Empty,
-			ShippingHouseNumberSuffix = string.Empty,
-			ShippingPostalCode = string.Empty,
-			ShippingStreet = string.Empty,
-			ShippingHouseNumber = string.Empty,
-			ShippingSameAsBilling = false,
-			ShippingEmail = string.Empty,
-			ShippingCareOf = string.Empty,
-			ShippingPhoneNumber = string.Empty,
+			//shipping
+			ShippingSameAsBilling = true, //if true, shipping part can be skipped.
 
+			Articles = new ParameterGroupCollection<Article>("Article")
+			{
+				new Article()
+				{
+					ArticleTitle = "foo1",
+					ArticleNumber = "123",
+					ArticlePrice = 0.1m,
+					ArticleQuantity = 1,
+					ArticleVat = 21
+				},
+				new Article()
+				{
+					ArticleTitle = "foo2",
+					ArticleNumber = "456",
+					ArticlePrice = 0.2m,
+					ArticleQuantity = 1,
+					ArticleVat = 21
+				},
 
+			}
+		};
+
+		internal static KlarnaPayRequest KlarnaKpPayMock => new KlarnaPayRequest()
+		{
+			ReservationNumber = "22a84ff4-9232-7d08-8541-037d88a3fff3", // Mandatory
+
+			// Article(s) optional. used for partial payments. 
+
+			//Article = new Article
+			//{
+			//	ArticleQuantity = 0,
+			//	ArticleNumber = string.Empty,
+			//}
+		};
+
+		internal static KlarnaRefundRequest KlarnaKpRefundMock => new KlarnaRefundRequest()
+		{
+			// no servicespecific variables required. Only the originalTransactionKey
 		};
 	}
-
 }

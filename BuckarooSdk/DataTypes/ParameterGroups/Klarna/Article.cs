@@ -8,8 +8,8 @@ namespace BuckarooSdk.DataTypes.ParameterGroups.Klarna
 		public string ArticleNumber { get; set; }
 		public string ArticleType { get; set; }
 		public int ArticleQuantity { get; set; }
-		public long ArticlePrice { get; set; }
+		public decimal ArticlePrice { get; set; }
 		public long ArticleVat { get; set; }
-		public long ArticleDiscount { get; set; }
+		public decimal ArticleDiscount { get; set; }
 	}
 }

@@ -43,8 +43,7 @@ namespace BuckarooSdk.Tests.Services.Giropay
 				.Pay(new GiropayPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					BIC = "GENODETT488",
-					CustomerIBAN = string.Empty,
-					BankLeitzahl = 0,
+					CustomerIBAN = string.Empty
 				});
 
 			var response = request.Execute();

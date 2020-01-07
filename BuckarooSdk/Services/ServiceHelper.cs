@@ -24,10 +24,7 @@ namespace BuckarooSdk.Services
 			{
 				var propertyValue = property.GetValue(fullOrPartialRequest);
 
-				if (propertyValue == null)
-				{
-					continue;
-				}
+				if (propertyValue is null || string.IsNullOrEmpty(StringifyParameter(propertyValue))) continue;
 
 				// Group with EVERY PARAM MaxOccurs > 1:
 				// Recurse into this method for each item

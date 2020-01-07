@@ -1,15 +1,9 @@
 namespace BuckarooSdk.Services.Giropay
 {
-	public class GiropayPayResponse
+	public class GiropayPayResponse : ActionResponse
 	{
+		public override Constants.Services.ServiceNames ServiceNames => Constants.Services.ServiceNames.Giropay;
+
 		public string ConsumerBIC { get; set; }
-
-		public string ConsumerBankleitzahl { get; set; }
-
-		public string ConsumerAccountNumber { get; set; }
-
-		public string ConsumerName { get; set; }
-
-		public string ConsumerIBAN { get; set; }
 	}
 }

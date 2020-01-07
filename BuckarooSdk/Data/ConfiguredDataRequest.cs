@@ -63,7 +63,6 @@ namespace BuckarooSdk.Data
 		public Services.KlarnaKP.KlarnaRequestObject KlarnaKP()
 		{
 			return new Services.KlarnaKP.KlarnaRequestObject(this);
-
 		}
 
 		/// <summary>

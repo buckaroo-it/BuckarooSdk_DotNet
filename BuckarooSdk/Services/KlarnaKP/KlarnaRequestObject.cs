@@ -36,6 +36,21 @@ namespace BuckarooSdk.Services.KlarnaKP
 			return configuredServiceDataReqeust;
 		}
 
+		/// <summary>
+		/// The CancelReservation function creates a configured datarequest with an KlarnaCancelReservationRequest request, 
+		/// that is ready to be executed.
+		/// </summary>
+		/// <param name="request">A KlarnaCancelReservationRequest</param>
+		/// <returns></returns>
+		public ConfiguredServiceDataRequest CancelReservation(KlarnaCancelReservationRequest request)
+		{
+			var parameters = ServiceHelper.CreateServiceParameters(request);
+			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+			configuredServiceDataReqeust.BaseData.AddService("klarnakp", parameters, "CancelReservation");
+
+			return configuredServiceDataReqeust;
+		}
+
 
 		/// <summary>
 		/// The Pay function creates a configured transaction with an KlarnaPayRequest request, 
@@ -47,7 +62,7 @@ namespace BuckarooSdk.Services.KlarnaKP
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("klarna", parameters, "Pay");
+			configuredServiceTransaction.BaseTransaction.AddService("klarnakp", parameters, "Pay");
 
 			return configuredServiceTransaction;
 		}
@@ -62,27 +77,11 @@ namespace BuckarooSdk.Services.KlarnaKP
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-			configuredServiceTransaction.BaseTransaction.AddService("klarna", parameters, "Refund");
+			configuredServiceTransaction.BaseTransaction.AddService("klarnakp", parameters, "Refund");
 
 			return configuredServiceTransaction;
 		}
-
-
-		/// <summary>
-		/// The CancelReservation function creates a configured datarequest with an KlarnaCancelReservationRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A KlarnaCancelReservationRequest</param>
-		/// <returns></returns>
-		public ConfiguredServiceDataRequest CancelReservation(KlarnaCancelReservationRequest request)
-		{
-			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("klarna", parameters, "CancelReservation");
-
-			return configuredServiceDataReqeust;
-		}
-
+		
 		/// <summary>
 		/// The UpdateReservation function creates a configured datarequest with an KlarnaUpdateReservationRequest request, 
 		/// that is ready to be executed.
@@ -93,7 +92,7 @@ namespace BuckarooSdk.Services.KlarnaKP
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
 			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("klarna", parameters, "UpdateReservation");
+			configuredServiceDataReqeust.BaseData.AddService("klarnakp", parameters, "UpdateReservation");
 
 			return configuredServiceDataReqeust;
 		}

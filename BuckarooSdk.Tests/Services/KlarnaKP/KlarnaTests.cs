@@ -10,6 +10,7 @@ using BuckarooSdk.Services.KlarnaKP;
 using System.Collections.Generic;
 using BuckarooSdk.Services;
 
+
 namespace BuckarooSdk.Tests.Services.KlarnaKP
 {
 	[TestClass]
@@ -27,9 +28,6 @@ namespace BuckarooSdk.Tests.Services.KlarnaKP
 		[TestMethod]
 		public void ReserveTest()
 		{
-			//var article = new Article();
-			var articles = new List<Article>();
-
 			var request =
 				this._buckarooClient.CreateRequest(new ExtensiveLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
@@ -53,16 +51,14 @@ namespace BuckarooSdk.Tests.Services.KlarnaKP
 
 			var logger = response.BuckarooSdkLogger;
 
-			//Process.Start(response.RequiredAction.RedirectURL);
+			Process.Start(response.RequiredAction.RedirectURL);
 			Console.WriteLine(logger.GetFullLog());
 		}
 
 
+		[TestMethod]
 		public void CancelReservationTest()
 		{
-			//var article = new Article();
-			var articles = new List<Article>();
-
 			var request =
 				this._buckarooClient.CreateRequest(new ExtensiveLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
@@ -90,6 +86,87 @@ namespace BuckarooSdk.Tests.Services.KlarnaKP
 			Console.WriteLine(logger.GetFullLog());
 		}
 
+		[TestMethod]
+		public void PayTest()
+		{
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				{
+					Currency = "EUR",
+					AmountDebit = 0.4m,
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+				})
+				.KlarnaKP() // Choose the paymentmethod you want to use
+				.Pay(Mocks.KlarnaKP.KlarnaKpPayMock); // choose the action you want to use and provide the payment method specific info.
+
+			var response = request.Execute();
+
+			// Process.Start(response.RequiredAction.RedirectURL);
+			Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+		}
+
+		[TestMethod]
+		public void RefundTest()
+		{
+			var request =
+				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest() // One of the request type options.
+				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				{
+					Currency = "EUR",
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					OriginalTransactionKey = "12890D0FFE9F4840A69126DA2A93F1B6",
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					AmountCredit = 0.40m,
+				})
+				.KlarnaKP() // Choose the paymentmethod you want to use
+				.Refund(Mocks.KlarnaKP.KlarnaKpRefundMock); // choose the action you want to use and provide the payment method specific info.
+
+			var response = request.Execute();
+
+			// Process.Start(response.RequiredAction.RedirectURL);
+			Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+		}
+
+		[TestMethod]
+		public void UpdateReservationTests()
+		{
+			var request =
+				this._buckarooClient.CreateRequest(new ExtensiveLogger()) // Create a request.
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.DataRequest() // One of the request type options.
+				.SetBasicFields(new DataBase() // The transactionbase contains the base information of a transaction.
+				{
+					ClientIp = TestSettings.IpAddress,
+					Currency = "EUR",
+					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+					ReturnUrl = TestSettings.ReturnUrl,
+					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+					ReturnUrlError = TestSettings.ReturnUrlError,
+					ReturnUrlReject = TestSettings.ReturnUrlReject,
+					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+				})
+
+				.KlarnaKP() // Choose the paymentmethod you want to use
+				.UpdateReservation(Mocks.KlarnaKP.KlarnaKpUpdateReservationMock); // choose the action you want to use and provide the payment method specific info.
+
+			var response = request.Execute();
+			var logger = response.BuckarooSdkLogger;
+
+			//Process.Start(response.RequiredAction.RedirectURL);
+			Console.WriteLine(logger.GetFullLog());
+		}
 	}
 }
 		/**
