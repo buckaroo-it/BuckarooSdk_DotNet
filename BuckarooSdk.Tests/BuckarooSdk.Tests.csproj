@@ -377,6 +377,7 @@
     <Compile Include="Services\Dankort\DankortTests.cs" />
     <Compile Include="Services\EMandate\EMandateTests.cs" />
     <Compile Include="Services\EPS\EPSTests.cs" />
+    <Compile Include="Services\Giftcard\HuisTuinGiftcardTests.cs" />
     <Compile Include="Services\Giropay\GiropayTests.cs" />
     <Compile Include="Services\IdealProcessing\IdealProcessingTests.cs" />
     <Compile Include="Services\IdealQr\IdealQrTests.cs" />

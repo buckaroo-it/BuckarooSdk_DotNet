@@ -11,11 +11,11 @@ namespace BuckarooSdk.Services.Ideal.TransactionRequest
 		/// The configured transaction
 		/// </summary>
         private ConfiguredTransaction ConfiguredTransaction { get;}
-
         internal IdealTransaction(ConfiguredTransaction configuredTransaction)
         {
             this.ConfiguredTransaction = configuredTransaction;
         }
+
 
         /// <summary>
         /// The pay function creates a configured transaction with an IdealPayRequest, 

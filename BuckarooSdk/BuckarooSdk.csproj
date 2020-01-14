@@ -425,6 +425,11 @@
     <Compile Include="Services\EPS\Push\EPSPayPush.cs" />
     <Compile Include="Services\EPS\Push\EPSPayRemainderPush.cs" />
     <Compile Include="Services\EPS\Push\EPSRefundPush.cs" />
+    <Compile Include="Services\Giftcards\HuisTuinGiftcard\HuisTuinGiftcardPayRequest.cs" />
+    <Compile Include="Services\Giftcards\HuisTuinGiftcard\HuisTuinGiftcardPayResponse.cs" />
+    <Compile Include="Services\Giftcards\HuisTuinGiftcard\HuisTuinGiftcardRefundRequest.cs" />
+    <Compile Include="Services\Giftcards\HuisTuinGiftcard\HuisTuinGiftcardRefundResponse.cs" />
+    <Compile Include="Services\Giftcards\HuisTuinGiftcard\HuisTuinTransaction.cs" />
     <Compile Include="Services\Giropay\GiropayPayRequest.cs" />
     <Compile Include="Services\Giropay\GiropayPayResponse.cs" />
     <Compile Include="Services\Giropay\GiropayRefundRequest.cs" />
@@ -489,7 +494,6 @@
     <Compile Include="Services\KlarnaKP\KlarnaUpdateReservationRequest.cs" />
     <Compile Include="Services\KlarnaKP\KlarnaUpdateReservationResponse.cs" />
     <Compile Include="Services\KlarnaKP\Push\KlarnaCancelReservationPush.cs" />
-    <Compile Include="Services\KlarnaKP\Push\KlarnaGetPClassesPush.cs" />
     <Compile Include="Services\KlarnaKP\Push\KlarnaReservePush.cs" />
     <Compile Include="Services\KlarnaKP\Push\KlarnaRefundPush.cs" />
     <Compile Include="Services\KlarnaKP\Push\KlarnaUpdateReservationPush.cs" />

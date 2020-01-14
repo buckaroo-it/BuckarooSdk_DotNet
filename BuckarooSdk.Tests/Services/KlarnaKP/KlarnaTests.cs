@@ -9,7 +9,8 @@ using BuckarooSdk.DataTypes.ParameterGroups.Klarna;
 using BuckarooSdk.Services.KlarnaKP;
 using System.Collections.Generic;
 using BuckarooSdk.Services;
-
+using System.Text;
+using System.IO;
 
 namespace BuckarooSdk.Tests.Services.KlarnaKP
 {
@@ -46,8 +47,8 @@ namespace BuckarooSdk.Tests.Services.KlarnaKP
 
 				.KlarnaKP() // Choose the paymentmethod you want to use
 				.Reserve(Mocks.KlarnaKP.KlarnaKpReserveMock); // choose the action you want to use and provide the payment method specific info.
-			
-				var response = request.Execute();
+
+			var response = request.Execute();
 
 			var logger = response.BuckarooSdkLogger;
 
@@ -169,6 +170,92 @@ namespace BuckarooSdk.Tests.Services.KlarnaKP
 		}
 	}
 }
+		//[TestMethod]
+		//public void ReservePushTest()
+		//{
+		//	var pushHandler = this._buckarooClient.GetPushHandler(TestSettings.SecretKey); // Retrieving the pushHandler from de SDK client.
+
+		//	using (var reader = new StreamReader($"{ TestSettings.LogBasePath }IdealPush.json"))
+		//	{
+		//		// JSON push as it is received by the client system.
+		//		var jsonString = reader.ReadToEnd();
+		//		var bodyAsBytes = Encoding.UTF8.GetBytes(jsonString);           // DEZE IS BELANGRIJK: BERICHT AS BYTE[]
+
+		//		// calculate UNIX time
+		//		var epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc);
+		//		var timeSpan = DateTime.UtcNow - epochStart;
+		//		var requestTimeStamp = Convert.ToUInt64(timeSpan.TotalSeconds).ToString();
+		//		// create random nonce for each request
+
+
+		//		var pushSignature = this._buckarooClient.GetSignatureCalculationService().CalculateSignature(bodyAsBytes, HttpMethod.Post.ToString(),
+		//			requestTimeStamp, Guid.NewGuid().ToString("N"),
+		//			TestSettings.PushUri, TestSettings.WebsiteKey, TestSettings.SecretKey);
+
+
+		//		var authorizationheader = $"hmac {pushSignature}";              // DEZE IS BELANGRIJK: SIGNATURE
+
+		//		// Function that returns a structured push, based on the JSON pushed that is received.
+		//		var push = pushHandler.DeserializePush(bodyAsBytes, TestSettings.PushUri, authorizationheader);
+
+		//		var responseData = push.GetActionResponse<BuckarooSdk.Services.KlarnaKP.Push.KlarnaReservePush>();
+
+		//		// 5 example values that can be retrieved from the push. The push contains many more though
+		//		var transactionKey = push.Key;
+		//		var transactionStatus = push.Status;
+
+		//		var iban = responseData.ConsumerIban;
+		//		var bic = responseData.ConsumerBic;
+		//		var consumerName = responseData.ConsumerName;
+
+		//		// The following KeyValuePair can be used to update your transaction
+		//		var newTransactionStatus = new KeyValuePair<string, int>(transactionKey, transactionStatus.Code.Code);
+		//	}
+		//}
+
+		//public void CapturePushTest()
+		//{
+		//	var pushHandler = this.BuckarooClient.GetPushHandler(TestSettings.SecretKey); // Retrieving the pushHandler from de SDK client.
+
+		//	using (var reader = new StreamReader($"{ TestSettings.LogBasePath }IdealPush.json"))
+		//	{
+		//		// JSON push as it is received by the client system.
+		//		var jsonString = reader.ReadToEnd();
+		//		var bodyAsBytes = Encoding.UTF8.GetBytes(jsonString);           // DEZE IS BELANGRIJK: BERICHT AS BYTE[]
+
+		//		// calculate UNIX time
+		//		var epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc);
+		//		var timeSpan = DateTime.UtcNow - epochStart;
+		//		var requestTimeStamp = Convert.ToUInt64(timeSpan.TotalSeconds).ToString();
+		//		// create random nonce for each request
+
+
+		//		var pushSignature = this.BuckarooClient.GetSignatureCalculationService().CalculateSignature(bodyAsBytes, HttpMethod.Post.ToString(),
+		//			requestTimeStamp, Guid.NewGuid().ToString("N"),
+		//			TestSettings.PushUri, TestSettings.WebsiteKey, TestSettings.SecretKey);
+
+
+		//		var authorizationheader = $"hmac {pushSignature}";              // DEZE IS BELANGRIJK: SIGNATURE
+
+		//		// Function that returns a structured push, based on the JSON pushed that is received.
+		//		var push = pushHandler.DeserializePush(bodyAsBytes, TestSettings.PushUri, authorizationheader);
+
+		//		var responseData = push.GetActionResponse<IdealPayPush>();
+
+		//		// 5 example values that can be retrieved from the push. The push contains many more though
+		//		var transactionKey = push.Key;
+		//		var transactionStatus = push.Status;
+
+		//		var iban = responseData.ConsumerIban;
+		//		var bic = responseData.ConsumerBic;
+		//		var consumerName = responseData.ConsumerName;
+
+		//		// The following KeyValuePair can be used to update your transaction
+		//		var newTransactionStatus = new KeyValuePair<string, int>(transactionKey, transactionStatus.Code.Code);
+		//	}
+
+
+		//}
 		/**
 
 		[TestMethod]

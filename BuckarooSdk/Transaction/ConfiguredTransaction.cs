@@ -29,6 +29,7 @@ using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
 using BuckarooSdk.Transaction.General;
 using AmericanExpressTransaction = BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction;
+using BuckarooSdk.Services.Giftcards.HuisTuinGiftcard;
 
 namespace BuckarooSdk.Transaction
 {
@@ -380,6 +381,11 @@ namespace BuckarooSdk.Transaction
 			return new Services.KlarnaKP.KlarnaRequestObject(this);
 		}
 
+		public HuisTuinTransaction HuisEnTuinGiftcard()
+		{
+			return new HuisTuinTransaction(this);
+		}
+	
 		/// <summary>
 		/// The instantiation of a general transaction without a service.
 		/// </summary>

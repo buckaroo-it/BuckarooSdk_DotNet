@@ -196,8 +196,8 @@ namespace BuckarooSdk.Tests.Services.Ideal
 			using (var reader = new StreamReader($"{ TestSettings.LogBasePath }IdealPush.json"))
 			{
 				// JSON push as it is received by the client system.
-				var jsonString = reader.ReadToEnd();
-				var bodyAsBytes = Encoding.UTF8.GetBytes(jsonString);
+				var jsonString = reader.ReadToEnd();						
+				var bodyAsBytes = Encoding.UTF8.GetBytes(jsonString);           // DEZE IS BELANGRIJK: BERICHT AS BYTE[]
 
 				// calculate UNIX time
 				var epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc);
@@ -208,8 +208,10 @@ namespace BuckarooSdk.Tests.Services.Ideal
 
 				var pushSignature = this.BuckarooClient.GetSignatureCalculationService().CalculateSignature(bodyAsBytes, HttpMethod.Post.ToString(),
 					requestTimeStamp, Guid.NewGuid().ToString("N"),
-					TestSettings.PushUri, TestSettings.WebsiteKey, TestSettings.SecretKey);
-				var authorizationheader = $"hmac {pushSignature}";
+					TestSettings.PushUri, TestSettings.WebsiteKey, TestSettings.SecretKey);     
+
+
+				var authorizationheader = $"hmac {pushSignature}";				// DEZE IS BELANGRIJK: SIGNATURE
 
 				// Function that returns a structured push, based on the JSON pushed that is received.
 				var push = pushHandler.DeserializePush(bodyAsBytes, TestSettings.PushUri, authorizationheader);
