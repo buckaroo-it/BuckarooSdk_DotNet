@@ -1,6 +1,5 @@
 using BuckarooSdk.Services.Afterpay;
-using BuckarooSdk.Services.AfterpayAcceptgiro;
-using BuckarooSdk.Services.AfterpayDigiaccept;
+
 using BuckarooSdk.Services.BuckarooWallet;
 using BuckarooSdk.Services.BuckarooVoucher;
 using BuckarooSdk.Services.Capayable;
@@ -173,27 +172,10 @@ namespace BuckarooSdk.Transaction
 
 		#endregion
 
-		#region AfterPay
-		/// <summary>
-		/// The instanciation of the specific AfterpayAcceptgiro Service transaction.
-		/// </summary>
-
-		public AfterpayAcceptgiroRequestObject AfterpayAcceptgiro()
-		{
-			return new AfterpayAcceptgiroRequestObject(this);
-		}
 		/// <returns> An INGHomePay</returns>
 		public INGHomePayRequestObject INGHomePay()
 		{
 			return new INGHomePayRequestObject(this);
-		}
-
-		/// <summary>
-		/// The instanciation of the specific AfterpayDigiaccept Service transaction.
-		/// </summary>
-		public AfterpayDigiacceptRequestObject AfterpayDigiaccept()
-		{
-			return new AfterpayDigiacceptRequestObject(this);
 		}
 
 		/// <summary>
@@ -203,7 +185,6 @@ namespace BuckarooSdk.Transaction
 		{
 			return new AfterpayRequestObject(this);
 		}
-		#endregion
 
 		#region customgiftcard
 		/// <summary>

@@ -1,9 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace BuckarooSdk.Services.Afterpay.Push
 {
-	/// <summary>
-	/// 
-	/// </summary>
-	public class AfterpayRefundPush : ActionPush
+	public class AfterpayAuthorizePush : ActionPush
 	{
 		public override Constants.Services.ServiceNames ServiceNames => Constants.Services.ServiceNames.Afterpay;
 
