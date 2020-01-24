@@ -216,6 +216,8 @@ namespace BuckarooSdk.Tests.Services.Ideal
 				// Function that returns a structured push, based on the JSON pushed that is received.
 				var push = pushHandler.DeserializePush(bodyAsBytes, TestSettings.PushUri, authorizationheader);
 
+				var service = push.GetServices();
+
 				var responseData = push.GetActionResponse<IdealPayPush>();
 
 				// 5 example values that can be retrieved from the push. The push contains many more though

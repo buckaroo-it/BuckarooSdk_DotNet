@@ -1,7 +1,9 @@
+using BuckarooSdk.Constants;
+
 namespace BuckarooSdk.Services.Afterpay
 {
-	public class AfterpayCaptureResponse
+	public class AfterpayCaptureResponse : ActionResponse
 	{
-		public string ErrorResponseMessage { get; set; }
+		public override Constants.Services.ServiceNames ServiceNames => Constants.Services.ServiceNames.Afterpay;
 	}
 }

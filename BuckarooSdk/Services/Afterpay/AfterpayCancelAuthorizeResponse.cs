@@ -1,7 +1,7 @@
 namespace BuckarooSdk.Services.Afterpay
 {
-	public class AfterpayCancelAuthorizeResponse
+	public class AfterpayCancelAuthorizeResponse : ActionResponse
 	{
-		public string ErrorResponseMessage { get; set; }
+		public override Constants.Services.ServiceNames ServiceNames => Constants.Services.ServiceNames.Afterpay;
 	}
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BuckarooSdk.Services.Giftcards.HuisTuinGiftcard
 {
 	/// <summary>
-	/// The Transaction class of payment method type: Huis & Tuin giftcards.
+	/// The Transaction class of payment method type: Huis en Tuin giftcards.
 	/// </summary>
 	public class HuisTuinTransaction
 	{
