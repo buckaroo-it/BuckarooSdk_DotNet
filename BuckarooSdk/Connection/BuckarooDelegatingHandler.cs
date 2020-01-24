@@ -51,10 +51,14 @@ namespace BuckarooSdk.Connection
 
 			// create random nonce for each request
 			var nonce = Guid.NewGuid().ToString("N");
-
+			var content = new byte[0];
+			
 			// checking if the request contains body, usually will be null with HTTP GET and DELETE
-			var content = await request.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
-			request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+			if (request.Content != null)
+			{
+				content = await request.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
+				request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+			}
 
 			var authorizationHeaderString = this.SignatureCalculationService.CalculateSignature(content, requestHttpMethod, requestTimeStamp, nonce, requestUri, this._websiteKey, this._apiKey);
 

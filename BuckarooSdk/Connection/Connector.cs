@@ -20,15 +20,11 @@ namespace BuckarooSdk.Connection
 	/// </summary>
 	internal static class Connector
 	{
-		private static readonly string CheckoutUrl = ConfigurationManager.AppSettings["BuckarooCheckoutUrl"];
-		private static readonly string TestCheckoutUrl = ConfigurationManager.AppSettings["BuckarooTestCheckoutUrl"];
+		private static readonly string CheckoutUrl = "https://checkout.buckaroo.nl";
+		private static readonly string TestCheckoutUrl = "https://testcheckout.buckaroo.nl";
 
 		static Connector()
 		{
-			// get urls from config, or use default values
-			CheckoutUrl = (CheckoutUrl ?? "https://checkout.buckaroo.nl").TrimEnd('/');
-			TestCheckoutUrl = (TestCheckoutUrl ?? "https://testcheckout.buckaroo.nl").TrimEnd('/');
-
 			// ensure urls are on the correct format
 			ValidateUrls();
 		}
