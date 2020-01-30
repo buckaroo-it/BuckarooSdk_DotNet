@@ -4,6 +4,8 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<RootNamespace>BuckarooSdk</RootNamespace>
 		<AssemblyName>BuckarooSdk</AssemblyName>
+		<Description>.NET Standard SDK for the Buckaroo API</Description>
+		<PackageIconUrl>https://www.buckaroo.nl/assets/static/favicons/apple-touch-icon.png</PackageIconUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
