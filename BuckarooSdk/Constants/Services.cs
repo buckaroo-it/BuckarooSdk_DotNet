@@ -47,6 +47,7 @@
 			BuckarooVoucher,
 			Notification,
 			Ippies,
+			HuisTuinGiftcard,
 		}
 	}
 }
