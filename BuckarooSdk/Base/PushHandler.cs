@@ -26,17 +26,18 @@ namespace BuckarooSdk.Base
 			var requestUriEncoded = WebUtility.UrlEncode(requestUri)?.ToLower();
 
 			var requestMethod = HttpMethod.Post.ToString();
-
-			// get content from request. 
-			var bodyAsString = Encoding.UTF8.GetString(body);
+            
 
 			//calculate signature
-			if (!this.SignatureCalculationService.VerifySignature(body, requestMethod, requestUri, this._apiKey, authorizationHeader))
+			if (!this.SignatureCalculationService.VerifySignature(body, requestMethod, requestUriEncoded, this._apiKey, authorizationHeader))
 			{
 				throw new AuthenticationException();
 			}
 
-			return this.DeserializePush(bodyAsString);
+            // get content from request. 
+            var bodyAsString = Encoding.UTF8.GetString(body);
+
+            return this.DeserializePush(bodyAsString);
 		}
 
 		private Push DeserializePush(string jsonString)
