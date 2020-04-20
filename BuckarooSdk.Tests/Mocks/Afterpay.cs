@@ -149,9 +149,9 @@ namespace BuckarooSdk.Tests.Mocks
 
 		};
 
-		internal static AfterpayRefundRequest AfterpayRefundMock => new AfterpayRefundRequest()
+		internal static AfterpayRefundRequest AfterpayRefundMock(string refundType) => new AfterpayRefundRequest(refundType)
 		{
-			Articles = new BuckarooSdk.Services.ParameterGroupCollection<Article>("Article")
+            Articles = new BuckarooSdk.Services.ParameterGroupCollection<Article>("Article")
 			{
 				new Article()
 				{
