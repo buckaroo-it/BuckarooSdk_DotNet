@@ -10,6 +10,6 @@ namespace BuckarooSdk.Services.Giftcards.VVVGiftcard
 		/// <summary>
 		/// Maximum length = 6 numeric char
 		/// </summary>
-		public string IntersolveValidationCode { get; set; }
+		public string IntersolvePin { get; set; }
 	}
 }

@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Diagnostics;
 using System.Globalization;
+using BuckarooSdk.Tests.Constants;
 
 namespace BuckarooSdk.Tests.Services.Giftcard
 {
@@ -41,7 +42,7 @@ namespace BuckarooSdk.Tests.Services.Giftcard
 				.Pay(new VVVGiftcardPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
                     IntersolveCardnumber = "0000000000000000001",
-                    IntersolveValidationCode = "350"
+                    IntersolvePin = "350"
 				});
 
 			var response = request.Execute();
@@ -51,8 +52,6 @@ namespace BuckarooSdk.Tests.Services.Giftcard
 				//optie 1
 				Process.Start(response.RequiredAction.RedirectURL);
             }
-
-			Process.Start(response.RequiredAction.RedirectURL);
 
 			Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
