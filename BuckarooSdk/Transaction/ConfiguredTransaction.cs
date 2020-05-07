@@ -1,13 +1,14 @@
 using BuckarooSdk.Services.Afterpay;
-
-using BuckarooSdk.Services.BuckarooWallet;
 using BuckarooSdk.Services.BuckarooVoucher;
+using BuckarooSdk.Services.BuckarooWallet;
 using BuckarooSdk.Services.Capayable;
 using BuckarooSdk.Services.CreditCards;
 using BuckarooSdk.Services.CreditCards.BanContact;
 using BuckarooSdk.Services.CustomGiftcard;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.EPS;
+using BuckarooSdk.Services.Giftcards.HuisTuinGiftcard;
+using BuckarooSdk.Services.Giftcards.VVVGiftcard;
 using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
@@ -28,7 +29,6 @@ using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
 using BuckarooSdk.Transaction.General;
 using AmericanExpressTransaction = BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction;
-using BuckarooSdk.Services.Giftcards.HuisTuinGiftcard;
 
 namespace BuckarooSdk.Transaction
 {
@@ -366,7 +366,12 @@ namespace BuckarooSdk.Transaction
 		{
 			return new HuisTuinTransaction(this);
 		}
-	
+
+        public VVVGiftcardTransaction VVVGiftcard()
+        {
+            return new VVVGiftcardTransaction(this);
+        }
+
 		/// <summary>
 		/// The instantiation of a general transaction without a service.
 		/// </summary>

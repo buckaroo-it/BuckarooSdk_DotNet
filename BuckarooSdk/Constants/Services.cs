@@ -48,6 +48,7 @@
 			Notification,
 			Ippies,
 			HuisTuinGiftcard,
+            VVVGiftcard,
 		}
 	}
 }
