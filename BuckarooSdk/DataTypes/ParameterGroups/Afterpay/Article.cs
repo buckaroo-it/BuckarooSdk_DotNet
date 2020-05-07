@@ -16,5 +16,6 @@ namespace BuckarooSdk.DataTypes.ParameterGroups.Afterpay
 		/// </summary>
 		public string Type { get; set; }
 		public string UnitCode { get; set; }
+        public string RefundType { get; set; }
 	}
 }

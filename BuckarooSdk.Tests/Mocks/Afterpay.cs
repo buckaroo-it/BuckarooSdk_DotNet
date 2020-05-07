@@ -149,12 +149,13 @@ namespace BuckarooSdk.Tests.Mocks
 
 		};
 
-		internal static AfterpayRefundRequest AfterpayRefundMock => new AfterpayRefundRequest()
+		internal static AfterpayRefundRequest AfterpayRefundMock(string refundType) => new AfterpayRefundRequest()
 		{
-			Articles = new BuckarooSdk.Services.ParameterGroupCollection<Article>("Article")
+            Articles = new BuckarooSdk.Services.ParameterGroupCollection<Article>("Article")
 			{
 				new Article()
 				{
+					RefundType = refundType,
 					Description = "Blue Toy Car",
 					GrossUnitPrice = "10.00",
 					VatPercentage = "21",
