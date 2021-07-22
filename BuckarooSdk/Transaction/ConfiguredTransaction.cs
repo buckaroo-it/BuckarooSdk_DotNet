@@ -294,7 +294,7 @@ namespace BuckarooSdk.Transaction
         /// </summary>
         public EMandateRequestObject EMandate()
         {
-            return new EMandateRequestObject(this);
+            return new EMandateRequestObject();
         }
 
         /// <summary>
