@@ -76,7 +76,7 @@ namespace BuckarooSdk.Data
         /// <returns> An ideal</returns>
         public IdealDataRequest Ideal()
         {
-            return new IdealDataRequest(this);
+            return new IdealDataRequest();
         }
 
         public IdealQrDataRequest IdealQr()
