@@ -329,10 +329,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="WireMock.Net, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WireMock.Net.1.0.7\lib\net461\WireMock.Net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="XPath2, Version=1.0.7.0, Culture=neutral, PublicKeyToken=463c6d7fb740c7e5, processorArchitecture=MSIL">
       <HintPath>..\packages\XPath2.1.0.6.1\lib\net40\XPath2.dll</HintPath>
       <Private>True</Private>
