@@ -328,6 +328,7 @@
     <Compile Include="Constants\CustomImplementationLogger.cs" />
     <Compile Include="Constants\TestSettings.cs" />
     <Compile Include="General\GeneralTransactionTests.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Mocks\Afterpay.cs" />
     <Compile Include="Mocks\KlarnaKP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

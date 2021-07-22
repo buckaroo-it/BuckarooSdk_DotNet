@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using BuckarooSdk;
 using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Tests.Constants;
@@ -13,18 +12,19 @@ namespace BuckarooSdk.Tests.General
     [TestClass]
     public class GeneralTransactionTests
     {
-        private SdkClient SdkClient { get;set; }
+        private readonly SdkClient _buckarooClient;
 
         public GeneralTransactionTests()
         {
-            this.SdkClient = new SdkClient(TestSettings.Logger);
+            _buckarooClient = new SdkClient(TestSettings.Logger);
         }
 
         [TestMethod]
         public void TransactionSpecificationTest()
         {
-            var request = this.SdkClient.CreateRequest()
-                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+            var request = _buckarooClient
+                .CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionSpecificationRequest()
                 .SpecificServiceSpecification("ideal", 2);
 
@@ -34,13 +34,14 @@ namespace BuckarooSdk.Tests.General
         [TestMethod]
         public void MultipleSpecificationTest()
         {
-            var request = this.SdkClient.CreateRequest()
-                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+            var request = _buckarooClient
+                .CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionSpecificationRequest()
                 .MultipleServiceSpecifications(new TransactionSpecificationBase()
-                        .AddService("ideal", 2)
-                        .AddService("transfer")
-                        .AddService("paypal")
+                    .AddService("ideal", 2)
+                    .AddService("transfer")
+                    .AddService("paypal")
                 );
 
             var response = request.GetMultipleSpecificiations();
@@ -51,7 +52,8 @@ namespace BuckarooSdk.Tests.General
         [TestMethod]
         public void NoServiceTransactionTest()
         {
-            var request = this.SdkClient.CreateRequest()
+            var request = _buckarooClient
+                .CreateRequest()
                 .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionRequest()
                 .SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
@@ -69,13 +71,12 @@ namespace BuckarooSdk.Tests.General
                 .Pay();
 
             var response = request.ExecuteAsync();
-
         }
 
         [TestMethod]
         public void NoServiceTransactionTest2()
         {
-            var request = this.SdkClient.CreateRequest();
+            var request = _buckarooClient.CreateRequest();
             var authRequest = request.Authenticate(
                     TestSettings.WebsiteKey, TestSettings.SecretKey,
                         TestSettings.Test, CultureInfo.GetCultureInfo("nl-NL"),
@@ -108,7 +109,9 @@ namespace BuckarooSdk.Tests.General
             {
                 "94436C07DE6F44EBACBF26CB561F17B3",
             };
-            var request = this.SdkClient.CreateRequest()
+
+            var request = _buckarooClient
+                .CreateRequest()
                 .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .CancelTransactionRequest()
                 .CancelMultiple(new CancelTransactionBase(transactionsToBeCanceled));
@@ -122,8 +125,9 @@ namespace BuckarooSdk.Tests.General
         {
             const string key = "12890D0FFE9F4840A69126DA2A93F1B6";
 
-            var request = this.SdkClient.CreateRequest()
-                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+            var request = _buckarooClient
+                .CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionStatusRequest()
                 .Status(key);
 
@@ -132,38 +136,32 @@ namespace BuckarooSdk.Tests.General
             if (requestResponse.Status.Code.Code == BuckarooSdk.Constants.Status.WaitingForConsumer)
             {
                 Process.Start("");
-
-            }
-            if (requestResponse.Status.Code.Code == BuckarooSdk.Constants.Status.Success)
-            {
-
             }
 
             //var logging = this.SdkClient.LoggerFactory.GetFullLog();
             //Console.WriteLine(logging);
-
         }
 
         [TestMethod]
         public void InvoiceInfoTest()
         {
-
             const string transactionKey = "244BD8425FB941B7B93E70F5AED31F3A";
 
-            var request = this.SdkClient.CreateRequest()
-                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+            var request = _buckarooClient
+                .CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionInvoiceInfoRequest()
                 .SpecificInvoiceInfo(transactionKey);
 
             var response = request.GetSingleInvoiceInfoRequest();
-
         }
 
         [TestMethod]
         public void InvoicesInfoTest()
         {
-            var request = this.SdkClient.CreateRequest()
-                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+            var request = _buckarooClient
+                .CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionInvoiceInfoRequest()
                 .MultipleInvoicesInfo(new TransactionInvoiceInfoBase()
                 {
@@ -186,14 +184,13 @@ namespace BuckarooSdk.Tests.General
         {
             const string transactionKey = "8CC823FB3A9545B99608541DF4BC4DFF";
 
-            var request = this.SdkClient.CreateRequest()
-                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+            var request = _buckarooClient
+                .CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionRefundInfoRequest()
                 .SpecificConfiguredTransactionRefundInfo(transactionKey);
 
-
             var response = request.GetSingleRefundInfo();
-
 
             Console.WriteLine();
         }
@@ -209,7 +206,7 @@ namespace BuckarooSdk.Tests.General
                 "fdaswerqrgtdgfsasdffwe",
             };
 
-            var request = SdkClient.CreateRequest()
+            var request = _buckarooClient.CreateRequest()
                 .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionRefundInfoRequest()
                 .MultipleConfiguredTransactionRefundInfo(new TransactionRefundInfoBase(transactionKeyList));
@@ -220,7 +217,7 @@ namespace BuckarooSdk.Tests.General
         [TestMethod]
         public void RefundsInfoTest()
         {
-            var request = SdkClient.CreateRequest()
+            var request = _buckarooClient.CreateRequest()
                 .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionRefundInfoRequest()
                 .MultipleConfiguredTransactionRefundInfo();

@@ -1,27 +1,29 @@
 ﻿using System;
-using BuckarooSdk.Services.PayPerEmail;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;
 using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services.PayPerEmail;
+using BuckarooSdk.Tests.Constants;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BuckarooSdk.Tests.Services.PayPerEmail
 {
     [TestClass]
     public class PayPerEmailTests
     {
-        private SdkClient _sdkClient;
+        private SdkClient _buckarooClient;
 
         [TestInitialize]
         public void Setup()
         {
-            this._sdkClient = new SdkClient(Constants.TestSettings.Logger);
+            _buckarooClient = new SdkClient(TestSettings.Logger);
         }
 
         [TestMethod]
         public void PaymentInvitationTest()
         {
-            var request = this._sdkClient.CreateRequest()
-               .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("en-US"))
+            var request = _buckarooClient
+                .CreateRequest()
+               .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("en-US"))
                .TransactionRequest()
                .SetBasicFields(new TransactionBase
                {
@@ -32,7 +34,7 @@ namespace BuckarooSdk.Tests.Services.PayPerEmail
                    ServicesSelectableByClient = "ideal",
                })
                .PayPerEmail()
-               .PaymentInvitation(new PayPerEmailPaymentInvitationRequest()
+               .PaymentInvitation(new PayPerEmailPaymentInvitationRequest
                {
                    CustomerGender = BuckarooSdk.Services.PayPerEmail.Constants.Gender.Male,
                    Attachment = "",

@@ -12,19 +12,20 @@ namespace BuckarooSdk.Tests.Services.Afterpay
     public class AfterpayTests
     {
         private SdkClient _buckarooClient;
+
         private string TestName => "Afterpay";//nameof(AfterpayTests).ToUpper();
 
         [TestInitialize]
         public void Setup()
         {
-            this._buckarooClient = new SdkClient(TestSettings.Logger);
+            _buckarooClient = new SdkClient(TestSettings.Logger);
         }
 
         [TestMethod]
         public void CancelAuthorizeTest()
         {
-            var request =
-                this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+            var request = _buckarooClient
+                .CreateRequest(new StandardLogger()) // Create a request.
                 .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionRequest() // One of the request type options.
                 .SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
