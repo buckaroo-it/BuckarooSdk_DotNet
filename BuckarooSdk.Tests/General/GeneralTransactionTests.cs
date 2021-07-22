@@ -199,7 +199,8 @@ namespace BuckarooSdk.Tests.General
         }
 
         [TestMethod]
-        public void RefundsInfoTest()
+        [Obsolete]
+        public void RefundsInfoTest_Obsolete()
         {
             var transactionKeyList = new List<string>()
             {
@@ -208,10 +209,21 @@ namespace BuckarooSdk.Tests.General
                 "fdaswerqrgtdgfsasdffwe",
             };
 
-            var request = this.SdkClient.CreateRequest()
-                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+            var request = SdkClient.CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                 .TransactionRefundInfoRequest()
                 .MultipleConfiguredTransactionRefundInfo(new TransactionRefundInfoBase(transactionKeyList));
+
+            var response = request.GetMultipleRefundsInfo();
+        }
+
+        [TestMethod]
+        public void RefundsInfoTest()
+        {
+            var request = SdkClient.CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+                .TransactionRefundInfoRequest()
+                .MultipleConfiguredTransactionRefundInfo();
 
             var response = request.GetMultipleRefundsInfo();
         }
