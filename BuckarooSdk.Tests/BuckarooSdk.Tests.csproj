@@ -66,10 +66,6 @@
       <HintPath>..\packages\Fare.2.1.2\lib\net35\Fare.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Handlebars, Version=1.9.5.0, Culture=neutral, PublicKeyToken=22225d0bf33cd661, processorArchitecture=MSIL">
-      <HintPath>..\packages\Handlebars.Net.1.9.5\lib\net452\Handlebars.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.AspNetCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.2.1.2\lib\netstandard2.0\Microsoft.AspNetCore.dll</HintPath>
       <Private>True</Private>
