@@ -4,7 +4,7 @@ namespace BuckarooSdk.Services.PayPal
 {
     public class PayPalPayResponse : ActionResponse
     {
-	    public override ServiceNames ServiceNames => ServiceNames.PayPal;
+        public override ServiceNames ServiceNames => ServiceNames.PayPal;
         public string PayerEmail { get; set;}
         public string NoteText { get; set; }
         public string PayerStatus { get; set; }

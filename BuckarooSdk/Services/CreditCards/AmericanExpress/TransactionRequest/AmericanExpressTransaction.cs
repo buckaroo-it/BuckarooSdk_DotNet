@@ -2,19 +2,19 @@
 
 namespace BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest
 {
-	public class AmericanExpressTransaction
-	{
-		/// <summary>
-		/// The configured transaction
-		/// </summary>
-		private ConfiguredTransaction ConfiguredTransaction { get; set; }
+    public class AmericanExpressTransaction
+    {
+        /// <summary>
+        /// The configured transaction
+        /// </summary>
+        private ConfiguredTransaction ConfiguredTransaction { get; set; }
 
-		internal AmericanExpressTransaction(ConfiguredTransaction configuredTransaction)
-		{
-			this.ConfiguredTransaction = configuredTransaction;
-		}
+        internal AmericanExpressTransaction(ConfiguredTransaction configuredTransaction)
+        {
+            this.ConfiguredTransaction = configuredTransaction;
+        }
 
-		/// <summary>
+        /// <summary>
         /// The pay function creates a configured transaction with an IdealPayRequest, 
         /// that is ready to be executed.
         /// </summary>
@@ -29,11 +29,11 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest
             return configuredServiceTransaction;
         }
         /// <summary>
-		/// The refund function creates a configured transaction with an IdealRefundRequest, 
+        /// The refund function creates a configured transaction with an IdealRefundRequest, 
         /// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">An IdealRefundRequest</param>
-		/// <returns></returns>
+        /// </summary>
+        /// <param name="request">An IdealRefundRequest</param>
+        /// <returns></returns>
         public ConfiguredServiceTransaction Refund(AmericanExpressRefundRequest request)
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
@@ -43,12 +43,12 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest
             return configuredServiceTransaction;
         }
 
-		/// <summary>
-		/// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
+        /// <summary>
+        /// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
         /// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">An IdealPayRemainderRequest</param>
-		/// <returns></returns>
+        /// </summary>
+        /// <param name="request">An IdealPayRemainderRequest</param>
+        /// <returns></returns>
         public ConfiguredServiceTransaction Authorize(AmericanExpressAuthorizeRequest request)
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
@@ -58,12 +58,12 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest
             return configuredServiceTransaction;
         }
 
-		/// <summary>
-		/// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
+        /// <summary>
+        /// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
         /// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">An IdealPayRemainderRequest</param>
-		/// <returns></returns>
+        /// </summary>
+        /// <param name="request">An IdealPayRemainderRequest</param>
+        /// <returns></returns>
         public ConfiguredServiceTransaction PayRecurrent(AmericanExpressPayRecurrentRequest request)
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
@@ -74,11 +74,11 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest
         }
 
         /// <summary>
-		/// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
+        /// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
         /// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">An IdealPayRemainderRequest</param>
-		/// <returns></returns>
+        /// </summary>
+        /// <param name="request">An IdealPayRemainderRequest</param>
+        /// <returns></returns>
         public ConfiguredServiceTransaction PayRemainder(AmericanExpressPayRemainderRequest request)
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
@@ -88,5 +88,5 @@ namespace BuckarooSdk.Services.CreditCards.AmericanExpress.TransactionRequest
             return configuredServiceTransaction;
         }
 
-	}
+    }
 }

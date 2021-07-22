@@ -6,8 +6,8 @@ namespace BuckarooSdk.Services.SimpleSepaDirectDebit
     public class SimpleSepaDirectDebitTransaction
     {
         /// <summary>
-		/// The configured transaction
-		/// </summary>
+        /// The configured transaction
+        /// </summary>
         private ConfiguredTransaction ConfiguredTransaction { get; set; }
 
         internal SimpleSepaDirectDebitTransaction(ConfiguredTransaction configuredTransaction)
@@ -30,11 +30,11 @@ namespace BuckarooSdk.Services.SimpleSepaDirectDebit
             return configuredServiceTransaction;
         }
         /// <summary>
-		/// The refund function creates a configured transaction with an SimpleSepaDirectDebitRefundRequest, 
+        /// The refund function creates a configured transaction with an SimpleSepaDirectDebitRefundRequest, 
         /// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">An SimpleSepaDirectDebitRefundRequest</param>
-		/// <returns></returns>
+        /// </summary>
+        /// <param name="request">An SimpleSepaDirectDebitRefundRequest</param>
+        /// <returns></returns>
         public ConfiguredServiceTransaction Refund(SimpleSepaDirectDebitRefundRequest request)
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);

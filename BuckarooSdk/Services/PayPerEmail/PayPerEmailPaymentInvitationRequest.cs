@@ -1,14 +1,14 @@
 ﻿using System;
 namespace BuckarooSdk.Services.PayPerEmail
 {
-	/// <summary>
-	/// The PayperEmail Payment invitation is a request that has the purpos of sending a payment invitation
-	/// to a customer. This can be performed by Buckaroo, or a payment link can be returned, in case the
-	/// mail should be sent by your own system. The payment link is the key element of the PayperEmail and
-	/// is the link to the Buckaroo Payment Engine.
-	/// </summary>
-	public class PayPerEmailPaymentInvitationRequest
-	{
+    /// <summary>
+    /// The PayperEmail Payment invitation is a request that has the purpos of sending a payment invitation
+    /// to a customer. This can be performed by Buckaroo, or a payment link can be returned, in case the
+    /// mail should be sent by your own system. The payment link is the key element of the PayperEmail and
+    /// is the link to the Buckaroo Payment Engine.
+    /// </summary>
+    public class PayPerEmailPaymentInvitationRequest
+    {
         /// <summary>
         /// The gender of the customer, used to properly address the customer in the mail. Possible values are:
         /// 

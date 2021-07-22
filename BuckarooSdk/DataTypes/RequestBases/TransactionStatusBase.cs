@@ -3,46 +3,46 @@ using Newtonsoft.Json;
 
 namespace BuckarooSdk.DataTypes.RequestBases
 {
-	public class TransactionStatusBase : IRequestBase
-	{
-		public List<TransactionStatus> Transactions { get; set; }
+    public class TransactionStatusBase : IRequestBase
+    {
+        public List<TransactionStatus> Transactions { get; set; }
 
-		public TransactionStatusBase(List<TransactionStatus> transactions)
-		{
-			this.Transactions = transactions;
-		}
+        public TransactionStatusBase(List<TransactionStatus> transactions)
+        {
+            this.Transactions = transactions;
+        }
 
-		public TransactionStatusBase AddTransactionStatus(TransactionStatus transaction)
-		{
-			this.Transactions.Add(transaction);
-			return this;
-		}
-	}
+        public TransactionStatusBase AddTransactionStatus(TransactionStatus transaction)
+        {
+            this.Transactions.Add(transaction);
+            return this;
+        }
+    }
 
-	public class TransactionStatus
-	{
-		public string Key { get; set; }
-		public string Invoice {get; set; }
+    public class TransactionStatus
+    {
+        public string Key { get; set; }
+        public string Invoice {get; set; }
 
-		/// <summary>
-		/// The parameters that are custom, which means that they can vary in case different services
-		/// are used. Where the base transaction paremeters are service independent, these
-		/// </summary>
+        /// <summary>
+        /// The parameters that are custom, which means that they can vary in case different services
+        /// are used. Where the base transaction paremeters are service independent, these
+        /// </summary>
         [JsonProperty()]
         internal CustomParameters CustomParameters { get; set; }
-		/// <summary>
-		/// The parameters that are additional to the service, which means that they can vary in case 
-		/// different service are used. Where the base transaction paremeters are service independent, these
-		/// </summary>
-		[JsonProperty()]
+        /// <summary>
+        /// The parameters that are additional to the service, which means that they can vary in case 
+        /// different service are used. Where the base transaction paremeters are service independent, these
+        /// </summary>
+        [JsonProperty()]
         internal AdditionalParameters AdditionalParameters { get; set; }
 
-		public TransactionStatus()
-		{
-			
-		}
+        public TransactionStatus()
+        {
+            
+        }
 
-		/// <summary>
+        /// <summary>
         /// Adds a custom parameter to the transactionbase. requires a parameter key and a parameter value.
         /// </summary>
         /// <param name="key"></param>
@@ -53,7 +53,7 @@ namespace BuckarooSdk.DataTypes.RequestBases
             this.CustomParameters.List.Add(new CustomParameter()
             {
                 Name = key,
-				Value = value
+                Value = value
             });
         }
 
@@ -71,5 +71,5 @@ namespace BuckarooSdk.DataTypes.RequestBases
                 Value = value
             });
         }
-	}
+    }
 }

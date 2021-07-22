@@ -6,7 +6,7 @@
         public string GroupType = string.Empty;
         public string GroupId = string.Empty;
         public string Value;
-	}
-	
-	internal class Global : Service { }
+    }
+    
+    internal class Global : Service { }
 }

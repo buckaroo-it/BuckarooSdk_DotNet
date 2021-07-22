@@ -1,0 +1,217 @@
+﻿// This file is used by Code Analysis to maintain SuppressMessage
+// attributes that are applied to this project.
+// Project-level suppressions either have no target or are given
+// a specific target and scoped to a namespace, type, member, etc.
+
+using System.Diagnostics.CodeAnalysis;
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.NoServiceTransactionTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.RefundInfoTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.TransactionSpecificationTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.NoServiceTransactionTest2")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.CancelTransactionTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.RefundsInfoTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.RefundsInfoTest_Obsolete")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.InvoiceInfoTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.General.GeneralTransactionTests.InvoicesInfoTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Afterpay.AfterpayTests.CancelAuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Afterpay.AfterpayTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Afterpay.AfterpayTests.RefundUndefinedTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Afterpay.AfterpayTests.RefundReturnTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Afterpay.AfterpayTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Afterpay.AfterpayTests.CaptureTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.AmericanExpress.AmericanExpressTests.AuthorizeEncryptedTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.AmericanExpress.AmericanExpressTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.AmericanExpress.AmericanExpressTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.AmericanExpress.AmericanExpressTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.AmericanExpress.AmericanExpressTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.AmericanExpress.AmericanExpressTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.AmericanExpress.AmericanExpressTests.PayEncryptedTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.AmericanExpress.AmericanExpressTests.PayTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Bancontact.BancontactTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Bancontact.BancontactTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Bancontact.BancontactTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Bancontact.BancontactTests.PayEncryptedTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooVoucher.BuckarooVoucherTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooVoucher.BuckarooVoucherTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooVoucher.BuckarooVoucherTests.GetBalanceTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooVoucher.BuckarooVoucherTests.CreateApplicationTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooWallet.BuckarooWalletTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooWallet.BuckarooWalletTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooWallet.BuckarooWalletTests.GetBalanceTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooWallet.BuckarooWalletTests.CreateApplicationTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooWallet.BuckarooWalletTests.DepositTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.BuckarooWallet.BuckarooWalletTests.UpdateTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Capayable.CapayableTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Capayable.CapayableTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Capayable.CapayableTests.PayInInstallmentsTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBancaire.CarteBancaireTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBancaire.CarteBancaireTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBancaire.CarteBancaireTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBancaire.CarteBancaireTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBancaire.CarteBancaireTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBancaire.CarteBancaireTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBleueVisa.CarteBleueVisaTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBleueVisa.CarteBleueVisaTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBleueVisa.CarteBleueVisaTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBleueVisa.CarteBleueVisaTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBleueVisa.CarteBleueVisaTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CarteBleueVisa.CarteBleueVisaTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CreditManagement.CreditManagementTests.CreateInvoice")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.CardInfoTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.PayTest2")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.RefundTest2")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.PayRemainderTest2")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.CardInfoTest2")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.PayTest3")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.RefundTest3")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.PayRemainderTest3")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.CustomGiftcard.CustomGiftcardTests.CardInfoTest3")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Dankort.DankortTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Dankort.DankortTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Dankort.DankortTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Dankort.DankortTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Dankort.DankortTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Dankort.DankortTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.EMandate.EMandateTests.CreateMandateTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.EMandate.EMandateTests.GetIssuerListTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.EMandate.EMandateTests.GetStatusTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.EMandate.EMandateTests.ModifyMandateTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.EPS.EPSTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.EPS.EPSTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.EPS.EPSTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Giftcard.HuisTuinGiftcardTests.PayTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Giropay.GiropayTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Giropay.GiropayTests.RefundTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Ideal.IdealTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Ideal.IdealTests.PayWithCreditManagementTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.IdealQr.IdealQrTests.GenerateTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.INGHomePay.INGHomePayTests.PayTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Ippies.IppiesTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Ippies.IppiesTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Ippies.IppiesTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.KbcPaymentButton.KbcPaymentButtonTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.KbcPaymentButton.KbcPaymentButtonTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.KbcPaymentButton.KbcPaymentButtonTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Maestro.MaestroTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Maestro.MaestroTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Maestro.MaestroTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Maestro.MaestroTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Maestro.MaestroTests.PayRecurrent")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Maestro.MaestroTests.PayRemainder")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.CancelAuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.PayEncryptedTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.AuthorizeEncryptedTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.RefundTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.AuthorizeTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.CaptureTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.PayTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.CancelAuthorizeTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.PayRecurrentTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.PayRemainderTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.PayEncryptedTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.MasterCard.MasterCardTests.AuthorizeEncryptedTestCreditCard")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Nexi.NexiTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Nexi.NexiTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Nexi.NexiTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Nexi.NexiTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Nexi.NexiTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Nexi.NexiTests.AuthorizeTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Notification.NotificationTests.ExtraInfoTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.OnlineGiroLite.OnlineGiroLiteTests.PaymentInvitationTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.OnlineGiro.OnlineGiroTests.PaymentInvitationTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.P24.P24Tests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.P24.P24Tests.RefundTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.RefundTest_Obsolete")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.ExtraInfoTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.PayTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPerEmail.PayPerEmailTests.PaymentInvitationTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PaysafeCard.PaysafeCardTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PaysafeCard.PaysafeCardTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.SimpleSepaDirectDebit.SimpleSepaDirectDebitTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.SimpleSepaDirectDebit.SimpleSepaDirectDebitTests.PayTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Sofort.SofortTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Sofort.SofortTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Sofort.SofortTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Transfer.TransferTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Transfer.TransferTests.RefundTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VisaElectron.VisaElectronTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VisaElectron.VisaElectronTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VisaElectron.VisaElectronTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VisaElectron.VisaElectronTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VisaElectron.VisaElectronTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VisaElectron.VisaElectronTests.PayRemainderTest")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.CancelAuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.PayEncryptedTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.AuthorizeEncryptedTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.PayTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.RefundTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.AuthorizeTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.CaptureTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.CancelAuthorizeTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.PayRecurrentTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.PayRemainderTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.PayEncryptedTestCreditCard")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.Visa.VisaTests.AuthorizeEncryptedTestCreditCard")]
+
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.PayTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.AuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.CaptureTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.CancelAuthorizeTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.PayRecurrentTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.PayRemainderTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.PayEncryptedTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.VPay.VPayTests.AuthorizeEncryptedTest")]

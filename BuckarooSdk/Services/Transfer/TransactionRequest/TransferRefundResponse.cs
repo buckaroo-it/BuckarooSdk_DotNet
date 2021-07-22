@@ -7,6 +7,6 @@ namespace BuckarooSdk.Services.Transfer.TransactionRequest
     /// </summary>
     public class TransferRefundResponse : ActionResponse
     {
-	    public override ServiceNames ServiceNames => ServiceNames.Transfer;
+        public override ServiceNames ServiceNames => ServiceNames.Transfer;
     }
 }

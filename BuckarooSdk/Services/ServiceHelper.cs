@@ -105,9 +105,9 @@ namespace BuckarooSdk.Services
 
 		private static string StringifyParameter(object value)
 		{
-			if (value is decimal)
+			if (value is decimal decimalValue)
 			{
-				return ((decimal)value).ToString(CultureInfo.InvariantCulture);
+				return decimalValue.ToString(CultureInfo.InvariantCulture);
 			}
 			else
 			{

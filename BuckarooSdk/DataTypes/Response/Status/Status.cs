@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace BuckarooSdk.DataTypes.Response.Status
 {
@@ -25,8 +25,8 @@ namespace BuckarooSdk.DataTypes.Response.Status
         /// </summary>
         public Status()
         {
-	        this.Code = new StatusCode();
-	        this.SubCode = new StatusSubCode();
+            this.Code = new StatusCode();
+            this.SubCode = new StatusSubCode();
         }
     }
 }
