@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Globalization;
-using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.Services.CreditCards.AmericanExpress.Constants;
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Logging;
 using BuckarooSdk.Services.CreditCards.AmericanExpress.Request;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Globalization;
 
 namespace BuckarooSdk.Tests.Services.AmericanExpress
 {
-	[TestClass]
+    [TestClass]
 	public class AmericanExpressTests
 
 	{
