@@ -24,8 +24,7 @@ namespace BuckarooSdk.DataTypes.Response
             }
             set
             {
-                RequiredActionType type;
-                Enum.TryParse(value, out type);
+                Enum.TryParse(value, out RequiredActionType type);
                 this.Type = type;
             }
         }
