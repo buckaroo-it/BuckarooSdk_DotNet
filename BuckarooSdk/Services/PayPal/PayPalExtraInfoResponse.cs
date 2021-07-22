@@ -4,7 +4,7 @@ namespace BuckarooSdk.Services.PayPal
 {
     public class PayPalExtraInfoResponse : ActionResponse
     {
-	    public override ServiceNames ServiceNames => ServiceNames.PayPal;
+        public override ServiceNames ServiceNames => ServiceNames.PayPal;
         public string SelectedName { get; set; }
         public string SelectedStreet1 { get; set; }
         public string SelectedStreet2 { get; set; }

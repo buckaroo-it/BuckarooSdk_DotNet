@@ -5,8 +5,8 @@ namespace BuckarooSdk.Services.PayPal
     public class PayPalTransaction
     {
         /// <summary>
-		/// The configured transaction
-		/// </summary>
+        /// The configured transaction
+        /// </summary>
         private ConfiguredTransaction ConfiguredTransaction { get; set; }
 
         internal PayPalTransaction(ConfiguredTransaction configuredTransaction)

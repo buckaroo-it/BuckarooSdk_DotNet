@@ -7,10 +7,10 @@ using BuckarooSdk.Transaction.Status;
 
 namespace BuckarooSdk.Base
 {
-	/// <summary>
-	/// An authenticatedRequest is a request where authentication properties are 
-	/// defined and validated upon type.
-	/// </summary>
+    /// <summary>
+    /// An authenticatedRequest is a request where authentication properties are 
+    /// defined and validated upon type.
+    /// </summary>
     public class AuthenticatedRequest
     {
         internal Request Request { get; set; }
@@ -20,44 +20,44 @@ namespace BuckarooSdk.Base
             this.Request = request;
         }
 
-		/// <summary>
-		/// States that the request that will be performed is a transaction request.
-		/// </summary>
-		/// <returns> A CancelTransaction</returns>
+        /// <summary>
+        /// States that the request that will be performed is a transaction request.
+        /// </summary>
+        /// <returns> A CancelTransaction</returns>
         public TransactionRequest TransactionRequest()
         {
             return new TransactionRequest(this);
         }
 
-	    public CancelTransaction CancelTransactionRequest()
-	    {
-		    return new CancelTransaction(this);
-	    }
+        public CancelTransaction CancelTransactionRequest()
+        {
+            return new CancelTransaction(this);
+        }
 
-	    public TransactionStatus TransactionStatusRequest()
-	    {
-		    return new TransactionStatus(this);
-	    }
+        public TransactionStatus TransactionStatusRequest()
+        {
+            return new TransactionStatus(this);
+        }
 
-	    public TransactionSpecification TransactionSpecificationRequest()
-	    {
-		    return new TransactionSpecification(this);
-	    }
+        public TransactionSpecification TransactionSpecificationRequest()
+        {
+            return new TransactionSpecification(this);
+        }
 
-	    public TransactionInvoiceInfo TransactionInvoiceInfoRequest()
-	    {
-		    return new TransactionInvoiceInfo(this);
-	    }
+        public TransactionInvoiceInfo TransactionInvoiceInfoRequest()
+        {
+            return new TransactionInvoiceInfo(this);
+        }
 
-	    public TransactionRefundInfo TransactionRefundInfoRequest()
-	    {
-		    return new TransactionRefundInfo(this);
-	    }
+        public TransactionRefundInfo TransactionRefundInfoRequest()
+        {
+            return new TransactionRefundInfo(this);
+        }
 
-		/// <summary>
-		/// States that the request that will be performed is a data request.
-		/// </summary>
-		/// <returns> A Data object </returns>
+        /// <summary>
+        /// States that the request that will be performed is a data request.
+        /// </summary>
+        /// <returns> A Data object </returns>
         public Data.Data DataRequest()
         {
             return new Data.Data(this);

@@ -1,18 +1,18 @@
-namespace BuckarooSdk.DataTypes.Response
+﻿namespace BuckarooSdk.DataTypes.Response
 {
-	/// <summary>
-	/// The reponse parameter specifies the name and value of each response.
-	/// </summary>
+    /// <summary>
+    /// The reponse parameter specifies the name and value of each response.
+    /// </summary>
     public class ResponseParameter
     {
-		/// <summary>
-		/// The name of the response parameter.
-		/// </summary>
+        /// <summary>
+        /// The name of the response parameter.
+        /// </summary>
         public string Name { get; set; }
 
-		/// <summary>
-		/// The value of the response parameter.
-		/// </summary>
+        /// <summary>
+        /// The value of the response parameter.
+        /// </summary>
         public string Value { get; set; }
     }
 }

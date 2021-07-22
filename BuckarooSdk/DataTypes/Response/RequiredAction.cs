@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace BuckarooSdk.DataTypes.Response
@@ -26,7 +26,7 @@ namespace BuckarooSdk.DataTypes.Response
             {
                 RequiredActionType type;
                 Enum.TryParse(value, out type);
-	            this.Type = type;
+                this.Type = type;
             }
         }
         /// <summary>

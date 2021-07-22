@@ -1,4 +1,4 @@
-namespace BuckarooSdk.Services.Sofort
+﻿namespace BuckarooSdk.Services.Sofort
 {
 	public class SofortPayRecurrentResponse
 	{

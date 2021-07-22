@@ -9,17 +9,17 @@ namespace BuckarooSdk.Tests.Services.PayPerEmail
     [TestClass]
     public class PayPerEmailTests
     {
-		private SdkClient _sdkClient;
+        private SdkClient _sdkClient;
 
-		[TestInitialize]
-		public void Setup()
-		{
-			this._sdkClient = new SdkClient(Constants.TestSettings.Logger);
-		}
+        [TestInitialize]
+        public void Setup()
+        {
+            this._sdkClient = new SdkClient(Constants.TestSettings.Logger);
+        }
 
-		[TestMethod]
+        [TestMethod]
         public void PaymentInvitationTest()
-		{
+        {
             var request = this._sdkClient.CreateRequest()
                .Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("en-US"))
                .TransactionRequest()
@@ -45,7 +45,7 @@ namespace BuckarooSdk.Tests.Services.PayPerEmail
                });
 
             var paypermailResponse = request.Execute();
-			var actionResponse = paypermailResponse.GetActionResponse<PayPerEmailPaymentInvitationResponse>();
-		}
+            var actionResponse = paypermailResponse.GetActionResponse<PayPerEmailPaymentInvitationResponse>();
+        }
     }
 }

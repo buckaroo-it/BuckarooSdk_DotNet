@@ -2,14 +2,14 @@
 
 namespace BuckarooSdk.Services.Ideal.TransactionRequest
 {
-	/// <summary>
-	/// The Transaction class of payment method type: iDEAL.
-	/// </summary>
+    /// <summary>
+    /// The Transaction class of payment method type: iDEAL.
+    /// </summary>
     public class IdealTransaction
     {
-		/// <summary>
-		/// The configured transaction
-		/// </summary>
+        /// <summary>
+        /// The configured transaction
+        /// </summary>
         private ConfiguredTransaction ConfiguredTransaction { get;}
         internal IdealTransaction(ConfiguredTransaction configuredTransaction)
         {
@@ -32,11 +32,11 @@ namespace BuckarooSdk.Services.Ideal.TransactionRequest
             return configuredServiceTransaction;
         }
         /// <summary>
-		/// The refund function creates a configured transaction with an IdealRefundRequest, 
+        /// The refund function creates a configured transaction with an IdealRefundRequest, 
         /// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">An IdealRefundRequest</param>
-		/// <returns></returns>
+        /// </summary>
+        /// <param name="request">An IdealRefundRequest</param>
+        /// <returns></returns>
         public ConfiguredServiceTransaction Refund(IdealRefundRequest request)
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
@@ -46,11 +46,11 @@ namespace BuckarooSdk.Services.Ideal.TransactionRequest
             return configuredServiceTransaction;
         }
         /// <summary>
-		/// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
+        /// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
         /// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">An IdealPayRemainderRequest</param>
-		/// <returns></returns>
+        /// </summary>
+        /// <param name="request">An IdealPayRemainderRequest</param>
+        /// <returns></returns>
         public ConfiguredServiceTransaction PayRemainder(IdealPayRemainderRequest request)
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);

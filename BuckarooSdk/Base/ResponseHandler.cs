@@ -6,7 +6,7 @@ using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.Base
 {
-	[Obsolete]
+    [Obsolete]
     public class ResponseHandler
     {
         public void HandleResponse(RequestResponse transaction)
