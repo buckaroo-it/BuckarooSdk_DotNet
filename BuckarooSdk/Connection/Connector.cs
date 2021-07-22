@@ -109,7 +109,7 @@ namespace BuckarooSdk.Connection
 				return default(TResponse);
 
 			}
-			catch (Exception exception)
+			catch (Exception)
 			{
 				return default(TResponse);
 			}
