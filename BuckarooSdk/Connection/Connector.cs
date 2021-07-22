@@ -106,12 +106,12 @@ namespace BuckarooSdk.Connection
                     request.BuckarooSdkLogger.AddErrorLogging(Constants.Logging.Messages.FailedSerializationResponseJson(responseJson) + exception);
                 }
 
-                return default(TResponse);
+                return default;
 
             }
             catch (Exception)
             {
-                return default(TResponse);
+                return default;
             }
         }
 
