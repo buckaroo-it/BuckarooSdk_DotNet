@@ -1,9 +1,7 @@
-﻿
-﻿using BuckarooSdk.Services.CreditManagement.DataRequest;
-using BuckarooSdk.Services.CustomGiftcard;
+﻿using BuckarooSdk.Services.BuckarooVoucher;
 using BuckarooSdk.Services.BuckarooWallet;
-using BuckarooSdk.Services.BuckarooVoucher;
 using BuckarooSdk.Services.CreditManagement.DataRequest;
+using BuckarooSdk.Services.CustomGiftcard;
 using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Services.Ideal.DataRequest;
 using BuckarooSdk.Services.IdealQr.DataRequest;
@@ -25,21 +23,27 @@ namespace BuckarooSdk.Data
 
         #region "Services"
 
+        /// <summary>
         /// The instantiation of the specific CustomGiftcard service transaction.
+        /// </summary>
         /// <returns></returns>
         public CustomGiftcardRequestObject CustomGiftcard()
         {
             return new CustomGiftcardRequestObject(this, Constants.Services.ServiceNames.CustomGiftcard);
         }
 
+        /// <summary>
         /// The instantiation of the specific CustomGiftcard3 service transaction.
+        /// </summary>
         /// <returns></returns>
         public CustomGiftcardRequestObject CustomGiftcard2()
         {
             return new CustomGiftcardRequestObject(this, Constants.Services.ServiceNames.CustomGiftcard2);
         }
 
+        /// <summary>
         /// The instantiation of the specific CustomGiftcard3 service transaction.
+        /// </summary>
         /// <returns></returns>
         public CustomGiftcardRequestObject CustomGiftcard3()
         {
@@ -60,6 +64,7 @@ namespace BuckarooSdk.Data
         {
             return new Services.Klarna.KlarnaRequestObject(this);
         }
+
         public Services.KlarnaKP.KlarnaRequestObject KlarnaKP()
         {
             return new Services.KlarnaKP.KlarnaRequestObject(this);

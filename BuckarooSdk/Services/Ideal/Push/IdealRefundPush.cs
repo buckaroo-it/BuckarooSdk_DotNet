@@ -2,8 +2,12 @@
 
 namespace BuckarooSdk.Services.Ideal.Push
 {
-	public class IdealRefundPush : ActionPush
-	{
-		public override ServiceNames ServiceNames => ServiceNames.Ideal;
-	}
+    /// <summary>
+    /// iDEAL refund push action.
+    /// </summary>
+    public class IdealRefundPush : ActionPush
+    {
+        /// <inheritdoc/>
+        public override ServiceNames ServiceNames => ServiceNames.Ideal;
+    }
 }

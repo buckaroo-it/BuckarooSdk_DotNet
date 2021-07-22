@@ -11,11 +11,11 @@ namespace BuckarooSdk.Services.Ideal.TransactionRequest
         /// The configured transaction
         /// </summary>
         private ConfiguredTransaction ConfiguredTransaction { get;}
+
         internal IdealTransaction(ConfiguredTransaction configuredTransaction)
         {
-            this.ConfiguredTransaction = configuredTransaction;
+            ConfiguredTransaction = configuredTransaction;
         }
-
 
         /// <summary>
         /// The pay function creates a configured transaction with an IdealPayRequest, 
@@ -31,6 +31,7 @@ namespace BuckarooSdk.Services.Ideal.TransactionRequest
 
             return configuredServiceTransaction;
         }
+
         /// <summary>
         /// The refund function creates a configured transaction with an IdealRefundRequest, 
         /// that is ready to be executed.
@@ -45,6 +46,7 @@ namespace BuckarooSdk.Services.Ideal.TransactionRequest
 
             return configuredServiceTransaction;
         }
+
         /// <summary>
         /// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
         /// that is ready to be executed.

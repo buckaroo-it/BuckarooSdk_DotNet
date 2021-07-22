@@ -2,14 +2,16 @@
 
 namespace BuckarooSdk.Services.Ideal.DataRequest
 {
-	public class IdealDataRequest
-	{
-		private ConfiguredDataRequest ConfiguredDataRequest { get; set; }
+    /// <summary>
+    /// iDEAL data request.
+    /// </summary>
+    public class IdealDataRequest
+    {
+        private ConfiguredDataRequest ConfiguredDataRequest { get; set; }
 
-		internal IdealDataRequest(ConfiguredDataRequest configuredDateRequest)
-		{
-			this.ConfiguredDataRequest = configuredDateRequest;
-		}
-
-	}
+        internal IdealDataRequest(ConfiguredDataRequest configuredDateRequest)
+        {
+            ConfiguredDataRequest = configuredDateRequest;
+        }
+    }
 }

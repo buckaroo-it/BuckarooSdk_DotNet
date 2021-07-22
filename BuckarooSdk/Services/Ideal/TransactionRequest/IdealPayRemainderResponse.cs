@@ -2,8 +2,12 @@
 
 namespace BuckarooSdk.Services.Ideal.TransactionRequest
 {
+    /// <summary>
+    /// iDEAL Pay remainder response.
+    /// </summary>
     public class IdealPayRemainderResponse : ActionResponse
     {
+        /// <inheritdoc/>
         public override ServiceNames ServiceNames => ServiceNames.Ideal;
 
         /// <summary>
