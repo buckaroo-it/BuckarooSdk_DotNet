@@ -15,7 +15,6 @@ namespace BuckarooSdk.Transaction.Status
 		internal ConfiguredTransactionStatus(TransactionStatus transactionStatus)
 		{
 			this.TransactionStatus = transactionStatus;
-			const string qwe = "";
 
 			var list = new List<string>();
 			var list2 = list.ToList();
