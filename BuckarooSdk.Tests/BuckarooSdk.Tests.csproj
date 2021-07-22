@@ -367,7 +367,6 @@
     <Compile Include="Services\PaysafeCard\PaysafeCardTests.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitTests.cs" />
     <Compile Include="Services\Sofort\SofortTests.cs" />
-    <Compile Include="Services\Subscriptions\SubscriptionRequestTests.cs" />
     <Compile Include="Services\Transfer\TransferTests.cs" />
     <Compile Include="Services\VisaElectron\VisaElectronTests.cs" />
     <Compile Include="Services\Visa\VisaTests.cs" />
@@ -385,6 +384,9 @@
       <Project>{cb68f005-23bc-42b0-8d90-787f97e9e646}</Project>
       <Name>BuckarooSdk</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Subscriptions\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
