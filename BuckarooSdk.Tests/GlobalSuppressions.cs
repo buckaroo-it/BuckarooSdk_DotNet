@@ -159,6 +159,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.P24.P24Tests.RefundTest")]
 
 [assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.RefundTest")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.RefundTest_Obsolete")]
 [assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.PayRemainderTest")]
 [assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.ExtraInfoTest")]
 [assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Manual testing variables, see issue #48.", Scope = "member", Target = "~M:BuckarooSdk.Tests.Services.PayPal.PayPalTests.PayRecurrentTest")]

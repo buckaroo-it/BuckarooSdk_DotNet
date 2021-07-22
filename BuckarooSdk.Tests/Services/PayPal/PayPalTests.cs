@@ -44,7 +44,8 @@ namespace BuckarooSdk.Tests.Services.PayPal
         }
 
         [TestMethod]
-        public void RefundTest()
+        [Obsolete]
+        public void RefundTest_Obsolete()
         {
             var request = _buckarooClient
                 .CreateRequest()
@@ -62,6 +63,25 @@ namespace BuckarooSdk.Tests.Services.PayPal
                     //define properties
 
                 });
+
+            var response = request.Execute();
+        }
+
+        [TestMethod]
+        public void RefundTest()
+        {
+            var request = _buckarooClient
+                .CreateRequest()
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+                .TransactionRequest()
+                .SetBasicFields(new TransactionBase
+                {
+                    Currency = "EUR",
+                    AmountDebit = 0.02m,
+                    Invoice = $"SDK_TEST_{DateTime.Now.Ticks}"
+                })
+                .PayPal()
+                .Refund();
 
             var response = request.Execute();
         }
