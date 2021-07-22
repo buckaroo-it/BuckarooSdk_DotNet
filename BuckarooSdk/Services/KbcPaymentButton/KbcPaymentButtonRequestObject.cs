@@ -1,4 +1,4 @@
-using BuckarooSdk.Data;
+﻿using BuckarooSdk.Data;
 using BuckarooSdk.Transaction;
 
 namespace BuckarooSdk.Services.KbcPaymentButton
@@ -9,16 +9,10 @@ namespace BuckarooSdk.Services.KbcPaymentButton
 		/// The configured transaction
 		/// </summary>
 		private ConfiguredTransaction ConfiguredTransaction { get; }
-		private ConfiguredDataRequest ConfiguredDataRequest { get; }
 
 		internal KbcPaymentButtonRequestObject(ConfiguredTransaction configuredTransaction)
 		{
 			this.ConfiguredTransaction = configuredTransaction;
-		}
-
-		internal KbcPaymentButtonRequestObject(ConfiguredDataRequest configuredDataRequest)
-		{
-			this.ConfiguredDataRequest = configuredDataRequest;
 		}
 
 		/// <summary>
