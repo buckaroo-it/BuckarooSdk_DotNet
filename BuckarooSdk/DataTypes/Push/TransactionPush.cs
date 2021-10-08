@@ -4,7 +4,6 @@ using BuckarooSdk.Services;
 using System.Linq;
 using BuckarooSdk.DataTypes.Response;
 using BuckarooSdk.DataTypes.Response.Status;
-using Newtonsoft.Json;
 using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.DataTypes.Push
@@ -15,7 +14,6 @@ namespace BuckarooSdk.DataTypes.Push
 		/// <summary>
 		/// The list of custom parameters that was sent with the transaction request
 		/// </summary>
-		[JsonIgnore()]
 		public CustomParameters CustomParameters { get; set; }
 		/// <summary>
 		/// The list of additional parameters that was sent with the transaction request
