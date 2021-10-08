@@ -1,12 +1,15 @@
-﻿using BuckarooSdk.DataTypes.Push;
+﻿using BuckarooSdk.Connection;
+using BuckarooSdk.DataTypes;
+using BuckarooSdk.DataTypes.Push;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Runtime.Serialization;
 using System.Security.Authentication;
 using System.Text;
-using BuckarooSdk.Connection;
 
 namespace BuckarooSdk.Base
 {
@@ -68,14 +71,58 @@ namespace BuckarooSdk.Base
 			return deserializeObject;
 		}
 
-		private static TransactionPush DeserializeTransaction(string jsonString)
-		{
-			return JsonConvert.DeserializeObject<TransactionPush>(jsonString);
-		}
+        private static TransactionPush DeserializeTransaction(string jsonString)
+        {
+            var result = JsonConvert.DeserializeObject<TransactionPush>(jsonString);
+            var customParametersResult = JsonConvert.DeserializeObject<JObject>(jsonString);
+
+            if (customParametersResult == null || result == null) return result;
+
+            foreach (var customParametersResultChild in customParametersResult.Children())
+            {
+                if (customParametersResultChild.Path != "CustomParameters") continue;
+
+                var customParameters = new CustomParameters
+                {
+                    List = new List<CustomParameter>()
+                };
+
+                foreach (var token in customParametersResultChild.Children().Children())
+                {
+                    customParameters.List.Add(new CustomParameter(token.SelectToken("Name")?.ToString(), token.SelectToken("Value")?.ToString()));
+                }
+
+                result.CustomParameters = customParameters;
+            }
+
+            return result;
+        }
 
 		private static DataRequest DeserializeDataRequest(string jsonString)
 		{
-			return JsonConvert.DeserializeObject<DataRequest>(jsonString);
+			var result = JsonConvert.DeserializeObject<DataRequest>(jsonString);
+            var customParametersResult = JsonConvert.DeserializeObject<JObject>(jsonString);
+
+            if (customParametersResult == null || result == null) return result;
+
+            foreach (var customParametersResultChild in customParametersResult.Children())
+            {
+                if (customParametersResultChild.Path != "CustomParameters") continue;
+
+                var customParameters = new CustomParameters
+                {
+                    List = new List<CustomParameter>()
+                };
+
+                foreach (var token in customParametersResultChild.Children().Children())
+                {
+                    customParameters.List.Add(new CustomParameter(token.SelectToken("Name")?.ToString(), token.SelectToken("Value")?.ToString()));
+                }
+
+                result.CustomParameters = customParameters;
+            }
+
+            return result;
 		}
-	}
+    }
 }
