@@ -78,24 +78,9 @@ namespace BuckarooSdk.Base
 
             if (customParametersResult == null || result == null) return result;
 
-            foreach (var customParametersResultChild in customParametersResult.Children())
-            {
-                if (customParametersResultChild.Path != "CustomParameters") continue;
+			result.CustomParameters = ExtractCustomParameters(customParametersResult);
 
-                var customParameters = new CustomParameters
-                {
-                    List = new List<CustomParameter>()
-                };
-
-                foreach (var token in customParametersResultChild.Children().Children())
-                {
-                    customParameters.List.Add(new CustomParameter(token.SelectToken("Name")?.ToString(), token.SelectToken("Value")?.ToString()));
-                }
-
-                result.CustomParameters = customParameters;
-            }
-
-            return result;
+			return result;
         }
 
 		private static DataRequest DeserializeDataRequest(string jsonString)
@@ -105,24 +90,32 @@ namespace BuckarooSdk.Base
 
             if (customParametersResult == null || result == null) return result;
 
-            foreach (var customParametersResultChild in customParametersResult.Children())
+            result.CustomParameters = ExtractCustomParameters(customParametersResult);
+
+            return result;
+		}
+
+        private static CustomParameters ExtractCustomParameters(JToken customParametersResult)
+        {
+            CustomParameters customParameters = null;
+
+			foreach (var customParametersResultChild in customParametersResult.Children())
             {
                 if (customParametersResultChild.Path != "CustomParameters") continue;
 
-                var customParameters = new CustomParameters
+                customParameters = new CustomParameters
                 {
                     List = new List<CustomParameter>()
                 };
 
-                foreach (var token in customParametersResultChild.Children().Children())
+				foreach (var token in customParametersResultChild.Children().Children())
                 {
-                    customParameters.List.Add(new CustomParameter(token.SelectToken("Name")?.ToString(), token.SelectToken("Value")?.ToString()));
+                    customParameters.List.Add(new CustomParameter(token.SelectToken("Name")?.ToString(),
+                        token.SelectToken("Value")?.ToString()));
                 }
-
-                result.CustomParameters = customParameters;
             }
 
-            return result;
+            return customParameters;
 		}
     }
 }
