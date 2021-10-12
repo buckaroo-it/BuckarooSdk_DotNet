@@ -1,4 +1,6 @@
-﻿namespace BuckarooSdk.DataTypes
+﻿using System.Data.SqlTypes;
+
+namespace BuckarooSdk.DataTypes
 {
 	/// <summary>
 	/// A custom parameter is a name value pair that can be used to add custom data
@@ -15,5 +17,16 @@
 		/// The value of the parameter.
 		/// </summary>
         public string Value { get; set; }
+
+        public CustomParameter()
+        {
+            
+        }
+
+		public CustomParameter(string name, string value)
+        {
+            this.Name = name;
+            this.Value = value;	
+        }
     }
 }
