@@ -1,12 +1,15 @@
-﻿using BuckarooSdk.DataTypes.Push;
+﻿using BuckarooSdk.Connection;
+using BuckarooSdk.DataTypes;
+using BuckarooSdk.DataTypes.Push;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Runtime.Serialization;
 using System.Security.Authentication;
 using System.Text;
-using BuckarooSdk.Connection;
 
 namespace BuckarooSdk.Base
 {
@@ -26,7 +29,7 @@ namespace BuckarooSdk.Base
 			var requestUriEncoded = WebUtility.UrlEncode(requestUri)?.ToLower();
 
 			var requestMethod = HttpMethod.Post.ToString();
-            
+
 
 			//calculate signature
 			if (!this.SignatureCalculationService.VerifySignature(body, requestMethod, requestUriEncoded, this._apiKey, authorizationHeader))
@@ -34,10 +37,10 @@ namespace BuckarooSdk.Base
 				throw new AuthenticationException();
 			}
 
-            // get content from request. 
-            var bodyAsString = Encoding.UTF8.GetString(body);
+			// get content from request. 
+			var bodyAsString = Encoding.UTF8.GetString(body);
 
-            return this.DeserializePush(bodyAsString);
+			return this.DeserializePush(bodyAsString);
 		}
 
 		private Push DeserializePush(string jsonString)
@@ -68,14 +71,51 @@ namespace BuckarooSdk.Base
 			return deserializeObject;
 		}
 
-		private static TransactionPush DeserializeTransaction(string jsonString)
-		{
-			return JsonConvert.DeserializeObject<TransactionPush>(jsonString);
-		}
+        private static TransactionPush DeserializeTransaction(string jsonString)
+        {
+            var result = JsonConvert.DeserializeObject<TransactionPush>(jsonString);
+            var customParametersResult = JsonConvert.DeserializeObject<JObject>(jsonString);
+
+            if (customParametersResult == null || result == null) return result;
+
+			result.CustomParameters = ExtractCustomParameters(customParametersResult);
+
+			return result;
+        }
 
 		private static DataRequest DeserializeDataRequest(string jsonString)
 		{
-			return JsonConvert.DeserializeObject<DataRequest>(jsonString);
+			var result = JsonConvert.DeserializeObject<DataRequest>(jsonString);
+            var customParametersResult = JsonConvert.DeserializeObject<JObject>(jsonString);
+
+            if (customParametersResult == null || result == null) return result;
+
+            result.CustomParameters = ExtractCustomParameters(customParametersResult);
+
+            return result;
 		}
-	}
+
+        private static CustomParameters ExtractCustomParameters(JToken customParametersResult)
+        {
+            CustomParameters customParameters = null;
+
+			foreach (var customParametersResultChild in customParametersResult.Children())
+            {
+                if (customParametersResultChild.Path != "CustomParameters") continue;
+
+                customParameters = new CustomParameters
+                {
+                    List = new List<CustomParameter>()
+                };
+
+				foreach (var token in customParametersResultChild.Children().Children())
+                {
+                    customParameters.List.Add(new CustomParameter(token.SelectToken("Name")?.ToString(),
+                        token.SelectToken("Value")?.ToString()));
+                }
+            }
+
+            return customParameters;
+		}
+    }
 }
