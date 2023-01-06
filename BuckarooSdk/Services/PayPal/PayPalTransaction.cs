@@ -80,7 +80,7 @@ namespace BuckarooSdk.Services.PayPal
         {
             var parameters = ServiceHelper.CreateServiceParameters(request);
             var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
-            configuredServiceTransaction.BaseTransaction.AddService("PayPal", parameters, "ExtraInfo", "1");
+            configuredServiceTransaction.BaseTransaction.AddService("PayPal", parameters, "Pay,ExtraInfo", "1");
 
             return configuredServiceTransaction;
         }
