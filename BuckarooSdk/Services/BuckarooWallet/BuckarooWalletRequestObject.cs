@@ -3,7 +3,7 @@ using BuckarooSdk.Transaction;
 
 namespace BuckarooSdk.Services.BuckarooWallet
 {
-	public class BuckarooWalletRequestObject
+    public class BuckarooWalletRequestObject
 	{
 		/// <summary>
 		/// The configured transaction
@@ -11,7 +11,7 @@ namespace BuckarooSdk.Services.BuckarooWallet
 		private ConfiguredTransaction ConfiguredTransaction { get; }
 
 		/// <summary>
-		/// The configured datarequest
+		/// The configured dataRequest
 		/// </summary>
 		private ConfiguredDataRequest ConfiguredDataRequest { get; }
 
@@ -55,64 +55,64 @@ namespace BuckarooSdk.Services.BuckarooWallet
 			return configuredServiceTransaction;
 		}
 
-		/// <summary>
-		/// The GetBalance function creates a configured datarequest with an BuckarooWalletGetBalanceRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A BuckarooWalletGetBalanceRequest</param>
-		/// <returns></returns>
-		public ConfiguredServiceDataRequest GetBalance(BuckarooWalletGetBalanceRequest request)
+        /// <summary>
+        /// The GetBalance function creates a configured dataRequest with an BuckarooWalletGetBalanceRequest request, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">A BuckarooWalletGetBalanceRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceDataRequest GetBalance(BuckarooWalletGetBalanceRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("buckaroowallet", parameters, "GetBalance");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("buckaroowallet", parameters, "GetBalance");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 
-		/// <summary>
-		/// The CreateApplication function creates a configured datarequest with an BuckarooWalletCreateApplicationRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A BuckarooWalletCreateApplicationRequest</param>
-		/// <returns></returns>
-		public ConfiguredServiceDataRequest CreateApplication(BuckarooWalletCreateApplicationRequest request)
+        /// <summary>
+        /// The CreateApplication function creates a configured dataRequest with an BuckarooWalletCreateApplicationRequest request, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">A BuckarooWalletCreateApplicationRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceDataRequest CreateApplication(BuckarooWalletCreateApplicationRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("buckaroowallet", parameters, "CreateApplication");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("buckaroowallet", parameters, "CreateApplication");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 
-		/// <summary>
-		/// The Deposit function creates a configured datarequest with an BuckarooWalletDepositRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A BuckarooWalletDepositRequest</param>
-		/// <returns></returns>
-		public ConfiguredServiceDataRequest Deposit(BuckarooWalletDepositRequest request)
+        /// <summary>
+        /// The Deposit function creates a configured dataRequest with an BuckarooWalletDepositRequest request, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">A BuckarooWalletDepositRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceDataRequest Deposit(BuckarooWalletDepositRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("buckaroowallet", parameters, "Deposit");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("buckaroowallet", parameters, "Deposit");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 
-		/// <summary>
-		/// The Update function creates a configured datarequest with an BuckarooWalletUpdateRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A BuckarooWalletUpdateRequest</param>
-		/// <returns></returns>
-		public ConfiguredServiceDataRequest Update(BuckarooWalletUpdateRequest request)
+        /// <summary>
+        /// The Update function creates a configured dataRequest with an BuckarooWalletUpdateRequest request, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">A BuckarooWalletUpdateRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceDataRequest Update(BuckarooWalletUpdateRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("buckaroowallet", parameters, "Update");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("buckaroowallet", parameters, "Update");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 	}
 }

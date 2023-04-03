@@ -31,7 +31,7 @@ namespace BuckarooSdk.Data
 
 		#region "Internal methods"
 		/// <summary>
-		/// Adding a service to the datarequest.
+		/// Adding a service to the dataRequest.
 		/// </summary>
 		/// <param name="serviceName">The name of the service</param>
 		/// <param name="parameters">The list of service parameters</param>

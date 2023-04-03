@@ -12,7 +12,7 @@ namespace BuckarooSdk.Services.IdealQr.DataRequest
 		}
 
 		/// <summary>
-		/// The Generate function creates a configured datarequest with an IdealQrGenerateRequest, 
+		/// The Generate function creates a configured dataRequest with an IdealQrGenerateRequest, 
 		/// that is ready to be executed.
 		/// </summary>
 		/// <param name="request">An IdealQrGenerateRequest</param>

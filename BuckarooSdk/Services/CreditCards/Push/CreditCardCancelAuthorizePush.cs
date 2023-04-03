@@ -1,11 +1,10 @@
+using ServiceNames = BuckarooSdk.Constants.Services.ServiceNames;
+
 namespace BuckarooSdk.Services.CreditCards.Push
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	public class CreditCardCancelAuthorizePush : ActionPush
 	{
-		public override BuckarooSdk.Constants.Services.ServiceNames ServiceNames => BuckarooSdk.Constants.Services.ServiceNames.CreditCard;
+		public override ServiceNames ServiceNames => ServiceNames.CreditCard;
 
 		/// <summary>
 		/// The name of the issuer (bank) of the consumer.

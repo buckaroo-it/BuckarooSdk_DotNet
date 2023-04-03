@@ -1,15 +1,14 @@
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Logging;
+using BuckarooSdk.Services.CustomGiftcard;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Diagnostics;
 using System.Globalization;
-using BuckarooSdk.Services.CustomGiftcard;
 
 namespace BuckarooSdk.Tests.Services.CustomGiftcard
 {
-	[TestClass]
+    [TestClass]
 	public class CustomGiftcardTests
 	{
 		private SdkClient _buckarooClient;
@@ -21,7 +20,6 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 			this._buckarooClient = new SdkClient(TestSettings.Logger);
 		}
 
-		#region CustomGiftcard
 		[TestMethod]
 		public void PayTest()
 		{
@@ -29,7 +27,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -41,7 +39,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard() // Choose the paymentmethod you want to use
+				.CustomGiftcard() // Choose the paymentMethod you want to use
 				.Pay(new CustomGiftcardPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 0, // Mandatory
@@ -62,7 +60,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -75,7 +73,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard() // Choose the paymentmethod you want to use
+				.CustomGiftcard() // Choose the paymentMethod you want to use
 				.Refund(new CustomGiftcardRefundRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -94,7 +92,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -107,7 +105,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard() // Choose the paymentmethod you want to use
+				.CustomGiftcard() // Choose the paymentMethod you want to use
 				.PayRemainder(new CustomGiftcardPayRemainderRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 0, // Mandatory
@@ -128,7 +126,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
-				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new DataBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -138,7 +136,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 
 				})
-				.CustomGiftcard() // Choose the paymentmethod you want to use
+				.CustomGiftcard() // Choose the paymentMethod you want to use
 				.CardInfo(new CustomGiftcardCardInfoRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 0, // Mandatory
@@ -151,9 +149,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
-		#endregion
 
-		#region CustomGiftcard2
 		[TestMethod]
 		public void PayTest2()
 		{
@@ -161,7 +157,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -173,7 +169,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard2() // Choose the paymentmethod you want to use
+				.CustomGiftcard2() // Choose the paymentMethod you want to use
 				.Pay(new CustomGiftcardPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 7000001184904198006, // Mandatory
@@ -194,7 +190,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -207,7 +203,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard2() // Choose the paymentmethod you want to use
+				.CustomGiftcard2() // Choose the paymentMethod you want to use
 				.Refund(new CustomGiftcardRefundRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -226,7 +222,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -239,7 +235,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard2() // Choose the paymentmethod you want to use
+				.CustomGiftcard2() // Choose the paymentMethod you want to use
 				.PayRemainder(new CustomGiftcardPayRemainderRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 0, // Mandatory
@@ -260,7 +256,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
-				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new DataBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -270,7 +266,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 
 				})
-				.CustomGiftcard2() // Choose the paymentmethod you want to use
+				.CustomGiftcard2() // Choose the paymentMethod you want to use
 				.CardInfo(new CustomGiftcardCardInfoRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 0, // Mandatory
@@ -283,9 +279,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
-		#endregion
 
-		#region CustomGiftcard3
 		[TestMethod]
 		public void PayTest3()
 		{
@@ -293,7 +287,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -305,7 +299,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard3() // Choose the paymentmethod you want to use
+				.CustomGiftcard3() // Choose the paymentMethod you want to use
 				.Pay(new CustomGiftcardPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 0, // Mandatory
@@ -326,7 +320,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -339,7 +333,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard3() // Choose the paymentmethod you want to use
+				.CustomGiftcard3() // Choose the paymentMethod you want to use
 				.Refund(new CustomGiftcardRefundRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -358,7 +352,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -371,7 +365,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.CustomGiftcard3() // Choose the paymentmethod you want to use
+				.CustomGiftcard3() // Choose the paymentMethod you want to use
 				.PayRemainder(new CustomGiftcardPayRemainderRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 0, // Mandatory
@@ -392,7 +386,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.DataRequest() // One of the request type options.
-				.SetBasicFields(new DataBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new DataBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -402,7 +396,7 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 
 				})
-				.CustomGiftcard3() // Choose the paymentmethod you want to use
+				.CustomGiftcard3() // Choose the paymentMethod you want to use
 				.CardInfo(new CustomGiftcardCardInfoRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CardNumber = 0, // Mandatory
@@ -415,8 +409,6 @@ namespace BuckarooSdk.Tests.Services.CustomGiftcard
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
-		#endregion
-
 
 		[TestCleanup]
 		public void TearDown()

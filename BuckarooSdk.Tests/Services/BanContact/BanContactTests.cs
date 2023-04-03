@@ -8,7 +8,7 @@ using System.Globalization;
 
 namespace BuckarooSdk.Tests.Services.Bancontact
 {
-	[TestClass]
+    [TestClass]
 	public class BancontactTests
 	{
 		private SdkClient _buckarooClient;
@@ -27,7 +27,7 @@ namespace BuckarooSdk.Tests.Services.Bancontact
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -39,7 +39,7 @@ namespace BuckarooSdk.Tests.Services.Bancontact
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Bancontact() // Choose the paymentmethod you want to use
+				.Bancontact() // Choose the paymentMethod you want to use
 				.Pay(new BancontactPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -57,7 +57,7 @@ namespace BuckarooSdk.Tests.Services.Bancontact
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -70,7 +70,7 @@ namespace BuckarooSdk.Tests.Services.Bancontact
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Bancontact() // Choose the paymentmethod you want to use
+				.Bancontact() // Choose the paymentMethod you want to use
 				.Refund(new BancontactRefundRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CustomerIBAN = string.Empty,
@@ -91,7 +91,7 @@ namespace BuckarooSdk.Tests.Services.Bancontact
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -104,7 +104,7 @@ namespace BuckarooSdk.Tests.Services.Bancontact
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Bancontact() // Choose the paymentmethod you want to use
+				.Bancontact() // Choose the paymentMethod you want to use
 				.PayRemainder(new BancontactPayRemainderRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -122,7 +122,7 @@ namespace BuckarooSdk.Tests.Services.Bancontact
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -134,7 +134,7 @@ namespace BuckarooSdk.Tests.Services.Bancontact
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Bancontact() // Choose the paymentmethod you want to use
+				.Bancontact() // Choose the paymentMethod you want to use
 				.PayEncrypted(new BancontactPayEncryptedRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					EncryptedCardData = string.Empty,

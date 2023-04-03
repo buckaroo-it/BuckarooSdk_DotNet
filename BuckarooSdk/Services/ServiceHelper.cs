@@ -1,22 +1,23 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 
 namespace BuckarooSdk.Services
 {
-	internal static class ServiceHelper
+    internal static class ServiceHelper
 	{
 		internal static List<RequestParameter> CreateServiceParameters(object request, string serviceName = "")
 		{
 			return CreateServiceParametersImplementation(request, serviceName);
 		}
 
-		private static List<RequestParameter> CreateServiceParametersImplementation(object fullOrPartialRequest, string serviceName, string groupName = "", string groupId = "")
+		private static List<RequestParameter> CreateServiceParametersImplementation(object fullOrPartialRequest, string serviceName,
+			string groupName = "", string groupId = "")
 		{
 			var result = new List<RequestParameter>();
 
-			var properties = fullOrPartialRequest.GetType().GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance)
+			var properties = fullOrPartialRequest.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
 				.Where(property => property.Name != nameof(IParameterGroup.GroupName))
 				.ToList();
 

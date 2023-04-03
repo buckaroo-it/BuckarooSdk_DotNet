@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using BuckarooSdk;
-using BuckarooSdk.DataTypes;
+﻿using BuckarooSdk.DataTypes;
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace BuckarooSdk.Tests.General
 {
-	[TestClass]
+    [TestClass]
 	public class GeneralTransactionTests
 	{
 		private SdkClient SdkClient { get;set; }
@@ -24,7 +23,7 @@ namespace BuckarooSdk.Tests.General
 		public void TransactionSpecificationTest()
 		{
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionSpecificationRequest()
 				.SpecificServiceSpecification("ideal", 2);
 
@@ -35,7 +34,7 @@ namespace BuckarooSdk.Tests.General
 		public void MultipleSpecificationTest()
 		{
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionSpecificationRequest()
 				.MultipleServiceSpecifications(new TransactionSpecificationBase()
 						.AddService("ideal", 2)
@@ -54,7 +53,7 @@ namespace BuckarooSdk.Tests.General
 			var request = this.SdkClient.CreateRequest()
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -122,7 +121,7 @@ namespace BuckarooSdk.Tests.General
 			const string key = "12890D0FFE9F4840A69126DA2A93F1B6";
 
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionStatusRequest()
 				.Status(key);
 
@@ -150,7 +149,7 @@ namespace BuckarooSdk.Tests.General
 			const string transactionKey = "244BD8425FB941B7B93E70F5AED31F3A";
 
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionInvoiceInfoRequest()
 				.SpecificInvoiceInfo(transactionKey);
 
@@ -162,7 +161,7 @@ namespace BuckarooSdk.Tests.General
 		public void InvoicesInfoTest()
 		{
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionInvoiceInfoRequest()
 				.MultipleInvoicesInfo(new TransactionInvoiceInfoBase()
 				{
@@ -186,7 +185,7 @@ namespace BuckarooSdk.Tests.General
 			const string transactionKey = "8CC823FB3A9545B99608541DF4BC4DFF";
 
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRefundInfoRequest()
 				.SpecificConfiguredTransactionRefundInfo(transactionKey);
 
@@ -208,7 +207,7 @@ namespace BuckarooSdk.Tests.General
 			};
 
 			var request = this.SdkClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRefundInfoRequest()
 				.MultipleConfiguredTransactionRefundInfo(new TransactionRefundInfoBase(transactionKeyList));
 

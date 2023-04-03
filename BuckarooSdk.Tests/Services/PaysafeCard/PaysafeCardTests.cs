@@ -1,14 +1,14 @@
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Logging;
+using BuckarooSdk.Services.PaysafeCard;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Globalization;
-using BuckarooSdk.Services.PaysafeCard;
 
 namespace BuckarooSdk.Tests.Services.PaysafeCard
 {
-	[TestClass]
+    [TestClass]
 	public class PaysafeCardTests
 	{
 		private SdkClient _buckarooClient;
@@ -27,7 +27,7 @@ namespace BuckarooSdk.Tests.Services.PaysafeCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -39,7 +39,7 @@ namespace BuckarooSdk.Tests.Services.PaysafeCard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.PaysafeCard() // Choose the paymentmethod you want to use
+				.PaysafeCard() // Choose the paymentMethod you want to use
 				.Pay(new PaysafeCardPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CustomerCode = string.Empty,
@@ -58,7 +58,7 @@ namespace BuckarooSdk.Tests.Services.PaysafeCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -71,7 +71,7 @@ namespace BuckarooSdk.Tests.Services.PaysafeCard
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.PaysafeCard() // Choose the paymentmethod you want to use
+				.PaysafeCard() // Choose the paymentMethod you want to use
 				.PayRemainder(new PaysafeCardPayRemainderRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CustomerCode = string.Empty,

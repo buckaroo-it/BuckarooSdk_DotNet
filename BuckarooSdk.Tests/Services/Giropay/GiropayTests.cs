@@ -1,14 +1,14 @@
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Logging;
+using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Globalization;
-using BuckarooSdk.Services.Giropay;
 
 namespace BuckarooSdk.Tests.Services.Giropay
 {
-	[TestClass]
+    [TestClass]
 	public class GiropayTests
 	{
 		private SdkClient _buckarooClient;
@@ -27,7 +27,7 @@ namespace BuckarooSdk.Tests.Services.Giropay
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -39,7 +39,7 @@ namespace BuckarooSdk.Tests.Services.Giropay
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Giropay() // Choose the paymentmethod you want to use
+				.Giropay() // Choose the paymentMethod you want to use
 				.Pay(new GiropayPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					BIC = "GENODETT488",
@@ -59,7 +59,7 @@ namespace BuckarooSdk.Tests.Services.Giropay
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -72,7 +72,7 @@ namespace BuckarooSdk.Tests.Services.Giropay
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Giropay() // Choose the paymentmethod you want to use
+				.Giropay() // Choose the paymentMethod you want to use
 				.Refund(new GiropayRefundRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					

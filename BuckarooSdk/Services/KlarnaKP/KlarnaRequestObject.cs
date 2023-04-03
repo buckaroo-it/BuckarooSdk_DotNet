@@ -3,7 +3,7 @@ using BuckarooSdk.Transaction;
 
 namespace BuckarooSdk.Services.KlarnaKP
 {
-	public class KlarnaRequestObject
+    public class KlarnaRequestObject
 	{
 		/// <summary>
 		/// The configured transaction
@@ -22,7 +22,7 @@ namespace BuckarooSdk.Services.KlarnaKP
 		}
 
 		/// <summary>
-		/// The Reserve function creates a configured datarequest with an KlarnaReserveRequest request, 
+		/// The Reserve function creates a configured dataRequest with an KlarnaReserveRequest request, 
 		/// that is ready to be executed.
 		/// </summary>
 		/// <param name="request">A KlarnaReserveRequest</param>
@@ -30,14 +30,14 @@ namespace BuckarooSdk.Services.KlarnaKP
 		public ConfiguredServiceDataRequest Reserve(KlarnaReserveRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("klarnakp", parameters, "Reserve");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("klarnakp", parameters, "Reserve");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 
 		/// <summary>
-		/// The CancelReservation function creates a configured datarequest with an KlarnaCancelReservationRequest request, 
+		/// The CancelReservation function creates a configured dataRequest with an KlarnaCancelReservationRequest request, 
 		/// that is ready to be executed.
 		/// </summary>
 		/// <param name="request">A KlarnaCancelReservationRequest</param>
@@ -45,10 +45,10 @@ namespace BuckarooSdk.Services.KlarnaKP
 		public ConfiguredServiceDataRequest CancelReservation(KlarnaCancelReservationRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("klarnakp", parameters, "CancelReservation");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("klarnakp", parameters, "CancelReservation");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 
 
@@ -83,7 +83,7 @@ namespace BuckarooSdk.Services.KlarnaKP
 		}
 		
 		/// <summary>
-		/// The UpdateReservation function creates a configured datarequest with an KlarnaUpdateReservationRequest request, 
+		/// The UpdateReservation function creates a configured dataRequest with an KlarnaUpdateReservationRequest request, 
 		/// that is ready to be executed.
 		/// </summary>
 		/// <param name="request">A KlarnaUpdateReservationRequest</param>
@@ -91,25 +91,25 @@ namespace BuckarooSdk.Services.KlarnaKP
 		public ConfiguredServiceDataRequest UpdateReservation(KlarnaUpdateReservationRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("klarnakp", parameters, "UpdateReservation");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("klarnakp", parameters, "UpdateReservation");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 
-		/// <summary>
-		/// The GetPClasses function creates a configured datarequest with an KlarnaGetPClassesRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A KlarnaGetPClassesRequest</param>
-		/// <returns></returns>
-		//public ConfiguredServiceDataRequest GetPClasses(KlarnaGetPClassesRequest request)
-		//{
-		//	var parameters = ServiceHelper.CreateServiceParameters(request);
-		//	var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-		//	configuredServiceDataReqeust.BaseData.AddService("klarna", parameters, "GetPClasses");
+        /// <summary>
+        /// The GetPClasses function creates a configured dataRequest with an KlarnaGetPClassesRequest request, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">A KlarnaGetPClassesRequest</param>
+        /// <returns></returns>
+        //public ConfiguredServiceDataRequest GetPClasses(KlarnaGetPClassesRequest request)
+        //{
+        //	var parameters = ServiceHelper.CreateServiceParameters(request);
+        //	var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+        //	configuredServiceDataRequest.BaseData.AddService("klarna", parameters, "GetPClasses");
 
-		//	return configuredServiceDataReqeust;
-		//}
-	}
+        //	return configuredServiceDataRequest;
+        //}
+    }
 }

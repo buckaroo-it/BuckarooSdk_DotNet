@@ -43,7 +43,7 @@ namespace BuckarooSdk.DataTypes.RequestBases
 		}
 
 		/// <summary>
-        /// Adds a custom parameter to the transactionbase. requires a parameter key and a parameter value.
+        /// Adds a custom parameter to the transactionBase. requires a parameter key and a parameter value.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -58,7 +58,7 @@ namespace BuckarooSdk.DataTypes.RequestBases
         }
 
         /// <summary>
-        /// Adds an additional parameter to the transactionbase. requires a parameter key and a parameter value.
+        /// Adds an additional parameter to the transactionBase. requires a parameter key and a parameter value.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>

@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using BuckarooSdk.Services.Ideal.TransactionRequest;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Globalization;
-using System.Diagnostics;
-using System.IO;
-using System.Net.Http;
-using System.Text;
-using BuckarooSdk.DataTypes.ParameterGroups.CreditManagement3;
+﻿using BuckarooSdk.DataTypes.ParameterGroups.CreditManagement3;
 using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Logging;
 using BuckarooSdk.Services.CreditManagement.DataRequest;
 using BuckarooSdk.Services.CreditManagement.TransactionRequest;
 using BuckarooSdk.Services.Ideal.Push;
+using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Tests.Constants;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Net.Http;
+using System.Text;
 
 namespace BuckarooSdk.Tests.Services.Ideal
 {
-	[TestClass]
+    [TestClass]
 	public class IdealTests
 	{
 		public SdkClient BuckarooClient { get; private set; }
@@ -35,7 +35,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 				this.BuckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					AmountDebit = 0.02m,
@@ -46,7 +46,7 @@ namespace BuckarooSdk.Tests.Services.Ideal
 					ReturnUrlError = TestSettings.ReturnUrlError,
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 				})
-				.Ideal() // Choose the paymentmethod you want to use
+				.Ideal() // Choose the paymentMethod you want to use
 				.Pay(new IdealPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					Issuer = BuckarooSdk.Services.Ideal.Constants.Issuers.IngBank,
@@ -211,10 +211,10 @@ namespace BuckarooSdk.Tests.Services.Ideal
 					TestSettings.PushUri, TestSettings.WebsiteKey, TestSettings.SecretKey);     
 
 
-				var authorizationheader = $"hmac {pushSignature}";				// DEZE IS BELANGRIJK: SIGNATURE
+				var authorizationHeader = $"hmac {pushSignature}";				// DEZE IS BELANGRIJK: SIGNATURE
 
 				// Function that returns a structured push, based on the JSON pushed that is received.
-				var push = pushHandler.DeserializePush(bodyAsBytes, TestSettings.PushUri, authorizationheader);
+				var push = pushHandler.DeserializePush(bodyAsBytes, TestSettings.PushUri, authorizationHeader);
 
 				var service = push.GetServices();
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.Services.CreditCards.AmericanExpress.Constants;
-using BuckarooSdk.DataTypes.RequestBases;
+﻿using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Logging;
 using BuckarooSdk.Services.CreditCards.AmericanExpress.Request;
 using BuckarooSdk.Tests.Constants;
@@ -13,7 +8,7 @@ using System.Globalization;
 
 namespace BuckarooSdk.Tests.Services.AmericanExpress
 {
-	[TestClass]
+    [TestClass]
 	public class AmericanExpressTests
 
 	{
@@ -23,7 +18,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 		[TestInitialize]
 		public void Setup()
 		{
-			this._buckarooClient = new SdkClient(Constants.TestSettings.Logger);
+			this._buckarooClient = new SdkClient(TestSettings.Logger);
 		}
 
 		[TestMethod]
@@ -33,7 +28,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -45,7 +40,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AmericanExpress() // Choose the paymentMethod you want to use
 				.Pay(new AmericanExpressPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					RecurringInterval = 0,
@@ -91,7 +86,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -104,7 +99,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AmericanExpress() // Choose the paymentMethod you want to use
 				.Refund(new AmericanExpressRefundRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -123,7 +118,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -135,7 +130,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AmericanExpress() // Choose the paymentMethod you want to use
 				.Authorize(new AmericanExpressAuthorizeRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					RecurringInterval = 0,
@@ -178,7 +173,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -191,7 +186,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AmericanExpress() // Choose the paymentMethod you want to use
 				.Capture(new AmericanExpressCaptureRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -210,7 +205,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -223,7 +218,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AmericanExpress() // Choose the paymentMethod you want to use
 				.PayRecurrent(new AmericanExpressPayRecurrentRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -242,7 +237,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -254,7 +249,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AmericanExpress() // Choose the paymentMethod you want to use
 				.PayEncrypted(new AmericanExpressPayEncryptedRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					EncryptedCardData = string.Empty,
@@ -274,7 +269,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -286,7 +281,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AmericanExpress() // Choose the paymentMethod you want to use
 				.AuthorizeEncrypted(new AmericanExpressAuthorizeEncryptedRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					EncryptedCardData = string.Empty,
@@ -306,7 +301,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -319,7 +314,7 @@ namespace BuckarooSdk.Tests.Services.AmericanExpress
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.AmericanExpress() // Choose the paymentmethod you want to use
+				.AmericanExpress() // Choose the paymentMethod you want to use
 				.PayRemainder(new AmericanExpressPayRemainderRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					RecurringInterval = 0,

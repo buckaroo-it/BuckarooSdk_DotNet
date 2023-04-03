@@ -27,7 +27,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -40,7 +40,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Afterpay() // Choose the paymentmethod you want to use
+				.Afterpay() // Choose the paymentMethod you want to use
 				.CancelAuthorize(new AfterpayCancelAuthorizeRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -59,7 +59,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -72,7 +72,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 					Order = $"SDK_{ TestName }_16",
 					ClientIp = TestSettings.IpAddress,
 				})
-				.Afterpay() // Choose the paymentmethod you want to use
+				.Afterpay() // Choose the paymentMethod you want to use
 				.Pay(Mocks.Afterpay.AfterpayPayMock); // choose the action you want to use and provide the payment method specific info.
 
 			var response = request.Execute();
@@ -88,7 +88,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -101,7 +101,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Afterpay() // Choose the paymentmethod you want to use
+				.Afterpay() // Choose the paymentMethod you want to use
 				.Refund(Mocks.Afterpay.AfterpayRefundMock("Undefined")); // choose the action you want to use and provide the payment method specific info.
 
 			var response = request.Execute();
@@ -117,7 +117,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
                 this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
                     .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                     .TransactionRequest() // One of the request type options.
-                    .SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+                    .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
                     {
                         Currency = "EUR",
                         Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -130,7 +130,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
                         AmountCredit = 2,
                         Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
                     })
-                    .Afterpay() // Choose the paymentmethod you want to use
+                    .Afterpay() // Choose the paymentMethod you want to use
                     .Refund(Mocks.Afterpay.AfterpayRefundMock("Return")); // choose the action you want to use and provide the payment method specific info.
 
             var response = request.Execute();
@@ -146,7 +146,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
                 this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
                     .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
                     .TransactionRequest() // One of the request type options.
-                    .SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+                    .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
                     {
                         Currency = "EUR",
                         Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -159,7 +159,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
                         AmountCredit = 2,
                         Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
                     })
-                    .Afterpay() // Choose the paymentmethod you want to use
+                    .Afterpay() // Choose the paymentMethod you want to use
                     .Refund(Mocks.Afterpay.AfterpayRefundMock("Refund")); // choose the action you want to use and provide the payment method specific info.
 
             var response = request.Execute();
@@ -175,7 +175,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -188,7 +188,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 					Order = $"SDK_{ TestName }_12",
 					ClientIp = TestSettings.IpAddress,
 				})
-				.Afterpay() // Choose the paymentmethod you want to use
+				.Afterpay() // Choose the paymentMethod you want to use
 				.Authorize(Mocks.Afterpay.AfterpayAuthorizeMock); // choose the action you want to use and provide the payment method specific info.
 
 			var response = request.Execute();
@@ -203,7 +203,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -216,7 +216,7 @@ namespace BuckarooSdk.Tests.Services.Afterpay
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.Afterpay() // Choose the paymentmethod you want to use
+				.Afterpay() // Choose the paymentMethod you want to use
 				.Capture(Mocks.Afterpay.AfterpayCaptureMock); // choose the action you want to use and provide the payment method specific info.
 
 			var response = request.Execute();

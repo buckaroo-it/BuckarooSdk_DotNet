@@ -4,11 +4,12 @@ using BuckarooSdk.Services.EMandate;
 using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace BuckarooSdk.Tests.Services.EMandate
 {
-	[TestClass]
+    [TestClass]
 	public class EMandateTests
 	{
 		private SdkClient _buckarooClient;
@@ -27,7 +28,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -37,7 +38,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 
 				})
-				.EMandate() // Choose the paymentmethod you want to use
+				.EMandate() // Choose the paymentMethod you want to use
 				.CreateMandate(new EMandateCreateMandateRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					EMandateReason = string.Empty,
@@ -55,6 +56,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
+
 		[TestMethod]
 		public void GetIssuerListTest()
 		{
@@ -62,7 +64,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -72,7 +74,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 
 				})
-				.EMandate() // Choose the paymentmethod you want to use
+				.EMandate() // Choose the paymentMethod you want to use
 				.GetIssuerList(new EMandateGetIssuerListRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -83,6 +85,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
+
 		[TestMethod]
 		public void GetStatusTest()
 		{
@@ -90,7 +93,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -100,7 +103,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 
 				})
-				.EMandate() // Choose the paymentmethod you want to use
+				.EMandate() // Choose the paymentMethod you want to use
 				.GetStatus(new EMandateGetStatusRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					MandateId = string.Empty,
@@ -111,6 +114,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
+
 		[TestMethod]
 		public void ModifyMandateTest()
 		{
@@ -118,7 +122,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -128,7 +132,7 @@ namespace BuckarooSdk.Tests.Services.EMandate
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 
 				})
-				.EMandate() // Choose the paymentmethod you want to use
+				.EMandate() // Choose the paymentMethod you want to use
 				.ModifyMandate(new EMandateModifyMandateRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					OriginalIBAN = string.Empty,
@@ -148,7 +152,38 @@ namespace BuckarooSdk.Tests.Services.EMandate
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
 
-		[TestCleanup]
+        [TestMethod]
+        public void CancelMandateTest()
+        {
+            var request =
+                this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+                .DataRequest() // One of the request type options.
+                .SetBasicFields(new DataBase // The database contains the base information of a transaction.
+                {
+                    Currency = "EUR",
+                    Description = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    ReturnUrl = TestSettings.ReturnUrl,
+                    ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+                    ReturnUrlError = TestSettings.ReturnUrlError,
+                    ReturnUrlReject = TestSettings.ReturnUrlReject,
+
+                })
+                .EMandate() // Choose the paymentMethod you want to use
+                .CancelMandate(new EMandateCancelMandateRequest // choose the action you want to use and provide the payment method specific info.
+                {
+                    EMandateReason = string.Empty,
+					MandateId = "1883D6BDA2E8EEF4B8D9E54ED1FC053CB14",
+					PurchaseId = "713",
+                });
+
+            var response = request.Execute();
+
+            Process.Start(response.RequiredAction.RedirectURL);
+			Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+		}
+
+        [TestCleanup]
 		public void TearDown()
 		{
 			this._buckarooClient = null;

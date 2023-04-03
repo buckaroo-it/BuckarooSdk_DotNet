@@ -1,14 +1,14 @@
-﻿using System;
-using BuckarooSdk.Services.CreditManagement.DataRequest;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Globalization;
-using BuckarooSdk.DataTypes.ParameterGroups.CreditManagement3;
+﻿using BuckarooSdk.DataTypes.ParameterGroups.CreditManagement3;
 using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Services.CreditManagement.DataRequest;
 using BuckarooSdk.Tests.Constants;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Globalization;
 
 namespace BuckarooSdk.Tests.Services.CreditManagement
 {
-	[TestClass]
+    [TestClass]
 	public class CreditManagementTests
 	{
 		private SdkClient _sdkClient;
@@ -22,7 +22,7 @@ namespace BuckarooSdk.Tests.Services.CreditManagement
 		[TestMethod]
 		public void CreateInvoice()
 		{
-			var datarequest = this._sdkClient.CreateRequest()
+			var dataRequest = this._sdkClient.CreateRequest()
 			.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, CultureInfo.GetCultureInfo("nl-NL"))
 			.DataRequest()
 			.SetBasicFields(new DataBase
@@ -72,7 +72,7 @@ namespace BuckarooSdk.Tests.Services.CreditManagement
 				},
 			});
 
-			var requestResponse = datarequest.Execute();
+			var requestResponse = dataRequest.Execute();
 
 			//var logging = this._sdkClient.LoggerFactory.GetFullLog();
 			//Console.WriteLine(logging);

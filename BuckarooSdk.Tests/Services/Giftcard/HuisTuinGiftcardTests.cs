@@ -1,16 +1,15 @@
-﻿using System;
-using BuckarooSdk.Services.Ideal.TransactionRequest;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Globalization;
-using System.Diagnostics;
-using BuckarooSdk.DataTypes.RequestBases;
+﻿using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Logging;
-using BuckarooSdk.Tests.Constants;
 using BuckarooSdk.Services.Giftcards.HuisTuinGiftcard;
+using BuckarooSdk.Tests.Constants;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace BuckarooSdk.Tests.Services.Giftcard
 {
-	[TestClass]
+    [TestClass]
 	public class HuisTuinGiftcardTests
 	{
 		public SdkClient BuckarooClient { get; private set; }
@@ -28,7 +27,7 @@ namespace BuckarooSdk.Tests.Services.Giftcard
 				this.BuckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					AmountDebit = 3.50m,
@@ -39,7 +38,7 @@ namespace BuckarooSdk.Tests.Services.Giftcard
 					ReturnUrlError = TestSettings.ReturnUrlError,
 					ReturnUrlReject = TestSettings.ReturnUrlReject,
 				})
-				.HuisEnTuinGiftcard() // Choose the paymentmethod you want to use
+				.HuisEnTuinGiftcard() // Choose the paymentMethod you want to use
 				.Pay(new HuisTuinGiftcardPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					TCSCardnumber = "0000000000000000001",

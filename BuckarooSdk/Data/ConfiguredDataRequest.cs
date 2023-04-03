@@ -66,7 +66,7 @@ namespace BuckarooSdk.Data
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Ideal Service transaction.
+		/// The instantiation of the specific Ideal Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
 		public IdealDataRequest Ideal()

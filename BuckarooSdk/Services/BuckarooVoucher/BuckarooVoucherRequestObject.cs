@@ -3,7 +3,7 @@ using BuckarooSdk.Transaction;
 
 namespace BuckarooSdk.Services.BuckarooVoucher
 {
-	public class BuckarooVoucherRequestObject
+    public class BuckarooVoucherRequestObject
 	{
 		/// <summary>
 		/// The configured transaction
@@ -56,7 +56,7 @@ namespace BuckarooSdk.Services.BuckarooVoucher
 		}
 
 		/// <summary>
-		/// The GetBalance function creates a configured datarequest with an BuckarooVoucherGetBalanceRequest request, 
+		/// The GetBalance function creates a configured dataRequest with an BuckarooVoucherGetBalanceRequest request, 
 		/// that is ready to be executed.
 		/// </summary>
 		/// <param name="request">A BuckarooVoucherGetBalanceRequest</param>
@@ -64,14 +64,14 @@ namespace BuckarooSdk.Services.BuckarooVoucher
 		public ConfiguredServiceDataRequest GetBalance(BuckarooVoucherGetBalanceRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("buckaroovoucher", parameters, "GetBalance");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("buckaroovoucher", parameters, "GetBalance");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 
 		/// <summary>
-		/// The CreateApplication function creates a configured datarequest with an BuckarooVoucherCreateApplicationRequest request, 
+		/// The CreateApplication function creates a configured dataRequest with an BuckarooVoucherCreateApplicationRequest request, 
 		/// that is ready to be executed.
 		/// </summary>
 		/// <param name="request">A BuckarooVoucherCreateApplicationRequest</param>
@@ -79,12 +79,10 @@ namespace BuckarooSdk.Services.BuckarooVoucher
 		public ConfiguredServiceDataRequest CreateApplication(BuckarooVoucherCreateApplicationRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request);
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService("buckaroovoucher", parameters, "CreateApplication");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService("buckaroovoucher", parameters, "CreateApplication");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
-
-
 	}
 }

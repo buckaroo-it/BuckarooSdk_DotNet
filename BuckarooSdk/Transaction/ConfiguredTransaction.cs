@@ -32,10 +32,10 @@ using AmericanExpressTransaction = BuckarooSdk.Services.CreditCards.AmericanExpr
 
 namespace BuckarooSdk.Transaction
 {
-	/// <summary>
-	/// The configuredTransaction is a transaction where the basic fields are set.
-	/// </summary>
-	public class ConfiguredTransaction
+    /// <summary>
+    /// The configuredTransaction is a transaction where the basic fields are set.
+    /// </summary>
+    public class ConfiguredTransaction
 	{
 		internal TransactionRequest BaseTransaction { get; private set; }
 
@@ -48,18 +48,17 @@ namespace BuckarooSdk.Transaction
 			this.BaseTransaction = transaction;
 		}
 
-		#region CreditCards
-		/// <summary>
-		/// The instanciation of the specific Dankort Service transaction.
-		/// </summary>
-		/// <returns> An Dankort</returns>
-		public CreditCardTransaction Dankort()
+        /// <summary>
+        /// The instantiation of the specific Dankort Service transaction.
+        /// </summary>
+        /// <returns> An Dankort</returns>
+        public CreditCardTransaction Dankort()
 		{
 			return new CreditCardTransaction(this, Constants.Services.ServiceNames.Dankort);
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Visa Service transaction.
+		/// The instantiation of the specific Visa Service transaction.
 		/// </summary>
 		/// <returns> A Visa</returns>
 		public CreditCardTransaction Visa()
@@ -68,7 +67,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific MasterCard Service transaction.
+		/// The instantiation of the specific MasterCard Service transaction.
 		/// </summary>
 		/// <returns>A MasterCard</returns>
 		public CreditCardTransaction MasterCard()
@@ -77,7 +76,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific CarteBleueVisa Service transaction.
+		/// The instantiation of the specific CarteBleueVisa Service transaction.
 		/// </summary>
 		/// <returns>A CarteBleueVisa</returns>
 		public CreditCardTransaction CarteBleueVisa()
@@ -87,7 +86,7 @@ namespace BuckarooSdk.Transaction
 
 
 		/// <summary>
-		/// The instanciation of the specific VisaElectron Service transaction.
+		/// The instantiation of the specific VisaElectron Service transaction.
 		/// </summary>
 		/// <returns>A VisaElectron</returns>
 		public CreditCardTransaction VisaElectron()
@@ -96,7 +95,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific VPay Service transaction.
+		/// The instantiation of the specific VPay Service transaction.
 		/// </summary>
 		/// <returns>A VPay</returns>
 		public CreditCardTransaction VPay()
@@ -105,7 +104,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Maestro Service transaction.
+		/// The instantiation of the specific Maestro Service transaction.
 		/// </summary>
 		/// <returns>A Maestro</returns>
 		public CreditCardTransaction Maestro()
@@ -114,7 +113,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific American Express Service transaction.
+		/// The instantiation of the specific American Express Service transaction.
 		/// </summary>
 		/// <returns>An AmericanExpress</returns>
 		public AmericanExpressTransaction AmericanExpress()
@@ -123,7 +122,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Nexi Service transaction.
+		/// The instantiation of the specific Nexi Service transaction.
 		/// </summary>
 		/// <returns>A Nexi</returns>
 		public CreditCardTransaction Nexi()
@@ -132,7 +131,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Carte Bancaire Service transaction.
+		/// The instantiation of the specific Carte Bancaire Service transaction.
 		/// </summary>
 		/// <returns>A CarteBancaire</returns>
 		public CreditCardTransaction CarteBancaire()
@@ -141,7 +140,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Bancontact Service transaction.
+		/// The instantiation of the specific Bancontact Service transaction.
 		/// </summary>
 		/// <returns>A Bancontact</returns>
 		public BancontactTransaction Bancontact()
@@ -149,11 +148,8 @@ namespace BuckarooSdk.Transaction
 			return new BancontactTransaction(this);
 		}
 
-		#endregion
-
-		#region iDeal
 		/// <summary>
-		/// The instanciation of the specific Ideal Service transaction.
+		/// The instantiation of the specific Ideal Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
 		public IdealTransaction Ideal()
@@ -162,15 +158,13 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Ideal Service transaction.
+		/// The instantiation of the specific Ideal Service transaction.
 		/// </summary>
 		/// <returns> An ideal</returns>
 		public IdealProcessingTransaction IdealProcessing()
 		{
 			return new IdealProcessingTransaction(this);
 		}
-
-		#endregion
 
 		/// <returns> An INGHomePay</returns>
 		public INGHomePayRequestObject INGHomePay()
@@ -179,14 +173,13 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Afterpay Service transaction.
+		/// The instantiation of the specific Afterpay Service transaction.
 		/// </summary>
 		public AfterpayRequestObject Afterpay()
 		{
 			return new AfterpayRequestObject(this);
 		}
 
-		#region customgiftcard
 		/// <summary>
 		/// The instantiation of the specific CustomGiftcard service transaction.
 		/// </summary>
@@ -209,7 +202,6 @@ namespace BuckarooSdk.Transaction
 			return new CustomGiftcardRequestObject(this, Constants.Services.ServiceNames.CustomGiftcard3);
 		}
 
-		#endregion
 		/// The instantiation of the specific Ippies service transaction.
 		public IppiesRequestObject Ippies()
 		{
@@ -274,7 +266,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Transfer Service transaction.
+		/// The instantiation of the specific Transfer Service transaction.
 		/// </summary>
 		public TransferTransaction Transfer()
 		{
@@ -282,7 +274,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific PayPal Service transaction.
+		/// The instantiation of the specific PayPal Service transaction.
 		/// </summary>
 		public PayPalTransaction PayPal()
 		{
@@ -290,15 +282,15 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific EMandate Service transaction.
+		/// The instantiation of the specific EMandate Service transaction.
 		/// </summary>
 		public EMandateRequestObject EMandate()
 		{
-			return new EMandateRequestObject(this);
+			return new EMandateRequestObject();
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Simple SEPA Direct debit Service transaction.
+		/// The instantiation of the specific Simple SEPA Direct debit Service transaction.
 		/// </summary>
 		public SimpleSepaDirectDebitTransaction SimpleSepaDirectDebit()
 		{
@@ -331,7 +323,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific PaysafeCard Service transaction.
+		/// The instantiation of the specific PaysafeCard Service transaction.
 		/// </summary>
 		/// <returns> An PaysafeCard</returns>
 		public PaysafeCardRequestObject PaysafeCard()
@@ -340,7 +332,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Sofort Service transaction.
+		/// The instantiation of the specific Sofort Service transaction.
 		/// </summary>
 		/// <returns> An Sofort</returns>
 		public SofortTransaction Sofort()
@@ -349,7 +341,7 @@ namespace BuckarooSdk.Transaction
 		}
 
 		/// <summary>
-		/// The instanciation of the specific Sofort Service transaction.
+		/// The instantiation of the specific Sofort Service transaction.
 		/// </summary>
 		/// <returns> A Giropay transaction</returns>
 		public GiropayTransaction Giropay()

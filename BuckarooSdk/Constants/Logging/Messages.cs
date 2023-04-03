@@ -1,17 +1,17 @@
-﻿using System;
+﻿using BuckarooSdk.DataTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using BuckarooSdk.DataTypes;
 
 namespace BuckarooSdk.Constants.Logging
 {
-	internal static class Messages
+    internal static class Messages
 	{
 		internal const string RequestCreated = "A new request is created";
 
-		internal const string RequestSerialized = "The request is successfuly serialized to JSON";
+		internal const string RequestSerialized = "The request is successfully serialized to JSON";
 
-		internal const string ResponseDeserialized = "The reponse is succesfully deserialized";
+		internal const string ResponseDeserialized = "The response is successfully deserialized";
 
 		internal const string BadImplementation =
 			"Request type is badly implemented in the buckaroo SDK. Please contact Buckaroo";
@@ -46,7 +46,7 @@ namespace BuckarooSdk.Constants.Logging
 
 		internal static string RequestAuthenticated(string[] values)
 		{
-			return $"Requst authenticated with values:{CreateValueListLog(values)}";
+			return $"Request authenticated with values:{CreateValueListLog(values)}";
 		}
 
 		private static string CreateValueListLog(IEnumerable<String> values)

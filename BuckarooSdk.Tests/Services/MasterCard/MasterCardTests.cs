@@ -1,18 +1,15 @@
-﻿using System;
-using BuckarooSdk.DataTypes.RequestBases;
+﻿using BuckarooSdk.DataTypes.RequestBases;
+using BuckarooSdk.Logging;
+using BuckarooSdk.Services.CreditCards.MasterCard.Request;
 using BuckarooSdk.Services.CreditCards.Request;
+using BuckarooSdk.Tests.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Globalization;
-using BuckarooSdk.DataTypes.RequestBases;
-using BuckarooSdk.Services.CreditCards.MasterCard;
-using BuckarooSdk.Logging;
-using BuckarooSdk.Services.CreditCards.MasterCard.Request;
-using BuckarooSdk.Tests.Constants;
 
 namespace BuckarooSdk.Tests.Services.MasterCard
 {
-	[TestClass]
+    [TestClass]
 	public class MasterCardTests
 	{
 		private SdkClient _buckarooClient;
@@ -21,16 +18,15 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 		[TestInitialize]
 		public void Setup()
 		{
-			this._buckarooClient = new SdkClient(Constants.TestSettings.Logger);
+			this._buckarooClient = new SdkClient(TestSettings.Logger);
 		}
 
-		#region MasterCard
 		[TestMethod]
 		[Obsolete]
 		public void PayTest()
 		{
 			var request = this._buckarooClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
 				.SetBasicFields(new TransactionBase
 				{
@@ -53,7 +49,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 		public void RefundTest()
 		{
 			var request = this._buckarooClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
 				.SetBasicFields(new TransactionBase
 				{
@@ -76,7 +72,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 		public void AuthorizeTest()
 		{
 			var request = this._buckarooClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
 				.SetBasicFields(new TransactionBase
 				{
@@ -100,7 +96,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 		public void CaptureTest()
 		{
 			var request = this._buckarooClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
 				.SetBasicFields(new TransactionBase
 				{
@@ -122,7 +118,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 		public void PayRecurrentTest()
 		{
 			var request = this._buckarooClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
 				.SetBasicFields(new TransactionBase
 				{
@@ -143,7 +139,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 		public void PayRemainderTest()
 		{
 			var request = this._buckarooClient.CreateRequest()
-				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest()
 				.SetBasicFields(new TransactionBase
 				{
@@ -167,7 +163,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 					.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 					.TransactionRequest() // One of the request type options.
-					.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+					.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 					{
 						Currency = "EUR",
 						Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -180,7 +176,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 						AmountCredit = 2,
 						Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					})
-					.MasterCard() // Choose the paymentmethod you want to use
+					.MasterCard() // Choose the paymentMethod you want to use
 					.CancelAuthorize(new MasterCardCancelAuthorizeRequest // choose the action you want to use and provide the payment method specific info.
 					{
 
@@ -199,7 +195,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -211,7 +207,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.PayEncrypted(new MasterCardPayEncryptedRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					EncryptedCardData = string.Empty,
@@ -231,7 +227,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -243,7 +239,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.AuthorizeEncrypted(new MasterCardAuthorizeEncryptedRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					EncryptedCardData = string.Empty,
@@ -255,9 +251,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
-		#endregion
 
-		#region CreditCard
 		[TestMethod]
 		public void PayTestCreditCard()
 		{
@@ -265,7 +259,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -277,7 +271,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.Pay(new CreditCardPayRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CustomerCode = string.Empty,
@@ -296,7 +290,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -309,7 +303,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.Refund(new CreditCardRefundRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -328,7 +322,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -340,7 +334,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.Authorize(new CreditCardAuthorizeRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CustomerCode = string.Empty,
@@ -359,7 +353,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -372,7 +366,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.Capture(new CreditCardCaptureRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -391,7 +385,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -404,7 +398,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					AmountCredit = 2,
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.CancelAuthorize(new CreditCardCancelAuthorizeRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -423,7 +417,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -436,7 +430,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.PayRecurrent(new CreditCardPayRecurrentRequest // choose the action you want to use and provide the payment method specific info.
 				{
 
@@ -455,7 +449,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -468,7 +462,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					OriginalTransactionKey = "",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.PayRemainder(new CreditCardPayRemainderRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					CustomerCode = string.Empty,
@@ -487,7 +481,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -499,7 +493,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.PayEncrypted(new CreditCardPayEncryptedRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					EncryptedCardData = string.Empty,
@@ -518,7 +512,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
 				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
 				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionbase contains the base information of a transaction.
+				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
 				{
 					Currency = "EUR",
 					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
@@ -530,7 +524,7 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
 				})
-				.MasterCard() // Choose the paymentmethod you want to use
+				.MasterCard() // Choose the paymentMethod you want to use
 				.AuthorizeEncrypted(new CreditCardAuthorizeEncryptedRequest // choose the action you want to use and provide the payment method specific info.
 				{
 					EncryptedCardData = string.Empty,
@@ -541,6 +535,5 @@ namespace BuckarooSdk.Tests.Services.MasterCard
 			// Process.Start(response.RequiredAction.RedirectURL);
 			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
 		}
-		#endregion
 	}
 }

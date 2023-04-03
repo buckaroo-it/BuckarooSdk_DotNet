@@ -1,9 +1,10 @@
 using BuckarooSdk.Data;
 using BuckarooSdk.Transaction;
+using ServiceNames = BuckarooSdk.Constants.Services.ServiceNames;
 
 namespace BuckarooSdk.Services.CustomGiftcard
 {
-	public class CustomGiftcardRequestObject
+    public class CustomGiftcardRequestObject
 	{
 		/// <summary>
 		/// The configured transaction
@@ -11,19 +12,19 @@ namespace BuckarooSdk.Services.CustomGiftcard
 		private ConfiguredTransaction ConfiguredTransaction { get; }
 
 		/// <summary>
-		/// The configured datarequest
+		/// The configured dataRequest
 		/// </summary>
 		private ConfiguredDataRequest ConfiguredDataRequest { get; }
 
-		internal Constants.Services.ServiceNames ServiceName { get; set; }
+		internal ServiceNames ServiceName { get; set; }
 
-		internal CustomGiftcardRequestObject(ConfiguredTransaction configuredTransaction, Constants.Services.ServiceNames serviceName)
+		internal CustomGiftcardRequestObject(ConfiguredTransaction configuredTransaction, ServiceNames serviceName)
 		{
 			this.ConfiguredTransaction = configuredTransaction;
 			this.ServiceName = serviceName;
 		}
 
-		internal CustomGiftcardRequestObject(ConfiguredDataRequest configuredDataRequest, Constants.Services.ServiceNames serviceName)
+		internal CustomGiftcardRequestObject(ConfiguredDataRequest configuredDataRequest, ServiceNames serviceName)
 		{
 			this.ConfiguredDataRequest = configuredDataRequest;
 			this.ServiceName = serviceName;
@@ -74,19 +75,19 @@ namespace BuckarooSdk.Services.CustomGiftcard
 			return configuredServiceTransaction;
 		}
 
-		/// <summary>
-		/// The CardInfo function creates a configured datarequest with an CustomGiftcardCardInfoRequest request, 
-		/// that is ready to be executed.
-		/// </summary>
-		/// <param name="request">A CustomGiftcardCardInfoRequest</param>
-		/// <returns></returns>
-		public ConfiguredServiceDataRequest CardInfo(CustomGiftcardCardInfoRequest request)
+        /// <summary>
+        /// The CardInfo function creates a configured dataRequest with an CustomGiftcardCardInfoRequest request, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">A CustomGiftcardCardInfoRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceDataRequest CardInfo(CustomGiftcardCardInfoRequest request)
 		{
 			var parameters = ServiceHelper.CreateServiceParameters(request, this.ServiceName.ToString());
-			var configuredServiceDataReqeust = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
-			configuredServiceDataReqeust.BaseData.AddService(this.ServiceName.ToString(), parameters, "CardInfo");
+			var configuredServiceDataRequest = new ConfiguredServiceDataRequest(this.ConfiguredDataRequest.BaseDataRequest);
+            configuredServiceDataRequest.BaseData.AddService(this.ServiceName.ToString(), parameters, "CardInfo");
 
-			return configuredServiceDataReqeust;
+			return configuredServiceDataRequest;
 		}
 	}
 }
