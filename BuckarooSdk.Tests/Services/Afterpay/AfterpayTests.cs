@@ -8,107 +8,107 @@ using BuckarooSdk.Tests.Constants;
 
 namespace BuckarooSdk.Tests.Services.Afterpay
 {
-	[TestClass]
-	public class AfterpayTests
-	{
-		private SdkClient _buckarooClient;
-		private string TestName => "Afterpay";//nameof(AfterpayTests).ToUpper();
+    [TestClass]
+    public class AfterpayTests
+    {
+        private SdkClient _buckarooClient;
+        private string TestName => "Afterpay";//nameof(AfterpayTests).ToUpper();
 
-		[TestInitialize]
-		public void Setup()
-		{
-			this._buckarooClient = new SdkClient(TestSettings.Logger);
-		}
+        [TestInitialize]
+        public void Setup()
+        {
+            this._buckarooClient = new SdkClient(TestSettings.Logger);
+        }
 
-		[TestMethod]
-		public void CancelAuthorizeTest()
-		{
-			var request =
-				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
-				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
-				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
-				{
-					Currency = "EUR",
-					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					ReturnUrl = TestSettings.ReturnUrl,
-					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
-					ReturnUrlError = TestSettings.ReturnUrlError,
-					ReturnUrlReject = TestSettings.ReturnUrlReject,
-					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					OriginalTransactionKey = "",
-					AmountCredit = 2,
-					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-				})
-				.Afterpay() // Choose the paymentMethod you want to use
-				.CancelAuthorize(new AfterpayCancelAuthorizeRequest // choose the action you want to use and provide the payment method specific info.
-				{
+        [TestMethod]
+        public void CancelAuthorizeTest()
+        {
+            var request =
+                this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+                .TransactionRequest() // One of the request type options.
+                .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
+                {
+                    Currency = "EUR",
+                    Description = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    ReturnUrl = TestSettings.ReturnUrl,
+                    ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+                    ReturnUrlError = TestSettings.ReturnUrlError,
+                    ReturnUrlReject = TestSettings.ReturnUrlReject,
+                    Invoice = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    OriginalTransactionKey = "",
+                    AmountCredit = 2,
+                    Order = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                })
+                .Afterpay() // Choose the paymentMethod you want to use
+                .CancelAuthorize(new AfterpayCancelAuthorizeRequest // choose the action you want to use and provide the payment method specific info.
+                {
 
-				});
+                });
 
-			var response = request.Execute();
+            var response = request.Execute();
 
-			// Process.Start(response.RequiredAction.RedirectURL);
-			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
-		}
+            // Process.Start(response.RequiredAction.RedirectURL);
+            // Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+        }
 
-		[TestMethod]
-		public void PayTest()
-		{
-			var request =
-				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
-				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
-				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
-				{
-					Currency = "EUR",
-					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					ReturnUrl = TestSettings.ReturnUrl,
-					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
-					ReturnUrlError = TestSettings.ReturnUrlError,
-					ReturnUrlReject = TestSettings.ReturnUrlReject,
-					AmountDebit = 2,
-					Invoice = $"TEST_17",
-					Order = $"SDK_{ TestName }_16",
-					ClientIp = TestSettings.IpAddress,
-				})
-				.Afterpay() // Choose the paymentMethod you want to use
-				.Pay(Mocks.Afterpay.AfterpayPayMock); // choose the action you want to use and provide the payment method specific info.
+        [TestMethod]
+        public void PayTest()
+        {
+            var request =
+                this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+                .TransactionRequest() // One of the request type options.
+                .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
+                {
+                    Currency = "EUR",
+                    Description = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    ReturnUrl = TestSettings.ReturnUrl,
+                    ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+                    ReturnUrlError = TestSettings.ReturnUrlError,
+                    ReturnUrlReject = TestSettings.ReturnUrlReject,
+                    AmountDebit = 2,
+                    Invoice = $"TEST_17",
+                    Order = $"SDK_{TestName}_16",
+                    ClientIp = TestSettings.IpAddress,
+                })
+                .Afterpay() // Choose the paymentMethod you want to use
+                .Pay(Mocks.Afterpay.AfterpayPayMock); // choose the action you want to use and provide the payment method specific info.
 
-			var response = request.Execute();
+            var response = request.Execute();
 
-			// Process.Start(response.RequiredAction.RedirectURL);
-			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
-		}
+            // Process.Start(response.RequiredAction.RedirectURL);
+            // Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+        }
 
-		[TestMethod]
-		public void RefundUndefinedTest()
-		{
-			var request =
-				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
-				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
-				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
-				{
-					Currency = "EUR",
-					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					ReturnUrl = TestSettings.ReturnUrl,
-					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
-					ReturnUrlError = TestSettings.ReturnUrlError,
-					ReturnUrlReject = TestSettings.ReturnUrlReject,
-					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					OriginalTransactionKey = "",
-					AmountCredit = 2,
-					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-				})
-				.Afterpay() // Choose the paymentMethod you want to use
-				.Refund(Mocks.Afterpay.AfterpayRefundMock("Undefined")); // choose the action you want to use and provide the payment method specific info.
+        [TestMethod]
+        public void RefundUndefinedTest()
+        {
+            var request =
+                this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+                .TransactionRequest() // One of the request type options.
+                .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
+                {
+                    Currency = "EUR",
+                    Description = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    ReturnUrl = TestSettings.ReturnUrl,
+                    ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+                    ReturnUrlError = TestSettings.ReturnUrlError,
+                    ReturnUrlReject = TestSettings.ReturnUrlReject,
+                    Invoice = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    OriginalTransactionKey = "",
+                    AmountCredit = 2,
+                    Order = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                })
+                .Afterpay() // Choose the paymentMethod you want to use
+                .Refund(Mocks.Afterpay.AfterpayRefundMock("Undefined")); // choose the action you want to use and provide the payment method specific info.
 
-			var response = request.Execute();
+            var response = request.Execute();
 
-			// Process.Start(response.RequiredAction.RedirectURL);
-			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
-		}
+            // Process.Start(response.RequiredAction.RedirectURL);
+            // Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+        }
 
         [TestMethod]
         public void RefundReturnTest()
@@ -120,15 +120,15 @@ namespace BuckarooSdk.Tests.Services.Afterpay
                     .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
                     {
                         Currency = "EUR",
-                        Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+                        Description = $"SDK_{TestName}_{DateTime.Now.Ticks}",
                         ReturnUrl = TestSettings.ReturnUrl,
                         ReturnUrlCancel = TestSettings.ReturnUrlCancel,
                         ReturnUrlError = TestSettings.ReturnUrlError,
                         ReturnUrlReject = TestSettings.ReturnUrlReject,
-                        Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+                        Invoice = $"SDK_{TestName}_{DateTime.Now.Ticks}",
                         OriginalTransactionKey = "",
                         AmountCredit = 2,
-                        Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+                        Order = $"SDK_{TestName}_{DateTime.Now.Ticks}",
                     })
                     .Afterpay() // Choose the paymentMethod you want to use
                     .Refund(Mocks.Afterpay.AfterpayRefundMock("Return")); // choose the action you want to use and provide the payment method specific info.
@@ -149,15 +149,15 @@ namespace BuckarooSdk.Tests.Services.Afterpay
                     .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
                     {
                         Currency = "EUR",
-                        Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+                        Description = $"SDK_{TestName}_{DateTime.Now.Ticks}",
                         ReturnUrl = TestSettings.ReturnUrl,
                         ReturnUrlCancel = TestSettings.ReturnUrlCancel,
                         ReturnUrlError = TestSettings.ReturnUrlError,
                         ReturnUrlReject = TestSettings.ReturnUrlReject,
-                        Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+                        Invoice = $"SDK_{TestName}_{DateTime.Now.Ticks}",
                         OriginalTransactionKey = "",
                         AmountCredit = 2,
-                        Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
+                        Order = $"SDK_{TestName}_{DateTime.Now.Ticks}",
                     })
                     .Afterpay() // Choose the paymentMethod you want to use
                     .Refund(Mocks.Afterpay.AfterpayRefundMock("Refund")); // choose the action you want to use and provide the payment method specific info.
@@ -168,69 +168,69 @@ namespace BuckarooSdk.Tests.Services.Afterpay
             // Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
         }
 
-		[TestMethod]
-		public void AuthorizeTest()
-		{
-			var request =
-				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
-				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
-				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
-				{
-					Currency = "EUR",
-					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					ReturnUrl = TestSettings.ReturnUrl,
-					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
-					ReturnUrlError = TestSettings.ReturnUrlError,
-					ReturnUrlReject = TestSettings.ReturnUrlReject,
-					AmountDebit = 2,
-					Invoice = $"TEST_12",
-					Order = $"SDK_{ TestName }_12",
-					ClientIp = TestSettings.IpAddress,
-				})
-				.Afterpay() // Choose the paymentMethod you want to use
-				.Authorize(Mocks.Afterpay.AfterpayAuthorizeMock); // choose the action you want to use and provide the payment method specific info.
+        [TestMethod]
+        public void AuthorizeTest()
+        {
+            var request =
+                this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+                .TransactionRequest() // One of the request type options.
+                .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
+                {
+                    Currency = "EUR",
+                    Description = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    ReturnUrl = TestSettings.ReturnUrl,
+                    ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+                    ReturnUrlError = TestSettings.ReturnUrlError,
+                    ReturnUrlReject = TestSettings.ReturnUrlReject,
+                    AmountDebit = 2,
+                    Invoice = $"TEST_12",
+                    Order = $"SDK_{TestName}_12",
+                    ClientIp = TestSettings.IpAddress,
+                })
+                .Afterpay() // Choose the paymentMethod you want to use
+                .Authorize(Mocks.Afterpay.AfterpayAuthorizeMock); // choose the action you want to use and provide the payment method specific info.
 
-			var response = request.Execute();
+            var response = request.Execute();
 
-			// Process.Start(response.RequiredAction.RedirectURL);
-			Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
-		}
-		[TestMethod]
-		public void CaptureTest()
-		{
-			var request =
-				this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
-				.Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
-				.TransactionRequest() // One of the request type options.
-				.SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
-				{
-					Currency = "EUR",
-					Description = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					ReturnUrl = TestSettings.ReturnUrl,
-					ReturnUrlCancel = TestSettings.ReturnUrlCancel,
-					ReturnUrlError = TestSettings.ReturnUrlError,
-					ReturnUrlReject = TestSettings.ReturnUrlReject,
-					AmountDebit = 2,
-					Invoice = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-					OriginalTransactionKey = "",
-					Order = $"SDK_{ TestName }_{ DateTime.Now.Ticks }",
-				})
-				.Afterpay() // Choose the paymentMethod you want to use
-				.Capture(Mocks.Afterpay.AfterpayCaptureMock); // choose the action you want to use and provide the payment method specific info.
+            // Process.Start(response.RequiredAction.RedirectURL);
+            Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+        }
+        [TestMethod]
+        public void CaptureTest()
+        {
+            var request =
+                this._buckarooClient.CreateRequest(new StandardLogger()) // Create a request.
+                .Authenticate(TestSettings.WebsiteKey, TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+                .TransactionRequest() // One of the request type options.
+                .SetBasicFields(new TransactionBase // The transactionBase contains the base information of a transaction.
+                {
+                    Currency = "EUR",
+                    Description = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    ReturnUrl = TestSettings.ReturnUrl,
+                    ReturnUrlCancel = TestSettings.ReturnUrlCancel,
+                    ReturnUrlError = TestSettings.ReturnUrlError,
+                    ReturnUrlReject = TestSettings.ReturnUrlReject,
+                    AmountDebit = 2,
+                    Invoice = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                    OriginalTransactionKey = "",
+                    Order = $"SDK_{TestName}_{DateTime.Now.Ticks}",
+                })
+                .Afterpay() // Choose the paymentMethod you want to use
+                .Capture(Mocks.Afterpay.AfterpayCaptureMock); // choose the action you want to use and provide the payment method specific info.
 
-			var response = request.Execute();
+            var response = request.Execute();
 
-			// Process.Start(response.RequiredAction.RedirectURL);
-			// Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
-		}
+            // Process.Start(response.RequiredAction.RedirectURL);
+            // Console.WriteLine(response.BuckarooSdkLogger.GetFullLog());
+        }
 
-		[TestCleanup]
-		public void TearDown()
-		{
-			this._buckarooClient = null;
-		}
-	}
+        [TestCleanup]
+        public void TearDown()
+        {
+            this._buckarooClient = null;
+        }
+    }
 }
 
 
