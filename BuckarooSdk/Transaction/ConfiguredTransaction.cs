@@ -1,4 +1,5 @@
 using BuckarooSdk.Services.Afterpay;
+using BuckarooSdk.Services.Banking;
 using BuckarooSdk.Services.BuckarooVoucher;
 using BuckarooSdk.Services.BuckarooWallet;
 using BuckarooSdk.Services.Capayable;
@@ -32,10 +33,10 @@ using AmericanExpressTransaction = BuckarooSdk.Services.CreditCards.AmericanExpr
 
 namespace BuckarooSdk.Transaction
 {
-	/// <summary>
-	/// The configuredTransaction is a transaction where the basic fields are set.
-	/// </summary>
-	public class ConfiguredTransaction
+    /// <summary>
+    /// The configuredTransaction is a transaction where the basic fields are set.
+    /// </summary>
+    public class ConfiguredTransaction
 	{
 		internal TransactionRequest BaseTransaction { get; private set; }
 
@@ -380,5 +381,13 @@ namespace BuckarooSdk.Transaction
 		{
 			return new GeneralTransaction(this);
 		}
-	}
+
+        /// <summary>
+        /// The instantiation of the specific Banking Service transaction.
+        /// </summary>
+        public BankingRequestObject Banking()
+        {
+            return new BankingRequestObject(this);
+        }
+    }
 }
