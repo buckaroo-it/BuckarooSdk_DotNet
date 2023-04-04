@@ -366,6 +366,7 @@
     <Compile Include="Services\Afterpay\AfterpayTests.cs" />
     <Compile Include="Services\AmericanExpress\AmericanExpressTests.cs" />
     <Compile Include="Services\BanContact\BanContactTests.cs" />
+    <Compile Include="Services\Banking\BankingTests.cs" />
     <Compile Include="Services\BuckarooWallet\BuckarooWalletTests.cs" />
     <Compile Include="Services\BuckarooVoucher\BuckarooVoucherTests.cs" />
     <Compile Include="Services\Capayable\CapayableTests.cs" />
@@ -418,6 +419,7 @@
       <Name>BuckarooSdk</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
