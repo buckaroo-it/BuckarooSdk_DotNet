@@ -1,8 +1,8 @@
-﻿using System;
+﻿using BuckarooSdk.DataTypes.RequestBases;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Globalization;
-using BuckarooSdk.DataTypes.RequestBases;
 
 namespace BuckarooSdk.Tests.Services.SimpleSepaDirectDebit
 {

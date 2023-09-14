@@ -397,6 +397,7 @@
     <Compile Include="Services\PayPal\PayPalTests.cs" />
     <Compile Include="Services\PayPerEmail\PayPerEmailTests.cs" />
     <Compile Include="Services\PaysafeCard\PaysafeCardTests.cs" />
+    <Compile Include="Services\SepaDirectDebit\SepaDirectDebitTests.cs" />
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitTests.cs" />
     <Compile Include="Services\Sofort\SofortTests.cs" />
     <Compile Include="Services\Subscriptions\SubscriptionRequestTests.cs" />
