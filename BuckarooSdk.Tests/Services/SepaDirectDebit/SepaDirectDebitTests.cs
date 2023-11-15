@@ -36,10 +36,10 @@ namespace BuckarooSdk.Tests.Services.SepaDirectDebit
                 .Pay(new SepaDirectDebitPayRequest()
                 {
                     MandateReference = "0012652668455265",
-                    MandateDate = "16-11-2016",
+                    MandateDate = "16-12-2023",
                     CustomerBic = "INGBNL2A",
                     CustomerAccountName = "JJA Roos",
-                    CollectDate = "26-11-2016",
+                    CollectDate = "26-12-2023",
                 });
 
             var paymentResponse = payment.Execute();
