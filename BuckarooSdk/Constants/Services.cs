@@ -20,6 +20,7 @@
 			PayPal,
 			AmericanExpress,
 			Transfer,
+			SepaDirectDebit,
 			SimpleSepaDirectDebit,
 			Payconiq,
 			Sofort,

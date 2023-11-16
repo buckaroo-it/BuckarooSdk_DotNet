@@ -24,6 +24,7 @@ using BuckarooSdk.Services.Payconiq.TransactionRequest;
 using BuckarooSdk.Services.PayPal;
 using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.PaysafeCard;
+using BuckarooSdk.Services.SepaDirectDebit;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
 using BuckarooSdk.Services.Sofort;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
@@ -305,7 +306,15 @@ namespace BuckarooSdk.Transaction
 			return new SimpleSepaDirectDebitTransaction(this);
 		}
 
-		public PayconiqTransaction Payconiq()
+        /// <summary>
+        /// The instanciation of the specific SEPA Direct debit Service transaction.
+        /// </summary>
+        public SepaDirectDebitTransaction SepaDirectDebit()
+        {
+            return new SepaDirectDebitTransaction(this);
+        }
+
+        public PayconiqTransaction Payconiq()
 		{
 			return new PayconiqTransaction(this);
 		}
