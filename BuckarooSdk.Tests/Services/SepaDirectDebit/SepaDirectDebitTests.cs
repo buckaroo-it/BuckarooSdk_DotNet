@@ -38,7 +38,7 @@ namespace BuckarooSdk.Tests.Services.SepaDirectDebit
                     MandateReference = "0012652668455265",
                     MandateDate = "16-12-2023",
                     CustomerBic = "INGBNL2A",
-                    CustomerAccountName = "JJA Roos",
+                    CustomerAccountName = "Tester Test",
                     CollectDate = "26-12-2023",
                 });
 
