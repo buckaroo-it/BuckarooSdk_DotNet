@@ -24,12 +24,19 @@ namespace BuckarooSdk.Base
 			this.SignatureCalculationService = new SignatureCalculationService();
 		}
 
-		public Push DeserializePush(byte[] body, string requestUri, string authorizationHeader)
+        /// <summary>
+        /// Deserializes a Buckaroo <see cref="Push"/> message.
+        /// </summary>
+        /// <param name="body">The body of the message as <see cref="Array"/> of <see cref="byte"/>.</param>
+        /// <param name="requestUri">The <see cref="Uri"/> of the receiving endpoint of the Buckaroo <see cref="Push"/> message.</param>
+        /// <param name="authorizationHeader">The Authorization header received with the <see cref="Push"/> message.</param>
+        /// <returns>A <see cref="Push"/> message.</returns>
+        /// <exception cref="AuthenticationException">If the HMAC Authorization header cannot be verified.</exception>
+        public Push DeserializePush(byte[] body, Uri requestUri, string authorizationHeader)
 		{
-			var requestUriEncoded = WebUtility.UrlEncode(requestUri)?.ToLower();
+			var requestUriEncoded = WebUtility.UrlEncode($"{requestUri.Authority}{requestUri.PathAndQuery}").ToLower();
 
 			var requestMethod = HttpMethod.Post.ToString();
-
 
 			//calculate signature
 			if (!this.SignatureCalculationService.VerifySignature(body, requestMethod, requestUriEncoded, this._apiKey, authorizationHeader))
