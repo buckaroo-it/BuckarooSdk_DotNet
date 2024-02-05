@@ -13,6 +13,7 @@ using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
 using BuckarooSdk.Services.INGHomePay;
+using BuckarooSdk.Services.InThree;
 using BuckarooSdk.Services.Ippies;
 using BuckarooSdk.Services.KbcPaymentButton;
 using BuckarooSdk.Services.Klarna;
@@ -339,11 +340,16 @@ namespace BuckarooSdk.Transaction
 			return new EPSRequestObject(this);
 		}
 
-		/// <summary>
-		/// The instanciation of the specific PaysafeCard Service transaction.
-		/// </summary>
-		/// <returns> An PaysafeCard</returns>
-		public PaysafeCardRequestObject PaysafeCard()
+        public InThreeTransaction InThree()
+        {
+            return new InThreeTransaction(this);
+        }
+
+        /// <summary>
+        /// The instanciation of the specific PaysafeCard Service transaction.
+        /// </summary>
+        /// <returns> An PaysafeCard</returns>
+        public PaysafeCardRequestObject PaysafeCard()
 		{
 			return new PaysafeCardRequestObject(this);
 		}
