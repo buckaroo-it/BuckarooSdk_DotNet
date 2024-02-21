@@ -11,7 +11,7 @@
         public string Street { get; set; }
 
         /// <summary>
-        /// GroupType: ShippingCustomer. House number of the shipping address.
+        /// GroupType: ShippingCustomer. Street number of the shipping address.
         /// </summary>
         public string StreetNumber { get; set; }
 
