@@ -24,6 +24,7 @@
 			SimpleSepaDirectDebit,
 			Payconiq,
 			Sofort,
+			In3,
 			//// additional services
 			CreditManagement,
 			//Subscriptions,
