@@ -6,17 +6,17 @@
     public class Article
     {
         /// <summary>
-        /// GroupType: Article. Gets or sets the description of the article.
+        /// GroupType: Article. Description of the article.
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// GroupType: Article. Gets or sets the gross unit price of the article.
+        /// GroupType: Article. Gross unit price of the article.
         /// </summary>
         public string GrossUnitPrice { get; set; }
 
         /// <summary>
-        /// GroupType: Article. Gets or sets the quantity of the article.
+        /// GroupType: Article. Quantity of the article.
         /// </summary>
         public int Quantity { get; set; }
     }
