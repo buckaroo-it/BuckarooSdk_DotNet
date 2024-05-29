@@ -367,6 +367,7 @@
     <Compile Include="Services\Afterpay\AfterpayTests.cs" />
     <Compile Include="Services\AmericanExpress\AmericanExpressTests.cs" />
     <Compile Include="Services\BanContact\BanContactTests.cs" />
+    <Compile Include="Services\Blik\BlikTests.cs" />
     <Compile Include="Services\BuckarooWallet\BuckarooWalletTests.cs" />
     <Compile Include="Services\BuckarooVoucher\BuckarooVoucherTests.cs" />
     <Compile Include="Services\Capayable\CapayableTests.cs" />
@@ -390,12 +391,15 @@
     <Compile Include="Services\KlarnaKP\KlarnaTests.cs" />
     <Compile Include="Services\Maestro\MaestroTests.cs" />
     <Compile Include="Services\MasterCard\MasterCardTests.cs" />
+    <Compile Include="Services\MBWay\MBWayTests.cs" />
+    <Compile Include="Services\Multibanco\MultibancoTests.cs" />
     <Compile Include="Services\Nexi\NexiTests.cs" />
     <Compile Include="Services\Notification\NotificationTests.cs" />
     <Compile Include="Services\OnlineGiroLite\OnlineGiroLiteTests.cs" />
     <Compile Include="Services\OnlineGiro\OnlineGiroTests.cs" />
     <Compile Include="Services\P24\P24Tests.cs" />
     <Compile Include="Services\Payconiq\PayconiqTests.cs" />
+    <Compile Include="Services\PaymentInitiation\PaymentInitiationTests.cs" />
     <Compile Include="Services\PayPal\PayPalTests.cs" />
     <Compile Include="Services\PayPerEmail\PayPerEmailTests.cs" />
     <Compile Include="Services\PaysafeCard\PaysafeCardTests.cs" />
@@ -403,6 +407,7 @@
     <Compile Include="Services\SimpleSepaDirectDebit\SimpleSepaDirectDebitTests.cs" />
     <Compile Include="Services\Sofort\SofortTests.cs" />
     <Compile Include="Services\Subscriptions\SubscriptionRequestTests.cs" />
+    <Compile Include="Services\Thunes\ThunesTests.cs" />
     <Compile Include="Services\Transfer\TransferTests.cs" />
     <Compile Include="Services\VisaElectron\VisaElectronTests.cs" />
     <Compile Include="Services\Visa\VisaTests.cs" />
