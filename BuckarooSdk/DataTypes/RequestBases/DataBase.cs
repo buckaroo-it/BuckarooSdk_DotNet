@@ -27,8 +27,8 @@ namespace BuckarooSdk.DataTypes.RequestBases
 
 		public DataBase()
 		{
-			//this.CustomParameters = new CustomParameters();
-			//this.AdditionalParameters = new AdditionalParameters();
+			this.CustomParameters = new CustomParameters();
+			this.AdditionalParameters = new AdditionalParameters();
 			this.Services = new Services.DataRequestServices();
 			this.OriginalTransactionReference = new TransactionReference();
 			this.ClientIp = new IpAddress();
