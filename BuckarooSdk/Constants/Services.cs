@@ -51,6 +51,7 @@
 			Ippies,
 			HuisTuinGiftcard,
             VVVGiftcard,
+			IDin,
 		}
 	}
 }

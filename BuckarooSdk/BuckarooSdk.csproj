@@ -12,6 +12,8 @@
 		<Folder Include="DataTypes\GlobalGroups\" />
 		<Folder Include="Services\CreditCards\BanContact\Constants\" />
 		<Folder Include="Services\CreditManagement\Push\" />
+		<Folder Include="Services\iDin\Constants\" />
+		<Folder Include="Services\iDin\DataRequest\" />
 		<Folder Include="Services\Payconiq\Push\" />
 	</ItemGroup>
 
