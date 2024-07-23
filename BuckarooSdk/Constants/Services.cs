@@ -60,7 +60,8 @@
 			PayByBank,
 			Blik,
 			MBWay,
-			Multibanco
-		}
+			Multibanco,
+            IDin
+        }
 	}
 }
