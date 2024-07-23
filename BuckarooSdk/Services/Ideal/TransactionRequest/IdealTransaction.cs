@@ -2,15 +2,15 @@
 
 namespace BuckarooSdk.Services.Ideal.TransactionRequest
 {
-	/// <summary>
-	/// The Transaction class of payment method type: iDEAL.
-	/// </summary>
+    /// <summary>
+    /// The Transaction class of payment method type: iDEAL.
+    /// </summary>
     public class IdealTransaction
     {
-		/// <summary>
-		/// The configured transaction
-		/// </summary>
-        private ConfiguredTransaction ConfiguredTransaction { get;}
+        /// <summary>
+        /// The configured transaction
+        /// </summary>
+        private ConfiguredTransaction ConfiguredTransaction { get; }
         internal IdealTransaction(ConfiguredTransaction configuredTransaction)
         {
             this.ConfiguredTransaction = configuredTransaction;
@@ -31,6 +31,21 @@ namespace BuckarooSdk.Services.Ideal.TransactionRequest
 
             return configuredServiceTransaction;
         }
+
+        /// <summary>
+        /// The PayFastCheckout function creates a configured transaction with an IdealPayFastCheckoutRequest, that is ready to be executed.
+        /// </summary>
+        /// <param name="request">An IdealPayFastCheckoutRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceTransaction PayFastCheckout(IdealPayFastCheckoutRequest request)
+        {
+            var parameters = ServiceHelper.CreateServiceParameters(request);
+            var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
+            configuredServiceTransaction.BaseTransaction.AddService("Ideal", parameters, "PayFastCheckout", "2");
+
+            return configuredServiceTransaction;
+        }
+
         /// <summary>
 		/// The refund function creates a configured transaction with an IdealRefundRequest, 
         /// that is ready to be executed.
@@ -45,6 +60,7 @@ namespace BuckarooSdk.Services.Ideal.TransactionRequest
 
             return configuredServiceTransaction;
         }
+
         /// <summary>
 		/// The pay remainder function creates a configured transaction with an IdealPayRemainderRequest, 
         /// that is ready to be executed.

@@ -13,6 +13,7 @@ using BuckarooSdk.Services.Giftcards.VVVGiftcard;
 using BuckarooSdk.Services.Giropay;
 using BuckarooSdk.Services.Ideal.TransactionRequest;
 using BuckarooSdk.Services.IdealProcessing.TransactionRequest;
+using BuckarooSdk.Services.iDin.TransactionRequest;
 using BuckarooSdk.Services.INGHomePay;
 using BuckarooSdk.Services.InThree;
 using BuckarooSdk.Services.Ippies;
@@ -177,10 +178,19 @@ namespace BuckarooSdk.Transaction
 			return new IdealProcessingTransaction(this);
 		}
 
-		#endregion
+        #endregion
 
-		/// <returns> An INGHomePay</returns>
-		public INGHomePayRequestObject INGHomePay()
+        /// <summary>
+        /// The instanciation of the specific IDin Service transaction.
+        /// </summary>
+        /// <returns> An IDin</returns>
+        public IDinTransaction IDin()
+        {
+            return new IDinTransaction(this);
+        }
+
+        /// <returns> An INGHomePay</returns>
+        public INGHomePayRequestObject INGHomePay()
 		{
 			return new INGHomePayRequestObject(this);
 		}

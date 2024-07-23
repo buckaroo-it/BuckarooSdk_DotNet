@@ -384,6 +384,7 @@
     <Compile Include="Services\IdealProcessing\IdealProcessingTests.cs" />
     <Compile Include="Services\IdealQr\IdealQrTests.cs" />
     <Compile Include="Services\Ideal\IdealTests.cs" />
+    <Compile Include="Services\iDin\IDinTests.cs" />
     <Compile Include="Services\INGHomePay\INGHomePayTests.cs" />
     <Compile Include="Services\InThree\InThreeTests.cs" />
     <Compile Include="Services\Ippies\IppiesTests.cs" />
