@@ -1,9 +1,11 @@
-﻿namespace BuckarooSdk.DataTypes.ParameterGroups.InThree
+﻿using BuckarooSdk.Services;
+
+namespace BuckarooSdk.DataTypes.ParameterGroups.InThree
 {
     /// <summary>
     /// Represents an article with description, gross unit price, and quantity.
     /// </summary>
-    public class Article
+    public class Article : ParameterGroup
     {
         /// <summary>
         /// GroupType: Article. Description of the article.

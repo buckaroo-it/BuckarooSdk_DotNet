@@ -1,9 +1,11 @@
-﻿namespace BuckarooSdk.DataTypes.ParameterGroups.InThree
+﻿using BuckarooSdk.Services;
+
+namespace BuckarooSdk.DataTypes.ParameterGroups.InThree
 {
     /// <summary>
     /// Represents a shipping customer.
     /// </summary>
-    public class ShippingCustomer
+    public class ShippingCustomer : ParameterGroup
     {
         /// <summary>
         /// GroupType: ShippingCustomer. Street of the shipping address.
