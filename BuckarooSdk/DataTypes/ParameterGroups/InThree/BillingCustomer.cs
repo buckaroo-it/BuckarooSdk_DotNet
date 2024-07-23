@@ -1,11 +1,12 @@
-﻿using System;
+﻿using BuckarooSdk.Services;
+using System;
 
 namespace BuckarooSdk.DataTypes.ParameterGroups.InThree
 {
     /// <summary>
     /// Represents a billing customer.
     /// </summary>
-    public class BillingCustomer
+    public class BillingCustomer : ParameterGroup
     {
         /// <summary>
         /// GroupType: BillingCustomer. The number you assign to the billing customer.
