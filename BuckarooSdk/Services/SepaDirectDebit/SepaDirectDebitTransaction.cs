@@ -15,6 +15,21 @@ namespace BuckarooSdk.Services.SepaDirectDebit
         }
 
         /// <summary>
+        /// The authorize function creates a configured transaction with an SepaDirectDebitAuthorizeRequest, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">An SepaDirectDebitAuthorizeRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceTransaction Authorize(SepaDirectDebitAuthorizeRequest request)
+        {
+            var parameters = ServiceHelper.CreateServiceParameters(request);
+            var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
+            configuredServiceTransaction.BaseTransaction.AddService("SepaDirectDebit", parameters, "Authorize");
+
+            return configuredServiceTransaction;
+        }
+
+        /// <summary>
         /// The pay function creates a configured transaction with an SepaDirectDebitPayRequest, 
         /// that is ready to be executed.
         /// </summary>
@@ -28,6 +43,52 @@ namespace BuckarooSdk.Services.SepaDirectDebit
 
             return configuredServiceTransaction;
         }
+
+        /// <summary>
+        /// The pay extra info function creates a configured transaction with an SepaDirectDebitExtraInfoRequest, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">An SepaDirectDebitExtraInfoRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceTransaction PayExtraInfo(SepaDirectDebitExtraInfoRequest request)
+        {
+            var parameters = ServiceHelper.CreateServiceParameters(request);
+            var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
+            configuredServiceTransaction.BaseTransaction.AddService("SepaDirectDebit", parameters, "Pay,ExtraInfo");
+
+            return configuredServiceTransaction;
+        }
+
+        /// <summary>
+        /// The pay recurrent function creates a configured transaction with an SepaDirectDebitPayRecurrentRequest, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">An SepaDirectDebitPayRecurrentRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceTransaction PayRecurrent(SepaDirectDebitPayRecurrentRequest request)
+        {
+            var parameters = ServiceHelper.CreateServiceParameters(request);
+            var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
+            configuredServiceTransaction.BaseTransaction.AddService("SepaDirectDebit", parameters, "payrecurrent");
+
+            return configuredServiceTransaction;
+        }
+
+        /// <summary>
+        /// The pay with emandate function creates a configured transaction with an SepaDirectDebitPayWithEmandateRequest, 
+        /// that is ready to be executed.
+        /// </summary>
+        /// <param name="request">An SepaDirectDebitPayWithEmandateRequest</param>
+        /// <returns></returns>
+        public ConfiguredServiceTransaction PayWithEMandate(SepaDirectDebitPayWithEmandateRequest request)
+        {
+            var parameters = ServiceHelper.CreateServiceParameters(request);
+            var configuredServiceTransaction = new ConfiguredServiceTransaction(this.ConfiguredTransaction.BaseTransaction);
+            configuredServiceTransaction.BaseTransaction.AddService("SepaDirectDebit", parameters, "PayWithEmandate");
+
+            return configuredServiceTransaction;
+        }
+
         /// <summary>
 		/// The refund function creates a configured transaction with an SepaDirectDebitRefundRequest, 
         /// that is ready to be executed.
