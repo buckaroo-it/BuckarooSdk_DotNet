@@ -1,4 +1,5 @@
 using BuckarooSdk.Services.Afterpay;
+using BuckarooSdk.Services.Blik;
 using BuckarooSdk.Services.BuckarooVoucher;
 using BuckarooSdk.Services.BuckarooWallet;
 using BuckarooSdk.Services.Capayable;
@@ -18,17 +19,21 @@ using BuckarooSdk.Services.InThree;
 using BuckarooSdk.Services.Ippies;
 using BuckarooSdk.Services.KbcPaymentButton;
 using BuckarooSdk.Services.Klarna;
+using BuckarooSdk.Services.MBWay;
+using BuckarooSdk.Services.Multibanco;
 using BuckarooSdk.Services.Notification;
 using BuckarooSdk.Services.OnlineGiro;
 using BuckarooSdk.Services.OnlineGiroLite;
 using BuckarooSdk.Services.P24.TransactionRequest;
 using BuckarooSdk.Services.Payconiq.TransactionRequest;
+using BuckarooSdk.Services.PaymentInitiation;
 using BuckarooSdk.Services.PayPal;
 using BuckarooSdk.Services.PayPerEmail;
 using BuckarooSdk.Services.PaysafeCard;
 using BuckarooSdk.Services.SepaDirectDebit;
 using BuckarooSdk.Services.SimpleSepaDirectDebit;
 using BuckarooSdk.Services.Sofort;
+using BuckarooSdk.Services.Thunes;
 using BuckarooSdk.Services.Transfer.TransactionRequest;
 using BuckarooSdk.Transaction.General;
 using AmericanExpressTransaction = BuckarooSdk.Services.CreditCards.AmericanExpress.Request.AmericanExpressTransaction;
@@ -317,10 +322,50 @@ namespace BuckarooSdk.Transaction
 			return new SimpleSepaDirectDebitTransaction(this);
 		}
 
-        /// <summary>
-        /// The instanciation of the specific SEPA Direct debit Service transaction.
-        /// </summary>
-        public SepaDirectDebitTransaction SepaDirectDebit()
+		/// <summary>
+		/// The instanciation of the specific Blik Service transaction.
+		/// </summary>
+		public BlikTransaction Blik()
+		{
+			return new BlikTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific MBWay Service transaction.
+		/// </summary>
+		public MBWayTransaction MBWay()
+		{
+			return new MBWayTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Multibanco Service transaction.
+		/// </summary>
+		public MultibancoTransaction Multibanco()
+		{
+			return new MultibancoTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific PaymentInitiation (PayByBank) Service transaction.
+		/// </summary>
+		public PaymentInitiationTransaction PaymentInitiation()
+		{
+			return new PaymentInitiationTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific Thunes Service transaction.
+		/// </summary>
+		public ThunesTransaction Thunes()
+		{
+			return new ThunesTransaction(this);
+		}
+
+		/// <summary>
+		/// The instanciation of the specific SEPA Direct debit Service transaction.
+		/// </summary>
+		public SepaDirectDebitTransaction SepaDirectDebit()
         {
             return new SepaDirectDebitTransaction(this);
         }

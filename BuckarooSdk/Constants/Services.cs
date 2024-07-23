@@ -51,7 +51,16 @@
 			Ippies,
 			HuisTuinGiftcard,
             VVVGiftcard,
-			IDin,
+			MonizzeMealVoucher,
+			MonizzeEcoVoucher,
+			MonizzeGiftVoucher,
+			SodexoMealVoucher,
+			SodexoEcoVoucher,
+			SodexoGiftVoucher,
+			PayByBank,
+			Blik,
+			MBWay,
+			Multibanco
 		}
 	}
 }
