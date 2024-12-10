@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 
@@ -205,10 +206,11 @@ namespace BuckarooSdk.Tests.Services.Ideal
                 var requestTimeStamp = Convert.ToUInt64(timeSpan.TotalSeconds).ToString();
                 // create random nonce for each request
 
+                var requestUriEncoded = WebUtility.UrlEncode(TestSettings.PushUri)?.ToLower();
 
                 var pushSignature = this.BuckarooClient.GetSignatureCalculationService().CalculateSignature(bodyAsBytes, HttpMethod.Post.ToString(),
                     requestTimeStamp, Guid.NewGuid().ToString("N"),
-                    TestSettings.PushUri, TestSettings.WebsiteKey, TestSettings.SecretKey);
+                    requestUriEncoded, TestSettings.WebsiteKey, TestSettings.SecretKey);
 
 
                 var authorizationheader = $"hmac {pushSignature}";              // DEZE IS BELANGRIJK: SIGNATURE
@@ -224,9 +226,9 @@ namespace BuckarooSdk.Tests.Services.Ideal
                 var transactionKey = push.Key;
                 var transactionStatus = push.Status;
 
-                var iban = responseData.ConsumerIban;
-                var bic = responseData.ConsumerBic;
-                var consumerName = responseData.ConsumerName;
+                var iban = responseData?.ConsumerIban;
+                var bic = responseData?.ConsumerBic;
+                var consumerName = responseData?.ConsumerName;
 
                 // The following KeyValuePair can be used to update your transaction
                 var newTransactionStatus = new KeyValuePair<string, int>(transactionKey, transactionStatus.Code.Code);
