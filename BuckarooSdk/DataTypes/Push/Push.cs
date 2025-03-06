@@ -7,38 +7,41 @@ using static BuckarooSdk.Constants.Services;
 
 namespace BuckarooSdk.DataTypes.Push
 {
-	public abstract class Push
-	{
-		/// <summary>
-		/// The transaction key
-		/// </summary>
-		public string Key { get; set; }
-		/// <summary>
-		/// The status of the transaction
-		/// </summary>
-		public Status Status { get; set; }
-		/// <summary>
-		/// The list of services that were available for the transaction request
-		/// </summary>
-		public List<Response.Service> Services { get; set; }
+    public abstract class Push
+    {
+        /// <summary>
+        /// The transaction key
+        /// </summary>
+        public string Key { get; set; }
+        /// <summary>
+        /// The status of the transaction
+        /// </summary>
+        public Status Status { get; set; }
+        /// <summary>
+        /// The list of services that were available for the transaction request
+        /// </summary>
+        public List<Response.Service> Services { get; set; }
 
-		public List<ServiceNames> GetServices()
-		{
-			return this.Services.Select(service => (ServiceNames) Enum.Parse(typeof(ServiceNames), service.Name, true)).ToList();
-		}
+        public List<ServiceNames> GetServices()
+        {
+            return this.Services?.Select(service => (ServiceNames)Enum.Parse(typeof(ServiceNames), service.Name, true)).ToList();
+        }
 
-		// abstract class Response
-		public T GetActionResponse<T>()
-			where T : ActionPush, new()
-		{
-			var result = new T();
+        // abstract class Response
+        public T GetActionResponse<T>()
+            where T : ActionPush, new()
+        {
+            var result = new T();
 
-			var service = this.Services.FirstOrDefault(s => s.Name.Equals(result.ServiceNames.ToString(), StringComparison.OrdinalIgnoreCase));
-			if (service == null) return null;
+            if (this.Services == null)
+                return null;
 
-			result.FillFromPush(service);
+            var service = this.Services.FirstOrDefault(s => s.Name.Equals(result.ServiceNames.ToString(), StringComparison.OrdinalIgnoreCase));
+            if (service == null) return null;
 
-			return result;
-		}
-	}
+            result.FillFromPush(service);
+
+            return result;
+        }
+    }
 }
