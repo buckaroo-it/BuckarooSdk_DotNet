@@ -129,7 +129,77 @@ namespace BuckarooSdk.Tests.Services.PayPal
 				{
 					//define properties
 				});
-			
+
+			var response = request.Execute();
+		}
+
+		[TestMethod]
+		public void AuthorizeTest()
+		{
+			var request = this._sdkClient.CreateRequest()
+				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest()
+				.SetBasicFields(new TransactionBase
+				{
+					Currency = "EUR",
+					AmountDebit = 0.02m,
+					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
+					Description = "PAYPAL_AUTHORIZE_SDK_UNITTEST",
+				})
+				.PayPal()
+				.Authorize(new PayPalAuthorizeRequest()
+				{
+					//define properties
+					BuyerEmail = "techsup@buckaroo.nl",
+					ProductName = "haardhout",
+				});
+
+			var paymentResponse = request.Execute();
+		}
+
+		[TestMethod]
+		public void CaptureTest()
+		{
+			var request = this._sdkClient.CreateRequest()
+				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest()
+				.SetBasicFields(new TransactionBase
+				{
+					Currency = "EUR",
+					AmountDebit = 0.02m,
+					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
+					Description = "PAYPAL_CAPTURE_SDK_UNITTEST",
+					//OriginalTransactionKey of a successful Authorize transaction is required at runtime
+				})
+				.PayPal()
+				.Capture(new PayPalCaptureRequest()
+				{
+					//define properties
+				});
+
+			var response = request.Execute();
+		}
+
+		[TestMethod]
+		public void CancelAuthorizeTest()
+		{
+			var request = this._sdkClient.CreateRequest()
+				.Authenticate(Constants.TestSettings.WebsiteKey, Constants.TestSettings.SecretKey, false, new CultureInfo("nl-NL"))
+				.TransactionRequest()
+				.SetBasicFields(new TransactionBase
+				{
+					Currency = "EUR",
+					AmountDebit = 0.02m,
+					Invoice = $"SDK_TEST_{DateTime.Now.Ticks}",
+					Description = "PAYPAL_CANCELAUTHORIZE_SDK_UNITTEST",
+					//OriginalTransactionKey of a successful Authorize transaction is required at runtime
+				})
+				.PayPal()
+				.CancelAuthorize(new PayPalCancelAuthorizeRequest()
+				{
+					//define properties
+				});
+
 			var response = request.Execute();
 		}
 	}
