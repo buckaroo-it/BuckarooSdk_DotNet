@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # Keep the GitHub Actions used in workflows current (and, once SHA-pinned,
+  # Dependabot will bump the pins for you).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
