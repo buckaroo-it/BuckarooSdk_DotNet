@@ -15,7 +15,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>buckaroo;payments;payment;psp;ideal;creditcard;sdk</PackageTags>
-		<PackageIconUrl>https://www.buckaroo.nl/assets/static/favicons/apple-touch-icon.png</PackageIconUrl>
+		<PackageIconUrl>https://www.buckaroo.nl/dist/assets/favicons/mkb/favicon-32x32.png?v=3</PackageIconUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
