@@ -1,0 +1,83 @@
+name: Publish NuGet package
+
+# Publish only when a GitHub Release is published — an explicit, auditable trigger.
+# Nothing publishes on push/PR.
+on:
+  release:
+    types: [published]
+
+# Deny-by-default at the workflow level. The publish job re-grants only what it needs.
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-nuget
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+
+    # Binds this run to the GitHub Actions environment named "release".
+    # Put protection rules on that environment (required reviewers + tag/branch
+    # restriction) and set the SAME name in the nuget.org Trusted Publishing policy.
+    environment: release
+
+    permissions:
+      id-token: write   # required: lets THIS job mint the OIDC token for nuget.org
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false   # don't leave the git token on disk
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4.3.1
+        with:
+          dotnet-version: '8.0.x'
+
+      # Pass the tag through the environment, never inline into the shell — a
+      # release tag is attacker-controllable and may contain shell metacharacters.
+      # Validate it as a version so only well-formed values reach later steps.
+      - name: Derive package version from the release tag
+        id: version
+        env:
+          TAG_NAME: ${{ github.event.release.tag_name }}
+        run: |
+          version="${TAG_NAME#v}"   # v1.5.5 -> 1.5.5
+          if ! [[ "$version" =~ ^[0-9]+(\.[0-9]+)*(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Refusing to publish: tag '$TAG_NAME' is not a valid version"
+            exit 1
+          fi
+          echo "value=$version" >> "$GITHUB_OUTPUT"
+
+      # Pack ONLY the library. BuckarooSdk.Tests is a legacy .NET Framework 4.7.1
+      # (packages.config) project and cannot restore/run on a Linux runner.
+      - name: Pack
+        env:
+          PKG_VERSION: ${{ steps.version.outputs.value }}
+        run: >
+          dotnet pack BuckarooSdk/BuckarooSdk.csproj
+          --configuration Release
+          -p:Version="$PKG_VERSION"
+          -p:ContinuousIntegrationBuild=true
+          --output "$RUNNER_TEMP/nupkgs"
+
+      # Exchange the OIDC token for a short-lived (1 hour) nuget.org API key.
+      # Do this immediately before push so the key can't expire mid-run.
+      - name: NuGet login (OIDC -> temporary API key)
+        id: login
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: ${{ secrets.NUGET_USER }}   # nuget.org username of the policy owner account
+
+      - name: Push to nuget.org
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+        run: >
+          dotnet nuget push "$RUNNER_TEMP/nupkgs/*.nupkg"
+          --api-key "$NUGET_API_KEY"
+          --source https://api.nuget.org/v3/index.json
+          --skip-duplicate

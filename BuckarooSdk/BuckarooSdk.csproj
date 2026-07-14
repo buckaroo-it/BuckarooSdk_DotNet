@@ -5,8 +5,22 @@
 		<RootNamespace>BuckarooSdk</RootNamespace>
 		<AssemblyName>BuckarooSdk</AssemblyName>
 		<Description>.NET Standard SDK for the Buckaroo API</Description>
-		<PackageIconUrl>https://www.buckaroo.nl/assets/static/favicons/apple-touch-icon.png</PackageIconUrl>
+		<PackageId>BuckarooSdk</PackageId>
+		<Authors>Buckaroo</Authors>
+		<Company>Buckaroo</Company>
+		<Copyright>Copyright © Buckaroo</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/buckaroo-it/BuckarooSdk_DotNet</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/buckaroo-it/BuckarooSdk_DotNet</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>buckaroo;payments;payment;psp;ideal;creditcard;sdk</PackageTags>
+		<PackageIconUrl>https://www.buckaroo.nl/dist/assets/favicons/mkb/favicon-32x32.png?v=3</PackageIconUrl>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Folder Include="DataTypes\GlobalGroups\" />
