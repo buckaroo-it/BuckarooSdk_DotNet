@@ -15,11 +15,12 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>buckaroo;payments;payment;psp;ideal;creditcard;sdk</PackageTags>
-		<PackageIconUrl>https://www.buckaroo.nl/dist/assets/favicons/mkb/favicon-32x32.png?v=3</PackageIconUrl>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="../README.md" Pack="true" PackagePath="/" />
+		<None Include="icon.png" Pack="true" PackagePath="/" />
 	</ItemGroup>
 
 	<ItemGroup>
