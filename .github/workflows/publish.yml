@@ -74,8 +74,10 @@ jobs:
           user: ${{ secrets.NUGET_USER }}   # nuget.org username of the policy owner account
 
       - name: Push to nuget.org
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
         run: >
-          dotnet nuget push '${{ runner.temp }}/nupkgs/*.nupkg'
-          --api-key '${{ steps.login.outputs.NUGET_API_KEY }}'
+          dotnet nuget push "$RUNNER_TEMP/nupkgs/*.nupkg"
+          --api-key "$NUGET_API_KEY"
           --source https://api.nuget.org/v3/index.json
           --skip-duplicate
