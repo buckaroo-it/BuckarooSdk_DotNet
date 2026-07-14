@@ -89,7 +89,8 @@ dotnet pack BuckarooSdk/BuckarooSdk.csproj -c Release -p:Version=1.5.5-local -o 
 |---|---|
 | Workflow fails at *Derive version* with "not a valid version" | The tag isn't `vX.Y.Z` (or a valid SemVer). Delete the tag/release and recreate with a proper version. |
 | Workflow doesn't start at all | It only triggers on **release: published** — a plain `git tag`/push won't do it. Create an actual GitHub Release. Also confirm the tag matches the environment's allowed tag pattern (`v*`). |
-| Push fails with 403 / policy not found | The nuget.org Trusted Publishing policy is inactive. Usually the policy-owner service account was removed from the `BuckarooBV` org, or the policy's Repository/Workflow/Environment values drifted from this workflow. Re-check the policy. |
+| NuGet login fails with "No matching trust policy owned by user" (HTTP 401) | `NUGET_USER` is wrong. It must be the username of the **user account that created** the Trusted Publishing policy — *not* the `BuckarooBV` package owner, and *not* an email. See the `NUGET_USER` note under [One-time setup](#one-time-setup-reference). |
+| Push fails with 403 / policy not found | The nuget.org Trusted Publishing policy is inactive. Usually the policy-creator service account was removed from the `BuckarooBV` org, or the policy's Repository/Workflow/Environment values drifted from this workflow. Re-check the policy. |
 | "already exists" but exits green | Expected — `--skip-duplicate`. That version is already published; bump and release again. |
 | Temporary key expired | Only happens if the job stalls > 1 hour between login and push. Just re-run the job. |
 
@@ -103,9 +104,14 @@ This is already configured; documented here so it can be recreated.
   - Repository: `BuckarooSdk_DotNet`
   - Workflow File: `publish.yml`
   - Environment: `release`
-  - Owned by a **dedicated service account** that is a permanent member of the `BuckarooBV` org
-    (if the owning user leaves the org, the policy goes inactive).
+  - Created by (and owned by) a **dedicated service account** that is a permanent member of the
+    `BuckarooBV` org. Trusted Publishing policies belong to the individual **user** who creates
+    them — even when they publish packages on behalf of the org — so if that user leaves the org
+    the policy goes inactive. This account's username is what goes in the `NUGET_USER` secret below.
 - **GitHub environment `release`** (repo → Settings → Environments): required reviewer(s) and
-  deployment restricted to tags matching `v*`.
+  deployment restricted to **tags** matching `v*` (add it as a *tag* rule, not a branch rule —
+  a branch rule never matches a release tag).
 - **Environment secret `NUGET_USER`**: the nuget.org username (profile name, *not* email) of the
-  policy-owner account.
+  **account that created the Trusted Publishing policy** — the *policy creator*, **not** the
+  `BuckarooBV` package-owner org. The OIDC token exchange returns HTTP 401 ("No matching trust
+  policy owned by user") if this is set to anything other than that user's exact username.
