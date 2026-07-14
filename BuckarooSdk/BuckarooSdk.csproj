@@ -9,7 +9,7 @@
 		<Authors>Buckaroo</Authors>
 		<Company>Buckaroo</Company>
 		<Copyright>Copyright © Buckaroo</Copyright>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/buckaroo-it/BuckarooSdk_DotNet</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/buckaroo-it/BuckarooSdk_DotNet</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
@@ -20,6 +20,7 @@
 
 	<ItemGroup>
 		<None Include="../README.md" Pack="true" PackagePath="/" />
+		<None Include="../LICENSE" Pack="true" PackagePath="/" />
 		<None Include="icon.png" Pack="true" PackagePath="/" />
 	</ItemGroup>
 
