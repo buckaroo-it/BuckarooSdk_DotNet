@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- LTS target so the suite runs on the widest range of machines/CI agents.
+         RollForward=Major lets it also execute on newer runtimes (e.g. .NET 10) when 8 is absent. -->
+    <TargetFramework>net8.0</TargetFramework>
+    <RollForward>Major</RollForward>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <!-- The SDK pins Newtonsoft.Json 12.0.3 (a known-vuln transitive dependency). That is an SDK
+         packaging concern, not a test concern; silence the audit noise so test output stays clean. -->
+    <NuGetAudit>false</NuGetAudit>
+    <NoWarn>$(NoWarn);NU1901;NU1902;NU1903;NU1904</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuckarooSdk\BuckarooSdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Recorded JSON fixtures (pushes / responses) copied next to the test assembly. -->
+    <None Include="TestData\**\*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

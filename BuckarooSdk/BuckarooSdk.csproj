@@ -37,4 +37,10 @@
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<!-- Expose internal types (Service, RequestParameter, ServiceHelper, Request, ...) to the
+		     unit test project so request-building and serialization can be verified without network. -->
+		<InternalsVisibleTo Include="BuckarooSdk.UnitTests" />
+	</ItemGroup>
+
 </Project>

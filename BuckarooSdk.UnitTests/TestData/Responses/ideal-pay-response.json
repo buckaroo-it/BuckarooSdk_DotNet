@@ -1,0 +1,38 @@
+{
+	"Key": "A9CF3A004C0144A2B1709EFAE7841388",
+	"Status": {
+		"Code": {
+			"Code": 190,
+			"Description": "Success"
+		},
+		"SubCode": {
+			"Code": "S060",
+			"Description": "Transaction successfully processed."
+		},
+		"DateTime": "2018-03-23T14:39:03"
+	},
+	"Invoice": "NL1802813331",
+	"ServiceCode": "ideal",
+	"IsTest": true,
+	"Currency": "EUR",
+	"AmountDebit": 12.34,
+	"TransactionType": "C021",
+	"MutationType": 1,
+	"Services": [
+		{
+			"Name": "ideal",
+			"Action": null,
+			"Parameters": [
+				{
+					"Name": "TransactionId",
+					"Value": "1150000854689906"
+				},
+				{
+					"Name": "ConsumerIssuer",
+					"Value": "ING Bank"
+				}
+			],
+			"VersionAsProperty": 2
+		}
+	]
+}
