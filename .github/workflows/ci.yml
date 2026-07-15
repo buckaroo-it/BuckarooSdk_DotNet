@@ -1,0 +1,56 @@
+name: CI
+
+# Fast feedback on every pull request and on pushes to the main branch.
+# Runs the network-free unit test suite (BuckarooSdk.UnitTests) only.
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+# Deny-by-default: the test job only needs to read the repository.
+permissions:
+  contents: read
+
+# Cancel superseded runs on the same ref (e.g. new push to a PR).
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Unit tests (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # Cross-platform: several tests assert culture-invariant behaviour (decimal
+        # formatting, signatures), so we validate on both Linux and Windows.
+        os: [ubuntu-24.04, windows-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5.4.0
+        with:
+          dotnet-version: '8.0.x'
+
+      # Target the test project directly. BuckarooSdk.Tests is a legacy .NET Framework
+      # 4.7.1 (packages.config) integration harness that cannot restore/run on these
+      # runners; only BuckarooSdk.UnitTests (and the SDK it references) is built here.
+      - name: Restore
+        run: dotnet restore BuckarooSdk.UnitTests/BuckarooSdk.UnitTests.csproj
+
+      - name: Build
+        run: dotnet build BuckarooSdk.UnitTests/BuckarooSdk.UnitTests.csproj --configuration Release --no-restore
+
+      - name: Test
+        run: >
+          dotnet test BuckarooSdk.UnitTests/BuckarooSdk.UnitTests.csproj
+          --configuration Release
+          --no-build
+          --logger "trx;LogFileName=test-results.trx"
+          --results-directory TestResults

@@ -1,0 +1,37 @@
+{
+	"DataRequest": {
+		"Key": "7B9E1C2D3F4A4B5C8D9E0F1A2B3C4D5E",
+		"Invoice": "NL9988776655",
+		"ServiceCode": "emandate",
+		"Status": {
+			"Code": {
+				"Code": 190,
+				"Description": "Success"
+			},
+			"SubCode": {
+				"Code": "S060",
+				"Description": "Data request successfully processed."
+			},
+			"DateTime": "2018-03-23T14:39:03"
+		},
+		"IsTest": true,
+		"Currency": "EUR",
+		"TransactionType": "V051",
+		"Services": [
+			{
+				"Name": "emandate",
+				"Action": null,
+				"Parameters": [
+					{
+						"Name": "mandateId",
+						"Value": "SDD-0001"
+					}
+				],
+				"VersionAsProperty": 1
+			}
+		],
+		"MutationType": 0,
+		"RelatedTransactions": null,
+		"CustomerName": "J. de Tester"
+	}
+}

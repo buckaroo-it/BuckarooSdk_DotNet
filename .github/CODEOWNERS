@@ -1,0 +1,6 @@
+# Code owners for CI/CD workflow changes.
+#
+# Changes under .github/workflows/ can run code and shape release/publish behaviour,
+# so they require review from the .NET development team. For this to be enforced,
+# enable "Require review from Code Owners" in the master branch protection rule.
+/.github/workflows/ @buckaroo-it/buckaroo-net-development
