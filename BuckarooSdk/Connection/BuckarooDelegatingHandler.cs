@@ -15,7 +15,7 @@ namespace BuckarooSdk.Connection
 	{
 		private SignatureCalculationService SignatureCalculationService { get; }
 
-		internal BuckarooDelegatingHandler(string websiteKey, string apiKey, string channel, string culture)
+		internal BuckarooDelegatingHandler(string websiteKey, string apiKey, string channel, string culture, HttpMessageHandler innerHandler = null)
 		{
 			this._websiteKey = websiteKey;
 			this._apiKey = apiKey;
@@ -23,7 +23,7 @@ namespace BuckarooSdk.Connection
 			this._culture = culture;
 			this._software = JsonConvert.SerializeObject(new Settings.Software());
 
-			this.InnerHandler = new HttpClientHandler();
+			this.InnerHandler = innerHandler ?? new HttpClientHandler();
 			this.SignatureCalculationService = new SignatureCalculationService();
 		}
 
@@ -70,7 +70,11 @@ namespace BuckarooSdk.Connection
 
 			response = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
 
-			if (!await this.ValidateResponse(response, request.Method.ToString(), requestUri).ConfigureAwait(false))
+			// Only signed gateway responses carry an HMAC to verify. A non-success response (e.g. a 429 or a
+			// firewall block) has no Buckaroo signature, so it is passed straight back to the caller to be
+			// turned into a meaningful error instead of being run through signature validation.
+			if (response.IsSuccessStatusCode &&
+				!await this.ValidateResponse(response, request.Method.ToString(), requestUri).ConfigureAwait(false))
 			{
 				throw new AuthenticationException();
 			}
@@ -80,8 +84,17 @@ namespace BuckarooSdk.Connection
 
 		protected async Task<bool> ValidateResponse(HttpResponseMessage response, string requestMethod, string requestUri)
 		{
-			response.Headers.TryGetValues("Authorization", out var authorizationResponse);
-			var actualHeader = authorizationResponse.ToList().First();
+			if (!response.Headers.TryGetValues("Authorization", out var authorizationResponse))
+			{
+				return false;
+			}
+
+			var actualHeader = authorizationResponse.FirstOrDefault();
+			if (actualHeader == null)
+			{
+				return false;
+			}
+
 			var body = await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
 
 			return this.SignatureCalculationService.VerifySignature(body, requestMethod, requestUri, this._apiKey, actualHeader);
