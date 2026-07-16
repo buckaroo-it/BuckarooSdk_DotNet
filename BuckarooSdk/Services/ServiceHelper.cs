@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.Reflection;
@@ -105,14 +106,23 @@ namespace BuckarooSdk.Services
 
 		private static string StringifyParameter(object value)
 		{
-			if (value is decimal)
+			// The gateway parses these values against a fixed culture, so the wire format must never depend
+			// on the culture of the machine running the SDK. Dates follow Buckaroo's documented ISO 8601
+			// format (date only, keeping a time component only when the value actually carries one); every
+			// other formattable value (decimal, double, float, ...) is written with the invariant culture.
+			if (value is DateTime dateTime)
 			{
-				return ((decimal)value).ToString(CultureInfo.InvariantCulture);
+				return dateTime.TimeOfDay == TimeSpan.Zero
+					? dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)
+					: dateTime.ToString("yyyy-MM-ddTHH:mm:ss", CultureInfo.InvariantCulture);
 			}
-			else
+
+			if (value is IFormattable formattable)
 			{
-				return value?.ToString();
+				return formattable.ToString(null, CultureInfo.InvariantCulture);
 			}
+
+			return value?.ToString();
 		}
 	}
 }
