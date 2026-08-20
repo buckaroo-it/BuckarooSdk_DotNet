@@ -1,13 +1,9 @@
 ﻿using BuckarooSdk.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BuckarooSdk.DataTypes.ParameterGroups.Afterpay
 {
-	public class BillingCustomer : ParameterGroup
+    public class BillingCustomer : ParameterGroup
 	{
 		/// <summary>
 		/// GroupType: BillingCustomer. Customer category of billing customer. Possible values: Person, Company. 
