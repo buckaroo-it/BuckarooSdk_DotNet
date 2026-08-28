@@ -9,6 +9,8 @@ namespace BuckarooSdk.DataTypes.RequestBases
 		public string ReturnUrlCancel { get; set; }
 		public string ReturnUrlError { get; set; }
 		public string ReturnUrlReject { get; set; }
+		public string PushUrl { get; set; }
+		public string PushURLFailure { get; set; }
 		public string Invoice { get; set; }
 		public string Description { get; set; }
 		public string Currency { get; set; }
